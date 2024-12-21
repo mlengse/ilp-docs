@@ -26,133 +26,123 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "pendahuluan/survei/index",
+              "path": "/docs/pendahuluan/survei/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pendahuluan/survei/metode",
+              "path": "/docs/pendahuluan/survei/metode",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pendahuluan/survei/surveior",
+              "path": "/docs/pendahuluan/survei/surveior",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "pendahuluan/tdd",
               "path": "/docs/pendahuluan/tdd",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "pkp/1",
-              "path": "/docs/pkp/1",
+              "id": "pkp/akses-pasien",
+              "path": "/docs/3/3",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "pkp/10",
-              "path": "/docs/pkp/10",
+              "id": "pkp/anestesi-bedah",
+              "path": "/docs/3/8",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "pkp/11",
-              "path": "/docs/pkp/11",
+              "id": "pkp/farmasi",
+              "path": "/docs/3/15",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "pkp/12",
-              "path": "/docs/pkp/12",
+              "id": "pkp/gizi",
+              "path": "/docs/3/9",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "pkp/13",
-              "path": "/docs/pkp/13",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "pkp/14",
-              "path": "/docs/pkp/14",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "pkp/15",
-              "path": "/docs/pkp/15",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "pkp/2",
-              "path": "/docs/pkp/2",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "pkp/3",
-              "path": "/docs/pkp/3",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "pkp/4",
-              "path": "/docs/pkp/4",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "pkp/5",
-              "path": "/docs/pkp/5",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "pkp/6",
-              "path": "/docs/pkp/6",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "pkp/7",
-              "path": "/docs/pkp/7",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "pkp/8",
-              "path": "/docs/pkp/8",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "pkp/9",
-              "path": "/docs/pkp/9",
+              "id": "pkp/hak-pasien",
+              "path": "/docs/3/1",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "pkp/index",
-              "path": "/docs/pkp/",
+              "path": "/docs/3",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "pmkp/1",
-              "path": "/docs/pmkp/1",
+              "id": "pkp/laboratorium",
+              "path": "/docs/3/13",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "pmkp/2",
-              "path": "/docs/pmkp/2",
+              "id": "pkp/pelaksanaan-asuhan",
+              "path": "/docs/3/5",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "pmkp/3",
-              "path": "/docs/pmkp/3",
+              "id": "pkp/pemulangan",
+              "path": "/docs/3/10",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/pengkajian-pasien",
+              "path": "/docs/3/4",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/promotif-preventif",
+              "path": "/docs/3/6",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/proses-asuhan",
+              "path": "/docs/3/2",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/radiologi",
+              "path": "/docs/3/14",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/rekam-medis",
+              "path": "/docs/3/12",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/risiko-tinggi",
+              "path": "/docs/3/7",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/rujukan",
+              "path": "/docs/3/11",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "pmkp/index",
-              "path": "/docs/pmkp/",
+              "path": "/docs/2",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "referensi",
-              "path": "/docs/referensi",
+              "id": "pmkp/peningkatan-mutu",
+              "path": "/docs/2/1",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "survei/index",
-              "path": "/docs/survei/",
+              "id": "pmkp/ppi",
+              "path": "/docs/2/3",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "survei/metode",
-              "path": "/docs/survei/metode",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "survei/surveior",
-              "path": "/docs/survei/surveior",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tdd",
-              "path": "/docs/tdd",
+              "id": "pmkp/skp",
+              "path": "/docs/2/2",
               "sidebar": "tutorialSidebar"
             },
             {

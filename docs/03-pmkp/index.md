@@ -1,21 +1,31 @@
 ---
 outline: deep
-title: 2. PMKP
-
+title: PMKP
+slug: /2
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-:::code-group
+<Tabs>
+
+<TabItem value="nilai" label="Nilai" default>
 
 ``` js [Nilai]
 PMKP = 180 
 ```
+</TabItem>
+<TabItem value="standar" label="Standar" default>
 
 ``` ts [Standar]
 PMKP 1 = 50
 PMKP 2 = 80
 PMKP 3 = 50
+
+
 ```
-:::
+</TabItem>
+</Tabs>
+
 
 # BAB II. Peningkatan Mutu dan Keselamatan Pasien (PMKP)
 

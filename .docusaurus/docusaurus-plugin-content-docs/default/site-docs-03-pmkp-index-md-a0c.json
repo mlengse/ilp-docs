@@ -1,11 +1,11 @@
 {
   "id": "pmkp/index",
-  "title": "2. PMKP",
+  "title": "PMKP",
   "description": "Gambaran Umum",
   "source": "@site/docs/03-pmkp/index.md",
   "sourceDirName": "03-pmkp",
-  "slug": "/pmkp/",
-  "permalink": "/docs/pmkp/",
+  "slug": "/2",
+  "permalink": "/docs/2",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/03-pmkp/index.md",
@@ -13,7 +13,8 @@
   "version": "current",
   "frontMatter": {
     "outline": "deep",
-    "title": "2. PMKP"
+    "title": "PMKP",
+    "slug": "/2"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
@@ -21,7 +22,7 @@
     "permalink": "/docs/1/4"
   },
   "next": {
-    "title": "2.1. Upaya Peningkatan Mutu",
-    "permalink": "/docs/pmkp/1"
+    "title": "Upaya Peningkatan Mutu",
+    "permalink": "/docs/2/1"
   }
 }

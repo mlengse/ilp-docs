@@ -249,17 +249,17 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-d1f": {
+  "/docs-f4f": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---docsaba-d7c"
     }
   },
-  "/docs-fa9": {
+  "/docs-565": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---docs-005-788"
   },
-  "/docs-619": {
+  "/docs-324": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/docs/-4a8": {
@@ -268,23 +268,103 @@
   },
   "/docs/1-1d8": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tkk-dc-1-fe6"
+    "content": "content---docs-1-dc-1-1f9"
   },
   "/docs/1/1-416": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tkk-organisasi-5-c-0-d65"
+    "content": "content---docs-1-15-c-0-3c9"
   },
   "/docs/1/2-2d8": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tkk-sdmd-2-e-32c"
+    "content": "content---docs-1-2-d-2-e-d43"
   },
   "/docs/1/3-941": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tkk-fasilitas-keselamatan-8-d-4-61b"
+    "content": "content---docs-1-38-d-4-543"
   },
   "/docs/1/4-66a": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tkk-kerjasama-590-457"
+    "content": "content---docs-1-4590-c03"
+  },
+  "/docs/2-529": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pmkp-a-0-c-d7b"
+  },
+  "/docs/2/1-f00": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pmkp-peningkatan-mutu-703-2ad"
+  },
+  "/docs/2/2-8af": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pmkp-skp-368-6bd"
+  },
+  "/docs/2/3-87e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pmkp-ppi-74-b-b84"
+  },
+  "/docs/3-10e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-9-cb-cd6"
+  },
+  "/docs/3/1-aa0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-hak-pasienb-0-e-db8"
+  },
+  "/docs/3/10-747": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-pemulangan-13-c-b8a"
+  },
+  "/docs/3/11-a0e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-rujukanef-2-c15"
+  },
+  "/docs/3/12-47a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-rekam-medisdb-3-9fc"
+  },
+  "/docs/3/13-193": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-laboratorium-0-ca-f82"
+  },
+  "/docs/3/14-434": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-radiologi-64-b-a15"
+  },
+  "/docs/3/15-f92": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-farmasi-1-ff-78e"
+  },
+  "/docs/3/2-a0d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-proses-asuhan-6-e-1-d4d"
+  },
+  "/docs/3/3-84f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-akses-pasiene-0-e-f77"
+  },
+  "/docs/3/4-c0c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-pengkajian-pasien-7-d-6-d4b"
+  },
+  "/docs/3/5-528": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-pelaksanaan-asuhan-35-c-a31"
+  },
+  "/docs/3/6-860": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-promotif-preventifb-2-e-789"
+  },
+  "/docs/3/7-cf8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-risiko-tinggi-0-cc-47b"
+  },
+  "/docs/3/8-75f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-anestesi-bedah-036-6a6"
+  },
+  "/docs/3/9-310": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-gizie-03-8d2"
   },
   "/docs/pendahuluan/-d74": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -294,109 +374,21 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-pendahuluan-referensi-676-5f6"
   },
+  "/docs/pendahuluan/survei/-c2b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pendahuluan-survei-24-d-e74"
+  },
+  "/docs/pendahuluan/survei/metode-fa2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pendahuluan-survei-metodea-56-567"
+  },
+  "/docs/pendahuluan/survei/surveior-6b2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pendahuluan-survei-surveiorc-57-65d"
+  },
   "/docs/pendahuluan/tdd-81f": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-pendahuluan-tdd-8-d-8-02a"
-  },
-  "/docs/pkp/-d64": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-9-cb-cd6"
-  },
-  "/docs/pkp/1-e6c": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-1-e-4-d-28a"
-  },
-  "/docs/pkp/10-4f7": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-102-f-0-bac"
-  },
-  "/docs/pkp/11-a79": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-11-e-45-312"
-  },
-  "/docs/pkp/12-a20": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-129-e-2-afb"
-  },
-  "/docs/pkp/13-571": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-132-e-8-64c"
-  },
-  "/docs/pkp/14-4e7": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-143-a-6-d4b"
-  },
-  "/docs/pkp/15-0ce": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-15-b-6-a-339"
-  },
-  "/docs/pkp/2-149": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-2743-da2"
-  },
-  "/docs/pkp/3-0cd": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-3011-0d0"
-  },
-  "/docs/pkp/4-a95": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-4193-75d"
-  },
-  "/docs/pkp/5-858": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-5-d-37-183"
-  },
-  "/docs/pkp/6-066": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-6316-a9c"
-  },
-  "/docs/pkp/7-71f": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-73-ac-ff7"
-  },
-  "/docs/pkp/8-51b": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-8-fa-1-ab1"
-  },
-  "/docs/pkp/9-27b": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pkp-98-d-1-fbd"
-  },
-  "/docs/pmkp/-5a0": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pmkp-a-0-c-d7b"
-  },
-  "/docs/pmkp/1-249": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pmkp-1373-6dc"
-  },
-  "/docs/pmkp/2-3e5": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pmkp-2090-cb3"
-  },
-  "/docs/pmkp/3-0db": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-pmkp-38-bf-7a7"
-  },
-  "/docs/referensi-206": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-referensi-518-d38"
-  },
-  "/docs/survei/-129": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-survei-61-a-267"
-  },
-  "/docs/survei/metode-a12": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-survei-metode-359-e17"
-  },
-  "/docs/survei/surveior-636": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-survei-surveiore-31-6e7"
-  },
-  "/docs/tdd-18d": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tddb-2-e-8d0"
   },
   "/-e5f": {
     "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",

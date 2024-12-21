@@ -2,14 +2,13 @@
 title: SDM
 slug: /1/2
 ---
-:::code-group
 
-``` js [Nilai]
-TKK 2 = 30
 
-```
-:::
 # Standar 1.2 Tata Kelola Sumber Daya Manusia (TKK2) 
+
+``` js title="Nilai"
+TKK 2 = 30
+```
 
 Klinik memiliki tata kelola Sumber Daya Manusia (SDM) yang meliputi perencanaan, pemetaan kebutuhan, perekrutan, evaluasi dan pengembangan sumber daya manusia. 
 

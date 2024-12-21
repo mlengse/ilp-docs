@@ -2,14 +2,11 @@
 title: Organisasi
 slug: /1/1
 ---
-:::code-group
-
-``` js [Nilai]
-TKK 1 = 30
-
-```
-:::
 # Standar 1.1 Pengorganisasian Klinik (TKK 1) 
+
+``` js title="Nilai"
+TKK 1 = 30
+```
 
 Dalam mengemban tugas, tanggung jawab dan wewenang, klinik perlu menyusun pengorganisasian yang jelas. 
 

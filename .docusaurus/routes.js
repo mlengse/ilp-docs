@@ -114,15 +114,15 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'd1f'),
+    component: ComponentCreator('/docs', 'f4f'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', 'fa9'),
+        component: ComponentCreator('/docs', '565'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', '619'),
+            component: ComponentCreator('/docs', '324'),
             routes: [
               {
                 path: '/docs/',
@@ -161,6 +161,126 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/docs/2',
+                component: ComponentCreator('/docs/2', '529'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/2/1',
+                component: ComponentCreator('/docs/2/1', 'f00'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/2/2',
+                component: ComponentCreator('/docs/2/2', '8af'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/2/3',
+                component: ComponentCreator('/docs/2/3', '87e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3',
+                component: ComponentCreator('/docs/3', '10e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/1',
+                component: ComponentCreator('/docs/3/1', 'aa0'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/10',
+                component: ComponentCreator('/docs/3/10', '747'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/11',
+                component: ComponentCreator('/docs/3/11', 'a0e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/12',
+                component: ComponentCreator('/docs/3/12', '47a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/13',
+                component: ComponentCreator('/docs/3/13', '193'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/14',
+                component: ComponentCreator('/docs/3/14', '434'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/15',
+                component: ComponentCreator('/docs/3/15', 'f92'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/2',
+                component: ComponentCreator('/docs/3/2', 'a0d'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/3',
+                component: ComponentCreator('/docs/3/3', '84f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/4',
+                component: ComponentCreator('/docs/3/4', 'c0c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/5',
+                component: ComponentCreator('/docs/3/5', '528'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/6',
+                component: ComponentCreator('/docs/3/6', '860'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/7',
+                component: ComponentCreator('/docs/3/7', 'cf8'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/8',
+                component: ComponentCreator('/docs/3/8', '75f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/9',
+                component: ComponentCreator('/docs/3/9', '310'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/docs/pendahuluan/',
                 component: ComponentCreator('/docs/pendahuluan/', 'd74'),
                 exact: true,
@@ -173,158 +293,26 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/docs/pendahuluan/survei/',
+                component: ComponentCreator('/docs/pendahuluan/survei/', 'c2b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/pendahuluan/survei/metode',
+                component: ComponentCreator('/docs/pendahuluan/survei/metode', 'fa2'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/pendahuluan/survei/surveior',
+                component: ComponentCreator('/docs/pendahuluan/survei/surveior', '6b2'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/docs/pendahuluan/tdd',
                 component: ComponentCreator('/docs/pendahuluan/tdd', '81f'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/',
-                component: ComponentCreator('/docs/pkp/', 'd64'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/1',
-                component: ComponentCreator('/docs/pkp/1', 'e6c'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/10',
-                component: ComponentCreator('/docs/pkp/10', '4f7'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/11',
-                component: ComponentCreator('/docs/pkp/11', 'a79'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/12',
-                component: ComponentCreator('/docs/pkp/12', 'a20'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/13',
-                component: ComponentCreator('/docs/pkp/13', '571'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/14',
-                component: ComponentCreator('/docs/pkp/14', '4e7'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/15',
-                component: ComponentCreator('/docs/pkp/15', '0ce'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/2',
-                component: ComponentCreator('/docs/pkp/2', '149'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/3',
-                component: ComponentCreator('/docs/pkp/3', '0cd'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/4',
-                component: ComponentCreator('/docs/pkp/4', 'a95'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/5',
-                component: ComponentCreator('/docs/pkp/5', '858'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/6',
-                component: ComponentCreator('/docs/pkp/6', '066'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/7',
-                component: ComponentCreator('/docs/pkp/7', '71f'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/8',
-                component: ComponentCreator('/docs/pkp/8', '51b'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pkp/9',
-                component: ComponentCreator('/docs/pkp/9', '27b'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pmkp/',
-                component: ComponentCreator('/docs/pmkp/', '5a0'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pmkp/1',
-                component: ComponentCreator('/docs/pmkp/1', '249'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pmkp/2',
-                component: ComponentCreator('/docs/pmkp/2', '3e5'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/pmkp/3',
-                component: ComponentCreator('/docs/pmkp/3', '0db'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/referensi',
-                component: ComponentCreator('/docs/referensi', '206'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/survei/',
-                component: ComponentCreator('/docs/survei/', '129'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/survei/metode',
-                component: ComponentCreator('/docs/survei/metode', 'a12'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/survei/surveior',
-                component: ComponentCreator('/docs/survei/surveior', '636'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/tdd',
-                component: ComponentCreator('/docs/tdd', '18d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               }

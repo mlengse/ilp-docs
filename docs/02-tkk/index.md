@@ -3,13 +3,20 @@ outline: deep
 title: Tata Kelola Klinik
 slug: /1
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Bab I. Tata Kelola Klinik (TKK) 
 
-:::code-group
+<Tabs>
+
+<TabItem value="nilai" label="Nilai" default>
 
 ``` js [Nilai]
 TKK = 190
 ```
+</TabItem>
+<TabItem value="standar" label="Standar" default>
 
 ``` ts [Standar]
 TKK 1 = 30
@@ -18,7 +25,8 @@ TKK 3 = 100
 TKK 4 = 30
 
 ```
-:::
+</TabItem>
+</Tabs>
 
 ## Gambaran Umum 
 Klinik merupakan fasilitas pelayanan kesehatan yang menyelenggarakan pelayanan kesehatan yang menyediakan pelayanan medik dasar dan/atau spesialistik secara komprehensif. Pelayanan kesehatan di klinik dapat berupa pelayanan rawat jalan, rawat inap, dan kegawatdaruratan dan pertolongan persalinan normal sesuai standar. 

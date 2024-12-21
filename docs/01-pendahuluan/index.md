@@ -1,14 +1,21 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Pendahuluan  	 
 
-:::code-group
+<Tabs>
 
-``` js [Nilai]
+<TabItem value="nilai" label="Nilai" default>
+
+```js
 TKK = 190
 PMKP = 180 
 PKP = 670
 ```
+</TabItem>
+<TabItem value="standar" label="Standar" default>
 
-``` ts [Standar]
+```ts [Standar]
 TKK 1 = 30
 TKK 2 = 30
 TKK 3 = 100
@@ -33,7 +40,8 @@ PKP 14 = 20
 PKP 15 = 130
 
 ```
-:::
+</TabItem>
+</Tabs>
 
 
 ## Latar Belakang 

@@ -2,13 +2,12 @@
 title: Kerja Sama
 slug: /1/4
 ---
-:::code-group
 
 ``` js [Nilai]
 TKK 4 = 30
 
 ```
-:::
+
 # Standar 1.4 Tata Kelola Kerja Sama (TKK 4)
 Klinik dapat melakukan kerja sama dengan pihak lain untuk memenuhi kebutuhan pelayanan. Dasar pelaksanaan kerja sama tersebut dituangkan dalam bentuk dokumen kontrak yang sesuai dengan ketentuan peraturan perundang-undangan. Kontrak dapat berupa kontrak klinis dan kontrak manajemen.  
 ## Maksud dan Tujuan 

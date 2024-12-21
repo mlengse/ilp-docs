@@ -1,13 +1,23 @@
 ---
 outline: deep
-title: 3. PKP
+title: PKP
+slug: /3
 
 ---
-:::code-group
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs>
+
+<TabItem value="nilai" label="Nilai" default>
 
 ``` js [Nilai]
-PMKP = 180 
+PKP = 670
 ```
+</TabItem>
+<TabItem value="standar" label="Standar" default>
 
 ``` ts [Standar]
 PKP 1 = 70
@@ -27,7 +37,9 @@ PKP 14 = 20
 PKP 15 = 130
 
 ```
-:::
+</TabItem>
+</Tabs>
+
 # BAB III. Penyelenggaraan Kesehatan Perseorangan (PKP) 
 ## Gambaran Umum 
 Pelayanan yang dilakukan di klinik meliputi pelayanan preventif, promotif, kuratif dan rehabilitatif. Pelayanan pasien memperhatikan hak pasien dan keluarga serta mutu dan keselamatan pasien. Klinik pratama menyelenggarakan pelayanan kesehatan dasar sedangkan klinik utama menyelengggarakan pelayanan spesialistik.  Pelaksanaan asuhan dan pelayanan dilakukan secara terintegrasi oleh semua Profesional Pemberi Asuhan (PPA). Asuhan pasien terintegrasi merupakan konsep pelayanan berfokus pada pasien dilaksanakan sehari hari dengan implementasi dapat terlihat sebagai berikut: 

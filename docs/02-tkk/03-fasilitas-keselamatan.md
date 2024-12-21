@@ -2,13 +2,12 @@
 title: Fasilitas Keselamatan
 slug: /1/3
 ---
-:::code-group
 
 ``` js [Nilai]
 TKK 3 = 100
 
 ```
-:::
+
 # Standar 1.3 Tata Kelola Fasilitas dan Keselamatan (TKK 3)  
 Klinik harus menyediakan fasilitas yang aman, berfungsi dan suportif bagi pasien, keluarga, staf dan pengunjung. Klinik juga harus menyediakan peralatan kesehatan sesuai dengan ketentuan peraturan perundang-undangan.   
 ## Maksud dan Tujuan  
