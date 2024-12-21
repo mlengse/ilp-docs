@@ -1,7 +1,7 @@
 {
   "id": "index",
-  "title": "Akreditasi Klinik",
-  "description": "",
+  "title": "index",
+  "description": "Manajemen Puskesmas",
   "source": "@site/docs/index.md",
   "sourceDirName": ".",
   "slug": "/",
@@ -11,47 +11,10 @@
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/index.md",
   "tags": [],
   "version": "current",
-  "frontMatter": {
-    "layout": "home",
-    "title": "Akreditasi Klinik",
-    "hero": {
-      "name": "Akreditasi Klinik",
-      "text": "Dokumen referensi ",
-      "actions": [
-        {
-          "theme": "brand",
-          "text": "Mulai",
-          "link": "/pendahuluan/"
-        },
-        {
-          "theme": "alt",
-          "text": "Referensi",
-          "link": "/pendahuluan/referensi"
-        }
-      ]
-    },
-    "features": [
-      {
-        "title": "Tata Kelola",
-        "details": "Tata kelola klinik yang baik akan menghasilkan pelayanan yang baik terutama dalam upaya meningkatkan mutu dan keselamatan pasien."
-      },
-      {
-        "title": "Mutu dan Keselamatan Pasien",
-        "details": "Dalam memberikan pelayanan dan asuhan pada pasien, klinik melaksanakan program Peningkatan Mutu dan Keselamatan Pasien."
-      },
-      {
-        "title": "Penyelenggaraan Kesehatan Perseorangan",
-        "details": "Pelayanan yang dilakukan di klinik meliputi pelayanan preventif, promotif, kuratif dan rehabilitatif."
-      }
-    ]
-  },
+  "frontMatter": {},
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "index",
-    "permalink": "/docs/ilp/"
-  },
-  "next": {
-    "title": "Pendahuluan",
-    "permalink": "/docs/klinik/pendahuluan/"
+    "title": "Klaster 1",
+    "permalink": "/docs/klaster-1/"
   }
 }

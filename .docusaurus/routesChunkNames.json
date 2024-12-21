@@ -249,158 +249,54 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-189": {
+  "/docs-222": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---docsaba-d7c"
     }
   },
-  "/docs-76c": {
+  "/docs-9e5": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---docs-005-788"
   },
-  "/docs-cef": {
+  "/docs-79f": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/docs/1-e2f": {
+  "/docs/-4a8": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-1-e-67-115"
+    "content": "content---docs-c-37-4d0"
   },
-  "/docs/2-dd9": {
+  "/docs/klaster-1/-da7": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-282-f-3f0"
+    "content": "content---docs-klaster-1-e-73-155"
   },
-  "/docs/2/1-9de": {
+  "/docs/pendahuluan/-d74": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-2-1277-681"
+    "content": "content---docs-pendahuluan-a-79-67c"
   },
-  "/docs/2/2-d4b": {
+  "/docs/pendahuluan/arsitektur-efe": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-2-2362-159"
+    "content": "content---docs-pendahuluan-arsitekturb-57-04a"
   },
-  "/docs/2/3-ee5": {
+  "/docs/pendahuluan/dasar-hukum-b9e": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-2-3-b-12-1dd"
+    "content": "content---docs-pendahuluan-dasar-hukum-1-b-5-fdf"
   },
-  "/docs/3-d7e": {
+  "/docs/pendahuluan/ilp-posyandu-a33": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-36-c-0-f9f"
+    "content": "content---docs-pendahuluan-ilp-posyandubb-3-c53"
   },
-  "/docs/3/1-c36": {
+  "/docs/pendahuluan/ilp-puskesmas-4df": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-1-af-3-f8b"
+    "content": "content---docs-pendahuluan-ilp-puskesmase-58-947"
   },
-  "/docs/3/1-f96": {
+  "/docs/pendahuluan/ilp-pustu-94b": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-160-a-b1d"
+    "content": "content---docs-pendahuluan-ilp-pustu-298-827"
   },
-  "/docs/3/10-85f": {
+  "/docs/pendahuluan/penyelenggaraan-1f2": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-107-ab-362"
-  },
-  "/docs/3/11-af0": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-117-f-8-d4c"
-  },
-  "/docs/3/12-93e": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-12387-b80"
-  },
-  "/docs/3/13-500": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-1341-e-a95"
-  },
-  "/docs/3/14-3aa": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-14-f-3-b-4cf"
-  },
-  "/docs/3/15-0f8": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-15623-24d"
-  },
-  "/docs/3/2-cbb": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-2972-b91"
-  },
-  "/docs/3/2-102": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-23-c-6-bcb"
-  },
-  "/docs/3/3-b17": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-3-cd-7-a3b"
-  },
-  "/docs/3/3-f39": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-3-df-1-2ec"
-  },
-  "/docs/3/4-415": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-4-aca-2e1"
-  },
-  "/docs/3/4-b90": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-40-e-7-124"
-  },
-  "/docs/3/5-c4e": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-5494-41f"
-  },
-  "/docs/3/6-a00": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-68-e-4-b14"
-  },
-  "/docs/3/7-cc9": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-7857-868"
-  },
-  "/docs/3/8-46b": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-8-f-29-883"
-  },
-  "/docs/3/9-e1e": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-3-9-b-7-f-bb3"
-  },
-  "/docs/ilp/-6c9": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-ilp-ad-2-62c"
-  },
-  "/docs/ilp/pendahuluan/-282": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-ilp-pendahuluan-16-d-943"
-  },
-  "/docs/ilp/pendahuluan/dasar-hukum-88b": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-ilp-pendahuluan-dasar-hukum-1-f-1-1aa"
-  },
-  "/docs/klinik/-7b0": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-klinik-fee-e2c"
-  },
-  "/docs/klinik/pendahuluan/-4c0": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-klinik-pendahuluan-8-c-4-fd8"
-  },
-  "/docs/klinik/pendahuluan/referensi-c20": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-klinik-pendahuluan-referensib-8-f-e71"
-  },
-  "/docs/klinik/pendahuluan/survei/-90d": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-klinik-pendahuluan-survei-dc-5-e8c"
-  },
-  "/docs/klinik/pendahuluan/survei/metode-74b": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-klinik-pendahuluan-survei-metodece-8-555"
-  },
-  "/docs/klinik/pendahuluan/survei/surveior-ade": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-klinik-pendahuluan-survei-surveior-6-f-8-59e"
-  },
-  "/docs/klinik/pendahuluan/tdd-b9f": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-klinik-pendahuluan-tdddfa-d51"
+    "content": "content---docs-pendahuluan-penyelenggaraanadd-8ca"
   },
   "/-e5f": {
     "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",

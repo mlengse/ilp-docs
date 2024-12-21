@@ -8,181 +8,51 @@
           "label": "Next",
           "isLast": true,
           "path": "/docs",
-          "mainDocId": "ilp/index",
+          "mainDocId": "index",
           "docs": [
             {
-              "id": "ilp/index",
-              "path": "/docs/ilp/",
+              "id": "index",
+              "path": "/docs/",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "ilp/pendahuluan/dasar-hukum",
-              "path": "/docs/ilp/pendahuluan/dasar-hukum",
+              "id": "klaster-1/index",
+              "path": "/docs/klaster-1/",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "ilp/pendahuluan/index",
-              "path": "/docs/ilp/pendahuluan/",
+              "id": "pendahuluan/arsitektur",
+              "path": "/docs/pendahuluan/arsitektur",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "klinik/index",
-              "path": "/docs/klinik/",
+              "id": "pendahuluan/dasar-hukum",
+              "path": "/docs/pendahuluan/dasar-hukum",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "klinik/pendahuluan/index",
-              "path": "/docs/klinik/pendahuluan/",
+              "id": "pendahuluan/ilp-posyandu",
+              "path": "/docs/pendahuluan/ilp-posyandu",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "klinik/pendahuluan/referensi",
-              "path": "/docs/klinik/pendahuluan/referensi",
+              "id": "pendahuluan/ilp-puskesmas",
+              "path": "/docs/pendahuluan/ilp-puskesmas",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "klinik/pendahuluan/survei/index",
-              "path": "/docs/klinik/pendahuluan/survei/",
+              "id": "pendahuluan/ilp-pustu",
+              "path": "/docs/pendahuluan/ilp-pustu",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "klinik/pendahuluan/survei/metode",
-              "path": "/docs/klinik/pendahuluan/survei/metode",
+              "id": "pendahuluan/index",
+              "path": "/docs/pendahuluan/",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "klinik/pendahuluan/survei/surveior",
-              "path": "/docs/klinik/pendahuluan/survei/surveior",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pendahuluan/tdd",
-              "path": "/docs/klinik/pendahuluan/tdd",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/akses-pasien",
-              "path": "/docs/3/3",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/anestesi-bedah",
-              "path": "/docs/3/8",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/farmasi",
-              "path": "/docs/3/15",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/gizi",
-              "path": "/docs/3/9",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/hak-pasien",
-              "path": "/docs/3/1",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/index",
-              "path": "/docs/3",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/laboratorium",
-              "path": "/docs/3/13",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/pelaksanaan-asuhan",
-              "path": "/docs/3/5",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/pemulangan",
-              "path": "/docs/3/10",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/pengkajian-pasien",
-              "path": "/docs/3/4",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/promotif-preventif",
-              "path": "/docs/3/6",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/proses-asuhan",
-              "path": "/docs/3/2",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/radiologi",
-              "path": "/docs/3/14",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/rekam-medis",
-              "path": "/docs/3/12",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/risiko-tinggi",
-              "path": "/docs/3/7",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pkp/rujukan",
-              "path": "/docs/3/11",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pmkp/index",
-              "path": "/docs/2",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pmkp/peningkatan-mutu",
-              "path": "/docs/2/1",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pmkp/ppi",
-              "path": "/docs/2/3",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/pmkp/skp",
-              "path": "/docs/2/2",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/tkk/fasilitas-keselamatan",
-              "path": "/docs/3/3",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/tkk/index",
-              "path": "/docs/1",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/tkk/kerjasama",
-              "path": "/docs/3/4",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/tkk/organisasi",
-              "path": "/docs/3/1",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "klinik/tkk/sdm",
-              "path": "/docs/3/2",
+              "id": "pendahuluan/penyelenggaraan",
+              "path": "/docs/pendahuluan/penyelenggaraan",
               "sidebar": "tutorialSidebar"
             }
           ],
@@ -190,8 +60,8 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/docs/ilp/",
-                "label": "index"
+                "path": "/docs/pendahuluan/",
+                "label": "Pendahuluan"
               }
             }
           }

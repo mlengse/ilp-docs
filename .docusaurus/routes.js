@@ -114,223 +114,67 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '189'),
+    component: ComponentCreator('/docs', '222'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '76c'),
+        component: ComponentCreator('/docs', '9e5'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', 'cef'),
+            component: ComponentCreator('/docs', '79f'),
             routes: [
               {
-                path: '/docs/1',
-                component: ComponentCreator('/docs/1', 'e2f'),
+                path: '/docs/',
+                component: ComponentCreator('/docs/', '4a8'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/2',
-                component: ComponentCreator('/docs/2', 'dd9'),
+                path: '/docs/klaster-1/',
+                component: ComponentCreator('/docs/klaster-1/', 'da7'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/2/1',
-                component: ComponentCreator('/docs/2/1', '9de'),
+                path: '/docs/pendahuluan/',
+                component: ComponentCreator('/docs/pendahuluan/', 'd74'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/2/2',
-                component: ComponentCreator('/docs/2/2', 'd4b'),
+                path: '/docs/pendahuluan/arsitektur',
+                component: ComponentCreator('/docs/pendahuluan/arsitektur', 'efe'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/2/3',
-                component: ComponentCreator('/docs/2/3', 'ee5'),
+                path: '/docs/pendahuluan/dasar-hukum',
+                component: ComponentCreator('/docs/pendahuluan/dasar-hukum', 'b9e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/3',
-                component: ComponentCreator('/docs/3', 'd7e'),
+                path: '/docs/pendahuluan/ilp-posyandu',
+                component: ComponentCreator('/docs/pendahuluan/ilp-posyandu', 'a33'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/3/1',
-                component: ComponentCreator('/docs/3/1', 'c36'),
+                path: '/docs/pendahuluan/ilp-puskesmas',
+                component: ComponentCreator('/docs/pendahuluan/ilp-puskesmas', '4df'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/3/1',
-                component: ComponentCreator('/docs/3/1', 'f96'),
+                path: '/docs/pendahuluan/ilp-pustu',
+                component: ComponentCreator('/docs/pendahuluan/ilp-pustu', '94b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/3/10',
-                component: ComponentCreator('/docs/3/10', '85f'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/11',
-                component: ComponentCreator('/docs/3/11', 'af0'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/12',
-                component: ComponentCreator('/docs/3/12', '93e'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/13',
-                component: ComponentCreator('/docs/3/13', '500'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/14',
-                component: ComponentCreator('/docs/3/14', '3aa'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/15',
-                component: ComponentCreator('/docs/3/15', '0f8'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/2',
-                component: ComponentCreator('/docs/3/2', 'cbb'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/2',
-                component: ComponentCreator('/docs/3/2', '102'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/3',
-                component: ComponentCreator('/docs/3/3', 'b17'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/3',
-                component: ComponentCreator('/docs/3/3', 'f39'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/4',
-                component: ComponentCreator('/docs/3/4', '415'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/4',
-                component: ComponentCreator('/docs/3/4', 'b90'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/5',
-                component: ComponentCreator('/docs/3/5', 'c4e'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/6',
-                component: ComponentCreator('/docs/3/6', 'a00'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/7',
-                component: ComponentCreator('/docs/3/7', 'cc9'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/8',
-                component: ComponentCreator('/docs/3/8', '46b'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/3/9',
-                component: ComponentCreator('/docs/3/9', 'e1e'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/ilp/',
-                component: ComponentCreator('/docs/ilp/', '6c9'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/ilp/pendahuluan/',
-                component: ComponentCreator('/docs/ilp/pendahuluan/', '282'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/ilp/pendahuluan/dasar-hukum',
-                component: ComponentCreator('/docs/ilp/pendahuluan/dasar-hukum', '88b'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/klinik/',
-                component: ComponentCreator('/docs/klinik/', '7b0'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/klinik/pendahuluan/',
-                component: ComponentCreator('/docs/klinik/pendahuluan/', '4c0'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/klinik/pendahuluan/referensi',
-                component: ComponentCreator('/docs/klinik/pendahuluan/referensi', 'c20'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/klinik/pendahuluan/survei/',
-                component: ComponentCreator('/docs/klinik/pendahuluan/survei/', '90d'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/klinik/pendahuluan/survei/metode',
-                component: ComponentCreator('/docs/klinik/pendahuluan/survei/metode', '74b'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/klinik/pendahuluan/survei/surveior',
-                component: ComponentCreator('/docs/klinik/pendahuluan/survei/surveior', 'ade'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/klinik/pendahuluan/tdd',
-                component: ComponentCreator('/docs/klinik/pendahuluan/tdd', 'b9f'),
+                path: '/docs/pendahuluan/penyelenggaraan',
+                component: ComponentCreator('/docs/pendahuluan/penyelenggaraan', '1f2'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               }
