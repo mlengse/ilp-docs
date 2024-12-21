@@ -1,0 +1,27 @@
+{
+  "id": "pmkp/index",
+  "title": "2. PMKP",
+  "description": "Gambaran Umum",
+  "source": "@site/docs/03 - pmkp/index.md",
+  "sourceDirName": "03 - pmkp",
+  "slug": "/pmkp/",
+  "permalink": "/docs/pmkp/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/03 - pmkp/index.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "outline": "deep",
+    "title": "2. PMKP"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "1.4. Kerja Sama",
+    "permalink": "/docs/tkk/4"
+  },
+  "next": {
+    "title": "2.1. Upaya Peningkatan Mutu",
+    "permalink": "/docs/pmkp/1"
+  }
+}

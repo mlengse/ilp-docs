@@ -1,0 +1,27 @@
+{
+  "id": "pmkp/2",
+  "title": "2.2. SKP",
+  "description": "Klinik menerapkan Sasaran Keselamatan Pasien (SKP) dalam pelayanan dan asuhan pasien.  Penerapan SKP melalui pengukuran, evaluasi, dan pelaporan indikator SKP.",
+  "source": "@site/docs/03-pmkp/2.md",
+  "sourceDirName": "03-pmkp",
+  "slug": "/pmkp/2",
+  "permalink": "/docs/pmkp/2",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/03-pmkp/2.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "2.2. SKP",
+    "outline": "deep"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "2.1. Upaya Peningkatan Mutu",
+    "permalink": "/docs/pmkp/1"
+  },
+  "next": {
+    "title": "2.3. PPI",
+    "permalink": "/docs/pmkp/3"
+  }
+}

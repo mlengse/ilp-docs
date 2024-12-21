@@ -249,62 +249,154 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-733": {
+  "/docs-d1f": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---docsaba-d7c"
     }
   },
-  "/docs-7e6": {
+  "/docs-fa9": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---docs-005-788"
   },
-  "/docs-ba6": {
+  "/docs-619": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/docs/category/tutorial---basics-20e": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---docs-category-tutorial-basicsc-8-a-e51"
-  },
-  "/docs/category/tutorial---extras-9ad": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---docs-category-tutorial-extras-6-bb-a82"
-  },
-  "/docs/intro-61d": {
+  "/docs/-4a8": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-intro-0-e-3-be1"
+    "content": "content---docs-c-37-4d0"
   },
-  "/docs/tutorial-basics/congratulations-458": {
+  "/docs/1-1d8": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tutorial-basics-congratulations-822-958"
+    "content": "content---docs-tkk-dc-1-fe6"
   },
-  "/docs/tutorial-basics/create-a-blog-post-108": {
+  "/docs/1/1-416": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tutorial-basics-create-a-blog-post-533-e85"
+    "content": "content---docs-tkk-organisasi-5-c-0-d65"
   },
-  "/docs/tutorial-basics/create-a-document-8fc": {
+  "/docs/1/2-2d8": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tutorial-basics-create-a-document-1-e-4-078"
+    "content": "content---docs-tkk-sdmd-2-e-32c"
   },
-  "/docs/tutorial-basics/create-a-page-951": {
+  "/docs/1/3-941": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tutorial-basics-create-a-page-5-c-8-e19"
+    "content": "content---docs-tkk-fasilitas-keselamatan-8-d-4-61b"
   },
-  "/docs/tutorial-basics/deploy-your-site-4f5": {
+  "/docs/1/4-66a": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tutorial-basics-deploy-your-sitef-55-a3f"
+    "content": "content---docs-tkk-kerjasama-590-457"
   },
-  "/docs/tutorial-basics/markdown-features-b05": {
+  "/docs/pendahuluan/-d74": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tutorial-basics-markdown-features-18-c-a79"
+    "content": "content---docs-pendahuluan-a-79-67c"
   },
-  "/docs/tutorial-extras/manage-docs-versions-978": {
+  "/docs/pendahuluan/referensi-55a": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tutorial-extras-manage-docs-versionsdff-6d4"
+    "content": "content---docs-pendahuluan-referensi-676-5f6"
   },
-  "/docs/tutorial-extras/translate-your-site-f9a": {
+  "/docs/pendahuluan/tdd-81f": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-tutorial-extras-translate-your-sitee-44-ddf"
+    "content": "content---docs-pendahuluan-tdd-8-d-8-02a"
+  },
+  "/docs/pkp/-d64": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-9-cb-cd6"
+  },
+  "/docs/pkp/1-e6c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-1-e-4-d-28a"
+  },
+  "/docs/pkp/10-4f7": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-102-f-0-bac"
+  },
+  "/docs/pkp/11-a79": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-11-e-45-312"
+  },
+  "/docs/pkp/12-a20": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-129-e-2-afb"
+  },
+  "/docs/pkp/13-571": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-132-e-8-64c"
+  },
+  "/docs/pkp/14-4e7": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-143-a-6-d4b"
+  },
+  "/docs/pkp/15-0ce": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-15-b-6-a-339"
+  },
+  "/docs/pkp/2-149": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-2743-da2"
+  },
+  "/docs/pkp/3-0cd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-3011-0d0"
+  },
+  "/docs/pkp/4-a95": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-4193-75d"
+  },
+  "/docs/pkp/5-858": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-5-d-37-183"
+  },
+  "/docs/pkp/6-066": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-6316-a9c"
+  },
+  "/docs/pkp/7-71f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-73-ac-ff7"
+  },
+  "/docs/pkp/8-51b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-8-fa-1-ab1"
+  },
+  "/docs/pkp/9-27b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pkp-98-d-1-fbd"
+  },
+  "/docs/pmkp/-5a0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pmkp-a-0-c-d7b"
+  },
+  "/docs/pmkp/1-249": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pmkp-1373-6dc"
+  },
+  "/docs/pmkp/2-3e5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pmkp-2090-cb3"
+  },
+  "/docs/pmkp/3-0db": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-pmkp-38-bf-7a7"
+  },
+  "/docs/referensi-206": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-referensi-518-d38"
+  },
+  "/docs/survei/-129": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-survei-61-a-267"
+  },
+  "/docs/survei/metode-a12": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-survei-metode-359-e17"
+  },
+  "/docs/survei/surveior-636": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-survei-surveiore-31-6e7"
+  },
+  "/docs/tdd-18d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-tddb-2-e-8d0"
   },
   "/-e5f": {
     "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",

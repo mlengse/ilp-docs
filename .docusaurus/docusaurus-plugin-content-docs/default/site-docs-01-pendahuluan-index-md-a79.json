@@ -1,0 +1,20 @@
+{
+  "id": "pendahuluan/index",
+  "title": "Pendahuluan",
+  "description": "Latar Belakang",
+  "source": "@site/docs/01-pendahuluan/index.md",
+  "sourceDirName": "01-pendahuluan",
+  "slug": "/pendahuluan/",
+  "permalink": "/docs/pendahuluan/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/01-pendahuluan/index.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Referensi",
+    "permalink": "/docs/pendahuluan/referensi"
+  }
+}

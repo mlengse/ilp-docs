@@ -1,0 +1,26 @@
+{
+  "id": "pkp/8",
+  "title": "3.  8. Anestesi dan Bedah",
+  "description": "Pelayanan anestesi dan bedah dilaksanakan sesuai standar, sesuai dengan perencanaan dan kajian secara komprehensif dan sesuai dengan ketentuan peraturan perundang-undangan.",
+  "source": "@site/docs/pkp/8.md",
+  "sourceDirName": "pkp",
+  "slug": "/pkp/8",
+  "permalink": "/docs/pkp/8",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/pkp/8.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "3.  8. Anestesi dan Bedah"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "3.  7. Pelayanan Risiko Tinggi",
+    "permalink": "/docs/pkp/7"
+  },
+  "next": {
+    "title": "3.  9. Gizi",
+    "permalink": "/docs/pkp/9"
+  }
+}

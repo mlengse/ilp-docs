@@ -1,0 +1,26 @@
+{
+  "id": "pkp/7",
+  "title": "3.  7. Pelayanan Risiko Tinggi",
+  "description": "Pelayanan Risiko Tinggi (PKP 7)",
+  "source": "@site/docs/pkp/7.md",
+  "sourceDirName": "pkp",
+  "slug": "/pkp/7",
+  "permalink": "/docs/pkp/7",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/pkp/7.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "3.  7. Pelayanan Risiko Tinggi"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "3.  6. Promotif Preventif",
+    "permalink": "/docs/pkp/6"
+  },
+  "next": {
+    "title": "3.  8. Anestesi dan Bedah",
+    "permalink": "/docs/pkp/8"
+  }
+}

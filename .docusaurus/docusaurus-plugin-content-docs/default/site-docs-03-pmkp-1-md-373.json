@@ -1,0 +1,26 @@
+{
+  "id": "pmkp/1",
+  "title": "2.1. Upaya Peningkatan Mutu",
+  "description": "Dalam rangka meningkatkan mutu dan keselamatan pasien maka klinik mempunyai program Peningkatan Mutu dan Keselamatan Pasien (PMKP) yang menjangkau seluruh bagian dan seluruh tenaga yang bekerja di klinik.",
+  "source": "@site/docs/03-pmkp/1.md",
+  "sourceDirName": "03-pmkp",
+  "slug": "/pmkp/1",
+  "permalink": "/docs/pmkp/1",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/03-pmkp/1.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "2.1. Upaya Peningkatan Mutu"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "2. PMKP",
+    "permalink": "/docs/pmkp/"
+  },
+  "next": {
+    "title": "2.2. SKP",
+    "permalink": "/docs/pmkp/2"
+  }
+}

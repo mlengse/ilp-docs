@@ -1,0 +1,26 @@
+{
+  "id": "pkp/1",
+  "title": "3.  1. Hak Pasien & Keluarga",
+  "description": "Pelayanan klinik didasarkan pada nilai-nilai keunikan pada diri pasien dan keluarganya.",
+  "source": "@site/docs/04-pkp/1.md",
+  "sourceDirName": "04-pkp",
+  "slug": "/pkp/1",
+  "permalink": "/docs/pkp/1",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/04-pkp/1.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "3.  1. Hak Pasien & Keluarga"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "3. PKP",
+    "permalink": "/docs/pkp/"
+  },
+  "next": {
+    "title": "3.10. Pemulangan dan Tindak Lanjut",
+    "permalink": "/docs/pkp/10"
+  }
+}

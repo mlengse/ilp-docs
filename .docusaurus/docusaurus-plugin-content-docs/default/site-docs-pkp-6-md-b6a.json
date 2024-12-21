@@ -1,0 +1,26 @@
+{
+  "id": "pkp/6",
+  "title": "3.  6. Promotif Preventif",
+  "description": "Klinik menyediakan pelayanan kesehatan promotif, preventif, kuratif, dan rehabilitatif. Penyelenggaraan pelayanan promotif dan preventif di klinik sesuai dengan kebutuhan pasien dan masyarakat serta mendukung program prioritas nasional maka dilakukan pemantauan secara berkesinambungan.",
+  "source": "@site/docs/pkp/6.md",
+  "sourceDirName": "pkp",
+  "slug": "/pkp/6",
+  "permalink": "/docs/pkp/6",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/pkp/6.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "3.  6. Promotif Preventif"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "3.  5. Pelaksanaan Asuhan",
+    "permalink": "/docs/pkp/5"
+  },
+  "next": {
+    "title": "3.  7. Pelayanan Risiko Tinggi",
+    "permalink": "/docs/pkp/7"
+  }
+}

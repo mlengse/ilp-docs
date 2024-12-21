@@ -1,0 +1,26 @@
+{
+  "id": "pkp/2",
+  "title": "3.  2. Proses Asuhan",
+  "description": "Dalam pendukung pemberian asuhan terintegrasi maka PPA melibatkan pasien dan keluarga dalam proses asuhan pasien.",
+  "source": "@site/docs/pkp/2.md",
+  "sourceDirName": "pkp",
+  "slug": "/pkp/2",
+  "permalink": "/docs/pkp/2",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/pkp/2.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "3.  2. Proses Asuhan"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "3.15. Kefarmasian",
+    "permalink": "/docs/pkp/15"
+  },
+  "next": {
+    "title": "3.  3. Akses Pasien",
+    "permalink": "/docs/pkp/3"
+  }
+}

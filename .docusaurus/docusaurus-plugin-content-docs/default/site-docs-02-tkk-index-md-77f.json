@@ -1,0 +1,27 @@
+{
+  "id": "tkk/index",
+  "title": "1. Tata Kelola Klinik",
+  "description": "Gambaran Umum",
+  "source": "@site/docs/02 - tkk/index.md",
+  "sourceDirName": "02 - tkk",
+  "slug": "/tkk/",
+  "permalink": "/docs/tkk/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/02 - tkk/index.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "outline": "deep",
+    "title": "1. Tata Kelola Klinik"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "TDD",
+    "permalink": "/docs/pendahuluan/tdd"
+  },
+  "next": {
+    "title": "1.1. Organisasi",
+    "permalink": "/docs/tkk/1"
+  }
+}

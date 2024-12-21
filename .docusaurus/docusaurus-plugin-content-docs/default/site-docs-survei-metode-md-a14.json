@@ -1,0 +1,24 @@
+{
+  "id": "survei/metode",
+  "title": "Metode",
+  "description": "Metode survei akreditasi Puskesmas, klinik, laboratorium Kesehatan, dan UTD, dilakukan dengan 2 metode, yaitu metode luring (full offline) atau metode hybrid (online dan offline). Untuk TPMD dan TPMDG dilakukan dengan metode daring (full online)",
+  "source": "@site/docs/survei/metode.md",
+  "sourceDirName": "survei",
+  "slug": "/survei/metode",
+  "permalink": "/docs/survei/metode",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/survei/metode.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Survei",
+    "permalink": "/docs/survei/"
+  },
+  "next": {
+    "title": "Surveior",
+    "permalink": "/docs/survei/surveior"
+  }
+}

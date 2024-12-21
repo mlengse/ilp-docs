@@ -1,0 +1,26 @@
+{
+  "id": "referensi",
+  "title": "Referensi",
+  "description": "1. Peraturan Menteri Kesehatan Republik Indonesia Nomor 34 tahun 2022 Tentang Akreditasi Pusat Kesehatan Masyarakat, Klinik, laboratorium Kesehatan, unit Transfusi Darah, tempat Praktik Mandiri Dokter, Dan Tempat Praktik Mandiri Dokter Gigi",
+  "source": "@site/docs/referensi.md",
+  "sourceDirName": ".",
+  "slug": "/referensi",
+  "permalink": "/docs/referensi",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/referensi.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "outline": "deep"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Akreditasi Klinik",
+    "permalink": "/docs/"
+  },
+  "next": {
+    "title": "Survei",
+    "permalink": "/docs/survei/"
+  }
+}

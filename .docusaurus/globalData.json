@@ -8,61 +8,176 @@
           "label": "Next",
           "isLast": true,
           "path": "/docs",
-          "mainDocId": "intro",
+          "mainDocId": "index",
           "docs": [
             {
-              "id": "intro",
-              "path": "/docs/intro",
+              "id": "index",
+              "path": "/docs/",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "tutorial-basics/congratulations",
-              "path": "/docs/tutorial-basics/congratulations",
+              "id": "pendahuluan/index",
+              "path": "/docs/pendahuluan/",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "tutorial-basics/create-a-blog-post",
-              "path": "/docs/tutorial-basics/create-a-blog-post",
+              "id": "pendahuluan/referensi",
+              "path": "/docs/pendahuluan/referensi",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "tutorial-basics/create-a-document",
-              "path": "/docs/tutorial-basics/create-a-document",
+              "id": "pendahuluan/tdd",
+              "path": "/docs/pendahuluan/tdd",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "tutorial-basics/create-a-page",
-              "path": "/docs/tutorial-basics/create-a-page",
+              "id": "pkp/1",
+              "path": "/docs/pkp/1",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "tutorial-basics/deploy-your-site",
-              "path": "/docs/tutorial-basics/deploy-your-site",
+              "id": "pkp/10",
+              "path": "/docs/pkp/10",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "tutorial-basics/markdown-features",
-              "path": "/docs/tutorial-basics/markdown-features",
+              "id": "pkp/11",
+              "path": "/docs/pkp/11",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "tutorial-extras/manage-docs-versions",
-              "path": "/docs/tutorial-extras/manage-docs-versions",
+              "id": "pkp/12",
+              "path": "/docs/pkp/12",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "tutorial-extras/translate-your-site",
-              "path": "/docs/tutorial-extras/translate-your-site",
+              "id": "pkp/13",
+              "path": "/docs/pkp/13",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/tutorial---basics",
-              "path": "/docs/category/tutorial---basics",
+              "id": "pkp/14",
+              "path": "/docs/pkp/14",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/tutorial---extras",
-              "path": "/docs/category/tutorial---extras",
+              "id": "pkp/15",
+              "path": "/docs/pkp/15",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/2",
+              "path": "/docs/pkp/2",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/3",
+              "path": "/docs/pkp/3",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/4",
+              "path": "/docs/pkp/4",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/5",
+              "path": "/docs/pkp/5",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/6",
+              "path": "/docs/pkp/6",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/7",
+              "path": "/docs/pkp/7",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/8",
+              "path": "/docs/pkp/8",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/9",
+              "path": "/docs/pkp/9",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pkp/index",
+              "path": "/docs/pkp/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pmkp/1",
+              "path": "/docs/pmkp/1",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pmkp/2",
+              "path": "/docs/pmkp/2",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pmkp/3",
+              "path": "/docs/pmkp/3",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pmkp/index",
+              "path": "/docs/pmkp/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "referensi",
+              "path": "/docs/referensi",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "survei/index",
+              "path": "/docs/survei/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "survei/metode",
+              "path": "/docs/survei/metode",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "survei/surveior",
+              "path": "/docs/survei/surveior",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tdd",
+              "path": "/docs/tdd",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tkk/fasilitas-keselamatan",
+              "path": "/docs/1/3",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tkk/index",
+              "path": "/docs/1",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tkk/kerjasama",
+              "path": "/docs/1/4",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tkk/organisasi",
+              "path": "/docs/1/1",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tkk/sdm",
+              "path": "/docs/1/2",
               "sidebar": "tutorialSidebar"
             }
           ],
@@ -70,8 +185,8 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/docs/intro",
-                "label": "intro"
+                "path": "/docs/pendahuluan/",
+                "label": "Pendahuluan"
               }
             }
           }
