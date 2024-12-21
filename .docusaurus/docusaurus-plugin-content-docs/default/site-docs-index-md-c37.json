@@ -47,7 +47,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Kefarmasian",
-    "permalink": "/docs/3/15"
+    "title": "index",
+    "permalink": "/docs/ilp/"
+  },
+  "next": {
+    "title": "Pendahuluan",
+    "permalink": "/docs/klinik/pendahuluan/"
   }
 }

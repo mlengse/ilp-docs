@@ -114,205 +114,223 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'ffe'),
+    component: ComponentCreator('/docs', '189'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', 'd98'),
+        component: ComponentCreator('/docs', '76c'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', 'ee0'),
+            component: ComponentCreator('/docs', 'cef'),
             routes: [
               {
-                path: '/docs/',
-                component: ComponentCreator('/docs/', '4a8'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
                 path: '/docs/1',
-                component: ComponentCreator('/docs/1', '1d8'),
+                component: ComponentCreator('/docs/1', 'e2f'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/2',
-                component: ComponentCreator('/docs/2', '529'),
+                component: ComponentCreator('/docs/2', 'dd9'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/2/1',
-                component: ComponentCreator('/docs/2/1', 'f00'),
+                component: ComponentCreator('/docs/2/1', '9de'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/2/2',
-                component: ComponentCreator('/docs/2/2', '8af'),
+                component: ComponentCreator('/docs/2/2', 'd4b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/2/3',
-                component: ComponentCreator('/docs/2/3', '87e'),
+                component: ComponentCreator('/docs/2/3', 'ee5'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3',
-                component: ComponentCreator('/docs/3', '10e'),
+                component: ComponentCreator('/docs/3', 'd7e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/1',
-                component: ComponentCreator('/docs/3/1', 'aa0'),
+                component: ComponentCreator('/docs/3/1', 'c36'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/1',
-                component: ComponentCreator('/docs/3/1', 'dc5'),
+                component: ComponentCreator('/docs/3/1', 'f96'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/10',
-                component: ComponentCreator('/docs/3/10', '747'),
+                component: ComponentCreator('/docs/3/10', '85f'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/11',
-                component: ComponentCreator('/docs/3/11', 'a0e'),
+                component: ComponentCreator('/docs/3/11', 'af0'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/12',
-                component: ComponentCreator('/docs/3/12', '47a'),
+                component: ComponentCreator('/docs/3/12', '93e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/13',
-                component: ComponentCreator('/docs/3/13', '193'),
+                component: ComponentCreator('/docs/3/13', '500'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/14',
-                component: ComponentCreator('/docs/3/14', '434'),
+                component: ComponentCreator('/docs/3/14', '3aa'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/15',
-                component: ComponentCreator('/docs/3/15', 'f92'),
+                component: ComponentCreator('/docs/3/15', '0f8'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/2',
-                component: ComponentCreator('/docs/3/2', 'a0d'),
+                component: ComponentCreator('/docs/3/2', 'cbb'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/2',
-                component: ComponentCreator('/docs/3/2', 'ccd'),
+                component: ComponentCreator('/docs/3/2', '102'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/3',
-                component: ComponentCreator('/docs/3/3', '84f'),
+                component: ComponentCreator('/docs/3/3', 'b17'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/3',
-                component: ComponentCreator('/docs/3/3', '86f'),
+                component: ComponentCreator('/docs/3/3', 'f39'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/4',
-                component: ComponentCreator('/docs/3/4', 'c0c'),
+                component: ComponentCreator('/docs/3/4', '415'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/4',
-                component: ComponentCreator('/docs/3/4', '29b'),
+                component: ComponentCreator('/docs/3/4', 'b90'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/5',
-                component: ComponentCreator('/docs/3/5', '528'),
+                component: ComponentCreator('/docs/3/5', 'c4e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/6',
-                component: ComponentCreator('/docs/3/6', '860'),
+                component: ComponentCreator('/docs/3/6', 'a00'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/7',
-                component: ComponentCreator('/docs/3/7', 'cf8'),
+                component: ComponentCreator('/docs/3/7', 'cc9'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/8',
-                component: ComponentCreator('/docs/3/8', '75f'),
+                component: ComponentCreator('/docs/3/8', '46b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/docs/3/9',
-                component: ComponentCreator('/docs/3/9', '310'),
+                component: ComponentCreator('/docs/3/9', 'e1e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/pendahuluan/',
-                component: ComponentCreator('/docs/pendahuluan/', 'd74'),
+                path: '/docs/ilp/',
+                component: ComponentCreator('/docs/ilp/', '6c9'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/pendahuluan/referensi',
-                component: ComponentCreator('/docs/pendahuluan/referensi', '55a'),
+                path: '/docs/ilp/pendahuluan/',
+                component: ComponentCreator('/docs/ilp/pendahuluan/', '282'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/pendahuluan/survei/',
-                component: ComponentCreator('/docs/pendahuluan/survei/', 'c2b'),
+                path: '/docs/ilp/pendahuluan/dasar-hukum',
+                component: ComponentCreator('/docs/ilp/pendahuluan/dasar-hukum', '88b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/pendahuluan/survei/metode',
-                component: ComponentCreator('/docs/pendahuluan/survei/metode', 'fa2'),
+                path: '/docs/klinik/',
+                component: ComponentCreator('/docs/klinik/', '7b0'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/pendahuluan/survei/surveior',
-                component: ComponentCreator('/docs/pendahuluan/survei/surveior', '6b2'),
+                path: '/docs/klinik/pendahuluan/',
+                component: ComponentCreator('/docs/klinik/pendahuluan/', '4c0'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/pendahuluan/tdd',
-                component: ComponentCreator('/docs/pendahuluan/tdd', '81f'),
+                path: '/docs/klinik/pendahuluan/referensi',
+                component: ComponentCreator('/docs/klinik/pendahuluan/referensi', 'c20'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/klinik/pendahuluan/survei/',
+                component: ComponentCreator('/docs/klinik/pendahuluan/survei/', '90d'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/klinik/pendahuluan/survei/metode',
+                component: ComponentCreator('/docs/klinik/pendahuluan/survei/metode', '74b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/klinik/pendahuluan/survei/surveior',
+                component: ComponentCreator('/docs/klinik/pendahuluan/survei/surveior', 'ade'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/klinik/pendahuluan/tdd',
+                component: ComponentCreator('/docs/klinik/pendahuluan/tdd', 'b9f'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               }
