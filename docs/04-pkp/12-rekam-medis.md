@@ -2,13 +2,12 @@
 title: Rekam Medis
 slug: /3/12
 ---
-:::code-group
+
 
 ``` js [Nilai]
 PKP 12 = 40
 
 ```
-:::
 # Standar 3.12 Penyelenggaraan Rekam Medis (PKP 12) 
 Klinik melakukan penyelenggaran pelayanan rekam medis sesuai dengan ketentuan peraturan perundang-undangan.  Rekam medis di klinik dipelihara dan terdokumentasi dengan baik 
 ## Maksud dan Tujuan 

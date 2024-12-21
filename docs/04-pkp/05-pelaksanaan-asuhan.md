@@ -2,13 +2,12 @@
 title: Pelaksanaan Asuhan
 slug: /3/5
 ---
-:::code-group
+
 
 ``` js [Nilai]
 PKP 5 = 30
 
 ```
-:::
 # Standar 3.5 Rencana dan Pemberian Asuhan (PKP 5) 
 Pelaksanaan asuhan sesuai dengan rencana asuhan. Rencana asuhan menjelaskan asuhan dan pengobatan/tindakan yang diberikan kepada seorang pasien.  
 ## Maksud dan Tujuan 

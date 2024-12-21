@@ -3,13 +3,12 @@ title: Radiologi
 slug: /3/14
 
 ---
-:::code-group
+
 
 ``` js [Nilai]
 PKP 14 = 20
 
 ```
-:::
 # Standar 3.14 Pelayanan Radiologi (PKP 14)  
 Pelayanan radiologi disediakan untuk memenuhi kebutuhan pasien. Pelayanan radiologi dikelola sesuai dengan kebijakan dan prosedur yang ditetapkan. 
 ## 	Maksud dan Tujuan  

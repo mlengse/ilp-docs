@@ -27,3 +27,31 @@ features:
     details: Pelayanan yang dilakukan di klinik meliputi pelayanan preventif, promotif, kuratif dan rehabilitatif.
 ---
 
+```mermaid
+---
+  config:
+    class:
+      hideEmptyMembersBox: true
+---
+classDiagram
+    `Kepala Puskesmas` -- `Klaster 1`
+    `Kepala Puskesmas` -- `Klaster 2`
+    `Kepala Puskesmas` -- `Klaster 3`
+    `Kepala Puskesmas` -- `Klaster 4`
+    `Kepala Puskesmas` -- `Lintas Klaster`
+    class `Kepala Puskesmas`
+    class `Klaster 1` {
+        Ketatausahaan
+        Manajemen Sumber Daya
+        Manajemen Puskesmas
+        Manajemen Mutu dan Keselamatan
+        Manajemen Jejaring dan Jaringan Puskesmas
+        Manajemen Informasi Puskesmas dan Dashboard PWS
+    }
+    class `Klaster 2` {
+        Ibu Hamil, Bersalin, Nifas
+    }
+    class `Klaster 3`
+    class `Klaster 4`
+    class `Lintas Klaster`
+```

@@ -2,13 +2,12 @@
 title: Pengkajian Pasien
 slug: /3/4
 ---
-:::code-group
+
 
 ``` js [Nilai]
 PKP 4 = 30
 
 ```
-:::
 # Standar 3.4 Pengkajian Pasien (PKP 4) 
 Proses pengkajian dilakukan secara komprehensif mencakup berbagai kebutuhan dan harapan pasien dan keluarga. 
 ## Maksud dan Tujuan 

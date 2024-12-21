@@ -2,13 +2,12 @@
 title: Gizi
 slug: /3/9
 ---
-:::code-group
+
 
 ``` js [Nilai]
 PKP 9 = 40
 
 ```
-:::
 # Standar 3.9 Pelayanan Gizi (PKP 9) 
 Pelayanan gizi dilakukan sesuai dengan kebutuhan pasien dan sesuai dengan ketentuan peraturan perundang-undangan, pasien berperan serta dalam perencanaan dan seleksi makanan. 
 ## Maksud dan Tujuan 

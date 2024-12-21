@@ -3,13 +3,12 @@ title: Promotif Preventif
 slug: /3/6
 
 ---
-:::code-group
+
 
 ``` js [Nilai]
 PKP 6 = 20
 
 ```
-:::
 # Standar 3.6 Pelayanan Promotif dan Preventif (PKP 6) 
 Klinik menyediakan pelayanan kesehatan promotif, preventif, kuratif, dan rehabilitatif. Penyelenggaraan pelayanan promotif dan preventif di klinik sesuai dengan kebutuhan pasien dan masyarakat serta mendukung program prioritas nasional maka dilakukan pemantauan secara berkesinambungan. 
 ## Maksud dan Tujuan 

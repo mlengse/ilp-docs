@@ -2,13 +2,12 @@
 title: Kefarmasian
 slug: /3/15
 ---
-:::code-group
+
 
 ``` js [Nilai]
 PKP 15 = 130
 
 ```
-:::
 # Standar 3.15 Pelayanan Kefarmasian (PKP 15) 
 Pelayanan kefarmasian dikelola sesuai dengan ketentuan peraturan perundang-undangan. Pelayanan Kefarmasian di Klinik diselenggarakan oleh ruang/ instalasi farmasi. Pelayanan Kefarmasian di Klinik terdiri dari pengelolaan sediaan farmasi, alat kesehatan dan BMHP, serta pelayanan farmasi klinis.  
 ## Maksud dan Tujuan 

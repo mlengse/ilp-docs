@@ -1,6 +1,6 @@
 ---
 title: Fasilitas Keselamatan
-slug: /1/3
+slug: /3/3
 ---
 
 ``` js [Nilai]

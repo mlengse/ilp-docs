@@ -2,13 +2,12 @@
 title: Pelayanan Risiko Tinggi
 slug: /3/7
 ---
-:::code-group
+
 
 ``` js [Nilai]
 PKP 7 = 20
 
 ```
-:::
 # Standar 3.7 Pelayanan Pasien Risiko Tinggi dan Penyediaan 
 Pelayanan Risiko Tinggi (PKP 7) 
 Klinik menetapkan regulasi pelayanan pasien risiko tinggi dan penyediaan pelayanan risiko  tinggi berdasarkan Panduan Praktik Klinis dan sesuai dengan ketentuan peraturan perundang-undangan. 

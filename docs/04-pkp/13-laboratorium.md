@@ -3,13 +3,12 @@ title: Laboratorium
 slug: /3/13
 
 ---
-:::code-group
+
 
 ``` js [Nilai]
 PKP 13 = 70
 
 ```
-:::
 # Standar 3.13 Pelayanan Laboratorium (PKP 13) 
 Klinik rawat jalan dapat menyelenggarakan pelayanan laboratorium. Klinik rawat inap wajib menyelenggarakan pelayanan laboratorium. 
 

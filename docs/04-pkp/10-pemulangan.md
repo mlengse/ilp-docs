@@ -2,13 +2,12 @@
 title: Pemulangan dan Tindak Lanjut
 slug: /3/10
 ---
-:::code-group
 
 ``` js [Nilai]
 PKP 10 = 30
 
 ```
-:::
+
 # Standar 3.10 Pemulangan dan Tindak Lanjut Perawatan (PKP 10) 
 Pemulangan dan tindak lanjut pasien bertujuan untuk kelangsungan layanan dipandu oleh prosedur yang baku dan jelas. Rujukan dilaksanakan apabila klinik tidak memiliki kompetensi penanganan yang sesuai dengan kebutuhan pasien.  
 ## Maksud dan Tujuan 

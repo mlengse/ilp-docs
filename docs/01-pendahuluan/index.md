@@ -1,7 +1,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Pendahuluan  	 
+# Pendahuluan  
+
+
 
 <Tabs>
 
@@ -124,31 +126,31 @@ Standar akreditasi klinik meliputi gambaran umum, maksud dan tujuan, serta eleme
 Standar Akreditasi Klinik dikelompokkan menurut fungsi-fungsi penting yang umum dalam organisasi klinik. Standar dikelompokkan menurut fungsi yang terkait dengan penyediaan pelayanan bagi pasien (*good clinical governance*) dan upaya menciptakan organisasi klinik yang aman, efektif, dan dikelola dengan baik (*good corporate governance*). 
 Standar Akreditasi klinik terdiri atas 3 (tiga) Bab meliputi: 
 
-### Bab I. [Tata Kelola Klinik (TKK)](/tkk/)  
-- Standar 1.1  :  [Pengorganisasian Klinik (TKK 1)](/tkk/1) 
-- Standar 1.2  :  [Tata Kelola Sumber Daya Manusia (TKK 2)](/tkk/2) 
-- Standar 1.3  :  [Tata Kelola Fasilitas dan Keselamatan (TKK 3)](/tkk/3)  
-- Standar 1.4  :  [Tata Kelola Kerja Sama (TKK 4)](/tkk/4)
-### Bab II. [Peningkatan Mutu dan Keselamatan Pasien (PMKP) ](/pmkp/) 
-- Standar 2.1  :  [Upaya Peningkatan Mutu Keselamatan Pasien (PMKP 1)](/pmkp/1) 
-- Standar 2.2  :  [Sasaran Keselamatan Pasien (PMKP 2)](/pmkp/2) 
-- Standar 2.3  :  [Pencegahan dan Pengendalian Infeksi (PMKP 3)](/pmkp/3) 
-### Bab III.  [Penyelenggaraan Kesehatan Perseorangan (PKP)](/pkp/)  
-- Standar 3.1  :  [Hak Pasien dan Keluarga (PKP 1)](/pkp/1)  
-- Standar 3.2  :  [Pasien dan Keluarga Dalam Proses Asuhan (PKP 2)](/pkp/2)  
-- Standar 3.3  :  [Akses Pasien Klinik (PKP 3)](/pkp/3) 
-- Standar 3.4  :  [Pengkajian Pasien (PKP 4)](/pkp/4) 
-- Standar 3.5  :  [Rencana dan Pemberian Asuhan (PKP 5)](/pkp/5) 
-- Standar 3.6  :  [Pelayanan Promotif dan Preventif (PKP 6);](/pkp/6) 
--	Standar 3.7 : [Pelayanan Pasien Resiko Tinggi dan Penyediaan Pelayanan Resiko Tinggi (PKP 7)](/pkp/7) 
-- Standar 3.8  :  [Pelayanan Anestesi dan Bedah (PKP 8)](/pkp/8) 
-- Standar 3.9  :  [Pelayanan Gizi (PKP 9)](/pkp/9) 
-- Standar 3.10 :  [Pemulangan dan Tindak Lanjut Perawatan (PKP 10)](/pkp/10) 
-- Standar 3.11 :  [Pelayanan Rujukan (PKP 11)](/pkp/11) 
-- Standar 3.12 :  [Penyelenggaraan Rekam Medis (PKP 12)](/pkp/12) 
-- Standar 3.13 :  [Pelayanan Laboratorium (PKP 13)](/pkp/13) 
-- Standar 3.14 :  [Pelayanan Radiologi (PKP 14)](/pkp/14) 
-- Standar 3.15 :  [Pelayanan Kefarmasian (PKP 15)](/pkp/15) 
+### Bab I. [Tata Kelola Klinik (TKK)](/docs/1/)  
+- Standar 1.1  :  [Pengorganisasian Klinik (TKK 1)](/docs/1/1) 
+- Standar 1.2  :  [Tata Kelola Sumber Daya Manusia (TKK 2)](/docs/1/2) 
+- Standar 1.3  :  [Tata Kelola Fasilitas dan Keselamatan (TKK 3)](/docs/1/3)  
+- Standar 1.4  :  [Tata Kelola Kerja Sama (TKK 4)](/docs/1/4)
+### Bab II. [Peningkatan Mutu dan Keselamatan Pasien (PMKP) ](/docs/2/) 
+- Standar 2.1  :  [Upaya Peningkatan Mutu Keselamatan Pasien (PMKP 1)](/docs/2/1) 
+- Standar 2.2  :  [Sasaran Keselamatan Pasien (PMKP 2)](/docs/2/2) 
+- Standar 2.3  :  [Pencegahan dan Pengendalian Infeksi (PMKP 3)](/docs/2/3) 
+### Bab III.  [Penyelenggaraan Kesehatan Perseorangan (PKP)](/docs/3/)  
+- Standar 3.1  :  [Hak Pasien dan Keluarga (PKP 1)](/docs/3/1)  
+- Standar 3.2  :  [Pasien dan Keluarga Dalam Proses Asuhan (PKP 2)](/docs/3/2)  
+- Standar 3.3  :  [Akses Pasien Klinik (PKP 3)](/docs/3/3) 
+- Standar 3.4  :  [Pengkajian Pasien (PKP 4)](/docs/3/4) 
+- Standar 3.5  :  [Rencana dan Pemberian Asuhan (PKP 5)](/docs/3/5) 
+- Standar 3.6  :  [Pelayanan Promotif dan Preventif (PKP 6);](/docs/3/6) 
+-	Standar 3.7 : [Pelayanan Pasien Resiko Tinggi dan Penyediaan Pelayanan Resiko Tinggi (PKP 7)](/docs/3/7) 
+- Standar 3.8  :  [Pelayanan Anestesi dan Bedah (PKP 8)](/docs/3/8) 
+- Standar 3.9  :  [Pelayanan Gizi (PKP 9)](/docs/3/9) 
+- Standar 3.10 :  [Pemulangan dan Tindak Lanjut Perawatan (PKP 10)](/docs/3/10) 
+- Standar 3.11 :  [Pelayanan Rujukan (PKP 11)](/docs/3/11) 
+- Standar 3.12 :  [Penyelenggaraan Rekam Medis (PKP 12)](/docs/3/12) 
+- Standar 3.13 :  [Pelayanan Laboratorium (PKP 13)](/docs/3/13) 
+- Standar 3.14 :  [Pelayanan Radiologi (PKP 14)](/docs/3/14) 
+- Standar 3.15 :  [Pelayanan Kefarmasian (PKP 15)](/docs/3/15) 
      
 Secara umum standar akreditasi klinik ini telah mengakomodir regulasi-regulasi yang ditetapkan pemerintah dalam pelayanan klinik baik klinik pratama maupun klinik utama. 
 

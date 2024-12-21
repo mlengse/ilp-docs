@@ -2,13 +2,12 @@
 title: Anestesi dan Bedah
 slug: /3/8
 ---
-:::code-group
+
 
 ``` js [Nilai]
 PKP 8 = 60
 
 ```
-:::
 # Standar 3.8 Pelayanan Anestesi dan Bedah (PKP 8) 
 Pelayanan anestesi dan bedah dilaksanakan sesuai standar, sesuai dengan perencanaan dan kajian secara komprehensif dan sesuai dengan ketentuan peraturan perundang-undangan.  
 ## Maksud dan Tujuan 

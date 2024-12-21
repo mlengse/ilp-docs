@@ -2,13 +2,12 @@
 title: Akses Pasien
 slug: /3/3
 ---
-:::code-group
+
 
 ``` js [Nilai]
 TKK 3 = 100
 
 ```
-:::
 # Standar 3.3 Akses Pasien Klinik (PKP 3) 
 Dalam Proses penerimaan pasien, klinik melakukan pendaftaran dan skrining. Pendaftaran dan skrining bertujuan untuk mengetahui kebutuhan pasien dan menilai kemampuan klinik dalam memberikan pelayanan. 
 ## Maksud dan Tujuan 

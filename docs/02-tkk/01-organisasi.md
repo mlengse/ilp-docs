@@ -1,6 +1,6 @@
 ---
 title: Organisasi
-slug: /1/1
+slug: /3/1
 ---
 # Standar 1.1 Pengorganisasian Klinik (TKK 1) 
 

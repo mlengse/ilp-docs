@@ -1,6 +1,6 @@
 ---
 title: Kerja Sama
-slug: /1/4
+slug: /3/4
 ---
 
 ``` js [Nilai]

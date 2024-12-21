@@ -114,15 +114,15 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'f4f'),
+    component: ComponentCreator('/docs', 'ffe'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '565'),
+        component: ComponentCreator('/docs', 'd98'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', '324'),
+            component: ComponentCreator('/docs', 'ee0'),
             routes: [
               {
                 path: '/docs/',
@@ -133,30 +133,6 @@ export default [
               {
                 path: '/docs/1',
                 component: ComponentCreator('/docs/1', '1d8'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/1/1',
-                component: ComponentCreator('/docs/1/1', '416'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/1/2',
-                component: ComponentCreator('/docs/1/2', '2d8'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/1/3',
-                component: ComponentCreator('/docs/1/3', '941'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/docs/1/4',
-                component: ComponentCreator('/docs/1/4', '66a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -193,6 +169,12 @@ export default [
               {
                 path: '/docs/3/1',
                 component: ComponentCreator('/docs/3/1', 'aa0'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/1',
+                component: ComponentCreator('/docs/3/1', 'dc5'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
@@ -239,14 +221,32 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/docs/3/2',
+                component: ComponentCreator('/docs/3/2', 'ccd'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/docs/3/3',
                 component: ComponentCreator('/docs/3/3', '84f'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/docs/3/3',
+                component: ComponentCreator('/docs/3/3', '86f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
                 path: '/docs/3/4',
                 component: ComponentCreator('/docs/3/4', 'c0c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/docs/3/4',
+                component: ComponentCreator('/docs/3/4', '29b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

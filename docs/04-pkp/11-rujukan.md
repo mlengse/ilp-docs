@@ -2,13 +2,12 @@
 title: Rujukan
 slug: /3/11
 ---
-:::code-group
+
 
 ``` js [Nilai]
 PKP 11 = 50
 
 ```
-:::
 # Standar 3.11 Pelayanan Rujukan (PKP 11)  
 Pelayanan Rujukan dilaksanakan apabila klinik tidak memiliki kompetensi penanganan yang sesuai dengan kebutuhan pasien. 
 ## Maksud dan Tujuan 

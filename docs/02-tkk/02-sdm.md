@@ -1,6 +1,6 @@
 ---
 title: SDM
-slug: /1/2
+slug: /3/2
 ---
 
 
