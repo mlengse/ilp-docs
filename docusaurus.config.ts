@@ -1,24 +1,27 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import remarkHyphenopoly from './src/remark/hyphenopoly'
+// import remarkHypher from 'remark-hypher'
+// import pattern from './hyphenation'
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'ILP Puskesmas',
+  tagline: 'Integrasi Pelayanan Kesehatan Primer',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://ilp.jyg.my.id',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Puskesmas Jayengan', // Usually your GitHub org/user name.
+  projectName: 'Referensi ILP', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -27,24 +30,41 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'id',
+    locales: ['id'],
   },
   markdown: {
     mermaid: true
   },
   themes: ['@docusaurus/theme-mermaid'],
-
+  plugins: [
+    process.env.NODE_ENV === 'production' && '@docusaurus/plugin-debug',
+  ].filter(Boolean),
   presets: [
     [
       'classic',
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          remarkPlugins: [
+            // remarkHyphenopoly
+            [remarkHyphenopoly, {
+            //   // file: './patterns/id.wasm',
+              lang: 'id',
+              minWordLength: 5
+            }]
+            // [remarkHypher, {
+            //   language: pattern,
+            //   leftmin: 2,
+            //   rightmin: 3,
+            //   minLength: 5,
+            // }]
+          ],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          
         },
         blog: {
           showReadingTime: true,
