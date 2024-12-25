@@ -16,20 +16,116 @@ Kepala Puskesmas akan menetapkan pembagian seluruh petugas Puskesmas ke dalam kl
 5. Lintas Klaster
 
 ![](/ilm/image008.gif)
-```
-Gambar 2. Struktur Organisasi Puskesmas
-```
+
+> Gambar 2. Struktur Organisasi Puskesmas
 
 Masing-masing klaster minimal terdiri atas penanggung jawab (PJ) dan anggota.
 
 ## Lingkup Kegiatan
 
 Lingkup kegiatan dan kompetensi petugas yang diperlukan di masing-masing klaster sebagai berikut:
-```
-Tabel 1. Lingkup Kegiatan dan Kompetensi Petugas Puskesmas
-```
 
-<table>
+### Klaster 1 Manajemen
+
+:::info **Lingkup Pelayanan/Kegiatan:**
+
+- Ketatausahaan: kepegawaian, keuangan dan system informasi
+- Manajemen Sumber Daya
+- Manajemen Puskesmas
+- Manajemen Mutu dan Keselamatan Pasien
+- Manajemen Jejaring Puskesmas
+:::
+:::tip **Kompetensi PJ dan anggota**
+- **PJ: Kepala Tata Usaha**
+- Manajemen data dan sistem informasi
+- Manajemen keuangan
+- Manajemen aset
+- Manajemen sumber daya (SDM, sarpras, obat dan BMHP)
+- Manajemen program/klaster
+- Mengoordinir manajemen Puskesmas
+- Mengoordinir manajemen mutu
+- Manajemen pemberdayaan masyarakat
+:::
+### Klaster 2 Ibu dan Anak
+:::info **Lingkup Pelayanan/Kegiatan:**
+- Menyelenggarakan pelayanan Kesehatan bagi ibu hamil, bersalin, nifas
+- Menyelenggarakan pelayanan bagi Kesehatan anak balita dan anak prasekolah
+- Menyelenggarakan pelayanan bagi Kesehatan anak usia sekolah dan remaja
+:::
+:::tip **Kompetensi PJ dan anggota**
+Mampu memberikan pelayanan, seperti:
+- ANC
+- ibu hamil
+- persalinan normal dan nifas.
+- Neonatal esensial
+- Pelayanan gizi bagi ibu dan anak
+- SDIDTK
+- Imunisasi
+- Skrining penyakit
+- Skrining Kesehatan jiwa
+- MTBS
+- Pengobatan umum
+- Kesehatan gigi dan mulut
+- Komunikasi Antar Pribadi (KAP)
+- Gadar Matneo
+- Perkesmas
+- Skrining Kekerasan terhadap Perempuan dan Anak
+:::
+### Klaster 3 Usia Dewasa dan Lansia
+:::info **Lingkup Pelayanan/Kegiatan:**
+- Menyelenggarakan pelayanan Kesehatan bagi usia dewasa
+- Menyelenggarakan pelayanan Kesehatan bagi lanjut usia
+:::
+:::tip **Kompetensi PJ dan anggota**
+Mampu memberikan pelayanan, seperti:
+- Skrining penyakit menular
+- Skrining penyakit tidak menular
+- Skrining Kesehatan jiwa
+- Skrining kebugaran jasmani
+- Skrining layak hamil
+- Skrining geriatri
+- Kespro bagi catin
+- KB
+- Pelayanan gizi bagi usia dewasa dan lansia
+- Pengobatan umum
+- Kesehatan gigi dan mulut
+- Kesehatan kerja
+- Komunikasi Antar Pribadi (KAP)
+- Perkesmas
+- Skrining Kekerasan terhadap Perempuan dan Anak
+:::
+### Klaster 4 Penanggulangan Penyakit Menular
+:::info **Lingkup Pelayanan/Kegiatan:**
+- Pencegahan, Kewaspadaan Dini dan Respon
+- Pengawasan kualitas lingkungan
+:::
+:::tip **Kompetensi PJ dan anggota**
+Mampu melakukan:
+- Surveilans
+- Penemuan kasus
+- Penyelidikan epidemiologi
+- Pengendalian vector 
+- Outbreak Respon Imunization (ORI)
+- Pelayanan Kesehatan lingkungan
+- Komunikasi Antar Pribadi (KAP)
+:::
+### Klaster 5 Lintas Klaster
+:::info **Lingkup Pelayanan/Kegiatan:**
+- Pelayanan gawat darurat
+- Pelayanan rawat inap
+- Pelayanan kefarmasian
+- Pelayanan Laboratorium
+:::
+:::tip **Kompetensi PJ dan anggota**
+Mampu melakukan pelayanan:
+- Kegawatdaruratan
+- Rawat inap
+- Kefarmasian
+- Pemeriksaan laboratorium specimen manusia, sampel vector dan reservoir serta sampel lingkungan
+:::
+<!-- > Tabel 1. Lingkup Kegiatan dan Kompetensi Petugas Puskesmas -->
+
+<!-- <table>
  <tr>
   <td>
   <p><b><span>No </span></b></p>
@@ -178,7 +274,7 @@ Tabel 1. Lingkup Kegiatan dan Kompetensi Petugas Puskesmas
   <p><span>Pemeriksaan laboratorium specimen manusia, sampel vector dan reservoir serta sampel lingkungan </span></p>
   </td>
  </tr>
-</table>
+</table> -->
 
 Dalam hal keterbatasan SDM, pelayanan dapat diberikan oleh petugas dari klaster lainnya yang memiliki kompetensi dan kewenangan yang sesuai.
 
@@ -187,24 +283,15 @@ Dalam hal keterbatasan SDM, pelayanan dapat diberikan oleh petugas dari klaster 
 Pelayanan diberikan secara komprehensif, meliputi promotif, preventif, kuratif dan rehabilitatif sesuai dengan siklus kehidupan dan masalah Kesehatan yang dialami pengunjung Puskesmas. Alur pelayanan dan PWS dengan pendekatan siklus hidup yang terintegrasi dapat dilihat pada bagan berikut ini.
 
 ![](/ilm/image010.gif)
-```
-Gambar 2. Alur Pelayanan dan PWS dengan Pendekatan Siklus Hidup
-```
+> Gambar 2. Alur Pelayanan dan PWS dengan Pendekatan Siklus Hidup
 
 1. Pasien dilakukan **identifikasi masalah kesehatan** dan ditentukan **skrining sesuai siklus kehidupan** yang perlu dilakukan pada saat kunjungan tersebut.
-
-    Pasien diarahkan ke petugas di klaster pelayanan siklus hidup yaitu klaster ibu dan anak atau klaster usia dewasa dan Lansia untuk dilakukan skrining tersebut dan dilakukan penanganan terhadap masalah Kesehatan yang dialami sesuai paket pelayanan.
-
-    Penanganan di klaster **komprehensif terintegrasi** berbagai program
-
-    Pelayanan yang dilakukan di ke-2 klaster tersebut didukung dengan **pelayanan laboratorium, kefarmasian dan lainnya**.
-
-    Pembagian ruang pelayanan mengikuti sistem klaster dan sasaran pelayanan, **mempertimbangkan ketersediaan SDM, ruangan dan luas gedung Puskesmas**. Masing-masing klaster dapat memberikan pelayanan dalam ruang yang terpisah, namun diutamakan ruangan tersebut berdekatan dalam satu klaster.
-
+    - Pasien diarahkan ke petugas di klaster pelayanan siklus hidup yaitu klaster ibu dan anak atau klaster usia dewasa dan Lansia untuk dilakukan skrining tersebut dan dilakukan penanganan terhadap masalah Kesehatan yang dialami sesuai paket pelayanan.
+    - Penanganan di klaster **komprehensif terintegrasi** berbagai program
+    - Pelayanan yang dilakukan di ke-2 klaster tersebut didukung dengan **pelayanan laboratorium, kefarmasian dan lainnya**.
+    -  Pembagian ruang pelayanan mengikuti sistem klaster dan sasaran pelayanan, **mempertimbangkan ketersediaan SDM, ruangan dan luas gedung Puskesmas**. Masing-masing klaster dapat memberikan pelayanan dalam ruang yang terpisah, namun diutamakan ruangan tersebut berdekatan dalam satu klaster.
 2. Petugas di klaster melakukan **pencatatan pelayanan** di **sistem informasi Puskesmas**. Variabel penting yang **dipantau** akan muncul dalam _dashboard_ situasi kesehatan wilayahnya.
-
-    Dashboard PWS dipantau dan dianalisis morbiditas dan cakupan pelayanan/program. Notifikasi ke Pustu jika ada yang perlu ditindaklanjuti di desa/kelurahan.
-
-    Puskesmas melakukan evaluasi bulanan atas hasil PWS bersama seluruh perwakilan Pustu. Dalam penanganan kasus di luar Puskesmas, pihak FKTP lain dapat dilibatkan dengan memberikan input terkait kasus yang ditangani ke _dashboard_ PWS dan menerima notifikasi tindak lanjut terhadap kasus di wilayahnya.
+    - Dashboard PWS dipantau dan dianalisis morbiditas dan cakupan pelayanan/program. Notifikasi ke Pustu jika ada yang perlu ditindaklanjuti di desa/kelurahan.
+    - Puskesmas melakukan evaluasi bulanan atas hasil PWS bersama seluruh perwakilan Pustu. Dalam penanganan kasus di luar Puskesmas, pihak FKTP lain dapat dilibatkan dengan memberikan input terkait kasus yang ditangani ke _dashboard_ PWS dan menerima notifikasi tindak lanjut terhadap kasus di wilayahnya.
 
 

@@ -4,9 +4,8 @@ title: Arsitektur Pelayanan
 # Arsitektur Pelayanan Kesehatan Primer
 
 ![](/ilm/image021.gif)
-```
-Gambar 6. Arsitektur Pelayanan Kesehatan Primer
-```
+
+> Gambar 6. Arsitektur Pelayanan Kesehatan Primer
 
 Integrasi Pelayanan Kesehatan Primer tercermin dari integrasi antara fasilitas pemberi layanan kesehatan primer dengan partisipasi/pemberdayaan masyarakat. 
 

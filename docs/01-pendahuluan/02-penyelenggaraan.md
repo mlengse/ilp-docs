@@ -26,8 +26,6 @@ Cara kerja baru tersebut terlihat dalam ilustrasi pola kerja berikut
 
 ![](/ilm/image006.gif)
 
-```
-Gambar 1. Ilustrasi Pola Kerja Sistem Pelayanan Kesehatan Primer
-```
+> Gambar 1. Ilustrasi Pola Kerja Sistem Pelayanan Kesehatan Primer
 
 

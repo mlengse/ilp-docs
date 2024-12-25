@@ -8,9 +8,8 @@ Integrasi pelayanan Kesehatan primer pada Pustu dilakukan dengan memberikan pela
 
 Unit Pelayanan kesehatan di Desa/Kelurahan yang memberikan pelayanan kesehatan dan mendukung pemberdayaan masyarakat desa/kelurahan
 
-```
-Gambar 4. Unit Pelayanan Kesehatan di Desa/Kelurahan
-```
+> Gambar 4. Unit Pelayanan Kesehatan di Desa/Kelurahan
+
 ![](/ilm/image014.gif)
 
 ## Paket Layanan

@@ -1,9 +1,14 @@
 ---
-title: Klaster 1
+title: Klaster Manajemen
+slug: /1
 ---
+import DocCardList from '@theme/DocCardList';
+
 # KLASTER MANAJEMEN
 
 Klaster ini memiliki lingkup tugas dan fungsi mengoordinasikan pelaksanaan manajemen Puskesmas, manajemen mutu pelayanan dan keselamatan bagi masyarakat, pasien, dan petugas. Selain itu, juga bertanggung jawab dalam kegiatan ketatausahaan, manajemen sumber daya serta manajemen jejaring dan jaringan Puskesmas serta sistem informasi.
+
+<DocCardList />
 
 ## Manajemen Puskesmas
 
