@@ -3,8 +3,9 @@ title: Manajemen Mutu dan Keselamatan
 slug: /1/2
 ---
 # Manajemen mutu pelayanan dan keselamatan bagi masyarakat, pasien, dan petugas
+Intervensi mutu diselenggarakan dalam rangka peningkatan mutu berkesinambungan. 
 
-Intervensi mutu diselenggarakan dalam rangka peningkatan mutu berkesinambungan.
+Kegiatan Manajemen Mutu meliputi: Pengukuran mutu, pencegahan dan pengendalian infeksi (PPI), keselamatan pasien, manajemen risiko, budaya mutu dan keselamatan, keselamatan dan kesehatan kerja (K3), manajemen fasilitas dan keselamatan (MFK).
 
 ## Pengukuran mutu
 

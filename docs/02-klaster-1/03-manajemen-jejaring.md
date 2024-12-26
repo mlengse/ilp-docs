@@ -3,6 +3,8 @@ title: Manajemen Jejaring dan Integrasi
 slug: /1/3
 ---
 # Manajemen Jejaring dan Integrasi Pelayanan
+Kerjasama dan pembinaan ke Pustu, FKTP lain, Posyandu dan UKBM lain
+
 ## Manajemen Jejaring Puskesmas
 Dalam rangka meningkatkan jangkauan pelayanan kepada seluruh masyarakat, Puskesmas didukung oleh sistem jejaring di wilayahnya yaitu:
 1. struktur jejaring berbasis wilayah administratif;

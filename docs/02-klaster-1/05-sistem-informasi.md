@@ -3,6 +3,9 @@ title: Sistem Informasi
 slug: /1/5
 ---
 # Sistem Informasi
+
+Puskesmas, Pustu, kegiatan Posyandu dan kunjungan rumah menggunakan sistem informasi yang terstandar dan terintegrasi ke Platform Satu Sehat.
+
 Integrasi pelayanan kesehatan primer perlu didukung oleh **Sistem Informasi** yang mampu menjamin **ketersediaan data** dan **informasi pelayanan Puskesmas yang terintegrasi dengan jejaringnya** secara cepat, akurat, terkini, berkelanjutan, dan dapat dipertanggungjawabkan.
 
 Sistem informasi tersebut merupakan bagian dari Sistem Informasi Kesehatan yang meliputi rekam medik, pencatatan dan pelaporan kegiatan Puskesmas dan jaringannya, pencatatan dan pelaporan keuangan Puskesmas dan jaringannya, laporan jejaring Puskesmas di wilayah kerjanya, laporan lintas sektor terkait, dan survey lapangan.

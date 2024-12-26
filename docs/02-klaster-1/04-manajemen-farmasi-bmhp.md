@@ -4,7 +4,6 @@ slug: /1/4
 ---
 
 # Manajemen Pengelolaan Sediaan Farmasi dan Bahan Medis Habis Pakai (BMHP)
-
 Dalam rangka pemenuhan pengelolaan sediaan farmasi dan BMHP yang sesuai standar dibutuhkan:
 1. Sumber Daya Kefarmasian
 2. Pengendalian Mutu Pelayanan Kefarmasian
