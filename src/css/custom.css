@@ -17,7 +17,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-p{
+article p,article li,article ol{
   hyphens: auto;
   text-align: justify;
   text-justify: auto;

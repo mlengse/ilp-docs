@@ -1,539 +1,217 @@
 
-## Pencegahan dan Pengendalian Infeksi (PPI)
-
-a. Prinsip penyelenggaraan PPI salah satunya adalah **penerapan konsep pelayanan pada pasien sehat dan sakit** untuk memutus mata rantai penularan penyakit di Puskesmas. **Penerapan PPI** dimulai dari pasien datang sampai dengan pasien keluar dari Puskesmas.
-
-Tabel 3. Ruang lingkup PPI di Puskesmas meliputi.
-
-No
-
-Ruang Lingkup
-
-Kegiatan
-
-1)
-
-Kewaspadaan Isolasi
-
-a) Kewaspadaan Standar
-
-Kebersihan tangan (hand hygiene),
-
-Penggunaan alat pelindung diri
-
-(APD),
-
-Pengendalian lingkungan,
-
-Pengelolaan lombah hasil pelayanan kesehatan,
-
-Pengelolaan peralatan perawatan pasien dan alat medis lainnya,
-
-Pengelolaan linen,
-
-Penyuntikan yang aman,
-
-Kebersihan pernapasan atau etika batuk,
-
-Penempatan pasien, dan
-
-Perlindungan kesehatan petugas.
-
-b) Kewaspadaan berdasarkan transmisi
-
-Kewaspadaan transmisi kontak Kewaspadaan transmisi droplet
-
-Kewaspadaan transmisi udara
-
-(airborne)
-
-2)
-
-Pencegahan dan pengendalian infeksi dengan penerapan _bundles Healthcare-Associated_
-
-_Infections_ (HAIs) dan PPI pada penggunaan peralatan kesehatan
-
-lainnya di Puskesmas
-
-a) Penerapan bundles HAIs, terdiri atas :
-
-Bundle Infeksi Saluran Kemih (ISK) atau _Catheter-Associated Urinary_ (CAUTI);
-
-_Bundles_ _Peripheral Line Associated Blood Stream Infection_ (PLABSI), dan
-
-Bundle Infeksi Daerah Operasi
-
-(IDO).
-
-b) PPI pada penggunaan alat peralatan kesehatan lainnya, terdiri atas,
-
-PPI pada pemberian alat bantu pernapasan (oksigen nasal),
-
-PPI pada pemberiam terapi inhalasi
-
-(nebulizer), dan
-
-PPI pada perawatan luka.
-
-3)
-
-Penggunaan antimiroba yang bijak
-
-4)
-
-Pendidikan dan pelatihan
-
-5)
-
-Surveilans
-
-.
-
-b. Penerapan PPI sesuai dengan ruang lingkup yang diuraikan di atas, mengacu pada pedoman dan/ atau ketentuan peraturan perundang-undangan yang berlaku.
-
-2. Keselamatan Pasien
-
-a. **Standar Keselamatan Pasien** wajib diterapkan di Puskesmas. **Terdapat 6 (enam) sasaran keselamatan pasien (SKP**), sebagai berikut.
-
-1) SKP.1 mengidentifikasi pasien dengan benar,
-
-2) SKP.2 meningkatkan komunikasi yang efektif,
-
-3) SKP.3 meningkatkan keamanan obat-obatan yang harus diwaspadai,
-
-4) SKP.4 memastikan lokasi pembedahan yang benar, prosedur yang benar, pembedahan pada pasien yang benar,
-
-5) SKP.5 mengurangi risiko infeksi akibat perawatan kesehatan,
-
-6) SKP.6 mengurangi risiko cedera pasien akibat terjatuh
-
-b.Penerapan keselamatan pasien di Puskesmas mengacu pada pedoman dan/ atau ketentuan peraturan perundang-undangan yang berlaku.
-
-3. Manajemen risiko
-
-a. Puskesmas wajib menerapkan manajemen risiko guna mengantisipasi kondisi ketidakpastian di masa yang akan datang yang mempengaruhi pencapaian tujuan dan sasaran Puskesmas.
-
-b. Manajemen risiko adalah proses yang proaktif dan kontinu meliputi:
-
-1) identifikasi,
-
-2) analisis,
-
-3) evaluasi,
-
-4) pengendalian,
-
-5) informasi komunikasi,
-
-6) pemantauan, dan pelaporan risiko,
-
-7) termasuk berbagai strategi yang dijalankan untuk mengelola risiko dan potensinya.
-
-c. Penerapan manajemen risiko mengacu pada pedoman dan/ atau ketentuan peraturan perundang-undangan yang berlaku.
-
-4. Budaya mutu dan keselamatan
-
-a. **Budaya mutu** di Puskesmas penting menjadi **nilai** bagi seluruh klaster dalam upaya mencapai tujuan Puskesmas untuk melakukan pembangunan kesehatan di wilayah kerjanya. Karakteristik lingkungan kerja budaya mutu adalah:
-
-1) Kepemimpinan mutu pada semua jenjang di puskesmas
-
-2) Keterbukaan
-
-3) Penekanan pada kerja tim
-
-4) Tangggung jawab yang jelas
-
-5) Budaya belajar dan pembelajaran
-
-6) Umpan balik yang aktif untuk peningkatan
-
-7) Keterlibatan kuat pegawai, pengguna dan masyarakat.
-
-8) Pemberdayaan individu
-
-9) Menyeleraskan nilai organisasi
-
-10) Menumbuhkan kebanggan dalam memberi pelayanan
-
-11) Menjadikan pelayanan sepenuh hati
-
-b. Penerapan budaya mutu yang adekuat oleh semua klaster di Puskesmas akan menghasilkan pelayanan Puskesmas yang bermutu secara berkesinambungan.
-
-5. Keselamatan dan Kesehatan Kerja (K3)
-
-a. Puskesmas merupakan tempat kerja yang memiliki risiko tinggi terhadap keselamatan dan kesehatan pegawai, pengunjung dan lingkungan Puskesmas.
-
-b. Pegawai yang bekerja di Puskesmas mempunyai risiko terpapar Bahaya seperti Fisik, biologi, kimia, ergonomi, psikososial, yang dapat menimbulkan penyakit akibat kerja, terjadinya kecelakaan kerja terkait dengan pekerjaan yang dilakukan dalam pelayanan baik langsung maupun tidak langsung sehingga berhak mendapatkan pelayanan kesehatan dan perlindungan terhadap kesehatannya.
-
-c. Program K3 bagi Pegawai Puskesmas antara lain:
-
-1) Promosi keselamatan dan kesehatan kerja serta kesejahteraan
-
-(_well being_) pegawai,
-
-2) pelindungan atas tindak kekerasan yang dilakukan oleh pengguna layanan, keluarga pengguna layanan, maupun oleh sesama pegawai,
-
-3) dan program K3 lainnya sesuai dengan yang ditetapkan oleh Puskesmas.
-
-4) pemeriksaan kesehatan pekerja puskesmas secara berkala
-
-d. Penyelenggaraan upaya kesehatan dan keselamatan kerja di Puskesmas mengacu pada pedoman dan/atau ketentuan peraturan perundang-undangan.
-
-6. Manajemen Fasilitas dan Keselamatan (MFK)
-
-a. Sarana (bangunan), prasarana, peralatan, keselamatan dan keamanan lingkungan Puskesmas harus dikelola secara efektif untuk mengurangi dan mengendalikan bahaya, risiko, mencegah kecelakaan, cidera dan penyakit akibat kerja, melalui penerapan manajemen fasilitas dan keselamatan (MFK).
-
-b. Program manajemen fasiltas dan keselamatan di Puskesmas terdiri
-
-dari,
-
-1) Manajemen keselamatan dan keamanan fasilitas,
-
-2) Manajemen bahan berbahaya beracun (B3) dan limbah B3,
-
-3) Manajemen kedaruratan dan bencana,
-
-4) Manajemen pengamanan kebakaran,
-
-5) Manajemen alat kesehatan, 6) Manajemen sistem utilitas, dan 7) Pendidikan MFK.
-
-c. Penerapan manajemen risiko mengacu pada pedoman dan/atau ketentuan peraturan perundang-undangan yang berlaku.
-
-### C.Manajemen Jejaring Puskesmas
-
-1. Dalam rangka meningkatkan jangkauan pelayanan kepada seluruh masyarakat, Puskesmas didukung oleh sistem jejaring di wilayahnya yaitu:
-
-a. struktur jejaring berbasis wilayah administratif;
-
-b. struktur jejaring berbasis sekolah;
-
-c. struktur jejaring berbasis tempat kerja;
-
-d. struktur jejaring sistem rujukan; dan
-
-e. struktur jejaring lintas sektor
-
-2. Manajemen sistem jejaring Puskesmas mengikuti manajemen Puskesmas dan terintegrasi dalam P1-P2-P3 Puskesmas.
-
-3. Manajemen sistem jejaring Puskesmas meliputi antara lain pengelolaan integrasi pelayanan Puskesmas dengan Pustu dan Posyandu serta jejaring pelayanan kesehatan lainnya.
-
-4. Manajemen Jejaring Puskesmas
-
-a. Puskesmas berkewajiban melakukan pembinaan teknis dan administrasi terhadap pelayanan kesehatan yang dilakukan oleh jejaring
-
-b. Membangun komitmen dalam jejaring pelayanan kesehatan, melalui nota kesepahaman/_Memorandum of Understanding_/MoU atau Perjanjian Kerjasama antara Puskesmas dan jejaringnya yang difasilitasi oleh Dinas Kesehatan Kabupaten/Kota
-
-c. Jejaring Puskesmas diundang dan hadir dalam lokakarya mini puskesmas
-
-d. Pembinaan teknis dan administrasi Puskesmas kepada jejaring dilaksanakan melaui 5 langkah yaitu:1) pembentukan jejaring pelayanan kesehatan; 2) identifikasi permasalahan prioritas; 3) menyusun Rencana Tindak Lanjut (RTL); 4) implementasi integrasi ke dalam pelayanan kesehatan; dan 5) monitoring dan evaluasi.
-
-5. Manajemen integrasi pelayanan Puskesmas, Pustu dan Posyandu mencakup perencanaan, pelaksanaan dan evaluasi antara lain dalam hal:
-
-a. Pemenuhan sumber daya: sarana, prasarana, peralatan, obat dan BMHP, SDM, pendanaan (Dinkes, Puskesmas, Pemdes, Dana
-
-Desa)
-
-b. Pemenuhan kompetensi tenaga kesehatan (Dinkes)
-
-c. Manajemen kader (Pemdes, TP-PKK, Puskesmas, Dinkes)
-
-d. Penyediaan SOP pelayanan dan rujukan (Pusat, Dinkes, Puskesmas)
-
-e. Pelaksanaan pelayanan sesuai standar (Puskesmas, Posyandu,
-
-Pustu)
-
-f. Pencatatan dan pelaporan kegiatan (Puskesmas, Posyandu, Pustu)
-
-g. Kerja sama dan pembagian peran dengan _stakeholder_ terkait
-
-(Dinkes, Puskesmas)
-
-![](/ilm/image027.gif)
-
-Gambar 9. Sistem Jejaring Pelayanan Kesehatan Primer
-
-### D.Manajemen Pengelolaan Sediaan Farmasi dan Bahan Medis Habis Pakai (BMHP)
-
-Dalam rangka pemenuhan pengelolaan sediaan farmasi dan BMHP yang sesuai standar dibutuhkan:
-
-1. Sumber Daya Kefarmasian
-
-a. Anggaran
-
-Anggaran penyediaan sediaan farmasi dan BMHP dapat bersumber dari Dinas Kesehatan Kabupaten/Kota atau sumbersumber lain yang resmi sesuai peraturan perundang-undangan.
-
-b. Sumber Daya Manusia
-
-c. Sumber daya manusia yang dibutuhkan untuk melakukan pekerjaan kefarmasian harus memadai dari segi aspek kuantitas dan kualitas, serta harus mempunyai kewenangan sesuai dengan peraturan perundang-undangan.
-
-d. Sarana Prasarana
-
-Dibutuhkan sarana dan prasarana yang memadai misalnya
-
-kebutuhan untuk rak penyimpanan, pallet, alat pemantau suhu, kartu stok, lemari pendingin dll.
-
-2. Pengendalian Mutu Pelayanan Kefarmasian
-
-a. Pengendalian mutu Pelayanan Kefarmasian merupakan kegiatan yang terintegrasi dengan program pengendalian mutu pelayanan kesehatan Puskesmas.
-
-b. Unsur-unsur yang mempengaruhi mutu pelayanan kefarmasian meliputi:
-
-1) Unsur masukan (input), yaitu sumber daya manusia, sarana dan prasarana, ketersediaan dana, dan Standar Prosedur Operasional.
-
-2) Unsur proses, yaitu tindakan yang dilakukan, komunikasi, dan kerja sama.
-
-3) Unsur lingkungan, yaitu kebijakan, organisasi, manajemen, budaya, respon dan tingkat pendidikan masyarakat.
-
-c. Sedangkan kegiatan pengendalian mutu pelayanan kefarmasian yang dilakukan meliputi:
-
-1) Perencanaan
-
-2) Pelaksanaan
-
-3) Tindakan hasil monitoring dan evaluasi
-3. Formularium Puskesmas
-
-Formularium Puskesmas sangat dibutuhkan dalam rangka kendali mutu dan biaya agar pelayanan kesehatan yang dilakukan dapat memenuhi standar pelayanan kefarmasian. Formularium disusun berdasarkan analisis kebutuhan pasien dan jenis pelayanan yang dilakukan Puskesmas dan mengacu kepada Formularium Nasional.
-E. Sistem Informasi
-
--------------------
-
-1. Integrasi pelayanan kesehatan primer perlu didukung oleh **Sistem Informasi** yang mampu menjamin **ketersediaan data** dan **informasi pelayanan Puskesmas yang terintegrasi dengan jejaringnya** secara cepat, akurat, terkini, berkelanjutan, dan dapat dipertanggungjawabkan.
-
-2. Sistem informasi tersebut merupakan bagian dari Sistem Informasi Kesehatan yang meliputi rekam medik, pencatatan dan pelaporan kegiatan Puskesmas dan jaringannya, pencatatan dan pelaporan keuangan Puskesmas dan jaringannya, laporan jejaring Puskesmas di wilayah kerjanya, laporan lintas sektor terkait, dan survey lapangan.
-
-3. Sistem informasi diselenggarakan **secara elektronik** berbasis web maupun _mobile_ sesuai ketentuan yang berlaku.
-
-4. _Dashboard_ situasi kesehatan akan menampilkan data kesehatan prioritas yang berasal dari dari sistem informasi yang digunakan oleh Puskesmas dan jaringannya secara terpadu.
-
-5. _Dashboard_ tersebut meliputi cakupan pelayanan dan pola penyakit di wilayah kerja Puskesmas hingga tingkat desa/kelurahan dan dusun/RT/RW.
-
-6. **Petugas di klaster 1 (Manajemen) bertanggung jawab** dalam pengelolaan sistem informasi dan dashboard situasi kesehatan.
-
-![](/ilm/image029.gif)
-
-Gambar 10. Arsitektur Sistem Pencatatan Pelayanan Kesehatan Primer
-
-Dalam implementasinya di Puskesmas, Pustu, kegiatan Posyandu dan kunjungan rumah, maka pencatatan dan pelaporan akan menggunakan **sistem informasi yang terstandar dan terintegrasi** ke Platform **Satu Sehat**. Sistem informasi tersebut sebagai berikut:
-
-a. Layanan Dalam Gedung (Puskesmas, Pustu)
-
-Pencatatan layanan dalam Gedung menggunakan Sistem Informasi Puskesmas (SIP/SIMPUS) masing-masing yang telah ada di Puskesmas dan Pustu yang telah mengikuti standar interoperabilitas platform Satu Sehat.
-
-b. Layanan Luar Gedung (Puskesmas, Pustu, Kegiatan Posyandu,
-
-Kunjungan Rumah)
-
-Pencatatan layanan luar gedung menggunakan dua sistem informasi gawai (mobile) yakni:
-
-1) Aplikasi Sehat IndonesiaKu (ASIK) oleh Tenaga Kesehatan dan Kader Kesehatan
-
-2) Aplikasi Whats App (WA) oleh Kader
-
-Apabila ada aplikasi berbasis gawai (mobile) lain yang dikembangkan oleh pihak ketiga, maka dapat digunakan oleh Tenaga Kesehatan atau Kader Kesehatan apabila telah mengikuti standar interoperabilitas Kementerian Kesehatan dan sesuai dengan kebutuhan program ILP.
-
-c. Hasil pencatatan data dari Dalam Gedung dan Luar Gedung yang terintegrasi ke Platform Satu Sehat dapat di monitor melalui dashboard untuk proses pemantuan wilayah setempat (PWS). Dashboard PWS membantu Puskesmas dan Pustu dalam melakukan intervensiintervensi Kesehatan sesuai klaster layanan yang ada.
-
-d. Hasil layanan di dalam gedung dan luar gedung berbentuk rekam medik elektronik, promosi kesehatan, notifikasi, lokasi fasilitas kesehatan, dan program kesehatan lainnya dapat di peroleh masyarakat melalui Aplikasi Satu Sehat Mobile.  
-BAB IVKLASTER PELAYANAN KESEHATAN IBU DAN ANAK
-==============================================
-
-Klaster ini memiliki sasaran intervensi yang terdiri dari 3 kelompok pelayanan yaitu **1) Ibu hamil, bersalin dan nifas; 2) Bawah Lima Tahun (Balita) dan anak pra sekolah** serta **3) anak usia sekolah dan remaja**, yang dilaksanakan secara terpadu dan berkesinambungan. Untuk dapat melaksanakan pelayanan kesehatan yang berkesinambungan maka fokus pelayanan kesehatan menyesuaikan kondisi pertambahan usia pada siklus kehidupan.
-
-Morbiditas yang banyak dialami oleh ibu, anak dan remaja meliputi:
-
-**1.** **Ibu hamil, bersalin dan nifas:** anemia, Kurang Energi Kronis (KEK), hipertensi, DM, penyakit infeksi (TBC, malaria, HIV, sifilis, hepatitis), perdarahan jalan lahir, ketuban pecah dini, plasenta previa, asma, penyakit jantung, perdarahan pasca persalinan, infeksi rahim, trauma/robekan perineum, _postpartum blues_, _postpartum depression_, dll.
-
-**2.** **Balita dan anak pra sekolah:** masalah neonatal (asfiksia, sepsis, kelainan kongenital), prematuritas dan Bayi Berat Lahir Rendah (BBLR), penyakit infeksi (TBC, diare, pneumonia), masalah gizi dan perkembangan (_weight faltering_, gizi kurang, gizi buruk, stunting dan obesitas), dll.
-
-**3.** **Anak usia sekolah dan remaja:** masalah gizi (anemia, gizi kurang, obesitas), penyakit infeksi (TBC, HIV, IMS), masalah gigi dan mulut (karies gigi), gangguan refraksi dan pendengaran, masalah perilaku dan penyalahgunaan NAPZA serta kekerasan baik fisik maupun seksual.
-
-
-
-\- 33 -
-Alur Kerja Klaster Pelayanan Kesehatan Ibu dan Anak
-
----------------------------------------------------
-
-Mekanisme kerja klaster 2 (ibu dan anak) terdiri dari pelayanan kesehatan di dalam dan luar Puskesmas sesuai gambar berikut:
-
-![](/ilm/image031.gif)
-
-Gambar 11. Alur Kerja Klaster 2 (Ibu dan Anak)
-
-**_jdih.kemkes.go.id_**
-
-
-
-Alur mekanisme kerja klaster 2 di atas adalah sebagai berikut:
-
-**1.** **Pelayanan Kesehatan Dalam Puskesmas**
-
-a. Petugas mengarahkan pasien dengan kondisi gawat darurat, seperti kegawatdaruratan maternal dan neonatal serta kasus kegawatdaruratan pada anak ke ruang tindakan/gawat darurat atau ruang bersalin untuk mendapatkan penanganan segera.
-
-b. Bila bukan termasuk kasus gawat darurat, petugas registrasi mengarahkan pasien ke ruang pelayanan klaster 2 (ibu dan anak) untuk mendapatkan pemeriksaan (anamnesis dan pemeriksaan fisik) serta penanganan yang komprehensif (promotif, preventif, kuratif, dan rehabilitatif) sesuai paket layanan pada klaster 2.
-
-c. Apabila pelayanan tidak dapat diberikan secara lengkap pada saat kunjungan karena kondisi pasien atau hal lainnya, petugas melakukan penjadwalan pelayanan pada waktu dan tempat yang disepakati bersama pasien. Misalnya pada balita sakit, imunisasi dilakukan setelah balita sehat di Posyandu.
-
-d. Bila pasien membutuhkan pelayanan lainnya maka dapat dilakukan rujukan internal untuk diberikan pelayanan yang diperlukan seperti tindakan medis, laboratorium, rawat inap dan pelayanan di klaster lainnya. Setelah mendapatkan pelayanan yang sesuai, pasien dapat kembali ke petugas klaster 2 untuk konsultasi kembali jika diperlukan.
-
-e. Bila pasien telah menyelesaikan seluruh pelayanan, maka dapat menuju pelayanan farmasi (jika ada resep dokter) dan pulang.
-
-f. Bila pasien membutuhkan layanan spesialistik/rujukan lainnya, maka dirujuk ke FKRTL dan fasilitas lainnya (misalnya rujukan sosial dan hukum).
-
-g. Petugas klaster 2 mencatat seluruh pelayanan yang dilakukan ke dalam sistem informasi dan melakukan PWS melalui analisis beban penyakit yang meliputi morbiditas dan cakupan pelayanan dengan memanfaatkan dashboard situasi kesehatan.
-
-h. Data untuk PWS juga dapat berasal dari faskes lainnya di wilayah kerja
-
-Puskesmas
-
-i. Hasil PWS yang membutuhkan tindak lanjut di tingkat desa/kelurahan diinformasikan ke petugas di Pustu.
-
-**2.** **Pelayanan Kesehatan Luar Puskesmas**
-
-a. Petugas Pustu bersama kader Posyandu menindaklanjuti hasil PWS dalam bentuk kegiatan di Pustu, Posyandu, dan kunjungan rumah.
-
-b. Petugas Pustu dan kader Posyandu melakukan evaluasi hasil kunjungan rumah (hasil kunjungan rutin maupun tindak lanjut PWS).
-
-c. Kader Posyandu menyelenggarakan kegiatan pelayanan kesehatan ibu dan anak pada hari buka Posyandu didampingi oleh tenaga kesehatan.
-
-d. Kader Posyandu melakukan kunjungan rumah untuk menemukan ibu (hamil, bersalin, nifas), dan anak (bayi, balita, anak prasekolah, anak usia sekolah, dan remaja) yang belum mendapatkan pelayanan kesehatan, tidak melakukan kunjungan ulang, ketidakpatuhan pengobatan, dan memiliki tanda bahaya serta memberikan edukasi sesuai kebutuhan sasaran.
-A. Paket Pelayanan Kesehatan Ibu dan Anak
-
------------------------------------------
-
-Pelayanan kesehatan Ibu dan Anak yang diberikan di Puskesmas,
-
-Pustu, dan Posyandu meliputi: paket pelayanan Kesehatan bagi sasaran Ibu Hamil, Bersalin dan Nifas; Anak Balita dan Anak Pra Sekolah; Anak Usia sekolah dan Remaja; serta pelayanan kesehatan lainnya yang ditujukan untuk seluruh sasaran Ibu dan Anak.
-
-![](/ilm/image033.gif)
-
-Gambar 12. Standardisasi Paket Pelayanan Kesehatan Ibu dan Anak
-
-### 1. Pelayanan Kesehatan Ibu Hamil, Bersalin dan Nifas
-
-Secara lengkap paket pelayanan kesehatan pada ibu hamil, bersalin dan nifas dilaksanakan untuk mencegah dan menangani permasalahan kehamilan termasuk status gizi ibu, persalinan dan nifas berisiko, meliputi:
-
-Tabel 4. Paket Pelayanan Kesehatan pada Ibu
-
-**Pelayanan Ibu hamil, bersalin dan nifas**
-
-**Sasaran**
-
-**Masalah**
-
-**Kesehatan**
-
-**Pelayanan**
-
-**Kesehatan**
-
-**Unit Pemberi Pelayanan**
-
-**Puskesmas**
-
-**(Kecamatan)**
-
-**Pustu**
-
-**(Desa/Kelurahan)**
-
-**Posyandu**
-
-**(Dusun/RT/RW)**
-
-**Kunjungan Rumah**
-
-**(Rumah/Masyarakat)**
-
-Status gizi ibu hamil, kehamilan, persalinan dan nifas beresiko
-
-ANC Terpadu
-
-ANC K1, K2, K3, K4, K5 dan K6 plus USG oleh
-
-dokter
-
-ANC K2, K3, K4 dan K6
-
-Ibu hamil normal sudah
-
-direkomendasikan oleh dokter
-
-Edukasi, pendataan ibu hamil, deteksi ibu hamil beresiko (4T), pemantauan dan pendampingan sesuai nasihat dokter, konseling KB, _sweeping_ serta edukasi tanda
-
-Penyakit menular
-
-bahaya kehamilan dan rujukan fasyankes sesuai kebutuhan
-
-Kelas Ibu hamil
-
-Fasilitasi
-
-pelaksanaan kelas ibu hamil di Posyandu
-
-Fasilitasi
-
-pelaksanaan kelas ibu hamil
-
-Posyandu
-
-di
-
-Kelas ibu hamil: edukasi tanda bahaya, risiko penyulit kehamilan, senam ibu hamil, sharing session, pemantauan TTD (Zat besi, Asam
-
-Folat)
-
-Edukasi menggunakan Buku KIA, mengikuti
-
-kelas ibu hamil
-
-Pemberian MT ibu hamil KEK
-
-Pemantauan
-
-status gizi dan asupan, edukasi, PMT, monitoring
-
-Edukasi seimbang pemberian pemulihan
-
-gizi dan PMT
-
-Edukasi gizi seimbang dan PMT pemulihan
-
-Edukasi gizi seimbang, monitoring PMT, mematuhi nasihat dokter
-
-Persalinan
-
-Normal
-
-Persalinan normal dan penyiapan serta stabilisasi rujukan bila diperlukan
-
-\-
-
-\-
-
-Pelayanan Nifas (KF 1-4 dan KN 1-3)
-
-Pelayanan nifas dan pelayanan KB pasca persalinan
-
-Pelayanan nifas bagi ibu dan bayi baru lahir kondisi normal termasuk kunjungan nifas dan pelayanan KB pasca persalinan
-
-Edukasi ASI
-
-Ekslusif, PMBA dan kelas ibu balita
-
-_Sweeping,_ pemantauan kondisi, pendampingan dan pemenuhan layanan esensial sesuai nasihat dokter, edukasi tanda bahaya Ibu dan Bayi baru lahir dan rujukan fasyankes sesuai kebutuhan
-
-Pelayanan pengobatan
-
-Sesuai tata laksana penyakit didukung oleh penunjang laboratorium
-
-\-
-
-\-
-
-\-
+# Pelayanan Kesehatan Ibu Hamil, Bersalin dan Nifas
+
+Secara lengkap paket pelayanan kesehatan pada ibu hamil, bersalin dan nifas dilaksanakan untuk mencegah dan menangani permasalahan kehamilan termasuk status gizi ibu, persalinan dan nifas berisiko.
+
+## ANC Terpadu
+
+<table>
+ <tr>
+  <td>
+  <p><b>Puskesmas (Kecamatan)</b></p>
+  </td>
+  <td>
+  <p><b>Pustu (Desa/Kelurahan)</b></p>
+  </td>
+  <td>
+  <p><b>Posyandu (Dusun/RT/RW)</b></p>
+  </td>
+  <td>
+  <p><b>Kunjungan Rumah (Rumah/Masyarakat)</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>ANC K1, K2, K3, K4, K5 dan K6 plus USG oleh dokter </p>
+  </td>
+  <td>
+  <p>ANC K2, K3, K4 dan K6 </p>
+  <p>Ibu hamil normal sudah direkomendasikan oleh dokter</p>
+  </td>
+  <td>
+  </td>
+  <td>
+  <p>Edukasi, pendataan ibu hamil, deteksi ibu hamil beresiko
+  (4T), pemantauan dan pendampingan sesuai nasihat dokter, konseling KB, <i>sweeping </i>serta
+  edukasi tanda bahaya kehamilan dan rujukan fasyankes sesuai kebutuhan </p>
+  </td>
+ </tr>
+</table>
+
+## Kelas Ibu hamil
+
+<table>
+ <tr>
+  <td>
+  <p><b>Puskesmas (Kecamatan)</b></p>
+  </td>
+  <td>
+  <p><b>Pustu (Desa/Kelurahan)</b></p>
+  </td>
+  <td>
+  <p><b>Posyandu (Dusun/RT/RW)</b></p>
+  </td>
+  <td>
+  <p><b>Kunjungan
+  Rumah (Rumah/Masyarakat)</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>Fasilitasi </p>
+  <p>pelaksanaan kelas ibu hamil di Posyandu </p>
+  </td>
+  <td>
+  <p>Fasilitasi pelaksanaan
+  kelas ibu hamil di Posyandu </p>
+  </td>
+  <td>
+  <p>Kelas ibu
+  hamil: edukasi tanda bahaya, risiko penyulit kehamilan, senam ibu hamil,
+  sharing session, pemantauan TTD (Zat besi, Asam Folat) </p>
+  </td>
+  <td>
+  <p>Edukasi menggunakan Buku
+  KIA, mengikuti kelas ibu hamil </p>
+  </td>
+ </tr>
+</table>
+## Pemberian MT ibu hamil KEK 
+
+<table>
+ <tr>
+  <td>
+  <p><b>Puskesmas (Kecamatan)</b></p>
+  </td>
+  <td>
+  <p><b>Pustu (Desa/Kelurahan)</b></p>
+  </td>
+  <td>
+  <p><b>Posyandu (Dusun/RT/RW)</b></p>
+  </td>
+  <td>
+  <p><b>Kunjungan
+  Rumah (Rumah/Masyarakat)</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>Pemantauan status gizi dan asupan, edukasi, PMT, monitoring </p>
+  </td>
+  <td>
+  <p>Edukasi gizi seimbang dan pemberian PMT pemulihan </p>
+  </td>
+  <td>
+  <p>Edukasi gizi seimbang dan PMT pemulihan </p>
+  </td>
+  <td>
+  <p>Edukasi gizi seimbang, monitoring PMT, mematuhi nasihat dokter</p>
+  </td>
+ </tr>
+</table>
+  
+## Persalinan Normal
+
+<table>
+ <tr>
+  <td>
+  <p><b>Puskesmas (Kecamatan)</b></p>
+  </td>
+  <td>
+  <p><b>Pustu (Desa/Kelurahan)</b></p>
+  </td>
+  <td>
+  <p><b>Posyandu (Dusun/RT/RW)</b></p>
+  </td>
+  <td>
+  <p><b>Kunjungan Rumah (Rumah/Masyarakat)</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>Persalinan normal dan penyiapan serta stabilisasi rujukan bila diperlukan</p>
+  </td>
+  <td>
+  <p>-</p>
+  </td>
+  <td>
+  <p>-</p>
+  </td>
+  <td>
+  <p>-</p>
+  </td>
+ </tr>
+</table>
+
+## Pelayanan Nifas (KF 1-4 dan KN 1-3)
+
+<table>
+ <tr>
+  <td>
+  <p><b>Puskesmas (Kecamatan)</b></p>
+  </td>
+  <td>
+  <p><b>Pustu (Desa/Kelurahan)</b></p>
+  </td>
+  <td>
+  <p><b>Posyandu (Dusun/RT/RW)</b></p>
+  </td>
+  <td>
+  <p><b>Kunjungan Rumah (Rumah/Masyarakat)</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>Pelayanan nifas dan pelayanan KB pasca persalinan </p>
+  </td>
+  <td>
+  <p>Pelayanan nifas bagi ibu dan bayi baru lahir kondisi normal
+  termasuk kunjungan nifas dan pelayanan KB pasca persalinan </p>
+  </td>
+  <td>
+  <p>Edukasi ASI Ekslusif, PMBA dan kelas ibu balita </p>
+  </td>
+  <td>
+  <p><i>Sweeping, </i>pemantauan
+  kondisi, pendampingan dan pemenuhan layanan esensial sesuai nasihat dokter,
+  edukasi tanda bahaya Ibu dan Bayi baru lahir dan rujukan fasyankes sesuai
+  kebutuhan </p>
+  </td>
+ </tr>
+</table>
+
+## Pelayanan pengobatan
+<table>
+ <tr>
+  <td>
+  <p><b>Puskesmas (Kecamatan)</b></p>
+  </td>
+  <td>
+  <p><b>Pustu (Desa/Kelurahan)</b></p>
+  </td>
+  <td>
+  <p><b>Posyandu (Dusun/RT/RW)</b></p>
+  </td>
+  <td>
+  <p><b>Kunjungan Rumah (Rumah/Masyarakat)</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>Sesuai tata laksana penyakit didukung oleh penunjang
+  laboratorium </p>
+  </td>
+  <td>
+  <p>- </p>
+  </td>
+  <td>
+  <p>- </p>
+  </td>
+  <td>
+  <p>- </p>
+  </td>
+ </tr>
+</table>
 
 **a.****Pelayanan Antenatal Terpadu/_Antenatal Care_ (ANC Terpadu)** Pelayanan antenatal terpadu dan komprehensif sesuai standar (10 T) sebagaimana bagan berikut:
 
