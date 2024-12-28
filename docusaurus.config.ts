@@ -47,6 +47,7 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           path: 'docs',
           sidebarPath: './sidebars.ts',
           rehypePlugins: [rehypeKatex],
