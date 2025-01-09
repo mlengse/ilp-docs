@@ -4,6 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 import remarkHyphenopoly from './src/remark/hyphenopoly';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import docusaurusSearchLocal from '@easyops-cn/docusaurus-search-local'
 // import remarkHypher from 'remark-hypher'
 // import pattern from './hyphenation'
 
@@ -22,8 +23,8 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Puskesmas Jayengan', // Usually your GitHub org/user name.
-  projectName: 'Referensi ILP', // Usually your repo name.
+  organizationName: 'mlengse', // Usually your GitHub org/user name.
+  projectName: 'ilp-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -38,7 +39,13 @@ const config: Config = {
   markdown: {
     mermaid: true
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: [
+    '@docusaurus/theme-mermaid',
+    // [docusaurusSearchLocal, ({
+    //   hashed: true,
+    //   language: ['id']
+    // })]
+  ],
   plugins: [
     process.env.NODE_ENV === 'production' && '@docusaurus/plugin-debug',
   ].filter(Boolean),
@@ -69,8 +76,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          
+            'https://github.com/mlengse/ilp-docs/',
         },
         blog: {
           showReadingTime: true,
@@ -80,8 +86,8 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl:
+            // 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
