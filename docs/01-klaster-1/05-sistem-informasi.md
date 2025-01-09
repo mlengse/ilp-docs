@@ -18,7 +18,7 @@ _Dashboard_ tersebut meliputi cakupan pelayanan dan pola penyakit di wilayah ker
 
 **Petugas di klaster 1 (Manajemen) bertanggung jawab** dalam pengelolaan sistem informasi dan dashboard situasi kesehatan.
 
-![](/ilm/image029.gif)
+![](/ilm/image028.png)
 
 > Gambar 10. Arsitektur Sistem Pencatatan Pelayanan Kesehatan Primer
 

@@ -11,7 +11,7 @@ Posyandu berada di tingkat dusun/RT/RW yang dibentuk berdasarkan **prakarsa peme
 :::note penataan
 Penataan posyandu yang berbasis program antara lain posyandu KIA, posyandu remaja, posbindu PTM, posyandu lansia menjadi posyandu yang melayani seluruh siklus hidup.
 :::
-![](/ilm/image019.gif)
+![](/ilm/image018.png)
 
 > Gambar 5. Posyandu Terintegrasi
 

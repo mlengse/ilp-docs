@@ -24,7 +24,7 @@ Penataan struktur layanan kesehatan primer tersebut membutuhkan pendekatan baru 
 
 Cara kerja baru tersebut terlihat dalam ilustrasi pola kerja berikut
 
-![](/ilm/image006.gif)
+![](/ilm/image005.png)
 
 > Gambar 1. Ilustrasi Pola Kerja Sistem Pelayanan Kesehatan Primer
 

@@ -40,6 +40,6 @@ Integrasi Pelayanan di Puskesmas, Pustu dan Posyandu mencakup perencanaan, pelak
 6. Pencatatan dan pelaporan kegiatan (Puskesmas, Posyandu, Pustu)
 7. Kerja sama dan pembagian peran dengan _stakeholder_ terkait (Dinkes, Puskesmas)
 
-![](/ilm/image027.gif)
+![](/ilm/image026.png)
 
 > Gambar 9. Sistem Jejaring Pelayanan Kesehatan Primer

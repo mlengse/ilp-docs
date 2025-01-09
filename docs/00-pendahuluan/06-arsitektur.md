@@ -3,7 +3,7 @@ title: Arsitektur Pelayanan
 ---
 # Arsitektur Pelayanan Kesehatan Primer
 
-![](/ilm/image021.gif)
+![](/ilm/image020.png)
 
 > Gambar 6. Arsitektur Pelayanan Kesehatan Primer
 

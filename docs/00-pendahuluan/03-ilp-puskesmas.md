@@ -15,7 +15,7 @@ Kepala Puskesmas akan menetapkan pembagian seluruh petugas Puskesmas ke dalam kl
 4. Klaster 4: Penanggulangan Penyakit Menular 
 5. Lintas Klaster
 
-![](/ilm/image008.gif)
+![](/ilm/image007.png)
 
 > Gambar 2. Struktur Organisasi Puskesmas
 
@@ -282,8 +282,8 @@ Dalam hal keterbatasan SDM, pelayanan dapat diberikan oleh petugas dari klaster 
 
 Pelayanan diberikan secara komprehensif, meliputi promotif, preventif, kuratif dan rehabilitatif sesuai dengan siklus kehidupan dan masalah Kesehatan yang dialami pengunjung Puskesmas. Alur pelayanan dan PWS dengan pendekatan siklus hidup yang terintegrasi dapat dilihat pada bagan berikut ini.
 
-![](/ilm/image010.gif)
-> Gambar 2. Alur Pelayanan dan PWS dengan Pendekatan Siklus Hidup
+![](/ilm/image009.png)
+**Gambar 2. Alur Pelayanan dan PWS dengan Pendekatan Siklus Hidup**
 
 1. Pasien dilakukan **identifikasi masalah kesehatan** dan ditentukan **skrining sesuai siklus kehidupan** yang perlu dilakukan pada saat kunjungan tersebut.
     - Pasien diarahkan ke petugas di klaster pelayanan siklus hidup yaitu klaster ibu dan anak atau klaster usia dewasa dan Lansia untuk dilakukan skrining tersebut dan dilakukan penanganan terhadap masalah Kesehatan yang dialami sesuai paket pelayanan.
