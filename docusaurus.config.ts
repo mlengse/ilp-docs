@@ -4,7 +4,6 @@ import type * as Preset from '@docusaurus/preset-classic';
 import remarkHyphenopoly from './src/remark/hyphenopoly';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import docusaurusSearchLocal from '@easyops-cn/docusaurus-search-local'
 // import remarkHypher from 'remark-hypher'
 // import pattern from './hyphenation'
 
