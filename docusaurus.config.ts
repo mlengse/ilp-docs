@@ -4,6 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 import remarkHyphenopoly from './src/remark/hyphenopoly';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import 'dotenv/config'
 // import remarkHypher from 'remark-hypher'
 // import pattern from './hyphenation'
 
@@ -53,6 +54,7 @@ const config: Config = {
       'classic',
       {
         docs: {
+          showLastUpdateTime: true,
           routeBasePath: '/',
           path: 'docs',
           sidebarPath: './sidebars.ts',
@@ -79,29 +81,62 @@ const config: Config = {
           // 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
-        theme: {
-          customCss: './src/css/custom.css',
-        },
+        blog: false
+      //   blog: {
+      //     showReadingTime: true,
+      //     feedOptions: {
+      //       type: ['rss', 'atom'],
+      //       xslt: true,
+      //     },
+      //     // Please change this to your repo.
+      //     // Remove this to remove the "edit this page" links.
+      //     editUrl:
+      //       'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+      //     // Useful options to enforce blogging best practices
+      //     onInlineTags: 'warn',
+      //     onInlineAuthors: 'warn',
+      //     onUntruncatedBlogPosts: 'warn',
+      //   },
+      //   theme: {
+      //     customCss: './src/css/custom.css',
+      //   },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
+    algolia: {
+      // The application ID provided by Algolia
+      appId: process.env.ALGOLIA_APP_ID,
+
+      // Public API key: it is safe to commit it
+      apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+
+      indexName: process.env.ALGOLIA_INDEX_NAME,
+
+      // Optional: see doc section below
+      contextualSearch: true,
+
+      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+      externalUrlRegex: 'external\\.com|domain\\.com',
+
+      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+      replaceSearchResultPathname: {
+        from: '/docs/', // or as RegExp: /\/docs\//
+        to: '/',
+      },
+
+      // Optional: Algolia search parameters
+      searchParameters: {},
+
+      // Optional: path for search page that enabled by default (`false` to disable it)
+      searchPagePath: 'search',
+
+      // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
+      insights: false,
+
+      //... other Algolia params
+    },
     // Replace with your project's social card
     image: 'img/download.png',
     navbar: {
