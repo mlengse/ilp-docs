@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "dev": "docusaurus start",
+    "dev": "docusaurus start --no-open",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@docusaurus/core": "^3.7.0",
+    "@docusaurus/faster": "^3.7.0",
     "@docusaurus/plugin-debug": "^3.7.0",
     "@docusaurus/preset-classic": "^3.7.0",
     "@docusaurus/theme-mermaid": "^3.7.0",
@@ -23,7 +24,6 @@
     "clsx": "^2.0.0",
     "dotenv": "^16.4.7",
     "hyphenopoly": "^6.0.0",
-    "lunr-languages": "mlengse/lunr-languages",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -53,6 +53,7 @@
     "node": ">=18.0"
   },
   "trustedDependencies": [
+    "@swc/core",
     "core-js",
     "core-js-pure"
   ]
