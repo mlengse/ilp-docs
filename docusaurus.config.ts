@@ -4,6 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 import remarkHyphenopoly from './src/remark/hyphenopoly';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import rehypeInferDescription from 'rehype-infer-description-meta'
 import 'dotenv/config'
 
 const config: Config = {
@@ -48,6 +49,9 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           rehypePlugins: [
             rehypeKatex,
+            [rehypeInferDescription, {
+              selector: '.theme-doc-markdown.markdown'
+            }]
           ],
           remarkPlugins: [
             remarkMath,
