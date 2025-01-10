@@ -79,6 +79,22 @@ const config: Config = {
         property: 'og:type',
         content: 'website'
       },
+      {
+        content: 'ILP Puskesmas',
+        itemprop: 'name'
+      },
+      {
+        content: '900',
+        property: 'og:image:width'
+      },
+      {
+        content: '900',
+        property: 'og:image:height'
+      },
+      {
+        content: 'ILP Puskesmas',
+        property: 'og:site_name'
+      }
     ],
     
     algolia: process.env.ALGOLIA_APP_ID ? {
