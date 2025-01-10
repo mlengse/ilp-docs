@@ -84,12 +84,16 @@ const config: Config = {
         itemprop: 'name'
       },
       {
-        content: '900',
+        content: '300',
         property: 'og:image:width'
       },
       {
-        content: '900',
-        property: 'og:image:height'
+        content: '300',
+        property: 'og:image:width'
+      },
+      {
+        content: 'image/png',
+        property: 'og:image:type'
       },
       {
         content: 'ILP Puskesmas',
