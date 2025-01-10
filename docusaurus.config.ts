@@ -74,6 +74,12 @@ const config: Config = {
   ],
 
   themeConfig: {
+    metadata: [
+      {
+        property: 'og:type',
+        value: 'website'
+      },
+    ],
     
     algolia: process.env.ALGOLIA_APP_ID ? {
       // The application ID provided by Algolia
