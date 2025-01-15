@@ -43,7 +43,7 @@ const config: Config = {
       'classic',
       {
         docs: {
-          exclude:['**.json'],
+          exclude:['**.json', '**/_*.{js,jsx,ts,tsx,md,mdx}', '_**/*.{js,jsx,ts,tsx,md,mdx}'],
           showLastUpdateTime: true,
           routeBasePath: '/',
           path: 'docs',
