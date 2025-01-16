@@ -1,0 +1,194 @@
+---
+slug: /9/1/form
+title: Form TB
+authors: 
+tags: []
+---
+
+import { Formku } from './form';
+import { BoundData } from '@site/src/components/BoundData';
+import schema from './schema.json';
+import uischema from './uischema.json';
+import Button from '@mui/material/Button';
+
+# FORMULIR SKRINING GEJALA TBC DAN PENYAKIT PERNAPASAN LAINNYA 
+
+WAJIB DIISI OLEH PETUGAS
+
+:::caution info
+Kami tidak menyimpan data isian Anda. Silahkan download _file_ `.pdf` yang di-_generate_ di bawah jika diperlukan.
+:::
+
+<Formku schema={ schema } uischema={ uischema } >
+  <BoundData judul={'Skrining TB'}/>
+</Formku>
+  
+<table style={{width:'100%'}}>
+    {/* <tr>
+        <td colSpan={6}>**IDENTITAS DIRI PESERTA**</td>
+    </tr>
+    
+    <tr>
+        <td >**Nama**</td>
+        
+        <td colSpan={5}>:</td>
+    </tr>
+    
+    <tr>
+        <td>**Alamat KTP**</td>
+        
+        <td colSpan={5}>:</td>
+    </tr>
+    
+    <tr>
+        <td>**Alamat Domisili**</td>
+        
+        <td colSpan={5}>:</td>
+    </tr>
+    
+    <tr>
+        <td>**NIK**</td>
+        
+        <td colSpan={5}>:</td>
+    </tr>
+    
+    <tr>
+        <td>**Pekerjaan**</td>
+        
+        <td colSpan={5}>:</td>
+    </tr>
+    
+    <tr>
+        <td>**Tanggal Lahir**</td>
+        
+        <td colSpan={2}>: ...../...../.....</td>
+        <td>Usia: </td>
+        <td colSpan={2} style={{textAlign:'end'}}>tahun</td>
+    </tr>   
+    <tr>
+        <td>**Jenis Kelamin**</td>
+        
+        <td colSpan={2}>Laki-laki</td> 
+        <td colSpan={3}>Perempuan</td>
+        
+    </tr>
+    <tr>
+        <td>**No. HP/email**</td>
+        
+        <td colSpan={5}>:</td>
+    </tr> */}
+    
+    <tr>
+        <td colSpan={6}>**PEMERIKSAAN BERAT BADAN DAN TINGGI BADAN**</td>
+    </tr>
+    
+    <tr><td>Berat badan</td><td> . Kg</td><td>Tinggi Badan</td><td> . cm</td><td>IMT</td><td> Kg/m2</td></tr>
+    
+    <td colSpan={3}>
+      Untuk Perempuan:
+      - Kurus: \< 17 Kg/m2
+      - Normal: 17 - 23 Kg/m2
+      - Kegemukan: 23 - 27 Kg/m2
+      - Obesitas: > 27 Kg/m2
+    </td>
+    
+    <td colSpan={3}>
+      Untuk Laki-laki:
+      - Kurus: \< 18 Kg/m2
+      - Normal: 18 - 25 Kg/m2
+      - Kegemukan: 25 - 27 Kg/m2
+      - Obesitas: > 27 Kg/m2
+    </td>
+    
+    <tr>
+      <td colSpan={6}>**PEMERIKSAAN RIWAYAT KONTAK TBC**</td>
+    </tr>
+    
+    <tr>
+      <td colSpan={6}>
+        - Ya, sebutkan jenis kontak TBC (TBC paru bakteriologis/ klinis/ekstraparu)\*lingkari yang dipilih
+        - Tidak
+      </td>
+    </tr>
+    
+    <tr>
+      <td colSpan={6}>**FAKTOR RISIKO**</td>
+    </tr>
+    
+    <tr><td colSpan={4}>Pernah terdiagnosa/ berobat TBC</td> <td>Ya, kapan? .</td> <td>Tidak</td></tr>
+    
+    <tr><td colSpan={4}>Pernah berobat TBC tapi pernah tidak tuntas</td> <td>Ya</td> <td>Tidak</td></tr>
+    
+    <tr><td colSpan={4}>Malnutrisi</td> <td>Ya</td> <td>Tidak</td></tr>
+    
+    <tr><td colSpan={4}>Merokok /Perokok Pasif</td> <td>Ya</td> <td>Tidak</td></tr>
+    
+    <tr><td colSpan={4}>Riwayat DM/Kencing Manis</td> <td>Ya</td> <td>Tidak</td></tr>
+    
+    <tr><td colSpan={4}>ODHIV</td> <td>Ya</td> <td>Tidak</td></tr>
+    
+    <tr><td colSpan={4}>Lansia > 65 tahun</td> <td>Ya</td> <td>Tidak</td></tr>
+    
+    <tr><td colSpan={4}>Ibu Hamil (Tidak direkomendasikan untuk pemeriksaan Skrining X-Ray)</td> <td>Ya</td> <td>Tidak</td></tr>
+    
+    <tr><td colSpan={4}>Warga Binaan Pemasyarakatan (WBP)</td> <td>Ya</td> <td>Tidak</td></tr>
+    
+    <tr><td colSpan={4}>Tinggal diwilayah padat kumuh miskin</td> <td>Ya</td> <td>Tidak</td></tr>
+    
+    <tr><td colSpan={6}>**PEMERIKSAAN FOTO TORAKS**</td></tr>
+    
+    <tr>
+      <td colSpan={6}>
+        - Abnormalitas TBC
+      
+        - Abnormalitas BukanTBC
+      
+        - Normal
+      
+      </td>
+    </tr>
+    <tr>
+      <td colSpan={6}>**SKRINING GEJALA**</td>
+    </tr>
+    
+    <tr>
+      <td colSpan={4}>**Gejala TBC**</td>
+      
+      <td>**Ya**</td>
+      
+      <td>**Tidak**</td>
+    </tr>
+    
+    <tr><td colSpan={4}>Batuk (semua bentuk batuk tanpa melihat durasi)</td><td></td><td></td></tr>
+    
+    <tr><td colSpan={4}>BB turun tanpa penyebab jelas/BB tidak naik/nafsu makan turun</td><td></td><td></td></tr>
+    
+    <tr><td colSpan={4}>Demam yang tidak diketahui penyebabnya</td><td></td><td></td></tr>
+    
+    <tr><td colSpan={4}>Berkeringat malam hari tanpa kegiatan</td><td></td><td></td></tr>
+    
+    <tr>
+      <td colSpan={6}>**Gejala Penyakit Pernapasan Lainnya, sebutkan (seperti pilek/flu, sakit tenggorokan dll) ..**</td>
+    </tr>
+    
+    <tr>
+      <td colSpan={6}>**HASIL SKRINING GEJALA TBC DAN PENYAKIT PERNAPASAN LAINNYA**</td>
+    </tr>
+    
+    <tr>
+      <td colSpan={2}>Tidak Ada gejala</td>
+      
+      <td colSpan={2} style={{width:`${100/3}%`}}>Ada gejala TBC</td>
+      
+      <td colSpan={2}>Ada Gejala Penyakit Pernapasan Lainnya</td>
+    </tr>
+    
+    <tr>
+      <td colSpan={6}>**Tanggal Skrining: ...**</td>
+    </tr>
+    
+    <tr><td colSpan={3}>**Pemeriksa,**</td> <td colSpan={3}>**Peserta,**</td></tr>
+    
+    <tr style={{height:'100px'}}><td style={{width:'50%'}} colSpan={3}></td> <td colSpan={3}></td></tr>
+    
+</table>

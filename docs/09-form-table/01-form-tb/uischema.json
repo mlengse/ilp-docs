@@ -1,0 +1,62 @@
+{
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "Label",
+      "text": "Identitas"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/nama"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/alamat_KTP"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/alamat_domisili"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/NIK"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/pekerjaan"
+    },
+    {
+      "type": "HorizontalLayout",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/tanggal_lahir",
+          "options": {
+            "format": "date",
+            "dateFormat": "DD-MM-YYYY",
+            "views": ["year", "month", "day"],
+            "dateSaveFormat": "DD-MM-YYYY"
+          }
+
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/usia"
+        }
+
+      ]
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/jenis_kelamin",
+      "options": {
+        "format": "radio"
+      }
+    },
+
+    {
+      "type": "Control",
+      "scope": "#/properties/no_hp_email"
+    }
+  ]
+}

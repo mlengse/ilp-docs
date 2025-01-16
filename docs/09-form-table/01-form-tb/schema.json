@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "properties": {
+    "nama": {
+      "type": "string",
+      "minLength": 1
+    },
+    "alamat_KTP": {
+      "type": "string",
+      "minLength": 1
+    },
+    "alamat_domisili": {
+      "type": "string",
+      "minLength": 1
+    },
+    "NIK":{
+      "type": "string",
+      "minLength": 16,
+      "pattern": "^(1[1-9]|21|[37][1-6]|5[1-3]|6[1-5]|[89][12])\\d{2}\\d{2}([04][1-9]|[1256][0-9]|[37][01])(0[1-9]|1[0-2])\\d{2}\\d{4}$"
+    },
+    "pekerjaan": {
+      "type": "string"
+    },
+    "tanggal_lahir":{
+      "type": "string"
+
+    },
+    "usia": {
+      "type": "string",
+      "minLength": 1,
+      "readOnly": true
+    },
+    "jenis_kelamin":{
+      "type": "string",
+      "enum": ["Laki-laki", "Perempuan"]
+    },
+    "no_hp_email": {
+      "label": "No Hp/Email",
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required":[
+    "jenis_kelamin", "tanggal_lahir"
+  ]
+}
