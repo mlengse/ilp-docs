@@ -12,12 +12,6 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 <BrowserOnly>
   {function() {
     return <iframe title="PDF" src={`https://mozilla.github.io/pdf.js/web/viewer.html?file=https%3A%2F%2Filp.jyg.my.id%2Fref%2FKMK-HK.01.07-MENKES-2015-2023-Juknis-ILP-signed.pdf`} width={"100%"} height={window.innerHeight}></iframe>
-    const url = window.location.hostname
-    console.log(url)
-    return <div>
-      <span>{url}</span>
-      <iframe title="PDF" src={`https://mozilla.github.io/pdf.js/web/viewer.html?file=${url}/ref/KMK-HK.01.07-MENKES-2015-2023-Juknis-ILP-signed.pdf`} width={"100%"} height={window.innerHeight}></iframe>
-    </div>
   }}
 </BrowserOnly>
 
