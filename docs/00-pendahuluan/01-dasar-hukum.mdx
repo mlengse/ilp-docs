@@ -3,17 +3,20 @@ title: Dasar Hukum
 
 ---
 
-import BrowserOnly from '@docusaurus/BrowserOnly';
+{/* // import BrowserOnly from '@docusaurus/BrowserOnly'; */}
+import {PDFViewer} from '@site/src/components/PdfViewer'
 
 # Dasar Hukum
 
 [KMK No. HK.01.07-MENKES-2015-2023 Tentang Juknis ILP](/ref/KMK-HK.01.07-MENKES-2015-2023-Juknis-ILP-signed.pdf)
 
-<BrowserOnly>
+{/* <BrowserOnly>
   {function() {
     return <iframe title="PDF" src={`https://mozilla.github.io/pdf.js/web/viewer.html?file=https%3A%2F%2Filp.jyg.my.id%2Fref%2FKMK-HK.01.07-MENKES-2015-2023-Juknis-ILP-signed.pdf`} width={"100%"} height={window.innerHeight}></iframe>
   }}
-</BrowserOnly>
+</BrowserOnly> */}
+
+<PDFViewer fileUrl={'/ref/KMK-HK.01.07-MENKES-2015-2023-Juknis-ILP-signed.pdf'} />
 
 {/* <iframe style={{width:'100%', height:'150vw'}} src={'https://docs.google.com/gview?embedded=true&url=https%3A%2F%2Filp.jyg.my.id%2Fref%2FKMK-HK.01.07-MENKES-2015-2023-Juknis-ILP-signed.pdf'}></iframe> */}
 

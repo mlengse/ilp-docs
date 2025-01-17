@@ -1,7 +1,8 @@
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet, PDFViewer, BlobProvider } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet/**, PDFViewer */, BlobProvider } from '@react-pdf/renderer';
 import Typography from '@mui/material/Typography';
-import BrowserOnly from '@docusaurus/BrowserOnly';
+// import BrowserOnly from '@docusaurus/BrowserOnly';
+import {PDFViewer} from '@site/src/components/PdfViewer'
 
 // Create styles
 const styles = StyleSheet.create({
@@ -66,8 +67,10 @@ export const BoundData = ({ judul, stringifiedData }) => {
               // var blobObj = new Blob([atob(blob.toString())], { type: "application/pdf" });
               // return <BrowserOnly>
                 // {function() {
+              return <PDFViewer fileUrl={url} />
+
                   // return <span>{URL.createObjectURL(url)}</span>
-                  return <iframe title="PDF" src={`https://mozilla.github.io/pdf.js/web/viewer.html?file=${url}`} width={"100%"} height={window.innerHeight}></iframe>
+                  // return <iframe title="PDF" src={`https://mozilla.github.io/pdf.js/web/viewer.html?file=${url}`} width={"100%"} height={window.innerHeight}></iframe>
                   // return <iframe title="PDF" src={`https://mozilla.github.io/pdf.js/web/viewer.html?file=${URL.createObjectURL(blob)}`} width={"100%"} height={window.innerHeight}></iframe>
                   // return <iframe title="PDF" src={`https://mozilla.github.io/pdf.js/web/viewer.html?file=https%3A%2F%2Filp.jyg.my.id%2Fref%2FKMK-HK.01.07-MENKES-2015-2023-Juknis-ILP-signed.pdf`} width={"100%"} height={window.innerHeight}></iframe>
                 // }}
@@ -81,9 +84,9 @@ export const BoundData = ({ judul, stringifiedData }) => {
         </BlobProvider>
 
 
-        <PDFViewer  style={{ width: '100%', height: '100vw' }} showToolbar={true}>
+        {/* <PDFViewer  style={{ width: '100%', height: '100vw' }} showToolbar={true}>
           {Doc}
-        </PDFViewer>
+        </PDFViewer> */}
   
   
       </div>
