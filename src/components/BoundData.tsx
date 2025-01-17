@@ -2,7 +2,7 @@ import React from 'react';
 import { Page, Text, View, Document, StyleSheet/**, PDFViewer */, BlobProvider } from '@react-pdf/renderer';
 import Typography from '@mui/material/Typography';
 // import BrowserOnly from '@docusaurus/BrowserOnly';
-import {PDFViewer} from '@site/src/components/PdfViewer'
+import {PDFViewer} from '@site/src/components/PDFViewer'
 
 // Create styles
 const styles = StyleSheet.create({
