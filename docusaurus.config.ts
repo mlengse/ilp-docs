@@ -35,6 +35,7 @@ const config: Config = {
     '@docusaurus/theme-mermaid',
   ],
   plugins: [
+    'pdf-loaders',
     // './metaku',
     process.env.NODE_ENV === 'production' && '@docusaurus/plugin-debug',
   ].filter(Boolean),

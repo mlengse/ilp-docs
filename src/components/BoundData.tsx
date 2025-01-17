@@ -59,14 +59,13 @@ export const BoundData = ({ judul, stringifiedData }) => {
       <div>
         <Typography variant={'h4'}>Print Out</Typography>
 
-
-
         <BlobProvider document={Doc}>
           {({ blob, url, loading, error }) => {
             if(!loading && !error && blob){
               // var blobObj = new Blob([atob(blob.toString())], { type: "application/pdf" });
               // return <BrowserOnly>
                 // {function() {
+              // return null
               return <PDFViewer fileUrl={url} />
 
                   // return <span>{URL.createObjectURL(url)}</span>

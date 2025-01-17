@@ -1,4 +1,5 @@
 import React from 'react'
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 
@@ -14,10 +15,16 @@ export const PDFViewer = ({ fileUrl }) => {
   );
 
   return (
-    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
-      <div style={{height:window.innerHeight*3/4}}>
-        <Viewer fileUrl={ fileUrl } plugins={[defaultLayoutPluginInstance]} />
-      </div>    
-    </Worker>
+    <BrowserOnly>
+      {function() {
+        return <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+          <div style={{height:window.innerHeight*3/4}}>
+            <Viewer fileUrl={ fileUrl } plugins={[defaultLayoutPluginInstance]} />
+          </div>    
+        </Worker>
+  
+      }}
+    </BrowserOnly>
+
   ) 
 };
