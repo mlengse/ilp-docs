@@ -36,7 +36,6 @@ const config: Config = {
   ],
   plugins: [
     'pdf-loaders',
-    // './metaku',
     process.env.NODE_ENV === 'production' && '@docusaurus/plugin-debug',
   ].filter(Boolean),
   presets: [
@@ -58,7 +57,6 @@ const config: Config = {
           remarkPlugins: [
             remarkMath,
             [remarkHyphenopoly, {
-            //   // file: './patterns/id.wasm',
               lang: 'id',
               minWordLength: 5
             }]
@@ -117,9 +115,7 @@ const config: Config = {
 
       insights: false,
 
-      //... other Algolia params
     } : null ,
-    // Replace with your project's social card
     image: 'img/download.png',
     navbar: {
       title: 'Referensi',

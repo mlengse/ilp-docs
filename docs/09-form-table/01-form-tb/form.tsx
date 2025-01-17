@@ -1,36 +1,17 @@
-import { useMemo, useState, cloneElement, useCallback } from 'react';
-import { JsonForms } from '@jsonforms/react';
-import { INIT, UPDATE_CORE, UPDATE_DATA } from  '@jsonforms/core'
-import Button from '@mui/material/Button';
-// import Typography from '@mui/material/Typography';
-import {
-  materialCells,
-  materialRenderers,
-} from '@jsonforms/material-renderers';
+import { useCallback } from 'react';
+import { FormSkrining } from '@site/src/components/FormSkrining';
+import { INIT, UPDATE_CORE, UPDATE_DATA } from  '@jsonforms/core';
+import schema from './schema.json';
+import uischema from './uischema.json';
+
 import {
 	differenceInDays,
-	// differenceInHours,
-	// differenceInMinutes,
 	differenceInMonths,
-	// differenceInSeconds,
 	differenceInWeeks,
 	differenceInYears
-}
-	from "date-fns";
+} from "date-fns";
 
-// const initialData = {
-//   name: 'Send email to Adrian',
-//   description: 'Confirm if you have passed the subject\nHereby ...',
-//   done: true,
-//   recurrence: 'Daily',
-//   rating: 3,
-// };
-
-const renderers = [
-  ...materialRenderers,
-];
-
-export const Formku = ({ schema, uischema, children }) => {
+export const FormTB = () => {
   const middleware = useCallback((state, action, defaultReducer) => {
     const newState = defaultReducer(state, action);
     function calculateAge (date) {
@@ -40,21 +21,17 @@ export const Formku = ({ schema, uischema, children }) => {
       const ageMonths = differenceInMonths(today, dateObject);
       const ageDays = differenceInDays(today, dateObject);
       const ageWeeks = differenceInWeeks(today, dateObject);
-      // const ageHours = differenceInHours(today, dateObject);
-      // const ageMinutes = differenceInMinutes(today, dateObject);
-      // const ageSeconds = differenceInSeconds(today, dateObject);
-      // console.log(ageYears, ageMonths, ageWeeks, ageDays)
       if(ageYears){
         return `${ageYears} tahun`
       }
       if(ageMonths > 0){
         return `${ageMonths} bulan`
       }
-      if(ageDays > 0){
-        return `${ageDays} hari`
-      }
       if(ageWeeks > 0){
         return `${ageWeeks} minggu`
+      }
+      if(ageDays > 0){
+        return `${ageDays} hari`
       }
     };
     switch (action.type) {
@@ -71,36 +48,11 @@ export const Formku = ({ schema, uischema, children }) => {
     }
   }, []);
 
-  const [data, setData] = useState<object>({});
-  const stringifiedData = useMemo(() => JSON.stringify(data, null, 2), [data]);
+  return <FormSkrining
+    judul={'Skrining TB'}
+    schema={schema}
+    uischema={uischema}
+    middleware={ middleware}
+  />
 
-  const clearData = () => {
-    setData({});
-  };
-  return (
-    <div>
-      {/* <Typography variant={'h4'}>Rendered form</Typography> */}
-      <Button
-        style={{marginBottom: 20}}
-        onClick={clearData}
-        color="primary"
-        variant="contained"
-        data-testid="clear-data">
-        Clear data
-      </Button>
-
-      <JsonForms
-        schema={schema}
-        uischema={uischema}
-        data={data}
-        renderers={renderers}
-        middleware={ middleware}
-        cells={materialCells}
-        onChange={({ data }) => setData(data)}
-      />
-
-      { cloneElement( children, { stringifiedData }) }
-
-    </div>
-  );
 };

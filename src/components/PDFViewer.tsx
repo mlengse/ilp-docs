@@ -1,4 +1,3 @@
-import React from 'react'
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';

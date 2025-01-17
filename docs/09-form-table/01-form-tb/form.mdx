@@ -5,11 +5,7 @@ authors:
 tags: []
 ---
 
-import { Formku } from './form';
-import { BoundData } from '@site/src/components/BoundData';
-import schema from './schema.json';
-import uischema from './uischema.json';
-import Button from '@mui/material/Button';
+import { FormTB } from './form';
 
 # FORMULIR SKRINING GEJALA TBC DAN PENYAKIT PERNAPASAN LAINNYA 
 
@@ -19,9 +15,7 @@ WAJIB DIISI OLEH PETUGAS
 Kami tidak menyimpan data isian Anda. Silahkan download _file_ `.pdf` yang di-_generate_ di bawah jika diperlukan.
 :::
 
-<Formku schema={ schema } uischema={ uischema } >
-  <BoundData judul={'Skrining TB'}/>
-</Formku>
+<FormTB />
   
 <table style={{width:'100%'}}>
     {/* <tr>
