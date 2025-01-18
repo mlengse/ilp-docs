@@ -118,7 +118,7 @@ const config: Config = {
     } : null ,
     image: 'img/download.png',
     navbar: {
-      title: 'Referensi',
+      // title: 'Referensi',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -126,10 +126,16 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'ILP',
           position: 'left',
           label: 'ILP',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'PPK',
+          position: 'left',
+          label: 'PPK',
+        }
       ],
     },
     footer: {

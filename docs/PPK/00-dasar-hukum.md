@@ -1,0 +1,107 @@
+# Dasar Hukum
+
+<!-- ![](/1186/image002.jpg) -->
+
+
+KEPUTUSAN MENTERI KESEHATAN REPUBLIK INDONESIA 
+
+NOMOR HK.01.07/MENKES/1186/2022 
+
+TENTANG 
+
+PANDUAN PRAKTIK KLINIS BAGI DOKTER DI FASILITAS PELAYANAN KESEHATAN TINGKAT PERTAMA
+
+DENGAN RAHMAT TUHAN YANG MAHA ESA MENTERI KESEHATAN REPUBLIK INDONESIA,
+
+Menimbang : 
+1. bahwa dokter di fasilitas pelayanan kesehatan tingkat pertama memiliki peranan penting dalam melakukan penapisan rujukan pelayanan kesehatan sesuai dengan standar pelayanan dan standar prosedur operasional;
+
+2. bahwa untuk memberikan acuan bagi fasilitas pelayanan kesehatan tingkat pertama dalam menyusun standar prosedur operasional perlu mengesahkan panduan praktik klinis yang disusun oleh organisasi profesi;
+
+3. bahwa Keputusan Menteri Kesehatan Nomor HK.02.02/MENKES/514/2015 tentang Panduan Praktik Klinis Bagi Dokter di Fasilitas Pelayanan Kesehatan Tingkat Pertama sudah tidak sesuai dengan perkembangan dan kebutuhan hukum serta pelayanan kesehatan, sehingga perlu diganti;
+
+4. bahwa berdasarkan pertimbangan sebagaimana dimaksud dalam huruf a, huruf b, dan huruf c, perlu menetapkan Keputusan Menteri Kesehatan tentang Panduan Praktik Klinis Bagi Dokter di Fasilitas Pelayanan Kesehatan Tingkat Pertama;
+
+Mengingat : 
+1. Undang-Undang Nomor 29 Tahun 2004 tentang Praktik Kedokteran (Lembaran Negara Republik Indonesia Tahun 2004 Nomor 116, Tambahan Lembaran Negara Republik Indonesia Nomor 4431);
+
+2. Undang-Undang Nomor 36 Tahun 2009 tentang Kesehatan (Lembaran Negara Republik Indonesia Tahun 2009 Nomor 144, Tambahan Lembaran Negara Republik Indonesia Nomor 5063);
+
+3. Undang-Undang Nomor 23 Tahun 2014 tentang Pemerintahan Daerah (Lembaran Negara Republik Indonesia Tahun 2014 Nomor 244, Tambahan Lembaran Negara Republik Indonesia Nomor 5587) sebagaimana telah beberapa kali diubah terakhir dengan Undang- Undang Nomor 9 Tahun 2015 tentang Perubahan Kedua atas Undang-Undang Nomor 23 Tahun 2014 tentang Pemerintahan Daerah (Lembaran Negara Republik Indonesia Tahun 2015 Nomor 58, Tambahan Lembaran Negara Republik Indonesia Nomor 5679);
+
+4. Undang-Undang Nomor 36 Tahun 2014 tentang Tenaga Kesehatan (Lembaran Negara Republik Indonesia Tahun 2014 Nomor 298, Tambahan Lembaran Negara Republik Indonesia Nomor 5607);
+
+5. Peraturan Presiden Nomor 18 Tahun 2021 tentang Kementerian Kesehatan (Lembaran Negara Republik Indonesia Tahun 2021 Nomor 83);
+
+6. Peraturan Menteri Kesehatan Nomor 269/Menkes/Per/III/2008 tentang Rekam Medik;
+
+7. Peraturan Menteri Kesehatan Nomor 1438/Menkes/Per/2010 tentang Standar Pelayanan Kedokteran (Berita Negara Republik Indonesia Tahun 2010 Nomor 464);
+
+8. Peraturan Menteri Kesehatan Nomor 2052/Menkes/Per/X/2011 tentang Izin Praktik dan Pelaksanan Praktik Kedokteran (Berita Negara Republik Indonesia Tahun 2011 Nomor 671);
+
+9. Peraturan Menteri Kesehatan Nomor 001 Tahun 2012 tentang Sistem Rujukan Pelayanan Kesehatan Perorangan (Berita Negara Republik Indonesia Tahun 2012 Nomor 122);
+
+10. Peraturan Menteri Kesehatan Nomor 5 Tahun 2022 tentang Organisasi dan Tata Kerja Kementerian Kesehatan (Berita Negara Republik Indonesia Tahun 2022 Nomor 156);
+
+11. Peraturan Konsil Kedokteran Indonesia Nomor 11 Tahun 2012 tentang Standar Kompetensi Dokter Indonesia (Berita Negara Republik Indonesia Tahun 2012 Nomor 342);
+
+MEMUTUSKAN:
+
+Menetapkan : 
+
+KEPUTUSAN MENTERI KESEHATAN TENTANG PANDUAN PRAKTIK KLINIS BAGI DOKTER DI FASILITAS PELAYANAN KESEHATAN TINGKAT PERTAMA.
+
+KESATU : 
+
+Menetapkan Panduan Praktik Klinis Bagi Dokter di Fasilitas Pelayanan Kesehatan Tingkat Pertama yang selanjutnya disebut PPK Dokter sebagaimana tercantum dalam Lampiran I yang merupakan bagian tidak terpisahkan dari Keputusan Menteri ini.
+
+KEDUA : 
+
+PPK Dokter sebagaimana dimaksud dalam Diktum KESATU merupakan pedoman bagi dokter dalam melaksanakan praktik kedokteran di fasilitas pelayanan kesehatan tingkat pertama baik milik Pemerintah maupun masyarakat yang berorientasi kepada kendali mutu dan kendali biaya dalam rangka meningkatkan mutu pelayanan kesehatan sekaligus menurunkan angka rujukan.
+
+KETIGA : 
+
+Dalam melaksanakan praktik kedokteran sesuai dengan PPK Dokter sebagaimana dimaksud dalam Diktum KEDUA, diperlukan keterampilan klinis sesuai dengan Panduan Keterampilan Klinis bagi dokter sebagaimana tercantum dalam Lampiran II yang merupakan bagian tidak terpisahkan dari Keputusan Menteri ini.
+
+KEEMPAT  : 
+
+PPK Dokter sebagaimana dimaksud dalam Diktum KESATU dan Panduan Keterampilan Klinis sebagaimana dimaksud dalam  Diktum  KETIGA  harus  dijadikan  acuan  dalam penyusunan standar prosedur operasional di setiap fasilitas pelayanan kesehatan tingkat pertama.
+
+KELIMA : 
+
+Kepatuhan terhadap PPK Dokter sebagaimana dimaksud dalam Diktum KESATU dan Panduan Keterampilan Klinis sebagaimana dimaksud dalam Diktum KETIGA dapat menjamin pemberian pelayanan kesehatan dengan upaya terbaik.
+
+KEENAM : 
+
+Modifikasi terhadap pelaksanaan PPK Dokter dapat dilakukan oleh dokter di fasilitas pelayanan kesehatan tingkat pertama hanya berdasarkan keadaan tertentu untuk kepentingan pasien dan harus tercantum dalam rekam medis.
+
+KETUJUH  : 
+
+Keadaan tertentu sebagaimana dimaksud dalam Diktum KEENAM meliputi keadaan khusus pasien, kedaruratan, keterbatasan sumber daya, dan perkembangan ilmu kedokteran dan teknologi berbasis bukti (_evidance based_).
+
+KEDELAPAN : 
+
+Penatalaksanaan pasien peserta Jaminan Kesehatan Nasional (JKN) harus menggunakan obat yang tercantum dalam Formularium Nasional.
+
+KESEMBILAN : 
+
+Pemerintah pusat, pemerintah daerah provinsi, dan pemerintah daerah kabupaten/kota melakukan pembinaan dan pengawasan terhadap pelaksanaan PPK Dokter berdasarkan kewenangan masing-masing dan dapat melibatkan organisasi profesi sesuai dengan ketentuan peraturan perundang-undangan.
+
+KESEPULUH : 
+
+Pada saat Keputusan Menteri ini mulai berlaku, Keputusan Menteri Kesehatan Nomor HK.02.02/MENKES/514/2015 tentang Panduan Praktik Klinis Bagi Dokter di Fasilitas Pelayanan Kesehatan Tingkat Pertama dicabut dan dinyatakan tidak berlaku.
+
+KESEBELAS : 
+
+Keputusan Menteri ini mulai berlaku pada tanggal ditetapkan.
+
+Ditetapkan di Jakarta pada tanggal 31 Mei 2022
+
+MENTERI KESEHATAN REPUBLIK INDONESIA,
+
+ttd.
+
+BUDI G. SADIKIN
+
+<!-- ![](/1186/image004.jpg) -->
+
