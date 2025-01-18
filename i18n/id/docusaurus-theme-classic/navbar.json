@@ -1,0 +1,14 @@
+{
+  "logo.alt": {
+    "message": "My Site Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.ILP": {
+    "message": "ILP",
+    "description": "Navbar item with label ILP"
+  },
+  "item.label.PPK": {
+    "message": "PPK",
+    "description": "Navbar item with label PPK"
+  }
+}

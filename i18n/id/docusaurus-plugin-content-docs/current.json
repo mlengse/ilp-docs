@@ -1,0 +1,130 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.ILP.category.Pendahuluan": {
+    "message": "Pendahuluan",
+    "description": "The label for category Pendahuluan in sidebar ILP"
+  },
+  "sidebar.ILP.category.Klaster Manajemen": {
+    "message": "Klaster Manajemen",
+    "description": "The label for category Klaster Manajemen in sidebar ILP"
+  },
+  "sidebar.ILP.category.Klaster Ibu dan Anak": {
+    "message": "Klaster Ibu dan Anak",
+    "description": "The label for category Klaster Ibu dan Anak in sidebar ILP"
+  },
+  "sidebar.ILP.category.Pelayanan Ibu Hamil dan Nifas": {
+    "message": "Pelayanan Ibu Hamil dan Nifas",
+    "description": "The label for category Pelayanan Ibu Hamil dan Nifas in sidebar ILP"
+  },
+  "sidebar.ILP.category.Pelayanan Balita dan Anak Pra Sekolah": {
+    "message": "Pelayanan Balita dan Anak Pra Sekolah",
+    "description": "The label for category Pelayanan Balita dan Anak Pra Sekolah in sidebar ILP"
+  },
+  "sidebar.ILP.category.Pelayanan Usia Sekolah dan Remaja": {
+    "message": "Pelayanan Usia Sekolah dan Remaja",
+    "description": "The label for category Pelayanan Usia Sekolah dan Remaja in sidebar ILP"
+  },
+  "sidebar.ILP.category.PKPR dalam Gedung": {
+    "message": "PKPR dalam Gedung",
+    "description": "The label for category PKPR dalam Gedung in sidebar ILP"
+  },
+  "sidebar.ILP.category.Skrining Kesehatan dan Imunisasi": {
+    "message": "Skrining Kesehatan dan Imunisasi",
+    "description": "The label for category Skrining Kesehatan dan Imunisasi in sidebar ILP"
+  },
+  "sidebar.ILP.category.PKPR Luar Gedung": {
+    "message": "PKPR Luar Gedung",
+    "description": "The label for category PKPR Luar Gedung in sidebar ILP"
+  },
+  "sidebar.ILP.category.Pelayananan Kesehatan Sekolah/Madrasah": {
+    "message": "Pelayananan Kesehatan Sekolah/Madrasah",
+    "description": "The label for category Pelayananan Kesehatan Sekolah/Madrasah in sidebar ILP"
+  },
+  "sidebar.ILP.category.Penjaringan Kesehatan dan Pemeriksaan Berkala": {
+    "message": "Penjaringan Kesehatan dan Pemeriksaan Berkala",
+    "description": "The label for category Penjaringan Kesehatan dan Pemeriksaan Berkala in sidebar ILP"
+  },
+  "sidebar.ILP.category.Pelayanan KIA": {
+    "message": "Pelayanan KIA",
+    "description": "The label for category Pelayanan KIA in sidebar ILP"
+  },
+  "sidebar.ILP.category.Klaster Dewasa dan Lansia": {
+    "message": "Klaster Dewasa dan Lansia",
+    "description": "The label for category Klaster Dewasa dan Lansia in sidebar ILP"
+  },
+  "sidebar.ILP.category.Pelayanan Seluruh Sasaran": {
+    "message": "Pelayanan Seluruh Sasaran",
+    "description": "The label for category Pelayanan Seluruh Sasaran in sidebar ILP"
+  },
+  "sidebar.ILP.category.Skrining Penyakit": {
+    "message": "Skrining Penyakit",
+    "description": "The label for category Skrining Penyakit in sidebar ILP"
+  },
+  "sidebar.ILP.category.Skrining Kanker": {
+    "message": "Skrining Kanker",
+    "description": "The label for category Skrining Kanker in sidebar ILP"
+  },
+  "sidebar.ILP.category.Pelayanan Kesehatan Usia Dewasa": {
+    "message": "Pelayanan Kesehatan Usia Dewasa",
+    "description": "The label for category Pelayanan Kesehatan Usia Dewasa in sidebar ILP"
+  },
+  "sidebar.ILP.category.Pelayanan Lansia": {
+    "message": "Pelayanan Lansia",
+    "description": "The label for category Pelayanan Lansia in sidebar ILP"
+  },
+  "sidebar.ILP.category.Klaster Penyakit Menular": {
+    "message": "Klaster Penyakit Menular",
+    "description": "The label for category Klaster Penyakit Menular in sidebar ILP"
+  },
+  "sidebar.ILP.category.Lintas Klaster": {
+    "message": "Lintas Klaster",
+    "description": "The label for category Lintas Klaster in sidebar ILP"
+  },
+  "sidebar.ILP.category.Pelayanan Farmasi": {
+    "message": "Pelayanan Farmasi",
+    "description": "The label for category Pelayanan Farmasi in sidebar ILP"
+  },
+  "sidebar.ILP.category.Pengelolaan Sediaan": {
+    "message": "Pengelolaan Sediaan",
+    "description": "The label for category Pengelolaan Sediaan in sidebar ILP"
+  },
+  "sidebar.ILP.category.Farmasi Klinis": {
+    "message": "Farmasi Klinis",
+    "description": "The label for category Farmasi Klinis in sidebar ILP"
+  },
+  "sidebar.ILP.category.Laboratorium": {
+    "message": "Laboratorium",
+    "description": "The label for category Laboratorium in sidebar ILP"
+  },
+  "sidebar.ILP.category.Pencatatan dan Pelaporan": {
+    "message": "Pencatatan dan Pelaporan",
+    "description": "The label for category Pencatatan dan Pelaporan in sidebar ILP"
+  },
+  "sidebar.ILP.category.Pencatatan": {
+    "message": "Pencatatan",
+    "description": "The label for category Pencatatan in sidebar ILP"
+  },
+  "sidebar.ILP.category.Formulir dan Tabel": {
+    "message": "Formulir dan Tabel",
+    "description": "The label for category Formulir dan Tabel in sidebar ILP"
+  },
+  "sidebar.ILP.category.Skrining TB": {
+    "message": "Skrining TB",
+    "description": "The label for category Skrining TB in sidebar ILP"
+  },
+  "sidebar.PPK.category.Panduan Praktik Klinis": {
+    "message": "Panduan Praktik Klinis",
+    "description": "The label for category Panduan Praktik Klinis in sidebar PPK"
+  },
+  "sidebar.PPK.category.Pendahuluan": {
+    "message": "Pendahuluan",
+    "description": "The label for category Pendahuluan in sidebar PPK"
+  },
+  "sidebar.PPK.category.Kelompok Umum": {
+    "message": "Kelompok Umum",
+    "description": "The label for category Kelompok Umum in sidebar PPK"
+  }
+}
