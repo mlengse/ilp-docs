@@ -33,6 +33,12 @@ const config: Config = {
   },
   themes: [
     '@docusaurus/theme-mermaid',
+    ['@easyops-cn/docusaurus-search-local', ({
+      indexDocs: true,
+      indexBlog: false,
+      indexPages: false,
+      hashed: true
+    })]
   ],
   plugins: [
     'pdf-loaders',
@@ -101,21 +107,21 @@ const config: Config = {
       }
     ],
     
-    algolia: process.env.ALGOLIA_APP_ID ? {
-      // The application ID provided by Algolia
-      appId: process.env.ALGOLIA_APP_ID,
+    // algolia: process.env.ALGOLIA_APP_ID ? {
+    //   // The application ID provided by Algolia
+    //   appId: process.env.ALGOLIA_APP_ID,
 
-      // Public API key: it is safe to commit it
-      apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+    //   // Public API key: it is safe to commit it
+    //   apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
 
-      indexName: process.env.ALGOLIA_INDEX_NAME,
+    //   indexName: process.env.ALGOLIA_INDEX_NAME,
 
-      // Optional: see doc section below
-      contextualSearch: true,
+    //   // Optional: see doc section below
+    //   contextualSearch: true,
 
-      insights: false,
+    //   insights: false,
 
-    } : null ,
+    // } : null ,
     image: 'img/download.png',
     navbar: {
       // title: 'Referensi',
