@@ -4,6 +4,9 @@
 # Production
 /build
 
+# Referensi
+/ref
+
 # Generated files
 .docusaurus
 .cache-loader
