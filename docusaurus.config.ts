@@ -7,6 +7,7 @@ import rehypeKatex from 'rehype-katex';
 import rehypeInferDescription from 'rehype-infer-description-meta'
 import 'dotenv/config'
 
+
 const config: Config = {
   title: 'ILP Puskesmas',
   tagline: 'Integrasi Pelayanan Kesehatan Primer',
@@ -135,7 +136,14 @@ const config: Config = {
           sidebarId: 'PPK',
           position: 'left',
           label: 'PPK',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'PKG',
+          position: 'left',
+          label: 'PKG',
         }
+
       ],
     },
     footer: {
