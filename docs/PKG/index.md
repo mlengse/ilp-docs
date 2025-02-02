@@ -1,292 +1,133 @@
-
-# PENDAHULUAN
-
-Delapan Misi Asta Cita Kepemimpinan Presiden terpilih tahun 2024- 2029, yang mencakup berbagai aspek pembangunan nasional memuat misi pembangunan Sumber Daya Manusia (SDM). Pembangunan SDM ini ditujukan untuk menciptakan masyarakat Indonesia yang sehat, produktif, dan berdaya saing di tingkat global. Kementerian Kesehatan memiliki tanggung jawab untuk melaksanakan tiga dari delapan Program Hasil Terbaik Cepat (PHTC) yaitu pembangunan rumah sakit lengkap berkualitas di seluruh kabupaten di Indonesia, penurunan kasus tuberkulosis sebanyak 50% dalam 5 tahun, dan Pemeriksaan Kesehatan Gratis (PKG) .
-
-PKG dilaksanakan melalui pendekatan siklus hidup, dimulai sejak bayi baru lahir hingga lanjut usia. Pendekatan ini difokuskan pada upaya promotif dan preventif yang bersifat holistik, terintegrasi, dan berbasis kelompok sasaran (_people-centered_). PKG ditujukan untuk mendeteksi faktor risiko kesehatan, kondisi pra-penyakit, serta penyakit dengan tujuan meningkatkan kualitas hidup dan angka harapan hidup masyarakat Indonesia. Pelayanan ini didukung oleh inovasi dan pemanfaatan teknologi digital oleh Penyelenggara Sistem Elektronik (PSE) baik sektor pemerintah maupun swasta.
-
-Hasil Survei Kesehatan Indonesia dan laporan Kementerian Kesehatan 2023 mengungkapkan berbagai tantangan kesehatan di setiap tahapan siklus hidup. Pada balita: 21,5% mengalami stunting, 8,5% mengalami _wasting_, dan 0,37% atau 31.905 balita memiliki penyakit jantung bawaan. Anak-anak usia sekolah dan remaja: menghadapi masalah perilaku kesehatan, seperti prevalensi merokok sebesar 7,4% pada anak usia 10-18 tahun,  serta  anemia  yang  dialami  oleh  15,6%  remaja  putri tingkat SLTP/MTS. Selain itu, survei _Indonesia-National Adolescent Mental Health Survey_ tahun 2022 mencatat bahwa 34,9% remaja usia 10-17 tahun memiliki masalah kesehatan mental.
-
-Pada kelompok dewasa dan lanjut usia, data menunjukkan bahwa 33,6% penduduk usia ≥20 tahun memiliki aktivitas fisik yang rendah, 30,92% merokok, 23,4% mengalami obesitas, dan 30,8% penduduk usia ≥18 tahun memiliki hipertensi. Prevalensi diabetes melitus yang didiagnosa oleh dokter pada kelompok usia 18-59 tahun mencapai 1,6%, sementara 10% memiliki kadar gula darah di atas normal. Angka ini lebih tinggi pada kelompok lansia, dengan prevalensi diabetes melitus sebesar 6,5% dan gula darah abnormal sebesar 24,3%. Untuk semua kelompok umur, prevalensi kanker yang didiagnosa oleh dokter mencapai 1,2 per 1.000 penduduk.
-
-Sebagian besar faktor risiko, kondisi pra-penyakit, dan penyakit ini dapat dicegah atau ditangani lebih dini melalui pemeriksaan kesehatan rutin. Namun, cakupan pemeriksaan kesehatan di Indonesia masih rendah. Data Kementerian Kesehatan tahun 2023 menunjukkan bahwa hanya 39,87% penduduk telah melakukan skrining penyakit tidak menular. Selain itu, sebanyak 32,6% penduduk usia >20 tahun tidak pernah memeriksa tekanan darah, 80,82% tidak pernah mengukur lingkar perut, 35,61% tidak memantau berat badan, 61,6% tidak memeriksa kadar kolesterol, dan 62,6% tidak pernah memeriksakan kadar gula darah.
-
-PKG diharapkan dapat menjawab tantangan dan permasalahan kesehatan ini melalui penyediaan layanan skrining sesuai siklus hidup. Program ini bertujuan untuk meningkatkan kesadaran masyarakat terhadap pentingnya kesehatan, sehingga mendorong pencegahan penyakit yang lebih efektif dan penanganan yang lebih terarah.
-
-PKG diberikan kepada seluruh kelompok sasaran melalui berbagai cara:
-
-1. PKG Hari Ulang Tahun ditujukan bagi bayi dan anak hingga usia 6 tahun (balita dan anak prasekolah) dan bagi usia 18 tahun ke atas (dewasa dan lanjut usia);
-
-2. PKG Sekolah ditujukan bagi anak usia 7-17 tahun (usia sekolah dan remaja) yang dilaksanakan setiap tahun ajaran baru; dan
-
-3. PKG Khusus ditujukan bagi ibu hamil, bayi, dan anak hingga usia 6 tahun (balita dan anak prasekolah) meliputi pemeriksaan kesehatan yang dilakukan sesuai standar pelayanan Kesehatan Ibu dan Anak.
-
-PKG Hari Ulang Tahun merupakan inovasi baru untuk meningkatkan kesadaran masyarakat dalam melakukan pemeriksaan kesehatan secara berkala dan memperluas jangkauan pemeriksaan kesehatan. Agar persiapan dan pelaksanaan PKG Hari Ulang Tahun terselenggara dengan baik, maka diperlukan Petunjuk Teknis sebagai panduan untuk memastikan keterpaduan, efisiensi, dan keberhasilan pelaksanaan PKG Hari Ulang Tahun di seluruh Indonesia.
-
-# Tujuan dan Sasaran PetunjukTeknis
-
-## Tujuan umum
-
-Menyediakan panduan pelaksanaan PKG Hari Ulang Tahun.
-
-## Tujuan khusus
-
-Menyediakan panduan mengenai:
-1. Paket layanan PKG Hari Ulang Tahun.
-2. Penyelenggaraan PKG Hari Ulang Tahun.
-3. Strategi komunikasi PKG Hari Ulang Tahun.
-4. Pemantauan dan evaluasi PKG Hari Ulang Tahun.
-
-## Sasaran
-
-Sasaran petunjuk teknis ini antara lain:
-1. Kepala Puskesmas, Penanggung Jawab dan Tim Klaster.
-2. Pimpinan dan Petugas FKTP lainnya (Klinik pratama, tempat praktik tenaga medis dan tenaga kesehatan).
-3. Pimpinan dan Petugas di Laboratorium Kesehatan Masyarakat tingkat 4, tingkat 3, dan tingkat 2.
-4. Rumah Sakit.
-5. Dinas Kesehatan Daerah Provinsi dan Dinas Kesehatan Daerah Kabupaten/Kota.
-6. Pemerintah daerah termasuk pemerintah provinsi, kabupaten/kota, kecamatan, kelurahan/desa, dan pemangku kebijakan (Organisasi Perangkat Daerah) terkait dengan pelaksanaan PKG Hari Ulang Tahun.
-7. Pembina Wilayah di Kementerian Kesehatan.
-
-h.     Kementerian/Lembaga terkait.
-
-i.       Penyelenggara Sistem Elektronik (PSE).
-
-       Organisasi profesi, organisasi masyarakat, institusi pendidikan, sektor swasta dan pihak lainnya.
-
-  
-
- 
-
-  
-
-**BAB II**
-
-**PEMERIKSAAN KESEHATAN GRATIS HARI ULANG TAHUN**
+# PEMERIKSAAN KESEHATAN GRATIS HARI ULANG TAHUN
 
 Pemeriksaan Kesehatan Gratis (PKG) Hari Ulang Tahun adalah upaya strategis yang dirancang oleh pemerintah untuk meningkatkan kesadaran masyarakat tentang pentingnya kesehatan. Program ini memanfaatkan momentum ulang tahun sebagai pengingat bagi individu untuk melakukan deteksi dini terhadap kondisi kesehatan yang berpotensi berkembang menjadi penyakit serius. Program ini mengedepankan upaya promotif dan preventif melalui pemberian layanan kesehatan gratis kepada masyarakat dan pemberian edukasi untuk memahami hasil pemeriksaan serta langkah-langkah tindak lanjut yang diperlukan. PKG Hari Ulang Tahun diharapkan dapat mengurangi beban pelayanan kesehatan rujukan serta meningkatkan produktivitas masyarakat.
 
 Pelaksanaan program ini didukung inovasi teknologi kesehatan melalui pemanfaatan Sistem Informasi Kesehatan Nasional (SIKN) yaitu Platform SATUSEHAT, Aplikasi SATUSEHAT Mobile (SSM), Aplikasi Sehat Indonesiaku (ASIK), dan/atau sistem elektronik yang dikelola Penyelenggara Sistem Elektronik (PSE) yang bekerja sama dengan Kementerian Kesehatan, yang memungkinkan pendaftaran, hasil pemeriksaan dicatat dan dipantau secara _real time_. PSE yang dimaksud adalah setiap orang, penyelenggara negara, badan usaha, dan masyarakat yang menyediakan, mengelola, dan/atau mengoperasikan sistem elektronik secara sendiri-sendiri maupun bersama- sama kepada pengguna sistem elektronik untuk keperluan dirinya dan/atau keperluan pihak lain, termasuk untuk kepentingan di bidang kesehatan seperti Telekesehatan atau Telemedisin.
 
-A.         Tujuan dan Sasaran PKG Hari Ulang Tahun Tujuan PKG Hari Ulang Tahun adalah:
-======================================================================================
+## Tujuan dan Sasaran PKG Hari Ulang Tahun 
 
-       Mengidentifikasi faktor risiko kesehatan agar masyarakat tetap sehat dan tidak berlanjut menyebabkan timbulnya penyakit;
+### Tujuan PKG Hari Ulang Tahun adalah:
 
-       Mendeteksi kondisi pra penyakit agar tidak berkembang menjadi penyakit; dan
-
-       penyakit lebih awal agar dapat diberikan penanganan yang tepat dan mencegah komplikasi serta menurunkan risiko kecacatan dan kematian.
-
-  
-
- 
-
-  
-
-Sasaran PKG Hari Ulang Tahun adalah:
-====================================
-
-1.         baru lahir (usia 2 hari);
-
-2.         Balita dan anak prasekolah (usia 1-6 tahun);
-
-3.         Dewasa (usia 18-59 tahun); dan
-
-4.         Lanjut usia (mulai usia 60 tahun).
-
-**B.**           **Waktu**
-
-1.    PKG Hari Ulang Tahun bagi bayi baru lahir dilaksanakan pada usia bayi dua hari (>24 jam)
-
-2.    PKG Hari Ulang Tahun bagi kelompok usia lainnya dilaksanakan saat seseorang berulang tahun sampai maksimal satu bulan setelah tanggal ulang tahun.
-
-**Tempatpelaksanaan:**
-
-1.    PKG Hari Ulang Tahun bagi bayi baru lahir dilaksanakan di fasilitas pelayanan Kesehatan yang melayani persalinan baik FKTP maupun FKTL.
-
-2.    PKG Hari Ulang Tahun bagi kelompok usia lainnya dilaksanakan di FKTP yang bekerjasama dengan BPJS Kesehatan.
-
-    Puskesmas dapat mendelegasikan PKG Hari Ulang Tahun kepada Puskesmas Pembantu atau Unit Pelayanan Kesehatan di Desa/Kelurahan lainnya sesuai alur Integrasi Pelayanan Kesehatan Primer (ILP).
-
-    Pemeriksaan laboratorium bagi bayi baru lahir pada PKG Hari Ulang Tahun dilaksanakan di laboratorium jejaring yang telah ditetapkan.
-
-    Pemeriksaan laboratorium bagi kelompok usia lainnya pada PKG Hari Ulang Tahun dilaksanakan di FKTP dan Laboratorium Kesehatan Masyarakat (Labkesmas). Labkesmas menjadi tempat rujukan pemeriksaan spesimen skrining yang tidak dapat dilaksanakan di Puskesmas.
-
-    Fasilitas lainnya dapat berpartisipasi dalam pelaksanaan PKG Hari Ulang Tahun di bawah koordinasi Dinas Kesehatan Daerah Kabupaten/Kota dan Puskesmas setempat.
-
-  
-
- 
-
-  
-
-C.            Pemeriksaan
-=========================
-
-    Jenis pemeriksaan pada bayi baru lahir meliputi:
-
-Kekurangan Hormon Tiroid sejak Lahir;
-
-enzim pelindung sel darah merah (G6PD);
-
-    Kekurangan hormon adrenal sejak
-
-jantung bawaan(PJB) kritis;
-
-e.Kelainan saluranempedu;
-
-     Pertumbuhan.
-
-  Jenis pemeriksaan pada balita dan anak prasekolah meliputi:
-
-Pertumbuhan;
-
-b.Perkembangan;
-
-    Tuberkulosis;
-
-Telinga;
-
-e.Mata;
-
-     Gigi;
-
-(mulai usia 2 tahun);
-
-darah (mulai usia2 tahun);
-
-  Jenis pemeriksaan pada dewasa meliputi:
-
-Kardiovaskular:
-
-1)Merokok;
-
-2)Tingkat aktivitas
-
-3) gizi;
-
-4)Gigi;
-
-5)Tekanan darah;
-
-6)darah;
-
-7)Risiko stroke (mulai usia 40
-
-8)Risiko jantung (mulai usia 40 tahun);
-
-9)Fungsi ginjal (mulai usia 40 tahun);
-
-Paru:
-
-1)Tuberkulosis;
-
-2)Penyakit paru obstruktif kronis (PPOK) (mulai usia 40 tahun);
-
-    Kanker:
-
-1)Kanker payudara (pada perempuan mulai usia 30 tahun);
-
-2)Kanker leher rahim (pada perempuan mulai usia 30 tahun);
-
-3)Kanker paru (pada laki-laki mulai usia 45 tahun);
-
-  
-
- 
-
-  
-
-4)Kanker usus (pada laki-laki mulai usia 45 tahun);
-
-indra:
-
-1)Mata;
-
-2)Telinga;
-
-jiwa;
-
-     Hati:
-
-1)Hepatitis B;
-
-2)Hepatitis C;
-
-3)Fibrosis/sirosis hati;
-
-pengantin:
-
-1)Anemia (hanya pada perempuan);
-
-2)Sifilis;
-
-3)HIV.
-
-  Jenis pemeriksaan pada lanjut usia (Lansia) meliputi:
-
-Geriatri;
-
-Kardiovaskular:
-
-1)Merokok;
-
-2)Tingkat aktivitas
-
-3) gizi;
-
-4)Gigi;
-
-5)Tekanan darah;
-
-6)darah;
-
-7)Risiko stroke (mulai usia 40
-
-8)Risiko jantung (mulai usia 40 tahun);
-
-9)Fungsi ginjal (mulai usia 40 tahun);
-
-    Paru:
-
-1)Tuberkulosis;
-
-2)Penyakit paru obstruktif kronis (PPOK);
-
-Kanker:
-
-1)Kanker payudara (pada perempuan hingga usia 69 tahun);
-
-2)Kanker leher rahim (pada perempuan hingga usia69 tahun);
-
-3)Kanker paru (pada laki-laki);
-
-4)Kanker usus (pada laki-laki);
-
-e.Fungsi indra:
-
-1)Mata;
-
-2)Telinga;
-
-  
-
- 
-
-  
-
-     Kesehatan jiwa;
-
-Hati:
-
-1)Hepatitis B;
-
-2)Hepatitis C;
-
-3)Fibrosis/sirosis hati.
-
-**D.**             **Metode Pemeriksaan**
-
+1. Mengidentifikasi faktor risiko kesehatan agar masyarakat tetap sehat dan tidak berlanjut menyebabkan timbulnya penyakit;
+2. Mendeteksi kondisi pra penyakit agar tidak berkembang menjadi penyakit; dan
+3. penyakit lebih awal agar dapat diberikan penanganan yang tepat dan mencegah komplikasi serta menurunkan risiko kecacatan dan kematian.
+
+### Sasaran PKG Hari Ulang Tahun adalah:
+
+1. Bayi baru lahir (usia 2 hari);
+
+2. Balita dan anak prasekolah (usia 1-6 tahun);
+
+3. Dewasa (usia 18-59 tahun); dan
+
+4. Lanjut usia (mulai usia 60 tahun).
+
+## Waktu
+
+1. PKG Hari Ulang Tahun bagi bayi baru lahir dilaksanakan pada usia bayi dua hari (>24 jam)
+
+2. PKG Hari Ulang Tahun bagi kelompok usia lainnya dilaksanakan saat seseorang berulang tahun sampai maksimal satu bulan setelah tanggal ulang tahun.
+
+## Tempat pelaksanaan:
+
+PKG Hari Ulang Tahun bagi bayi baru lahir dilaksanakan di fasilitas pelayanan Kesehatan yang melayani persalinan baik FKTP maupun FKTL.
+
+PKG Hari Ulang Tahun bagi kelompok usia lainnya dilaksanakan di FKTP yang bekerjasama dengan BPJS Kesehatan.
+
+Puskesmas dapat mendelegasikan PKG Hari Ulang Tahun kepada Puskesmas Pembantu atau Unit Pelayanan Kesehatan di Desa/Kelurahan lainnya sesuai alur Integrasi Pelayanan Kesehatan Primer (ILP).
+
+Pemeriksaan laboratorium bagi bayi baru lahir pada PKG Hari Ulang Tahun dilaksanakan di laboratorium jejaring yang telah ditetapkan.
+
+Pemeriksaan laboratorium bagi kelompok usia lainnya pada PKG Hari Ulang Tahun dilaksanakan di FKTP dan Laboratorium Kesehatan Masyarakat (Labkesmas). Labkesmas menjadi tempat rujukan pemeriksaan spesimen skrining yang tidak dapat dilaksanakan di Puskesmas.
+
+
+Fasilitas lainnya dapat berpartisipasi dalam pelaksanaan PKG Hari Ulang Tahun di bawah koordinasi Dinas Kesehatan Daerah Kabupaten/Kota dan Puskesmas setempat.
+
+## Pemeriksaan
+
+### Jenis pemeriksaan pada bayi baru lahir meliputi:
+
+1. Kekurangan Hormon Tiroid sejak Lahir;
+2. Kekurangan enzim pelindung sel darah merah (G6PD);
+3. Kekurangan hormon adrenal sejak
+4. Penyakit jantung bawaan(PJB) kritis;
+5. Kelainan saluranempedu;
+6. Pertumbuhan.
+
+### Jenis pemeriksaan pada balita dan anak prasekolah meliputi:
+
+1. Pertumbuhan;
+2. Perkembangan;
+3. Tuberkulosis;
+4. Telinga;
+5. Mata;
+6. Gigi;
+7. Talasemia (mulai usia 2 tahun);
+8. Gula darah (mulai usia 2 tahun);
+
+### Jenis pemeriksaan pada dewasa meliputi:
+1. Kardiovaskular:
+    1) Merokok;
+    2) Tingkat aktivitas
+    3) Status gizi;
+    4) Gigi;
+    5) Tekanan darah;
+    6) darah;
+    7) Risiko stroke (mulai usia 40
+    8) Risiko jantung (mulai usia 40 tahun);
+    9) Fungsi ginjal (mulai usia 40 tahun);
+2. Paru:
+    1) Tuberkulosis;
+    2) Penyakit paru obstruktif kronis (PPOK) (mulai usia 40 tahun);
+3. Kanker:
+    1) Kanker payudara (pada perempuan mulai usia 30 tahun);
+    2) Kanker leher rahim (pada perempuan mulai usia 30 tahun);
+    3) Kanker paru (pada laki-laki mulai usia 45 tahun);
+    4) Kanker usus (pada laki-laki mulai usia 45 tahun);
+4. Fungsi indra:
+    1) Mata;
+    2) Telinga;
+5. Kesehatan jiwa;
+6. Hati:
+    1) Hepatitis B;
+    2) Hepatitis C;
+    3) Fibrosis/sirosis hati;
+7. Calon pengantin:
+    1) Anemia (hanya pada perempuan);
+    2) Sifilis;
+    3) HIV.
+
+#### Jenis pemeriksaan pada lanjut usia (Lansia) meliputi:
+
+1. Geriatri;
+2. Kardiovaskular:
+    1) Merokok;
+    2) Tingkat aktivitas
+    3) gizi;
+    4) Gigi;
+    5) Tekanan darah;
+    6) darah;
+    7) Risiko stroke (mulai usia 40
+    8) Risiko jantung (mulai usia 40 tahun);
+    9) Fungsi ginjal (mulai usia 40 tahun);
+3. Paru:
+    1) Tuberkulosis;
+    2) Penyakit paru obstruktif kronis (PPOK);
+4. Kanker:
+    1) Kanker payudara (pada perempuan hingga usia 69 tahun);
+    2) Kanker leher rahim (pada perempuan hingga usia69 tahun);
+    3) Kanker paru (pada laki-laki);
+    4) Kanker usus (pada laki-laki);
+5. Fungsi indra:
+    1) Mata;
+    2) Telinga;
+6. Kesehatan jiwa;
+7. Hati:
+    1) Hepatitis B;
+    2) Hepatitis C;
+    3) Fibrosis/sirosis hati.
+
+## Metode Pemeriksaan
 1.      pemeriksaan pada bayibaru lahir:
 
    Kekurangan Hormon Tiroid sejak Lahir, Kekurangan enzim pelindung sel darah merah (G6PD), Kekurangan hormon adrenal sejak lahir: pengambilan spesimen darah tumit dengan kertas saring diikuti pemeriksaan spesimen di laboratorium rujukan.
