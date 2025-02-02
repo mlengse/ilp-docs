@@ -136,7 +136,14 @@ const config: Config = {
           sidebarId: 'PPK',
           position: 'left',
           label: 'PPK',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'PKG',
+          position: 'left',
+          label: 'PKG',
         }
+
       ],
     },
     footer: {
