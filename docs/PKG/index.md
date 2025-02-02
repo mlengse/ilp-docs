@@ -15,58 +15,38 @@ PKG diharapkan dapat menjawab tantangan dan permasalahan kesehatan ini melalui p
 
 PKG diberikan kepada seluruh kelompok sasaran melalui berbagai cara:
 
-1.         PKG Hari Ulang Tahun ditujukan bagi bayi dan anak hingga usia 6 tahun (balita dan anak prasekolah) dan bagi usia 18 tahun ke atas (dewasa dan lanjut usia);
+1. PKG Hari Ulang Tahun ditujukan bagi bayi dan anak hingga usia 6 tahun (balita dan anak prasekolah) dan bagi usia 18 tahun ke atas (dewasa dan lanjut usia);
 
-2.         PKG Sekolah ditujukan bagi anak usia 7-17 tahun (usia sekolah dan remaja) yang dilaksanakan setiap tahun ajaran baru; dan
+2. PKG Sekolah ditujukan bagi anak usia 7-17 tahun (usia sekolah dan remaja) yang dilaksanakan setiap tahun ajaran baru; dan
 
-3.         PKG Khusus ditujukan bagi ibu hamil, bayi, dan anak hingga usia 6 tahun (balita dan anak prasekolah) meliputi pemeriksaan kesehatan yang dilakukan sesuai standar pelayanan Kesehatan Ibu dan Anak.
-
-  
-
- 
-
-  
+3. PKG Khusus ditujukan bagi ibu hamil, bayi, dan anak hingga usia 6 tahun (balita dan anak prasekolah) meliputi pemeriksaan kesehatan yang dilakukan sesuai standar pelayanan Kesehatan Ibu dan Anak.
 
 PKG Hari Ulang Tahun merupakan inovasi baru untuk meningkatkan kesadaran masyarakat dalam melakukan pemeriksaan kesehatan secara berkala dan memperluas jangkauan pemeriksaan kesehatan. Agar persiapan dan pelaksanaan PKG Hari Ulang Tahun terselenggara dengan baik, maka diperlukan Petunjuk Teknis sebagai panduan untuk memastikan keterpaduan, efisiensi, dan keberhasilan pelaksanaan PKG Hari Ulang Tahun di seluruh Indonesia.
 
-B.      dan Sasaran PetunjukTeknis
-==================================
+# Tujuan dan Sasaran PetunjukTeknis
 
-      **Tujuanumum**
+## Tujuan umum
 
 Menyediakan panduan pelaksanaan PKG Hari Ulang Tahun.
 
-2.      khusus
-==============
+## Tujuan khusus
 
 Menyediakan panduan mengenai:
+1. Paket layanan PKG Hari Ulang Tahun.
+2. Penyelenggaraan PKG Hari Ulang Tahun.
+3. Strategi komunikasi PKG Hari Ulang Tahun.
+4. Pemantauan dan evaluasi PKG Hari Ulang Tahun.
 
-     Paket layanan PKG Hari Ulang Tahun.
+## Sasaran
 
-     Penyelenggaraan PKG Hari Ulang Tahun.
-
-     Strategi komunikasi PKG Hari Ulang Tahun.
-
-     Pemantauan dan evaluasi PKG Hari Ulang Tahun.
-
-3.      Sasaran
-===============
-
-Sasaran petunjuk teknis iniantara lain:
-
-a.     Puskesmas, Penanggung Jawab dan Tim Klaster.
-
-     Pimpinan dan Petugas FKTP lainnya (Klinik pratama, tempat praktik tenaga medis dan tenaga kesehatan).
-
-      Pimpinan dan Petugas di Laboratorium Kesehatan Masyarakat tingkat 4, tingkat 3, dan tingkat 2.
-
-d. Rumah Sakit.
-
-     Dinas Kesehatan Daerah Provinsi dan Dinas Kesehatan Daerah Kabupaten/Kota.
-
-       Pemerintah daerah termasuk pemerintah provinsi, kabupaten/kota, kecamatan, kelurahan/desa, dan pemangku kebijakan (Organisasi Perangkat Daerah) terkait dengan pelaksanaan PKG Hari Ulang Tahun.
-
-g.     Wilayah di Kementerian Kesehatan.
+Sasaran petunjuk teknis ini antara lain:
+1. Kepala Puskesmas, Penanggung Jawab dan Tim Klaster.
+2. Pimpinan dan Petugas FKTP lainnya (Klinik pratama, tempat praktik tenaga medis dan tenaga kesehatan).
+3. Pimpinan dan Petugas di Laboratorium Kesehatan Masyarakat tingkat 4, tingkat 3, dan tingkat 2.
+4. Rumah Sakit.
+5. Dinas Kesehatan Daerah Provinsi dan Dinas Kesehatan Daerah Kabupaten/Kota.
+6. Pemerintah daerah termasuk pemerintah provinsi, kabupaten/kota, kecamatan, kelurahan/desa, dan pemangku kebijakan (Organisasi Perangkat Daerah) terkait dengan pelaksanaan PKG Hari Ulang Tahun.
+7. Pembina Wilayah di Kementerian Kesehatan.
 
 h.     Kementerian/Lembaga terkait.
 
