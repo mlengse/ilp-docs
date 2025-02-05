@@ -1,6 +1,9 @@
 ---
 title: Pencatatan dan Pelaporan
 ---
+
+import {PDFViewer} from '@site/src/components/PDFViewer'
+
 # PENCATATAN DAN PELAPORAN
 
 Pencatatan dan pelaporan PKG Hari Ulang Tahun merupakan satu kesatuan dari sistem pencatatan dan pelaporan dalam platform SATUSEHAT. Pencatatan layanan PKG di Puskesmas diinput melalui website ASIK. Penyedia sistem Rekam Medis Elektronik (RME) perlu mengadopsi modul layanan PKG dan mengintegrasikan datanya ke dalam SATUSEHAT. Semua pencatatan wajib dilakukan melalui sistem informasi dan dilaporkan secara _real-time_ setelah memastikan data yang dicatat sudah benar.
@@ -41,7 +44,14 @@ Mekanisme integrasi dilaksanakan paling sedikit sesuai ketentuan sebagai berikut
 
 Pihak yang melakukan integrasi Data dan Informasi Pelaksanaan PKG ke Platform SATUSEHAT menandatangani Pakta Integritas dan menyepakati petunjuk teknis integrasi dengan format seperti pada contoh.
 
-**PAKTA INTEGRITAS**
+<details>
+  <summary>**Contoh Pakta Integritas**</summary>
+  
+  <PDFViewer fileUrl={'/ref/KMK No. HK.01.07-MENKES-33-2025 ttg Juknis Pemeriksaan Kesehatan Gratis Hari Ulang Tahun-signed [79-81].pdf'} />
+</details>
+
+
+{/* **PAKTA INTEGRITAS**
 
 **PELAKSANAAN DUKUNGAN PEMERIKSAAN KESEHATAN GRATIS HARI ULANG TAHUN OLEH PENYELENGGARA SISTEM ELEKTRONIK (PSE)**
 
@@ -98,18 +108,87 @@ _(Meterai 10.000)_
 | --- | --- |
 | Tanggal: | Tanggal: |
 
-_1,2,3,4,5) Isi nama PSE_
+_1,2,3,4,5) Isi nama PSE_ */}
 
 ## Perlindungan Data Pribadi dalam Pelaksanaan PKG
 
 Pelaksanaan PKG dilaksanakan dengan memproses data pribadi spesifik yang berisiko tinggi, antara lain meliputi data dan informasi kesehatan dan data anak, sehingga diperlukan upaya untuk Perlindungan Data Pribadi (PDP) atas data yang diproses, termasuk pada aktivitas PKG yang dilaksanakan oleh PSE sesuai dengan lingkup dukungan.
 
 Kerangka PDP dalam pelaksanaan PKG merujuk pada prinsip PDP sebagaimana dimaksud UU No. 27 Tahun 2022 tentang PDP dan _The Protection of Personal Data in Health Information Systems – Principles and Processes for Public Health yang dikembangkan oleh World Health Organization_ pada tahun 2021. Selain itu, dalam rangka memastikan dilakukan perlindungan data pribadi secara memadai, Kementerian Kesehatan melakukan koordinasi dengan kementerian/lembaga di bidang pengawasan sistem elektronik dan keamanan siber.
+### Pengumpulan Data Pribadi dilakukan secara terbatas dan spesifik, sah secara hukum, dan transparan
+#### Tahapan 
+Pendaftaran peserta PKG
+#### Mitigasi: 
+1. pengumpulan Data Pribadi harus terbatas sesuai dengan tujuan pelaksanaan PKG, 
+2. memiliki dasar pemrosesan yang relevan, misalnya consent atau dasar lain sesuai peraturan perundang-undangan; dan 
+3. memastikan Subjek Data Pribadi telah mendapatkan informasi atas Data Pribadinya yang dikumpulkan untuk kepentingan PKG.
+#### Pelaksana: 
+Kementerian Kesehatan, FKTP, dan PSE
+### Pemrosesan Data Pribadi dilakukan sesuai dengan tujuan pemrosesan
+#### Tahapan 
+Seluruh tahapan pelaksanaan PKG
+#### Mitigasi: 
+1. merumuskan tujuan pemrosesan Data Pribadi pelaksanaan PKG dalam kebijakan PDP.
+2. menyampaikan tujuan pemrosesan Data Pribadi kepada masyarakat.
+####  Pelaksana: 
+Kementerian Kesehatan, BSSN, FKTP,dan PSE
+### Pemrosesan Data Pribadi dilakukan dengan menjamin hak Subjek Data Pribadi
+#### Tahapan
+Seluruh tahapan pelaksanaan PKG
+####  Mitigasi: 
+1. memberikan informasi kepada subjek data pribadi mengenai haknya dalam pelaksanaan PKG.
+2. memastikan terdapat layanan dan mekanisme pemenuhan hak subjek data pribadi baik secara elektronik atau nonelektronik.
+3. mendokumentasikan permintaan hak subjek data pribadi.
+####  Pelaksana: 
+Kementerian Kesehatan, BSSN, FKTP,dan PSE
+###  Pemrosesan Data Pribadi dilakukan secara akurat, lengkap, tidak menyesatkan, mutakhir, dan dapat dipertanggungjawabkan
+#### Tahapan
+Seluruh tahapan pelaksanaan PKG
+####  Mitigasi: 
+1. melakukan pemeriksaan kesesuaian data pribadi dengan dokumen pendukung;
+2. melakukan verifikasi untuk memastikan kelengkapan data pribadi yang harus diproses.
+####  Pelaksana: 
+Kementerian Kesehatan, BSSN, FKTP, dan PSE
+### Melindungi keamanan Data Pribadi dari pengaksesan yang tidak sah, pengungkapan yang tidak sah, pengubahan yang tidak sah, penyalahgunaan, perusakan, dan/atau penghilangan Data Pribadi
+#### Tahapan
+Seluruh tahapan pelaksanaan PKG
+####  Mitigasi: 
+1. melakukan pengendalian atas hak dan distribusi akses data pribadi pelaksanaan PKG;
+2. memastikan sistem elektronik yang digunakan dalam pelaksanaan PKG telah sesuai dengan standar keamanan, termasuk analisis risiko.
+3. memastikan dilakukannya bagi pakai data pribadi pelaksanaan PKG dengan aman dan sah.
+4. memastikan dilaksanakannya pencadangan data.memastikan sumber daya manusia yang terlibat telah memahami risiko pemrosesan data pribadi.
+#### Pelaksana: 
+Kementerian Kesehatan, BSSN, FKTP, dan PSE
+### Pemrosesan Data Pribadi dilakukan dengan memberitahukan tujuan dan aktivitas pemrosesan, serta kegagalan perlindungan Data Pribadi
+#### Tahapan PKG: 
+Seluruh tahapan pelaksanaan PKG
+####  Mitigasi: 
+1. mencantumkan dan menginformasikan tujuan pemrosesan Data Pribadi pelaksanaan PKG.
+2. memberitahukan aktivitas pemrosesan Data Pribadi kepada Subjek Data Pribadi; dan
+3. memberitahukan kegagalan perlindungan Data Pribadi kepada Subjek Data Pribadi dan Lembaga perlindungan Data Pribadi.
+####  Pelaksana: 
+Kementerian Kesehatan, BSSN, FKTP, dan PSE
+### Data Pribadi dimusnahkan dan/atau dihapus setelah masa retensi berakhir atau berdasarkan permintaan Subjek Data Pribadi
+####  Tahapan PKG: 
+Pasca pendaftaran, pencatatan dan pelaporan PKG.
+####  Mitigasi: 
+1. melakukan penghapusan Data Pribadi sesuai peraturan perundang- undangan dan
+2. melakukan pemusnahan Data Pribadi sesuai peraturan perundang- undangan.
+3. melakukan pendokumentasian data pribadi yang dimusnahkan atau dihapus.
+####  Pelaksana: 
+Kementerian Kesehatan, BSSN, FKTP, dan PSE
+### Pemrosesan Data Pribadi dilakukan secara bertanggung jawab dan dapat dibuktikan secara jelas (akuntabel),
+####  Tahapan PKG: 
+Seluruh tahapan pelaksanaan PKG
+####  Mitigasi: 
+memastikan pemenuhan kepatuhan atas peraturan perundang-undangan terkait dalam pemrosesan data pribadi;
+####  Pelaksana: 
+Kementerian Kesehatan, BSSN, FKTP, dan PSE
 
-Tabel 7.1 Kerangka Perlindungan Data Pribadi Dalam Pelaksanaan PKG
+{/* Tabel 7.1 Kerangka Perlindungan Data Pribadi Dalam Pelaksanaan PKG */}
 
-<table><tbody><tr><th><p><strong>No.</strong></p></th><th><p><strong>Tahapan PKG</strong></p></th><th><p><strong>Prinsip PDP</strong></p></th><th><p><strong>Mitigasi</strong></p></th><th><p><strong>Pelaksana</strong></p></th></tr><tr><td><p>1.</p></td><td><p>Pendaftaran peserta PKG</p></td><td><p>pengumpulan Data Pribadi dilakukan secara terbatas dan spesifik, sah secara hukum, dan transparan;</p></td><td><ol><li>pengumpulan Data Pribadi harus terbatas sesuai dengan tujuan pelaksanaan PKG.</li><li>memiliki dasar pemrosesan yang relevan, misalnya <em>consent </em>atau dasar lain sesuai peraturan perundang-undangan; dan</li><li>memastikan Subjek Data Pribadi telah mendapatkan informasi atas Data Pribadinya yang dikumpulkan untuk kepentingan PKG.</li></ol></td><td><p>Kementerian Kesehatan, FKTP, dan PSE</p></td></tr><tr><td><p>2.</p></td><td><p>Seluruh tahapan pelaksanaan PKG</p></td><td><p>pemrosesan Data Pribadi dilakukan sesuai dengan tujuan pemrosesan</p></td><td><ol><li>merumuskan tujuan pemrosesan Data Pribadi pelaksanaan PKG dalam kebijakan PDP.</li><li>menyampaikan tujuan pemrosesan Data Pribadi kepada masyarakat.</li></ol></td><td><p>Kementerian Kesehatan, BSSN, FKTP,</p><p>dan PSE</p></td></tr></tbody></table>
+{/* <table><tbody><tr><th><p><strong>No.</strong></p></th><th><p><strong>Tahapan PKG</strong></p></th><th><p><strong>Prinsip PDP</strong></p></th><th><p><strong>Mitigasi</strong></p></th><th><p><strong>Pelaksana</strong></p></th></tr><tr><td><p>1.</p></td><td><p>Pendaftaran peserta PKG</p></td><td><p>pengumpulan Data Pribadi dilakukan secara terbatas dan spesifik, sah secara hukum, dan transparan;</p></td><td><ol><li>pengumpulan Data Pribadi harus terbatas sesuai dengan tujuan pelaksanaan PKG.</li><li>memiliki dasar pemrosesan yang relevan, misalnya <em>consent </em>atau dasar lain sesuai peraturan perundang-undangan; dan</li><li>memastikan Subjek Data Pribadi telah mendapatkan informasi atas Data Pribadinya yang dikumpulkan untuk kepentingan PKG.</li></ol></td><td><p>Kementerian Kesehatan, FKTP, dan PSE</p></td></tr><tr><td><p>2.</p></td><td><p>Seluruh tahapan pelaksanaan PKG</p></td><td><p>pemrosesan Data Pribadi dilakukan sesuai dengan tujuan pemrosesan</p></td><td><ol><li>merumuskan tujuan pemrosesan Data Pribadi pelaksanaan PKG dalam kebijakan PDP.</li><li>menyampaikan tujuan pemrosesan Data Pribadi kepada masyarakat.</li></ol></td><td><p>Kementerian Kesehatan, BSSN, FKTP,</p><p>dan PSE</p></td></tr></tbody></table> */}
 
-<table><tbody><tr><th><p><strong>No.</strong></p></th><th><p><strong>Tahapan PKG</strong></p></th><th><p><strong>Prinsip PDP</strong></p></th><th><p><strong>Mitigasi</strong></p></th><th><p><strong>Pelaksana</strong></p></th></tr><tr><td><p>3.</p></td><td><p>Seluruh tahapan pelaksanaan PKG</p></td><td><p>pemrosesan Data Pribadi dilakukan dengan menjamin hak Subjek Data Pribadi</p></td><td><ol><li>memberikan informasi kepada subjek data pribadi mengenai haknya dalam pelaksanaan PKG.</li><li>memastikan terdapat layanan dan mekanisme pemenuhan hak subjek data pribadi baik secara elektronik atau nonelektronik.</li><li>mendokumentasikan permintaan hak subjek data pribadi.</li></ol></td><td><p>Kementerian Kesehatan, BSSN, FKTP,</p><p>dan PSE</p></td></tr><tr><td><p>4.</p></td><td><p>Seluruh tahapan pelaksanaan PKG</p></td><td><p>pemrosesan Data Pribadi dilakukan secara akurat, lengkap, tidak menyesatkan, mutakhir, dan dapat dipertanggungjawabkan</p></td><td><ol><li>melakukan pemeriksaan kesesuaian data pribadi dengan dokumen pendukung;</li><li>melakukan verifikasi untuk memastikan kelengkapan data pribadi yang harus diproses.</li></ol></td><td><p>Kementerian Kesehatan, BSSN, FKTP, dan PSE</p></td></tr><tr><td><p>5.</p></td><td><p>Seluruh tahapan pelaksanaan PKG</p></td><td><p>melindungi keamanan Data Pribadi dari pengaksesan yang tidak sah, pengungkapan yang tidak sah, pengubahan yang tidak sah, penyalahgunaan, perusakan, dan/atau penghilangan Data Pribadi</p></td><td><ol><li>melakukan pengendalian atas hak dan distribusi akses data pribadi pelaksanaan PKG;</li><li>memastikan sistem elektronik yang digunakan dalam pelaksanaan PKG telah sesuai dengan standar keamanan, termasuk analisis risiko.</li><li>memastikan dilakukannya bagi pakai data pribadi pelaksanaan PKG dengan aman dan sah.</li><li>memastikan dilaksanakannya pencadangan data.</li><li>memastikan sumber daya manusia yang terlibat telah memahami risiko pemrosesan data pribadi.</li></ol></td><td><p>Kementerian Kesehatan, BSSN, FKTP, dan PSE</p></td></tr></tbody></table>
+{/* <table><tbody><tr><th><p><strong>No.</strong></p></th><th><p><strong>Tahapan PKG</strong></p></th><th><p><strong>Prinsip PDP</strong></p></th><th><p><strong>Mitigasi</strong></p></th><th><p><strong>Pelaksana</strong></p></th></tr><tr><td><p>3.</p></td><td><p>Seluruh tahapan pelaksanaan PKG</p></td><td><p>pemrosesan Data Pribadi dilakukan dengan menjamin hak Subjek Data Pribadi</p></td><td><ol><li>memberikan informasi kepada subjek data pribadi mengenai haknya dalam pelaksanaan PKG.</li><li>memastikan terdapat layanan dan mekanisme pemenuhan hak subjek data pribadi baik secara elektronik atau nonelektronik.</li><li>mendokumentasikan permintaan hak subjek data pribadi.</li></ol></td><td><p>Kementerian Kesehatan, BSSN, FKTP,</p><p>dan PSE</p></td></tr><tr><td><p>4.</p></td><td><p>Seluruh tahapan pelaksanaan PKG</p></td><td><p>pemrosesan Data Pribadi dilakukan secara akurat, lengkap, tidak menyesatkan, mutakhir, dan dapat dipertanggungjawabkan</p></td><td><ol><li>melakukan pemeriksaan kesesuaian data pribadi dengan dokumen pendukung;</li><li>melakukan verifikasi untuk memastikan kelengkapan data pribadi yang harus diproses.</li></ol></td><td><p>Kementerian Kesehatan, BSSN, FKTP, dan PSE</p></td></tr><tr><td><p>5.</p></td><td><p>Seluruh tahapan pelaksanaan PKG</p></td><td><p>melindungi keamanan Data Pribadi dari pengaksesan yang tidak sah, pengungkapan yang tidak sah, pengubahan yang tidak sah, penyalahgunaan, perusakan, dan/atau penghilangan Data Pribadi</p></td><td><ol><li>melakukan pengendalian atas hak dan distribusi akses data pribadi pelaksanaan PKG;</li><li>memastikan sistem elektronik yang digunakan dalam pelaksanaan PKG telah sesuai dengan standar keamanan, termasuk analisis risiko.</li><li>memastikan dilakukannya bagi pakai data pribadi pelaksanaan PKG dengan aman dan sah.</li><li>memastikan dilaksanakannya pencadangan data.</li><li>memastikan sumber daya manusia yang terlibat telah memahami risiko pemrosesan data pribadi.</li></ol></td><td><p>Kementerian Kesehatan, BSSN, FKTP, dan PSE</p></td></tr></tbody></table> */}
 
-<table><tbody><tr><th><p><strong>No.</strong></p></th><th><p><strong>Tahapan PKG</strong></p></th><th><p><strong>Prinsip PDP</strong></p></th><th><p><strong>Mitigasi</strong></p></th><th><p><strong>Pelaksana</strong></p></th></tr><tr><td><p>6.</p></td><td><p>Seluruh tahapan pelaksanaan PKG</p></td><td><p>pemrosesan Data Pribadi dilakukan dengan memberitahukan tujuan dan aktivitas pemrosesan, serta kegagalan perlindungan Data Pribadi</p></td><td><ol><li>mencantumkan dan menginformasikan tujuan pemrosesan Data Pribadi pelaksanaan PKG.</li><li>memberitahukan aktivitas pemrosesan Data Pribadi kepada Subjek Data Pribadi; dan</li><li>memberitahukan kegagalan perlindungan Data Pribadi kepada Subjek Data Pribadi dan Lembaga perlindungan Data Pribadi.</li></ol></td><td><p>Kementerian Kesehatan, BSSN, FKTP, dan PSE</p></td></tr><tr><td><p>7.</p></td><td><p>Pasca pendaftaran, pencatatan dan pelaporan PKG.</p></td><td><p>Data Pribadi dimusnahkan dan/atau dihapus setelah masa retensi berakhir atau berdasarkan permintaan Subjek Data Pribadi</p></td><td><ol><li>melakukan penghapusan Data Pribadi sesuai peraturan perundang- undangan dan</li><li>melakukan pemusnahan Data Pribadi sesuai peraturan perundang- undangan.</li><li>melakukan pendokumentasian data pribadi yang dimusnahkan atau dihapus.</li></ol></td><td><p>Kementerian Kesehatan, BSSN, FKTP, dan PSE</p></td></tr><tr><td><p>8.</p></td><td><p>Seluruh tahapan pelaksanaan PKG</p></td><td><p>pemrosesan Data Pribadi dilakukan secara bertanggung jawab dan dapat dibuktikan secara jelas (akuntabel),</p></td><td><p>memastikan pemenuhan kepatuhan atas peraturan perundang-undangan terkait dalam pemrosesan data pribadi;</p></td><td><p>Kementerian Kesehatan, BSSN, FKTP, dan PSE</p></td></tr></tbody></table>
+{/* <table><tbody><tr><th><p><strong>No.</strong></p></th><th><p><strong>Tahapan PKG</strong></p></th><th><p><strong>Prinsip PDP</strong></p></th><th><p><strong>Mitigasi</strong></p></th><th><p><strong>Pelaksana</strong></p></th></tr><tr><td><p>6.</p></td><td><p>Seluruh tahapan pelaksanaan PKG</p></td><td><p>pemrosesan Data Pribadi dilakukan dengan memberitahukan tujuan dan aktivitas pemrosesan, serta kegagalan perlindungan Data Pribadi</p></td><td><ol><li>mencantumkan dan menginformasikan tujuan pemrosesan Data Pribadi pelaksanaan PKG.</li><li>memberitahukan aktivitas pemrosesan Data Pribadi kepada Subjek Data Pribadi; dan</li><li>memberitahukan kegagalan perlindungan Data Pribadi kepada Subjek Data Pribadi dan Lembaga perlindungan Data Pribadi.</li></ol></td><td><p>Kementerian Kesehatan, BSSN, FKTP, dan PSE</p></td></tr><tr><td><p>7.</p></td><td><p>Pasca pendaftaran, pencatatan dan pelaporan PKG.</p></td><td><p>Data Pribadi dimusnahkan dan/atau dihapus setelah masa retensi berakhir atau berdasarkan permintaan Subjek Data Pribadi</p></td><td><ol><li>melakukan penghapusan Data Pribadi sesuai peraturan perundang- undangan dan</li><li>melakukan pemusnahan Data Pribadi sesuai peraturan perundang- undangan.</li><li>melakukan pendokumentasian data pribadi yang dimusnahkan atau dihapus.</li></ol></td><td><p>Kementerian Kesehatan, BSSN, FKTP, dan PSE</p></td></tr><tr><td><p>8.</p></td><td><p>Seluruh tahapan pelaksanaan PKG</p></td><td><p>pemrosesan Data Pribadi dilakukan secara bertanggung jawab dan dapat dibuktikan secara jelas (akuntabel),</p></td><td><p>memastikan pemenuhan kepatuhan atas peraturan perundang-undangan terkait dalam pemrosesan data pribadi;</p></td><td><p>Kementerian Kesehatan, BSSN, FKTP, dan PSE</p></td></tr></tbody></table> */}

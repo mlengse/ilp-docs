@@ -24,7 +24,8 @@ article p,article li,article ol{
 }
 
 .katex-html{
-  visibility: hidden;
+  display: none;
+  /* visibility: hidden; */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
