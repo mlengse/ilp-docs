@@ -34,7 +34,7 @@
     "dotenv": "^16.4.7",
     "hyphenopoly": "^6.0.0",
     "lunr": "^2.3.9",
-    "lunr-languages": "git+https://github.com/mlengse/lunr-languages.git",
+    "lunr-languages": "git+https://github.com/mlengse/lunr-languages.git#master",
     "node-loader": "^2.1.0",
     "pdf-loaders": "file:plugins/pdf-loaders",
     "pdfjs-dist": "3.4.120",
@@ -70,6 +70,7 @@
     "@swc/core",
     "canvas",
     "core-js",
-    "core-js-pure"
+    "core-js-pure",
+    "nodejieba"
   ]
 }
