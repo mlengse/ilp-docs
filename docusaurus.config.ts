@@ -54,20 +54,20 @@ const config: Config = {
     //     // forceIgnoreNoIndex: true,
     //   }),
     // ],
-    ['@easyops-cn/docusaurus-search-local', ({
-      indexDocs: true,
-      indexBlog: false,
-      indexPages: false,
-      docsRouteBasePath: '/',
-      language: ['en', 'id'],
-      // hashed: true
-    })]
+    // ['@easyops-cn/docusaurus-search-local', ({
+    //   indexDocs: true,
+    //   indexBlog: false,
+    //   indexPages: false,
+    //   docsRouteBasePath: '/',
+    //   language: ['en', 'id'],
+    //   // hashed: true
+    // })]
   ],
   plugins: [
     'pdf-loaders',
-    // [require.resolve('docusaurus-lunr-search'), {
-    //   languages: ['en','id']
-    // }],
+    [require.resolve('docusaurus-lunr-search'), {
+      languages: ['en','id']
+    }],
     process.env.NODE_ENV === 'production' && '@docusaurus/plugin-debug',
   ].filter(Boolean),
   presets: [
