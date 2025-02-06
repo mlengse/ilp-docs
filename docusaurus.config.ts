@@ -34,37 +34,40 @@ const config: Config = {
   },
   themes: [
     '@docusaurus/theme-mermaid',
-    [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
-      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
-      ({
-        indexDocs: true,
-        indexBlog: false,
-        indexPages: false,
-        docsRouteBasePath: '/',
-        language: ['en'/**, 'id' */],
-        // ... Your options.
-        // `hashed` is recommended as long-term-cache of index file is possible.
-        hashed: true,
+    // [
+    //   require.resolve("@easyops-cn/docusaurus-search-local"),
+    //   /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+    //   ({
+    //     indexDocs: true,
+    //     indexBlog: false,
+    //     indexPages: false,
+    //     docsRouteBasePath: '/',
+    //     language: ['en'/**, 'id' */],
+    //     // ... Your options.
+    //     // `hashed` is recommended as long-term-cache of index file is possible.
+    //     hashed: true,
 
-        // For Docs using Chinese, it is recomended to set:
-        // language: ["en", "zh"],
+    //     // For Docs using Chinese, it is recomended to set:
+    //     // language: ["en", "zh"],
 
-        // If you're using `noIndex: true`, set `forceIgnoreNoIndex` to enable local index:
-        // forceIgnoreNoIndex: true,
-      }),
-    ],
-    // ['@easyops-cn/docusaurus-search-local', ({
-    //   indexDocs: true,
-    //   indexBlog: false,
-    //   indexPages: false,
-    //   docsRouteBasePath: '/',
-    //   language: ['en'],
-    //   // hashed: true
-    // })]
+    //     // If you're using `noIndex: true`, set `forceIgnoreNoIndex` to enable local index:
+    //     // forceIgnoreNoIndex: true,
+    //   }),
+    // ],
+    ['@easyops-cn/docusaurus-search-local', ({
+      indexDocs: true,
+      indexBlog: false,
+      indexPages: false,
+      docsRouteBasePath: '/',
+      language: ['en', 'id'],
+      // hashed: true
+    })]
   ],
   plugins: [
     'pdf-loaders',
+    // [require.resolve('docusaurus-lunr-search'), {
+    //   languages: ['en','id']
+    // }],
     process.env.NODE_ENV === 'production' && '@docusaurus/plugin-debug',
   ].filter(Boolean),
   presets: [
