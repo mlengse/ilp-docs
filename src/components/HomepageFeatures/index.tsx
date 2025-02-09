@@ -11,32 +11,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Integrasi Pelayanan Kesehatan Primer',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Strategi global pelayanan kesehatan berfokus pada individu (people centred), terintegrasi guna mewujudkan pelayanan yang lebih komprehensif, responsif dan terjangkau untuk mengatasi beragam kebutuhan kesehatan yang diperlukan masyarakat. <a href="/ILP/pendahuluan">Lihat...</a>
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Panduan Praktik Klinis',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Pedoman baku minimum dengan mengutamakan upaya maksimal sesuai kompetensi dan fasilitas yang ada. Pedoman ini berisi <a href="/PPK/praktik-klinis">Panduan Praktik Klinis</a> dan <a href="/PPK/keterampilan-klinis">Panduan Keterampilan Klinis</a>
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Pemeriksaan Kesehatan Gratis',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        <a href="/PKG/pendahuluan">Pemeriksaan Kesehatan Gratis (PKG)</a> dilaksanakan melalui pendekatan siklus hidup, dimulai sejak bayi baru lahir hingga lanjut usia.
       </>
     ),
   },
