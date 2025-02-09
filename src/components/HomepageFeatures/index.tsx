@@ -11,6 +11,15 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
+    title: 'Pemeriksaan Kesehatan Gratis',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        <a href="/PKG/pendahuluan">Pemeriksaan Kesehatan Gratis (PKG)</a> dilaksanakan melalui pendekatan siklus hidup, dimulai sejak bayi baru lahir hingga lanjut usia.
+      </>
+    ),
+  },
+  {
     title: 'Integrasi Pelayanan Kesehatan Primer',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
@@ -25,15 +34,6 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Pedoman baku minimum dengan mengutamakan upaya maksimal sesuai kompetensi dan fasilitas yang ada. Pedoman ini berisi <a href="/PPK/praktik-klinis">Panduan Praktik Klinis</a> dan <a href="/PPK/keterampilan-klinis">Panduan Keterampilan Klinis</a>
-      </>
-    ),
-  },
-  {
-    title: 'Pemeriksaan Kesehatan Gratis',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        <a href="/PKG/pendahuluan">Pemeriksaan Kesehatan Gratis (PKG)</a> dilaksanakan melalui pendekatan siklus hidup, dimulai sejak bayi baru lahir hingga lanjut usia.
       </>
     ),
   },
