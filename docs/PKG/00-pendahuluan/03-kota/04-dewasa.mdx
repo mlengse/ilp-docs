@@ -35,6 +35,15 @@ Glukometer
 - Strip gula darah
 - alkohol swab, 
 - Lancet
+
+:::tip Perhitungan
+```math
+Kebutuhan = Sasaran 
+```
+:::
+- $Kebutuhan$ $=$ Kebutuhan BMHP Pemeriksaan Gula Darah
+- $Sasaran$ $=$ Jumlah sasaran usia 15 - 59 tahun
+
 ## Risiko Stroke
 **SDM Kesehatan**: 
 - Dokter/Perawat
@@ -77,12 +86,41 @@ EKG
 -        Alcohol Swab
 -        Plester
 -        Tabung Vacutainer Tutup Kuning
+
+:::tip Perhitungan
+```math
+Kebutuhan=Sasaran\ x\ (HT+DM)
+```
+:::
+- $Kebutuhan$ $=$ Kebutuhan BMHP untuk pemeriksaan Risiko stroke, jantung, dan fungsi ginjal
+- $Sasaran$ $=$ Jumlah sasaran usia 40 - 59 tahun 
+- $HT$ $=$ Prevalensi Hipertensi
+- $DM$ $=$ Prevalensi Diabetes Melitus
+
+Untuk setiap jenis BMHP fungsi ginjal (misalnya, _yellow micropipette tips_, _cuvet_ 4,5 mL, tabung vacutainer tutup kuning, dan lain-lain), rumus yang digunakan adalah:
+:::tip BMHP Fungsi Ginjal 
+```math
+BMHP = Sasaran\ x\ Pemakaian
+```
+:::
+- $BMHP =$ Kebutuhan BMHP Fungsi Ginjal
+- $Sasaran =$ Sasaran Skrining 
+- $Pemakaian =$ Pemakaian BMHP per Individu
 ## Tuberkulosis
 **SDM Kesehatan**: Dokter/Bidan/ Perawat
 
 **Alat Kesehatan**: Mikroskop atau mesin TCM
 
 **Bahan Medis Habis Pakai (BMHP):** Tes Sputum BTA / TCM
+:::tip Perhitungan
+```math
+Kebutuhan=Prevalensi\ x\ Sasaran
+```
+:::
+- $Kebutuhan$ $=$ Kebutuhan BMHP Pemeriksaan Tuberkulosis 
+- $Prevalensi$ $=$ Prevalensi Tuberkulosis 
+- $Sasaran$ $=$ Jumlah sasaran dewasa 18 - 59 tahun
+
 ## Penyakit Paru Obstruktif Kronis
 **SDM Kesehatan**: 
 Dokter/ Perawat/Bidan
@@ -102,6 +140,14 @@ Dokter/ Perawat/Bidan
 - Collecting Kit (cytobrush + VTM),
 -        Reagen Ekstraksi,
 -        Reagen PCR
+:::tip Perhitungan
+```math
+Kebutuhan=Sasaran
+```
+:::
+- $Kebutuhan$ $=$ Kebutuhan BMHP Pemeriksaan Kanker Leher Rahim 
+- $Sasaran$ $=$ Jumlah sasaran perempuan usia 30 - 59 tahun
+
 ## Kanker Paru
 **SDM Kesehatan**: Dokter/ Perawat/Bidan
 ## Kanker Usus
@@ -111,6 +157,13 @@ Dokter/ Perawat/Bidan
 - Pot feses
 -      sarung tangan non steril
 -      FOBT/Reagen darah samar
+:::tip Perhitungan
+```math
+Kebutuhan=Sasaran
+```
+:::
+- $Kebutuhan$ $=$ Kebutuhan BMHP Pemeriksaan Kanker Usus
+- $Sasaran$ $=$ Jumlah sasaran laki - laki usia 45 - 59 tahun
 ## Mata
 **SDM Kesehatan**: Dokter/ Bidan/ Perawat
 
@@ -134,12 +187,30 @@ Dokter/ Perawat/Bidan
 - Rapid test Hepatitis B (HbSAg),
 - Blood lancet,
 -  Alkohol swab
+:::tip Perhitungan
+```math
+Kebutuhan=Prevalensi\ x\ Sasaran
+```
+:::
+- $Kebutuhan$ $=$ Kebutuhan BMHP Pemeriksaan Hepatitis B
+- $Prevalensi$ $=$ Prevalensi Hepatitis B 
+- $Sasaran$ $=$ Jumlah sasaran Dewasa usia 18 - 59 tahun
+
 ## Hepatitis C
 **SDM Kesehatan**: TTLM
+
 **Bahan Medis Habis Pakai (BMHP)**: 
 - Rapid test Hepatitis C (anti HCV),
 - Blood lancet,
 - Alkohol swab
+:::tip Perhitungan
+```math
+Kebutuhan=Prevalensi\ x\ Sasaran
+```
+:::
+- $Kebutuhan$ $=$ Kebutuhan BMHP Pemeriksaan Hepatitis C
+- $Prevalensi$ $=$ Prevalensi Hepatitis C 
+- $Sasaran$ $=$ Jumlah sasaran Dewasa usia 18 - 59 tahun
 ## Fibrosis/ Sirosis hati
 **SDM Kesehatan**: TTLM
 
@@ -150,6 +221,18 @@ Dokter/ Perawat/Bidan
 **Bahan Medis Habis Pakai (BMHP)**: 
 - BMHP pemeriksaan SGOT
 - BMHP pemeriksaan jumlah trombosit
+:::tip Perhitungan
+```math
+Kebutuhan= (HepB+HepC+Ob+Lip)\ x\ Sasaran
+```
+:::
+- $Kebutuhan$ $=$ Kebutuhan BMHP Pemeriksaan Fibrosis/Sirosis Hati
+- $HepB$ $=$ Prevalensi Hepatitis B
+- $HepC$ $=$ Prevalensi Hepatitis C
+- $Ob$ $=$ Prevalensi Obesitas Sentral
+- $Lip$ $=$ Prevalensi Dislipidemia
+- $Sasaran$ $=$ Jumlah sasaran dewasa usia 18 - 59 tahun
+
 ## Calon Pengantin
 **SDM Kesehatan**: Dokter/Bidan/ Perawat/TTLM
 
@@ -161,259 +244,23 @@ Dokter/ Perawat/Bidan
 - Rapid Sifilis,
 - Blood lancet,
 - Alkohol swab
-
-  {/* **Tabel 3.3 Kebutuhan Sumber Daya Manusia, Alat Kesehatan dan BMHP pada Dewasa** */}
-  
-{/* <table>
-  <thead>
-    <tr>
-      <th >No</th>
-      <th >Pemeriksaan</th>
-      <th >SDM Kesehatan</th>
-      <th>Alat Kesehatan</th>
-      <th>Bahan Medis Habis Pakai (BMHP)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Pe­ri­laku Me­ro­kok</td>
-      <td>Dok­ter/ Pe­ra­wat/Bi­dan</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Ting­kat ak­ti­vi­tas fi­sik</td>
-      <td>Dok­ter/ Pe­ra­wat/Bi­dan</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Sta­tus Gizi (Obe­si­tas, Gizi Ku­rang)</td>
-      <td>Dok­ter/ Pe­ra­wat/Bi­dan/Nu­tri­si­o­nis</td>
-      <td>Set An­tro­po­metri</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Gigi</td>
-      <td>Dok­ter Gigi/ Te­ra­pis Gigi</td>
-      <td>Set Pe­me­rik­saan Gigi</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Te­kanan da­rah</td>
-      <td>Dok­ter/ Pe­ra­wat/Bi­dan</td>
-      <td>Ten­si­me­ter</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>Gula darah</td>
-      <td>Dokter/Perawat/Bidan/TTLM</td>
-      <td>Glukometer</td>
-      <td>
-        <li>Strip gula darah</li>
-        <li>alkohol swab, Lancet</li>
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>Risiko Stroke</td>
-      <td>TTLM</td>
-      <td rowspan="2">Clinical Chemistry Analyzer/Fotometer</td>
-      <td rowspan="2">
-        <li>Reagen total kolesterol</li>
-        <li>Reagen Trigliserid,</li>
-        <li>Reagen HDL</li>
-        <li>Jarum vacutainer,</li>
-        <li>Tabung vacutainer,</li>
-        <li>Alkohol swab,</li>
-        <li>Plester</li>
-        <li>Tip kuning, Bahan kontrol</li>
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="2">8</td>
-      <td rowspan="2">Risiko Jantung</td>
-      <td rowspan="2">Dokter/Perawat</td>
-    </tr>
-    <tr>
-      <td>EKG</td>
-      <td>
-        <li>Thermal paper EKG</li>
-        <li>Gel EKG</li>
-      </td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>Fungsi ginjal</td>
-      <td>TTLM</td>
-      <td>Fotometer / Chemistry Analyzer</td>
-      <td>
-        <p>Pemeriksaan serum Ureum dan Kreatinin dengan BMHP</p>
-        <li>Reagen ureum</li>
-        <li>Reagen kreatinin</li>
-        <li>Yellow Micropipette Tips</li>
-        <li>Hand Scoon</li>
-        <li>Jarum Vacutainer 22</li>
-        <li>Alcohol Swab</li>
-        <li>Plester</li>
-        <li>Tabung Vacutainer Tutup Kuning</li>
-      </td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>Tuberkulosis</td>
-      <td>Dokter/Bidan/ Perawat</td>
-      <td>Mikroskop atau mesin TCM</td>
-      <td>Tes Sputum BTA / TCM</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>Penyakit Paru Obstruktif Kronis</td>
-      <td>Dokter/ Perawat/Bidan</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td>Kanker Payudara</td>
-      <td>Dokter/ Perawat/Bidan</td>
-      <td>USG dengan Probe Linier</td>
-      <td>Gel pelicin/pelumas untuk pasien/lubricant gel untuk USG</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>Kanker Leher Rahim</td>
-      <td>Dokter/Bidan</td>
-      <td>PCR*</td>
-      <td>
-        <li>Collecting Kit (cytobrush + VTM),</li>
-        <li>Reagen Ekstraksi,</li>
-        <li>Reagen PCR</li>
-      </td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>Kanker Paru</td>
-      <td>Dokter/ Perawat/Bidan</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>Kanker Usus</td>
-      <td>Dokter/ Perawat/Bidan</td>
-      <td></td>
-      <td>
-        <li>Pot feses</li>
-        <li>sarung tangan non steril</li>
-        <li>FOBT/Reagen darah samar</li>
-      </td>
-    </tr>
-    <tr>
-      <td>16</td>
-      <td>Mata</td>
-      <td>Dokter/ Bidan/ Perawat</td>
-      <td>
-        <li>Oftalmoskop</li>
-        <li>Senter</li>
-        <li>_E-Tumbling / Snellen Chart /E- Chart_</li>
-        <li>_pinhole_</li>
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>17</td>
-      <td>Telinga</td>
-      <td>Dokter/ Bidan/ Perawat</td>
-      <td>
-        <li>Garpu tala 512 Hz</li>
-        <li>otoskop</li>
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>18</td>
-      <td>Kesehatan Jiwa</td>
-      <td>Dokter/ Perawat/ Bidan/Psikolog Klinis</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>19</td>
-      <td>Hepatitis B</td>
-      <td>TTLM</td>
-      <td></td>
-      <td>
-        <li>Rapid test Hepatitis B (HbSAg),</li>
-        <li>Blood lancet,</li>
-        <li>Alkohol swab</li>
-      </td>
-    </tr>
-    <tr>
-      <td>20</td>
-      <td>Hepatitis C</td>
-      <td>TTLM</td>
-      <td></td>
-      <td>
-        <li>Rapid test Hepatitis C (anti HCV),</li>
-        <li>Blood lancet,</li>
-        <li>Alkohol swab</li>
-      </td>
-    </tr>
-    <tr>
-      <td>21</td>
-      <td>Fibrosis/ Sirosis hati</td>
-      <td>TTLM</td>
-      <td>
-        <li>_Hematology Analyzer,_</li>
-        <li>_Chemistry Analyzer_ /Fotometer</li>
-        
-      </td>
-      <td>
-        <li>BMHP pemeriksaan SGOT</li>
-        <li>BMHP pemeriksaan jumlah trombosit</li>
-      </td>
-    </tr>
-    <tr>
-      <td>22</td>
-      <td>Calon Pengantin</td>
-      <td>Dokter/Bidan/ Perawat/TTLM</td>
-      <td>Hb Meter</td>
-      <td>
-        <li>Rapid Hb,</li>
-        <li>Rapid HIV,</li>
-        <li>Rapid Sifilis,</li>
-        <li>Blood lancet,</li>
-        <li>Alkohol swab</li>
-      </td>
-    </tr>
-  </tbody>
-</table> */}
+:::tip Perhitungan
+```math
+Hb = SasaranP
+```
+<br/>
+```math
+Rapid = Sasaran
+```
+:::
+- $Hb$ $=$ Kebutuhan Strip Hemoglobin
+- $SasaranP$ $=$ Jumlah sasaran **perempuan** dewasa usia 18-49 tahun perempuan yang akan menikah dalam 1 tahun ke depan (data perkiraan sasaran diambil dari data calon pengantin yang menikah di tahun sebelumnya).
+- $Rapid$ $=$ Kebutuhan BMHP Rapid sifilis dan HIV 
+- $Sasaran$ $=$ Jumlah sasaran dewasa usia 18-49 tahun yang akan menikah dalam 1 tahun ke depan (data perkiraan sasaran diambil dari data calon pengantin yang menikah di tahun sebelumnya).
 
 [^*]: Di Labkesmas Tingkat 2
 
-
-Kebutuhan BMHP pemeriksaan Dewasa dihitung berdasarkan sasaran pemeriksaan sebagai berikut:
-
-1. Gula darah $=$ $jumlah$ sasaran usia 15 - 59 tahun
-2. Risiko stroke, jantung, dan fungsi ginjal $= jumlah$ sasaran usia 40 - 59 tahun $x$ $($ $Prevalensi$ Hipertensi $+$ $Prevalensi$ Diabetes Melitus$)$
-3. Tuberkulosis $=$ $prevalensi$ Tuberkulosis $x$ $jumlah$ sasaran dewasa 18 - 59 tahun
-4. Kanker Leher Rahim $=$ $jumlah$ sasaran perempuan usia 30 - 59 tahun
-5. Kanker Usus $=$ $jumlah$ sasaran laki - laki usia 45 - 59 tahun
-6. Hepatitis B $=$ $prevalensi$ Hepatitis B $x$ $jumlah$ sasaran Dewasa usia 18 - 59 tahun
-7. Hepatitis C $=$ $prevalensi$ Hepatitis C $x$ $jumlah$ sasaran dewasa usia 18 - 59 tahun
-8. Fibrosis/Sirosis $=$ $($ $prevalensi$ Hepatitis B $+$ Hepatitis C $+$ Obesitas Sentral $+$ Dislipidemia$)$ $x$ $jumlah$ sasaran dewasa usia 18 - 59 tahun
-9. Calon Pengantin:
-    1. Strip Hemoglobin $=$ $jumlah$ sasaran perempuan dewasa usia 18-49 tahun perempuan yang akan menikah dalam 1 tahun ke depan (data perkiraan sasaran diambil dari data calon pengantin yang menikah di tahun sebelumnya).
-    2. Rapid sifilis dan HIV $=$ $jumlah$ sasaran dewasa usia 18-49 tahun yang akan menikah dalam 1 tahun ke depan (data perkiraan sasaran diambil dari data calon pengantin yang menikah di tahun sebelumnya).
-
+---
 Sebelum melakukan perhitungan BMHP dilakukan penghitungan jumlah sasaran di wilayah kerja Puskesmas.
 
 :::tip Rumus
@@ -426,15 +273,5 @@ Estimasi = jumlah + 10\%
 - $jumlah = $ sasaran dalam setahun 
 - $10\% = $ kemungkinan perpindahan atau penambahan sasaran
 
-**Catatan:**
 
-Untuk setiap jenis BMHP fungsi ginjal (misalnya, _yellow micropipette tips_, _cuvet_ 4,5 mL, tabung vacutainer tutup kuning, dan lain-lain), rumus yang digunakan adalah:
-:::note Rumus BMHP Fungsi Ginjal 
-```math
-BMHP = Sasaran\ x\ Pemakaian
-```
-<br/>
-:::
-- $BMHP =$ Kebutuhan BMHP 
-- $Sasaran =$ Sasaran Skrining 
-- $Pemakaian =$ Pemakaian BMHP per Individu
+
