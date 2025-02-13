@@ -1,4 +1,4 @@
-# Lansia
+# Kebutuhan Pemeriksaan Lansia
 
   {/* **Tabel 3.4. Kebutuhan Sumber Daya Manusia, Alat Kesehatan dan BMHP pada Lansia**
   
@@ -207,23 +207,23 @@
   </table>   */}
 ## Ge­ri­atri
 **SDM Kesehatan**: Dok­ter/Pe­ra­wat/Bi­dan
-## Pemeriksaan: Pe­ri­laku Me­ro­kok
+## Pe­ri­laku Me­ro­kok
 **SDM Kesehatan**: Dok­ter/ Pe­ra­wat/Bi­dan
-## Pemeriksaan: Ting­kat ak­ti­vi­tas fi­sik
+## Ting­kat ak­ti­vi­tas fi­sik
 **SDM Kesehatan**: Dok­ter/ Pe­ra­wat/Bi­dan
-## Pemeriksaan: Sta­tus Gizi (Obe­si­tas, Gizi Ku­rang)
+## Sta­tus Gizi (Obe­si­tas, Gizi Ku­rang)
 **SDM Kesehatan**: Dok­ter/Pe­ra­wat/Bi­dan/Nut­risi onis
 
 **Alat Kesehatan**: Set An­tro­po­metri
-## Pemeriksaan: Gigi
+## Gigi
 **SDM Kesehatan**: Dok­ter Gigi/ Te­ra­pis Gigi
 
 **Alat Kesehatan**: Set Pe­me­rik­saan Gigi
-## Pemeriksaan: Te­kanan da­rah
+## Te­kanan da­rah
 **SDM Kesehatan**: Dok­ter/Pe­ra­wat/Bi­dan
 
 **Alat Kesehatan**: Ten­si­me­ter
-## Pemeriksaan: Gula darah
+## Gula darah
 **SDM Kesehatan**: Perawat/Bidan/TTLM
 
 **Alat Kesehatan**: Glukometer
@@ -231,7 +231,15 @@
 **Bahan Medis Habis Pakai (BMHP)**: 
 - Strip gula darah
 - alkohol swab, Lancet
-## Pemeriksaan: Risiko Stroke
+:::tip Perhitungan
+```math
+BMHP=Sasaran
+```
+:::
+- $BMHP$ $=$ Jumlah kebutuhan BMHP Gula darah
+- $Sasaran$ $=$ Jumlah sasaran lanjut usia (>60 tahun)
+
+## Risiko Stroke
 **SDM Kesehatan**: TTLM
 
 **Alat Kesehatan**: Clinical Chemistry Analyzer/Fotometer
@@ -245,13 +253,13 @@
 - Alkohol swab,
 - Plester
 - Tip kuning, Bahan kontrol
-## Pemeriksaan: Risiko Jantung
+## Risiko Jantung
 **SDM Kesehatan**: Dokter/Perawat
-## Pemeriksaan: EKG
+## EKG
 **Bahan Medis Habis Pakai (BMHP)** 
 - Thermal paper EKG
 - Gel EKG
-## Pemeriksaan: Fungsi ginjal
+## Fungsi ginjal
 **SDM Kesehatan**: TTLM
 
 **Alat Kesehatan**: Fotometer / Chemistry Analyzer
@@ -266,52 +274,117 @@
 - Alcohol Swab
 - Plester
 - Tabung Vacutainer Tutup Kuning
-## Pemeriksaan: Tuberkulosis
-  SDM Kesehatan: Dokter/Bidan/ Perawat
-  Alat Kesehatan: Mikroskop atau mesin TCM
-  Bahan Medis Habis Pakai (BMHP): Tes Sputum BTA / TCM
-## Pemeriksaan: Penyakit Paru Obstruktif Kronis
-  SDM Kesehatan: Dokter/ Perawat/Bidan
-## Pemeriksaan: Kanker Payudara
-  SDM Kesehatan: Dokter/Perawat/Bidan
-  Alat Kesehatan: USG dengan Probe Linier
-  Bahan Medis Habis Pakai (BMHP): Gel pelicin/pelumas untuk pasien/lubricant gel untuk USG
-## Pemeriksaan: Kanker Leher Rahim
-  SDM Kesehatan: Dokter/Bidan
-  Alat Kesehatan: PCR[^*]
-  Bahan Medis Habis Pakai (BMHP): Collecting Kit (cytobrush + VTM),
-          Reagen Ekstraksi,
-          Reagen PCR
-## Pemeriksaan: Kanker Paru
-  SDM Kesehatan: Dokter/ Perawat/Bidan
-## Pemeriksaan: Kanker Usus
-  SDM Kesehatan: Dokter/ Perawat/Bidan
-  Bahan Medis Habis Pakai (BMHP): Pot feses
-          sarung tangan non steril
-          FOBT/Reagen darah samar
-## Pemeriksaan: Mata
-  SDM Kesehatan: Dokter/ Bidan/ Perawat
-  Alat Kesehatan: Oftalmoskop
-          Senter
-          _E-Tumbling / Snellen Chart /E- Chart_
-          _pinhole_
-## Pemeriksaan: Telinga
-  SDM Kesehatan: Dokter/ Bidan/ Perawat
-  Alat Kesehatan: Garpu tala 512 Hz
-          otoskop
-## Pemeriksaan: Kesehatan Jiwa
-  SDM Kesehatan: Dokter/ Perawat/ Bidan/Psikolog Klinis
-## Pemeriksaan: Hepatitis B
-  SDM Kesehatan: TTLM
-  Bahan Medis Habis Pakai (BMHP): Rapid test Hepatitis B (HbSAg),
-          Blood lancet,
-          Alkohol swab
-## Pemeriksaan: Hepatitis C
-  SDM Kesehatan: TTLM
-  Bahan Medis Habis Pakai (BMHP): Rapid test Hepatitis C (anti HCV),
-          Blood lancet,
-          Alkohol swab
-## Pemeriksaan: Fibrosis/ Sirosis hati
+:::tip Perhitungan
+```math
+BMHP=(DM+HT)\ x\ Sasaran
+```
+:::
+- $BMHP$ $=$ Jumlah kebutuhan BMHP Risiko stroke, risiko jantung, dan fungsi ginjal 
+- $DM$ $=$ Prevalensi DM
+- $HT$ $=$ Prevalensi HT
+- $Sasaran$ $=$ Jumlah sasaran lanjut usia (>60 tahun)
+
+## Tuberkulosis
+**SDM Kesehatan**: Dokter/Bidan/ Perawat
+
+**Alat Kesehatan**: Mikroskop atau mesin TCM
+
+**Bahan Medis Habis Pakai** (BMHP): Tes Sputum BTA / TCM
+:::tip Perhitungan
+```math
+BMHP=TB\ x\ Sasaran
+```
+:::
+- $TB$ $=$ Prevalensi Tuberkulosis 
+- $Sasaran$ $=$ jumlah sasaran lanjut usia (>60 tahun)
+
+## Penyakit Paru Obstruktif Kronis
+**SDM Kesehatan**: Dokter/ Perawat/Bidan
+## Kanker Payudara
+**SDM Kesehatan**: Dokter/Perawat/Bidan
+
+**Alat Kesehatan**: USG dengan Probe Linier
+
+**Bahan Medis Habis Pakai** (BMHP): Gel pelicin/pelumas untuk pasien/lubricant gel untuk USG
+## Kanker Leher Rahim
+**SDM Kesehatan**: Dokter/Bidan
+
+**Alat Kesehatan**: PCR[^*]
+
+**Bahan Medis Habis Pakai** (BMHP): 
+- Collecting Kit (cytobrush + VTM),
+- Reagen Ekstraksi,
+- Reagen PCR
+:::tip rumus
+```math
+BMHP=Sasaran
+```
+:::
+$Sasaran$ $=$ jumlah sasaran perempuan lanjut usia (>60 tahun)
+
+## Kanker Paru
+**SDM Kesehatan**: Dokter/ Perawat/Bidan
+## Kanker Usus
+**SDM Kesehatan**: Dokter/ Perawat/Bidan
+
+**Bahan Medis Habis Pakai** (BMHP): 
+- Pot feses
+- sarung tangan non steril
+- FOBT/Reagen darah samar
+:::tip rumus
+```math
+BMHP=Sasaran
+```
+:::
+$Sasaran$ $=$ Jumlah sasaran laki laki lanjut usia (> 60 tahun)
+## Mata
+**SDM Kesehatan**: Dokter/ Bidan/ Perawat
+
+**Alat Kesehatan**: 
+- Oftalmoskop
+- Senter
+- _E-Tumbling / Snellen Chart /E- Chart_
+- _pinhole_
+## Telinga
+**SDM Kesehatan**: Dokter/ Bidan/ Perawat
+
+**Alat Kesehatan**: 
+- Garpu tala 512 Hz
+- otoskop
+## Kesehatan Jiwa
+**SDM Kesehatan**: Dokter/ Perawat/ Bidan/Psikolog Klinis
+## Hepatitis B
+**SDM Kesehatan**: TTLM
+
+**Bahan Medis Habis Pakai** (BMHP): 
+- Rapid test Hepatitis B (HbSAg),
+- Blood lancet,
+- Alkohol swab
+:::tip rumus
+```math
+BMHP=HepB\ x\ Sasaran
+```
+:::
+- $HepB$ $=$ Prevalensi Hepatitis B 
+- $Sasaran$ $=$ Jumlah sasaran lanjut usia (> 60 tahun)
+
+## Hepatitis C
+**SDM Kesehatan**: TTLM
+
+**Bahan Medis Habis Pakai** (BMHP): 
+- Rapid test Hepatitis C (anti HCV),
+- Blood lancet,
+- Alkohol swab
+:::tip rumus
+```math
+BMHP=HepC\ x\ Sasaran
+```
+:::
+- $HepC$ $=$ Prevalensi Hepatitis C 
+- $Sasaran$ $=$ Jumlah sasaran lanjut usia (> 60 tahun)
+
+
+## Fibrosis/ Sirosis hati
 **SDM Kesehatan**: TTLM
 
 **Alat Kesehatan**: 
@@ -321,19 +394,19 @@
 **Bahan Medis Habis Pakai (BMHP)**
 - BMHP pemeriksaan SGOT
 - BMHP pemeriksaan jumlah trombosit
+:::tip Perhitungan
+```math
+Kebutuhan= (HepB+HepC+Ob+Lip)\ x\ Sasaran
+```
+:::
+- $Kebutuhan$ $=$ Kebutuhan BMHP Pemeriksaan Fibrosis/Sirosis Hati
+- $HepB$ $=$ Prevalensi Hepatitis B
+- $HepC$ $=$ Prevalensi Hepatitis C
+- $Ob$ $=$ Prevalensi Obesitas Sentral
+- $Lip$ $=$ Prevalensi Dislipidemia
+- $Sasaran$ $=$ Jumlah sasaran lanjut usia (> 60 tahun)
 
 [^*]: Di Labkesmas Tingkat 2
-
-Kebutuhan BMHP skrining Lanjut Usia dihitung berdasarkan sasaran sebagai berikut :
-
-1. Gula darah $=$ $jumlah$ sasaran lanjut usia (>60 tahun)
-2. Risiko stroke, risiko jantung, dan fungsi ginjal $=$ ($prevalensi$ DM $+$ HT) $x$ $jumlah$ sasaran lanjut usia (>60 tahun)
-3. Tuberkulosis $=$ $Prevalensi$ Tuberkulosis $x$ $jumlah$ sasaran lanjut usia (>60 tahun)
-4. Kanker Leher Rahim $=$ $jumlah$ sasaran perempuan lanjut usia (>60 tahun)
-5. Kanker Usus $=$ $jumlah$ sasaran laki laki lanjut usia (> 60 tahun)
-6. Hepatitis B $=$ $prevalensi$ Hepatitis B $x$ $jumlah$ sasaran lanjut usia (> 60 tahun)
-7. Hepatitis C $=$ $prevalensi$ Hepatitis C $x$ $jumlah$ sasaran lanjut usia (>60 tahun)
-8. Fibrosis/Sirosis $=$ ($prevalensi$ Hepatitis B $+$ Hepatitis C $+$ Obesitas Sentral $+$ Dislipidemia) $x$ $jumlah$ sasaran Lanjut Usia (>60 tahun).
 
 Sebelum melakukan perhitungan BMHP dilakukan penghitungan jumlah sasaran. Jumlah sasaran Lanjut Usia adalah jumlah penduduk usia >60 tahun.
 
