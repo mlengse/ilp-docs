@@ -1,0 +1,339 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import BumilIcon from '@site/static/cp/bumil.svg';
+import BayiIcon from '@site/static/cp/bayi.svg';
+import SekolahIcon from '@site/static/cp/sekolah.svg';
+import DewasaIcon from '@site/static/cp/dewasa.svg';
+import BumilComponent from '@site/src/components/cp/alur-bumil';
+
+# Pengantar
+ 
+
+## Pengenalan Care Pathway
+
+![Pengenalan banner](/cp/PDF1_SVG2.svg)
+
+**Care pathway** disusun untuk mendukung Integrasi Pelayanan Kesehatan Primer Mencakup **alur pelayanan** **rujukan dan rujuk balik**
+
+Care pathway merupakan alur pelayanan yang terintegrasi, mencakup seluruh unit pemberi pelayanan primer mulai dari FKTP, Pustu dan Posyandu
+
+<details>
+  <summary>**FUNGSI**</summary>
+
+  Tools praktis bagi tenaga Puskesmas dan jaringannya (tenaga kesehatan dan kader) dalam pemberian pelayanan sesuai dengan siklus hidup
+</details>
+
+<details>
+  <summary>**MANFAAT BAGI POSYANDU**</summary>
+
+  Acuan kader posyandu dalam melakukan kunjungan rumah, edukasi, deteksi, dan pemantauan
+</details>
+
+<details>
+  <summary>**MANFAAT BAGI PUSTU**</summary>
+
+  Acuan dalam pelayanan kesehatan sesuai dengan kemampuan pelayanan di Pustu
+</details>
+<details>
+  <summary>**MANFAAT BAGI FKTP**</summary>
+
+  Melakukan pelayanan komprehensif sesuai standar dan kompetensi, acuan dalam penyusunan SPO dan pembinaan ke jaringan dibawahnya
+</details>
+<details>
+  <summary>**Tujuan**</summary>
+
+  1. Meningkatkan kualitas pelayanan yang berkesinambungan sesuai siklus hidup.
+  2. Meningkatkan kemampuan dalam deteksi dini dan risiko penanganan dini.
+  3. Meningkatkan hasil patient safety dan kenyamanan pasien.
+  4. Optimalisasi penggunaan sumber daya.
+</details>
+
+<details>
+  <summary>**Tentang Care Pathway**</summary>
+
+  Latar belakang disusunnya Care Pathway karena adanya Transformasi Layanan Primer yang dilaksanakan dalam bentuk Integrasi Pelayanan Kesehatan  Primer  sebagai  salah  satu  fokus  penguatan  layanan  primer. Untuk  memenuhi  kebutuhan  pelayanan  masyarakat  di  setiap  siklus kehidupan  yang  mudah  diakses,  komprehensif,  berkualitas,  dan  terjangkau  sampai  pada  tingkat  masyarakat,  keluarga  dan  individu,  telah diterbitkan Keputusan Menteri Kesehatan Nomor 2015 Tahun 2023 tentang Petunjuk Teknis Integrasi Pelayanan Kesehatan Primer.
+  
+  Care Pathway merupakan alur bagi penyedia pelayanan kesehatan yang menggambarkan keterkaitan antara unit pelayanan di pelayanan primer  dan  pemberian  pelayanan  sesuai  dengan  kewenangan  dan  kompetensi  masing-masing  unit  pelayanan.  Care  Pathway  ini  disusun mengacu  pada  Petunjuk  Teknis  Integrasi  Pelayanan  Kesehatan  Primer  dan  telah  mendapatkan  masukan  dari  berbagai  lintas  program  di Kementerian Kesehatan, Organisasi Profesi dan Praktisi Kesehatan. Care Pathway yang dihadirkan sesuai dengan paket layanan dalam Integrasi Pelayanan Kesehatan Primer yang harus diberikan kepada masyarakat sesuai dengan siklus kehidupan dan dilengkapi dengan informasi tentang materi edukasi sebagai pendukung.
+  
+  Dengan tersedianya Care Pathway dalam Integrasi Pelayanan Kesehatan Primer ini, diharapkan tenaga kesehatan di FKTP maupun kader dapat memahami kegiatan-kegiatan pelayanan yang dapat diberikan di masing-masing unit pelayanan dan dapat menjalankan rujukan horizontal, rujukan vertikal maupun melakukan tata laksana rujukan balik dengan baik. Dalam Care Pathway ini, unit pelayanan dibedakan dengan warna-warna yang berbeda untuk memudahkan para pembaca mengidentifikasi unit pelayanan mana yang akan dikunjungi dan layanan apa saja yang terdapat pada unit pelayanan tersebut.
+</details>
+
+<details>
+  <summary>**Tim Penyusun Care Pathway**</summary>
+  
+  Ucapan terima kasih disampaikan kepada semua pihak dan kontributor yang terlibat dalam pembahasan selama penyusunan Care Pathway ini:
+  
+  Pengarah: dr. Obrin Parulian, M.Kes (Direktur Pelayanan Kesehatan Primer)
+  
+  <details>
+    <summary>Tim Penyusun:</summary>
+    
+    dr. Upik Rukmini, MKM; dr. Adi Pamungkas; dr. Gita Swisari, MKM; Sarto S.Kom, MKM; dr. Wing Irawati; drg. Naneu Retna Arfani; drg. Aditia Putri; dr. Era Renjana Diskamara; dr. Anandini Nindya Lestari Umar; dr. Vitis Finivera Syafitriningrum; dr. Saddam Adriansyah Sudarsono; Sri Nuraini, SKM; dr. Nadia Adelin; dr. Barbarani Satriyani Hayyu; dr. Siti Hardianty Yarika; Yuanita Rizky Inggarputri, SKM; Junetta Dirgahayu, SKM; Endro Kahono, SKM, M.Kes
+  </details>
+  
+  <details>
+    <summary>Kontributor (dalam urutan abjad):</summary>
+    
+    dr. Bertharia Romauli Sinaga (Dit. Gizi & KIA); Bunga M. Datu Linggi, SKM, M.Kes (Dit. P2PM); Cicilia Nurteta, SKM, M.Kes (Dit. P2PTM); dr. Cornelia Kelyombar (Dit. Pengelolaan Imunisasi); Dahlia Hutagaol, SKM, M.Kes (Dit. Gizi & KIA); dr. Edduwar Idul Riyadi, Sp.KJ (Dit. Kesehatan Jiwa); dr. Elcha Leonard (Sekretariat Komnas KIPI); dr. Endang Budi Hastuti (Dit. Pengelolaan Imunisasi); Evi Firna, SKM (Dit. Kesehatan Jiwa); dr. Farsely Mranani, MKM (Dit. Gizi & KIA); dr. Fatchanuraliyah, MKM (Dit. P2PTM); dr. Florentine Marthatilova (Dit. Gizi & KIA); dr. Fristika Mildya, M.K.K.K (Dit. Pengelolaan Imunisasi); dr. Herbert Sidabutar, Sp.KJ (Dit. Kesehatan Jiwa); dr. Iis Afandi (Dit. P2PTM); Inge Yuliane Susianto, S.Gz (Dit. Takel Kesmas); dr. Lily Banonah Rivai, M.Epid (Dit. Pengelolaan Imunisasi); Muhammad Rizka, S. Or. (Dit. UPL); Nanda Indah Permatasari, S.Gz (Dit. Gizi & KIA); dr. Nindya Savitri, MKM (Dit. UPL); Nurasni, SKM (Dit. P2PM); Nurul Badriyah, SKM (Dit. P2PM); dr. Pratano (Dit. P2PTM); dr. Prihandriyo Sri Hijranti, M. Epid (Dit. P2PTM); Putra Fajar Angkasa, SKM (Sekretariat Komnas KIPI); dr. Rainy Fathiyah, MKM (Dit. P2PTM); Ratih Oktri Nanda, SKM (Dit. Pengelolaan Imunisasi); dr. Ratna B. Hapsari, MKM (Dit. P2PM); dr. Rima Damayanti, M.Kes (Dit. Takel Kesmas); dr. Rivani Noor, MKM (Dit. Gizi & KIA); dr. Sherli Karolina, MKM (Dit. Pengelolaan Imunisasi); dr. Solihah Widyastuti, M.Epid (Dit. Pengelolaan Imunisasi); Sri Drisna Dewi, SKM, MPH (Dit. P2PM); dr. Sylviana Andinisari, MSc (Dit. P2PTM); dr. Theresia Sandra Diah Ratih, MHA (Dit. P2PTM);  dr.  Tiersa  Vera  Junita,  M.Epid  (Dit.  P2PTM);  dr.  Tiffany  Tiara  Pakasi,  MA  (Dit.  P2PM);  dr.  Uswatun  Hasanah,  M.Epid  (Dit.  P2PTM);  dr.  Yunita Arihandayani (Dit. Keswa)
+  </details>
+</details>
+
+<details>
+  <summary>**Sambutan Direktur Jenderal Pelayanan Kesehatan**</summary>
+  
+  
+  Puji syukur kami ucapkan kehadirat Tuhan Yang Maha Esa karena atas limpahan rahmat-Nya, kita telah menyelesaikan Dokumen Manajemen Alur Pelayanan Kesehatan (Care Pathway) di Fasilitas Pelayanan Kesehatan Tingkat Pertama (FKTP). Dokumen ini terdiri dari dua bagian yaitu Alur Pelayanan (Care Pathway) mulai dari pelayanan promotif, preventif, dan skrining berdasarkan siklus hidup dan Alur Manajemen Kasus Klinis di FKTP menggunakan pendekatan gejala.
+  
+  Dokumen ini disusun untuk melengkapi buku petunjuk teknis Integrasi Pelayanan Kesehatan Primer yang disusun dalam bentuk alur untuk memberi acuan kepada dokter dan tenaga kesehatan dalam memberikan pelayanan di berbagai pelayanan primer dan jaringan di bawahnya secara komprehensif. Selanjutnya manajemen kasus  klinis  dibuat  dalam  bentuk  alur  klinis  yang  membantu  dokter  dan  tenaga  kesehatan  dalam  melakukan  penatalaksanaan  kasus  dari  gejala,  melakukan pemeriksaan, mendapatkan diagnosis yang tepat dan merencanakan terapi sesuai dengan kompetensi dan melakukan rujukan serta pelayanan rujuk balik.
+  
+  Manajemen Alur Pelayanan Kesehatan (Care Pathway) dapat dimulai di Posyandu, Puskesmas Pembantu (Pustu), Puskesmas, atau FKTP lainnya dengan melakukan edukasi, konseling, dan skrining sesuai kebutuhan pasien dan sesuai dengan kompetensi tenaga kesehatan yang memberikan pelayanan. Untuk tata laksana kasus hasil skrining yang positif atau pasien dengan keluhan atau gejala, dilakukan di FKTP yang memiliki dokter dengan menggunakan alur klinis.
+  
+  Alur klinis sebagai bagian dari Care Pathway ini disusun berdasarkan gejala, karena sebagai fasilitas pelayanan kesehatan kontak pertama, pasien biasanya datang ke FKTP dengan gejala atau keluhan, jadi sebagai titik awal penanganan pasien diawali dari gejala atau keluhan untuk skrining cepat, menegakkan diagnosis setelah melakukan pemeriksaan dan rencana tatalaksana pasien. Dokter akan diarahkan untuk mendapatkan diagnosis yang tepat dengan pendekatan berdasarkan gejala atau  keluhan  pasien.  Diawali  dengan  menilai  apakah  terdapat  tanda  kegawatdaruratan  dan  menanganinya.  Selanjutnya  melakukan  pemeriksaan  fisik  dan pemeriksaan penunjang sampai ditemukan diagnosis yang tepat dan merencanakan terapi sesuai diagnosis dan sesuai dengan kompetensi serta menentukan kapan pasien harus dirujuk.
+  
+  Manajemen Alur Pelayanan Kesehatan (Care Pathway) yang dilengkapi dengan alur klinis ini disusun mengacu pada standar pelayanan yang sudah ada seperti PNPK dan PPK dan pedoman lain yang berlaku. Alur pelayanan ini bersifat dinamis dan dapat dilakukan perbaikan secara berkala sesuai dengan kemajuan ilmu pengetahun dan kebutuhan kesehatan sehingga saran dan masukan dari para pengguna akan sangat bermanfaat demi perbaikan buku ini dimasa yang akan datang.
+  
+  Dengan adanya Manajemen Alur Pelayanan Kesehatan (Care Pathway) yang dilengkapi dengan alur klinis ini diharapkan pelayanan yang diberikan oleh dokter dan tenaga kesehatan di FKTP dapat lebih baik dan berkualitas serta memberikan dampak kepada kepuasan pasien dan penurunan rujukan kasus dari layanan primer ke layanan rujukan sehingga dapat mengurangi beban pembiayaan JKN di layanan rujukan. Semoga dokumen ini dimanfaatkan dengan baik dalam mendukung Transformasi Layanan Primer.
+  
+  Jakarta, 29 Desember 2023
+  
+  dr. Azhar Jaya, SKM, SH, MARS Direktur Jenderal Pelayanan Kesehatan
+</details>
+
+<details>
+  <summary>**Sambutan Direktur Jenderal Kesehatan Masyarakat**</summary>
+  
+  Puji syukur kami ucapkan kehadirat Tuhan Yang Maha Esa karena atas limpahan rahmat-Nya, kami telah menyelesaikan Dokumen Care Pathway.  Care  Pathway  dalam  Integrasi  Pelayanan  Primer  merupakan  alur  bagi  penyedia  pelayanan  kesehatan  yang  menggambarkan keterkaitan antar unit layanan sesuai dengan kewenangan dan kompetensi masing-masing unit dimulai dari keluarga hingga fasilitas pelayanan kesehatan.
+  
+  Dokumen Care Pathway disusun dengan mengacu pada konsep Integrasi Pelayanan Kesehatan Primer (ILP) dan telah mendapatkan masukan dari berbagai lintas program di Kementerian Kesehatan dan Organisasi Profesi. Care Pathway dalam Integrasi Pelayanan Primer dihadirkan sesuai dengan klaster-klaster siklus hidup serta dilengkapi dengan informasi tambahan lain sebagai pendukung untuk memudahkan pembaca dalam memahami alur pelayanan primer terintegrasi.
+  
+  Dokumen ini disusun untuk melengkapi buku petunjuk teknis Integrasi Pelayanan Kesehatan Primer yang disusun dalam bentuk alur, sehingga diharapkan tenaga kesehatan maupun kader dapat memahami kegiatan pelayanan yang dapat diberikan di masing-masing unit pelayanan. Care Pathway diharapkan dapat menjadi acuan dalam memberikan pelayanan kesehatan secara komprehensif mulai dari promotif, preventif, kuratif dan rehabilitatif serta rujukan horizontal, rujukan vertikal, maupun melakukan tata laksana rujukan balik dengan baik.
+  
+  Care Pathway disusun sebagai salah satu upaya transformasi pelayanan kesehatan primer yang bertujuan penataan kembali pelayanan kesehatan primer yang telah ada, sehingga mampu melayani seluruh penduduk Indonesia dengan pelayanan kesehatan yang lengkap dan berkualitas.  Penataan  struktur  layanan  kesehatan  primer  tersebut  telah  dirangkum  pada  dokumen  Care  Pathway  yang  menggambarkan pendekatan baru dengan berorientasi pada kebutuhan layanan di setiap siklus kehidupan yang diberikan secara komprehensif dan terintegrasi antarunit layanan kesehatan.
+  
+  Dalam Care Pathway ini, setiap unit pelayanan telah diberikan warna yang berbeda untuk memudahkan para pembaca mengidentifikasi unit layanan mana yang akan dikunjungi dan pelayanan-pelayanan apa saja yang terdapat pada unit tersebut. Dengan adanya alur pelayanan ini diharapkan setiap individu memiliki pengetahuan dan dukungan yang dibutuhkan untuk mampu membuat keputusan dan berpartisipasi dalam perawatan kesehatannya sesuai strategi global pelayanan kesehatan berfokus pada individu (people center) untuk mewujudkan pelayanan kesehatan yang terintegrasi dan lebih komprehensif.
+  
+  Jakarta, 29 Desember 2023
+  
+  
+  
+  dr. Maria Endang Sumiwi, MPH Direktur Jenderal Kesehatan Masyarakat
+</details>
+
+
+## Cara Membaca Care Pathway
+
+{/* <!-- Mulai dari halaman **DAFTAR ISI** -->
+<!-- # Daftar Isi -->
+<!-- ## Pengantar 
+* Tentang Care Pathway 
+* Tim Penyusun Care Pathway 
+* Sambutan Dirjen Yankes 
+* Sambutan Dirjen Kesmas 
+* Cara Membaca Care Pathway 
+* Glosarium 
+* Daftar Isi  -->
+<!-- ### Overview 
+* Pengenalan Care Pathway 
+* Paket Layanan: Siklus Hidup  --> */}
+
+![Alur banner](/cp/PDF1_SVG10.svg)
+
+### Alur dan Paket Layanan Berdasarkan Siklus Hidup
+
+Pilih **ALUR LAYANAN** sesuai siklus hidup yang ingin dituju.
+
+Pada **ALUR LAYANAN** :
+- Biasakan memulai membaca dari sasaran yang berada dalam bentuk oval.
+- Gunakan belah ketupat untuk menentukan apakah sasaran memiliki keluhan kesehatan yang memerlukan penanganan di Puskesmas.
+- Jika sasaran tidak memiliki keluhan kesehatan, ikuti algoritma untuk memilih salah satu jenis skrining yang dituju.
+
+Pada **ALUR SKRINING** :
+- Selalu dimulai dari unit pelayanan mana yang akan dikunjungi oleh sasaran.
+- Jika sudah ditentukan unit pelayanan mana yang akan dikunjungi, bacalah informasi yang tertera dalam kotak putih, lakukan sebagaimana informasi yang disampaikan dan sesuaikan dengan kondisi yang ada.
+- Pada bagian belah ketupat, informasi didalamnya menunjukkan suatu kondisi tertentu akan menghasilkan beberapa kemungkinan, yang selanjutnya dapat dipilih sesuai dengan kondisi atau kasus yang dijumpai.
+- Terus ikuti tanda panah untuk melakukan tata laksana selanjutnya. 
+
+Pada **ALUR LAYANAN** dan **ALUR SKRINING** akan sering ditemukan:
+- Legenda warna yang berfungsi untuk memudahkan pengguna mengidentifikasi unit pelayanan dan layanan apa saja yang dapat dilakukan pada masing-masing unit pelayanan ( Keluarga I Posyandu I Pustu I Puskesmas/FKTP I Fasilitas Pelayanan Kesehatan Tingkat Lanjut (FKTL)).
+- Kalimat yang digarisbawahi yang apabila diklik akan membawa pengguna ke halaman skrining/halaman bantu yang berisi informasi tambahan.
+- Tombol navigasi yang dapat mengarahkan pengguna untuk berpindah halaman jika diklik
+- Tanda panah kembali membawa pengguna ke halaman sebelumnya.
+- Tanda panah ke kanan membawa pengguna ke alur skrining selanjutnya.
+{/* - Tanda list membawa pengguna kembali ke daftar isi. */}
+
+<BumilComponent></BumilComponent>
+
+<Tabs>
+  <TabItem value="ibu" label={<BumilIcon />} default>
+    ## Ibu Hamil, Bersalin & Nifas
+    * a. ANC Terpadu (termasuk USG, Skrining HIV, Sifilis, Hepatitis B, Imunisasi Tetanus Toksoid (TT), Imunisasi COVID- 19 Program, Gigi dan Mulut)
+    * b. Kelas Ibu Hamil
+    * c. PMT pada Ibu Hamil KEK
+    * d. Skrining TBC
+    * e. Skrining Kes. Jiwa
+    * f. Skrining Anemia
+    * g. Skrining Malaria (Daerah Endemis)
+    * h. Skrining KtPA
+    * i. Skrining Pre-eklampsia
+    * j. Persalinan Normal
+    * k. Pelayanan Pasca Persalinan
+    * l. Pelayanan Kes. Gigi dan Mulut
+    * m. Pengobatan
+  </TabItem>
+  <TabItem value="bayi" label={
+    <BayiIcon />
+  }>
+    ## Bayi dan Anak Prasekolah
+    * a. Pelayanan Neonatal Esensial
+    * b. Pelayanan BBLR
+    * c. Pencegahan, Deteksi Dini, Tata Laksana dan Rujukan Balita _Weight Faltering_ , _Underweight_ , Gizi Kurang, Gizi Buruk, dan Stunting
+    * d. Kelas Ibu Balita
+    * e. Imunisasi Rutin Lengkap Bayi dan Baduta
+    * f. Pemberian Vitamin A dan Obat Cacing
+    * g. Pemantauan Pertumbuhan dan Perkembangan
+    * h. Skrining Hipotiroid Kongenital (SHK)
+    * i. Skrining Penyakit Jantung Bawaan
+    * j. Skrining TBC
+    * k. Skrining Gigi dan Mulut
+    * l. Skrining Gangguan Spektrum Autisme
+    * m. Skrining Penyimpangan Perilaku dan Emosi
+    * n. Skrining Gangguan Pemusatan dan Hiperaktivitas (GPPH)
+    * o. Skrining HIV
+    * p. Skrining Hepatitis B
+    * q. Skrining Talasemia
+    * r. Skrining Malaria (Daerah Endemis)
+    * s. Skrining KtPA
+    * t. Tes Daya Dengar
+    * u. Tes Daya Lihat
+    * v. Pelayanan Kes. Gigi dan Mulut
+    * w. Pelayanan Pengobatan dengan Manajemen Terpadu Balita Sakit (MTBS)
+  </TabItem>
+  <TabItem value="anak" label={
+    <SekolahIcon />}>
+    ## Anak Usia Sekolah dan Remaja
+    * a. Imunisasi Rutin Lengkap Usia Sekolah
+    * b. Skrining Status Tumbuh Kembang dan Gizi (Pengukuran Antropometri termasuk Skrining Anemia pada SMP dan SMA)
+    * c. Skrining Kes. Indra
+    * d. Skrining Gigi dan Mulut
+    * e. Skrining Perilaku Merokok
+    * f. Skrining Faktor Risiko PTM (termasuk Skrining Hipertensi dan DM)
+    * g. Skrining TBC
+    * h. Skrining Kes. Jiwa
+    * i. Skrining Talasemia
+    * j. Skrining Kebugaran
+    * k. Skrining Malaria (Daerah Endemis)
+    * l. Skrining KtPA
+    * m. Skrining Imunisasi Tetanus bagi WUS
+    * n. Pelayanan Kes. Gigi dan Mulut
+    * o. Pencegahan Anemia
+    * p. Pengobatan
+  </TabItem>
+  <TabItem value="dewasa" label={
+    <DewasaIcon />}>
+    ## Usia Dewasa dan Lanjut Usia
+    * a. Skrining Obesitas
+    * b. Skrining Hipertensi
+    * c. Skrining DM
+    * d. Skrining Faktor Risiko Stroke
+    * e. Skrining Faktor Risiko Penyakit Jantung
+    * f. Skrining Kanker (Leher Rahim, Payudara, Kolorektal, dan Paru)
+    * g. Skrining Talasemia
+    * h. Skrining PPOK
+    * i. Skrining TBC
+    * j. Skrining Indra Penglihatan
+    * k. Skrining Kebugaran
+    * l. Skrining Kes. Jiwa
+    * m. Skrining Layak Hamil
+    * n. Skrining Imunisasi Tetanus bagi WUS
+    * o. Skrining Geriatri
+    * p. Skrining Malaria (Daerah Endemis)
+    * q. Skrining KtPA
+    * r. Pelayanan KB
+    * s. Pelayanan PAK
+    * t. Pelayanan Kes. Gigi dan Mulut
+    * u. Pelayanan Imunisasi COVID- 19 Program
+    * v. Pengobatan
+  </TabItem>
+</Tabs>
+
+
+{/* ## Alur Layanan
+* Ibu Hamil, Bersalin dan Nifas 
+* Bayi dan Anak Prasekolah 
+* Anak Usia Sekolah dan Remaja 
+* Usia Dewasa dan Lanjut Usia 
+
+
+- **Ibu Hamil, Bersalin dan Nifas**  
+- **Bayi dan Anak Pra-sekolah**  
+- **Anak Usia Sekolah dan Remaja**  
+- **Usia Dewasa**  
+- **Lanjut Usia** */}
+
+
+## Lampiran
+* Panduan Praktis Tata Laksana Klinis bagi Pasien Dewasa (PPTK)
+* Pelayanan Pengobatan dengan Manajemen Terpadu Balita Sakit (MTBS)
+* _Tracer Indicator_
+
+{/* <!-- ```
+Tanda panah kembali membawa pengguna ke halaman sebelumnya.
+Tanda panah ke kanan membawa pengguna ke alur skrining selanjutnya.
+Tanda list membawa pengguna kembali ke daftar isi.
+``` --> */}
+
+<details>
+  <summary>**Glosarium**</summary>
+  
+  * AIDS : _Acquired Immunodeficiency Syndrome_
+  * AKS/ADL : Aktivitas Kehidupan Sehari-hari
+  * ANC : _Antenatal Care_
+  * APCS : _The Asia-Pacific Colorectal Screening_
+  * ASSIST : _Alcohol, Smoking, and Substance Involvement Screening Test_
+  * DM : Diabetes Melitus
+  * Fasyankes : Fasilitas Pelayanan Kesehatan
+  * FKTL : Fasilitas Pelayanan Kesehatan Tingkat Lanjut
+  * FKTP : Fasilitas Pelayanan Kesehatan Tingkat Pertama
+  * GGL : Gula, Garam, Lemak
+  * HIV : Human Immunodeficiency Virus
+  * ILP : Integrasi Pelayanan Kesehatan Primer
+  * IMT : Indeks Massa Tubuh
+  * IPWL : Institusi Penerima Wajib Lapor
+  * IVA : Inspeksi Visual Asetat
+  * JKN : Jaminan Kesehatan Nasional
+  * KB : Keluarga Berencana
+  * KEK : Kurang Energi Kronis
+  * Keswa : Kesehatan Jiwa
+  * KIA : Kesehatan Ibu dan Anak
+  * KMK : Keputusan Menteri Kesehatan
+  * KPSP : Kuesioner Pra Skrining Perkembangan
+  * Lansia : Lanjut Usia
+  * LiLa : Lingkar Lengan Atas
+  * MTBM : Manajemen Terpadu Bayi Muda
+  * MTBS : Manajemen Terpadu Balita Sakit
+  * OAT : Obat Anti Tuberkulosis
+  * PAK : Penyakit Akibat Kerja
+  * PAR-Q : Physical Activity Readiness Questionnaire
+  * Permenkes : Peraturan Menteri Kesehatan
+  * PJB : Penyakit Jantung Bawaan
+  * PMT : Pemberian Makanan Tambahan
+  * PNPK : Pedoman Nasional Pelayanan Kedokteran
+  * PPK : Panduan Praktik Klinis
+  * PPOK : Penyakit Paru Obstruktif Kronis
+  * PPTK : Panduan Praktis Tata Laksana Klinis Bagi Pasien Dewasa
+  * PTM : Penyakit Tidak Menular
+  * PUS : Pasangan Usia Subur
+  * Puskesmas : Pusat Kesehatan Masyarakat
+  * Pustu : Puskesmas Pembantu
+  * Sadanis : Periksa Payudara secara Klinis
+  * Sadari : Periksa Payudara Sendiri
+  * SDQ : Strength and Difficulties Questionnaire
+  * SHK : Skrining Hipotiroid Kongenital
+  * SKILAS : Skrining Lansia Sederhana
+  * SRQ : Self Reporting Questionnaire
+  * TBC : Tuberkulosis
+  * TPT : Terapi Pencegahan Tuberkulosis
+  * USG : Ultrasonografi
+  * WBP : Warga Binaan Pemasyarakatan
+  * WUS : Wanita Usia Subur
+</details>

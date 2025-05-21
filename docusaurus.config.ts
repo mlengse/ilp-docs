@@ -127,6 +127,12 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
+          sidebarId: 'CarePathways',
+          position: 'left',
+          label: 'Care Pathways',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'ILP',
           position: 'left',
           label: 'ILP',

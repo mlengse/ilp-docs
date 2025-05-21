@@ -11,6 +11,15 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
+    title: 'INDONESIA’s CARE PATHWAY',
+    Svg: require('@site/static/cp/PDF1_SVG1.svg').default,
+    description: (
+      <>
+        <a href="/care-pathways/pengantar">INDONESIA’s CARE PATHWAY</a> Manajemen Alur Pelayanan Kesehatan di Fasilitas Pelayanan Kesehatan Tingkat Pertama (FKTP).
+      </>
+    ),
+  },
+  {
     title: 'Pemeriksaan Kesehatan Gratis',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
