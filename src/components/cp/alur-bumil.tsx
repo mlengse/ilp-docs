@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 
 const App = () => {
-  // State untuk mengelola transformasi SVG (pan)
-  const [scale, setScale] = useState(1); // Skala tetap 1 karena zoom roda gulir/pinch dihapus
+  // State untuk mengelola transformasi SVG (zoom dan pan)
+  const [scale, setScale] = useState(1);
   const [translateX, setTranslateX] = useState(0);
   const [translateY, setTranslateY] = useState(0);
 
@@ -21,27 +21,49 @@ const App = () => {
   const getSvgCoordinates = useCallback((clientX, clientY) => {
     if (!svgRef.current) return { x: 0, y: 0 };
     const svg = svgRef.current;
-    const CTM = svg.getScreenCTM();
-    if (!CTM) return { x: 0, y: 0 }; // Handle case where CTM might be null
+    const CTM = svg.getScreenCTM(); // Current Transformation Matrix
+    if (!CTM) return { x: 0, y: 0 };
     return {
       x: (clientX - CTM.e) / CTM.a,
       y: (clientY - CTM.f) / CTM.d,
     };
   }, []);
 
-  // Fungsi untuk melakukan zoom pada titik tertentu (hanya digunakan oleh double-tap/click sekarang)
-  const zoomAtPoint = useCallback((pointX, pointY, newScale) => {
-    // Batasi zoom agar tidak terlalu kecil atau terlalu besar
+  // Fungsi untuk melakukan zoom agar elemen tertentu memenuhi layar
+  const zoomToFitElement = useCallback((element) => {
+    if (!svgRef.current || !element || typeof element.getBBox !== 'function') {
+      console.warn("Invalid element or svgRef for zoomToFitElement.");
+      return;
+    }
+
+    const svg = svgRef.current;
+    const svgViewBox = svg.viewBox.baseVal; // Dapatkan dimensi viewBox SVG
+
+    // Dapatkan bounding box dari elemen yang diklik
+    const elementBBox = element.getBBox();
+
+    // Hitung skala yang dibutuhkan untuk mengisi lebar atau tinggi elemen ke dalam viewport SVG
+    // Menambahkan faktor padding untuk memberikan sedikit ruang di sekitar elemen
+    const paddingFactor = 0.8; // 80% dari viewport akan diisi elemen
+    const scaleX = svgViewBox.width / elementBBox.width * paddingFactor;
+    const scaleY = svgViewBox.height / elementBBox.height * paddingFactor;
+    const newScale = Math.min(scaleX, scaleY); // Pilih skala terkecil agar seluruh elemen terlihat
+
+    // Batasi skala agar tidak terlalu kecil atau terlalu besar
     const clampedNewScale = Math.max(0.1, Math.min(5, newScale));
 
-    // Hitung pergeseran agar zoom berpusat pada titik yang diberikan
-    const newTranslateX = pointX - (pointX - translateX) * (clampedNewScale / scale);
-    const newTranslateY = pointY - (pointY - translateY) * (clampedNewScale / scale);
+    // Hitung pusat elemen dalam koordinat pengguna SVG
+    const elementCenterX = elementBBox.x + elementBBox.width / 2;
+    const elementCenterY = elementBBox.y + elementBBox.height / 2;
+
+    // Hitung translasi yang dibutuhkan untuk memusatkan elemen di viewport SVG
+    const newTranslateX = (svgViewBox.width / 2) - (elementCenterX * clampedNewScale);
+    const newTranslateY = (svgViewBox.height / 2) - (elementCenterY * clampedNewScale);
 
     setScale(clampedNewScale);
     setTranslateX(newTranslateX);
     setTranslateY(newTranslateY);
-  }, [scale, translateX, translateY]);
+  }, []);
 
   // --- Penanganan Event Mouse (untuk Desktop) ---
 
@@ -50,18 +72,16 @@ const App = () => {
     const tapLength = currentTime - lastTapTime;
 
     if (tapLength < doubleTapThreshold && tapLength > 0) {
-      // Double click detected
-      const svgPoint = getSvgCoordinates(e.clientX, e.clientY);
-      const targetScale = scale === 1 ? 2.5 : 1; // Toggle between 1x and 2.5x zoom
-      zoomAtPoint(svgPoint.x, svgPoint.y, targetScale);
-      setLastTapTime(0); // Reset last tap time
+      // Double click terdeteksi
+      zoomToFitElement(e.target); // Zoom ke elemen yang diklik
+      setLastTapTime(0); // Reset waktu tap terakhir
     } else {
-      // Single click or start of panning
+      // Klik tunggal atau mulai panning
       setIsPanning(true);
       setStartPoint({ x: e.clientX, y: e.clientY });
       setLastTapTime(currentTime);
     }
-  }, [lastTapTime, scale, getSvgCoordinates, zoomAtPoint]);
+  }, [lastTapTime, zoomToFitElement]);
 
   const handleMouseMove = useCallback((e) => {
     if (!isPanning) return;
@@ -69,6 +89,7 @@ const App = () => {
     const dx = e.clientX - startPoint.x;
     const dy = e.clientY - startPoint.y;
 
+    // Perbarui translasi, dibagi dengan skala agar kecepatan pan konsisten
     setTranslateX(prev => prev + dx / scale);
     setTranslateY(prev => prev + dy / scale);
     setStartPoint({ x: e.clientX, y: e.clientY }); // Perbarui titik awal untuk gerakan berkelanjutan
@@ -82,17 +103,6 @@ const App = () => {
     setIsPanning(false); // Hentikan panning jika mouse keluar dari area SVG
   }, []);
 
-  // handleWheel dihapus karena mempengaruhi fungsi asli browser
-  // const handleWheel = useCallback((e) => {
-  //   e.preventDefault(); // Mencegah scrolling halaman
-
-  //   const svgPoint = getSvgCoordinates(e.clientX, e.clientY);
-  //   const zoomFactor = 1.1; // Faktor zoom
-  //   const newScale = e.deltaY < 0 ? scale * zoomFactor : scale / zoomFactor;
-
-  //   zoomAtPoint(svgPoint.x, svgPoint.y, newScale);
-  // }, [scale, getSvgCoordinates, zoomAtPoint]);
-
   // --- Penanganan Event Sentuh (untuk Mobile) ---
 
   const handleTouchStart = useCallback((e) => {
@@ -101,41 +111,21 @@ const App = () => {
 
     if (e.touches.length === 1) {
       if (tapLength < doubleTapThreshold && tapLength > 0) {
-        // Double tap detected
-        const touch = e.touches[0];
-        const svgPoint = getSvgCoordinates(touch.clientX, touch.clientY);
-        const targetScale = scale === 1 ? 2.5 : 1; // Toggle between 1x and 2.5x zoom
-        zoomAtPoint(svgPoint.x, svgPoint.y, targetScale);
-        setLastTapTime(0); // Reset last tap time
+        // Double tap terdeteksi
+        zoomToFitElement(e.target); // Zoom ke elemen yang disentuh
+        setLastTapTime(0); // Reset waktu tap terakhir
       } else {
-        // Single tap or start of panning
+        // Tap tunggal atau mulai panning
         setIsPanning(true);
         setStartPoint({ x: e.touches[0].clientX, y: e.touches[0].clientY });
         setLastTapTime(currentTime);
       }
     }
-    // Pinch-to-zoom dengan dua jari dihapus
-    // else if (e.touches.length === 2) {
-    //   setIsPanning(false); // Ensure panning is not active during pinch
-    //   const touch1 = e.touches[0];
-    //   const touch2 = e.touches[1];
-
-    //   const dist = Math.sqrt(
-    //     Math.pow(touch2.clientX - touch1.clientX, 2) +
-    //     Math.pow(touch2.clientY - touch1.clientY, 2)
-    //   );
-    //   setInitialPinchDistance(dist);
-
-    //   const centerX = (touch1.clientX + touch2.clientX) / 2;
-    //   const centerY = (touch1.clientY + touch2.clientY) / 2;
-    //   setInitialPinchCenter(getSvgCoordinates(centerX, centerY));
-    //   setLastTapTime(0); // Reset last tap time to prevent accidental double-tap
-    // }
-  }, [lastTapTime, scale, getSvgCoordinates, zoomAtPoint]);
+  }, [lastTapTime, zoomToFitElement]);
 
   const handleTouchMove = useCallback((e) => {
     if (isPanning && e.touches.length === 1) {
-      // Panning
+      // Panning dengan satu jari
       const dx = e.touches[0].clientX - startPoint.x;
       const dy = e.touches[0].clientY - startPoint.y;
 
@@ -143,30 +133,13 @@ const App = () => {
       setTranslateY(prev => prev + dy / scale);
       setStartPoint({ x: e.touches[0].clientX, y: e.touches[0].clientY });
     }
-    // Pinch-to-zoom dihapus
-    // else if (e.touches.length === 2 && initialPinchDistance > 0) {
-    //   const touch1 = e.touches[0];
-    //   const touch2 = e.touches[1];
-
-    //   const currentDist = Math.sqrt(
-    //     Math.pow(touch2.clientX - touch1.clientX, 2) +
-    //     Math.pow(touch2.clientY - touch1.clientY, 2)
-    //   );
-
-    //   const zoomFactor = currentDist / initialPinchDistance;
-    //   let newScale = scale * zoomFactor;
-
-    //   zoomAtPoint(initialPinchCenter.x, initialPinchCenter.y, newScale);
-    //   setInitialPinchDistance(currentDist); // Update initial distance for continuous movement
-    // }
-  }, [isPanning, startPoint.x, startPoint.y, scale, /* initialPinchDistance, initialPinchCenter, */ zoomAtPoint]); // initialPinchDistance dan initialPinchCenter tidak lagi dibutuhkan
+  }, [isPanning, startPoint.x, startPoint.y, scale]);
 
   const handleTouchEnd = useCallback(() => {
     setIsPanning(false);
-    // setInitialPinchDistance(0); // Reset pinch distance dihapus
   }, []);
 
-  // Fungsi untuk mereset zoom dan pan
+  // Fungsi untuk mereset zoom dan pan ke tampilan awal
   const resetView = useCallback(() => {
     setScale(1);
     setTranslateX(0);
@@ -181,7 +154,7 @@ const App = () => {
         {/* <p className="text-gray-600 text-sm">
           Seret dengan mouse atau satu jari untuk menggeser.
           <br />
-          Ketuk dua kali (mobile) atau klik dua kali (desktop) untuk memperbesar/memperkecil.
+          Ketuk dua kali (mobile) atau klik dua kali (desktop) pada elemen diagram untuk memperbesar/memperkecil ke elemen tersebut.
         </p> */}
         <button
           onClick={resetView}
@@ -209,7 +182,6 @@ const App = () => {
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
-          // onWheel dihapus
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
