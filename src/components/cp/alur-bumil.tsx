@@ -1,331 +1,450 @@
-import React from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 
-function App() {
+const App = () => {
+  // State untuk mengelola transformasi SVG (pan)
+  const [scale, setScale] = useState(1); // Skala tetap 1 karena zoom roda gulir/pinch dihapus
+  const [translateX, setTranslateX] = useState(0);
+  const [translateY, setTranslateY] = useState(0);
+
+  // State untuk mengelola status panning
+  const [isPanning, setIsPanning] = useState(false);
+  const [startPoint, setStartPoint] = useState({ x: 0, y: 0 }); // Titik awal saat memulai pan
+
+  // State untuk mendeteksi double-tap/double-click
+  const [lastTapTime, setLastTapTime] = useState(0);
+  const doubleTapThreshold = 300; // Milliseconds for double-tap detection
+
+  // Ref untuk mengakses elemen SVG DOM
+  const svgRef = useRef(null);
+
+  // Fungsi untuk mendapatkan koordinat mouse/sentuh relatif terhadap SVG
+  const getSvgCoordinates = useCallback((clientX, clientY) => {
+    if (!svgRef.current) return { x: 0, y: 0 };
+    const svg = svgRef.current;
+    const CTM = svg.getScreenCTM();
+    if (!CTM) return { x: 0, y: 0 }; // Handle case where CTM might be null
+    return {
+      x: (clientX - CTM.e) / CTM.a,
+      y: (clientY - CTM.f) / CTM.d,
+    };
+  }, []);
+
+  // Fungsi untuk melakukan zoom pada titik tertentu (hanya digunakan oleh double-tap/click sekarang)
+  const zoomAtPoint = useCallback((pointX, pointY, newScale) => {
+    // Batasi zoom agar tidak terlalu kecil atau terlalu besar
+    const clampedNewScale = Math.max(0.1, Math.min(5, newScale));
+
+    // Hitung pergeseran agar zoom berpusat pada titik yang diberikan
+    const newTranslateX = pointX - (pointX - translateX) * (clampedNewScale / scale);
+    const newTranslateY = pointY - (pointY - translateY) * (clampedNewScale / scale);
+
+    setScale(clampedNewScale);
+    setTranslateX(newTranslateX);
+    setTranslateY(newTranslateY);
+  }, [scale, translateX, translateY]);
+
+  // --- Penanganan Event Mouse (untuk Desktop) ---
+
+  const handleMouseDown = useCallback((e) => {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTapTime;
+
+    if (tapLength < doubleTapThreshold && tapLength > 0) {
+      // Double click detected
+      const svgPoint = getSvgCoordinates(e.clientX, e.clientY);
+      const targetScale = scale === 1 ? 2.5 : 1; // Toggle between 1x and 2.5x zoom
+      zoomAtPoint(svgPoint.x, svgPoint.y, targetScale);
+      setLastTapTime(0); // Reset last tap time
+    } else {
+      // Single click or start of panning
+      setIsPanning(true);
+      setStartPoint({ x: e.clientX, y: e.clientY });
+      setLastTapTime(currentTime);
+    }
+  }, [lastTapTime, scale, getSvgCoordinates, zoomAtPoint]);
+
+  const handleMouseMove = useCallback((e) => {
+    if (!isPanning) return;
+
+    const dx = e.clientX - startPoint.x;
+    const dy = e.clientY - startPoint.y;
+
+    setTranslateX(prev => prev + dx / scale);
+    setTranslateY(prev => prev + dy / scale);
+    setStartPoint({ x: e.clientX, y: e.clientY }); // Perbarui titik awal untuk gerakan berkelanjutan
+  }, [isPanning, startPoint.x, startPoint.y, scale]);
+
+  const handleMouseUp = useCallback(() => {
+    setIsPanning(false);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsPanning(false); // Hentikan panning jika mouse keluar dari area SVG
+  }, []);
+
+  // handleWheel dihapus karena mempengaruhi fungsi asli browser
+  // const handleWheel = useCallback((e) => {
+  //   e.preventDefault(); // Mencegah scrolling halaman
+
+  //   const svgPoint = getSvgCoordinates(e.clientX, e.clientY);
+  //   const zoomFactor = 1.1; // Faktor zoom
+  //   const newScale = e.deltaY < 0 ? scale * zoomFactor : scale / zoomFactor;
+
+  //   zoomAtPoint(svgPoint.x, svgPoint.y, newScale);
+  // }, [scale, getSvgCoordinates, zoomAtPoint]);
+
+  // --- Penanganan Event Sentuh (untuk Mobile) ---
+
+  const handleTouchStart = useCallback((e) => {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTapTime;
+
+    if (e.touches.length === 1) {
+      if (tapLength < doubleTapThreshold && tapLength > 0) {
+        // Double tap detected
+        const touch = e.touches[0];
+        const svgPoint = getSvgCoordinates(touch.clientX, touch.clientY);
+        const targetScale = scale === 1 ? 2.5 : 1; // Toggle between 1x and 2.5x zoom
+        zoomAtPoint(svgPoint.x, svgPoint.y, targetScale);
+        setLastTapTime(0); // Reset last tap time
+      } else {
+        // Single tap or start of panning
+        setIsPanning(true);
+        setStartPoint({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+        setLastTapTime(currentTime);
+      }
+    }
+    // Pinch-to-zoom dengan dua jari dihapus
+    // else if (e.touches.length === 2) {
+    //   setIsPanning(false); // Ensure panning is not active during pinch
+    //   const touch1 = e.touches[0];
+    //   const touch2 = e.touches[1];
+
+    //   const dist = Math.sqrt(
+    //     Math.pow(touch2.clientX - touch1.clientX, 2) +
+    //     Math.pow(touch2.clientY - touch1.clientY, 2)
+    //   );
+    //   setInitialPinchDistance(dist);
+
+    //   const centerX = (touch1.clientX + touch2.clientX) / 2;
+    //   const centerY = (touch1.clientY + touch2.clientY) / 2;
+    //   setInitialPinchCenter(getSvgCoordinates(centerX, centerY));
+    //   setLastTapTime(0); // Reset last tap time to prevent accidental double-tap
+    // }
+  }, [lastTapTime, scale, getSvgCoordinates, zoomAtPoint]);
+
+  const handleTouchMove = useCallback((e) => {
+    if (isPanning && e.touches.length === 1) {
+      // Panning
+      const dx = e.touches[0].clientX - startPoint.x;
+      const dy = e.touches[0].clientY - startPoint.y;
+
+      setTranslateX(prev => prev + dx / scale);
+      setTranslateY(prev => prev + dy / scale);
+      setStartPoint({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+    }
+    // Pinch-to-zoom dihapus
+    // else if (e.touches.length === 2 && initialPinchDistance > 0) {
+    //   const touch1 = e.touches[0];
+    //   const touch2 = e.touches[1];
+
+    //   const currentDist = Math.sqrt(
+    //     Math.pow(touch2.clientX - touch1.clientX, 2) +
+    //     Math.pow(touch2.clientY - touch1.clientY, 2)
+    //   );
+
+    //   const zoomFactor = currentDist / initialPinchDistance;
+    //   let newScale = scale * zoomFactor;
+
+    //   zoomAtPoint(initialPinchCenter.x, initialPinchCenter.y, newScale);
+    //   setInitialPinchDistance(currentDist); // Update initial distance for continuous movement
+    // }
+  }, [isPanning, startPoint.x, startPoint.y, scale, /* initialPinchDistance, initialPinchCenter, */ zoomAtPoint]); // initialPinchDistance dan initialPinchCenter tidak lagi dibutuhkan
+
+  const handleTouchEnd = useCallback(() => {
+    setIsPanning(false);
+    // setInitialPinchDistance(0); // Reset pinch distance dihapus
+  }, []);
+
+  // Fungsi untuk mereset zoom dan pan
+  const resetView = useCallback(() => {
+    setScale(1);
+    setTranslateX(0);
+    setTranslateY(0);
+  }, []);
+
   return (
-    // Kontainer utama dengan gaya CSS biasa
-    <div style={{
-      // minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      // padding: '20px',
-      // backgroundColor: '#f0f2f5', // Warna latar belakang yang lembut
-      fontFamily: 'Inter, sans-serif' // Menggunakan font Inter
-    }}>
-      {/* Kontainer kartu dengan gaya CSS biasa */}
-      <div style={{
-        backgroundColor: '#ffffff', // Latar belakang kontainer putih
-        borderRadius: '12px',      // Sudut membulat
-        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)', // Bayangan lembut
-        padding: '30px',
-        textAlign: 'center',
-        maxWidth: '960px', // Lebar maksimum kontainer, disesuaikan dengan SVG
-        width: '100%',     // Lebar penuh dalam batas maxWidth
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}>
-        {/* Judul dengan gaya CSS biasa
-        <h1 style={{
-          fontSize: '1.8rem', // Ukuran font yang lebih besar
-          fontWeight: '700',   // Tebal
-          color: '#333',
-          marginBottom: '20px'
-        }}>Tampilan Grafis SVG Anda</h1> */}
-        {/* Paragraf deskripsi dengan gaya CSS biasa */}
-        {/* <p style={{
-          color: '#666',
-          marginBottom: '25px',
-          fontSize: '1rem'
-        }}>Berikut adalah representasi visual dari data SVG yang Anda berikan.</p> */}
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4 font-sans text-gray-800">
+      {/* <h1 className="text-4xl font-bold mb-8 text-indigo-700">Diagram Alur Proses</h1> */}
 
-        {/* Kode SVG yang Anda berikan */}
+      <div className="bg-white p-2 rounded-lg shadow-md mb-4 text-center">
+        {/* <p className="text-gray-600 text-sm">
+          Seret dengan mouse atau satu jari untuk menggeser.
+          <br />
+          Ketuk dua kali (mobile) atau klik dua kali (desktop) untuk memperbesar/memperkecil.
+        </p> */}
+        <button
+          onClick={resetView}
+          className="mt-3 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200 shadow-md"
+        >
+          Reset Tampilan
+        </button>
+      </div>
+
+      <div
+        className="w-full max-w-4xl h-auto rounded-lg shadow-xl bg-white overflow-hidden border border-gray-300"
+        style={{
+          cursor: isPanning ? 'grabbing' : 'grab', // Mengubah kursor saat panning
+          touchAction: 'none', // Mencegah browser melakukan tindakan default pada sentuhan
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          width="960"
-          height="540"
+          width="960" // Lebar asli SVG
+          height="540" // Tinggi asli SVG
           viewBox="0 0 960 540"
+          id="svg86"
+          ref={svgRef} // Menghubungkan ref ke elemen SVG
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          // onWheel dihapus
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
           style={{
-            maxWidth: '100%',    // Memastikan SVG responsif
-            height: 'auto',      // Mempertahankan rasio aspek
-            borderRadius: '8px', // Sudut membulat untuk SVG
-            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.05)' // Bayangan kecil untuk SVG
+            display: 'block',
+            width: '100%', // Membuat SVG responsif terhadap lebar kontainer
+            height: 'auto', // Menjaga rasio aspek
           }}
         >
-          <defs>
-            <clipPath id="clip_0">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M9279.6 5083.2H9466.799V5270.3996H9279.6Z" clipRule="evenodd"/>
-            </clipPath>
-          </defs>
-          <g>
-            {/* Latar belakang putih */}
-            {/* <path transform="matrix(.1,0,0,-.1,0,540)" d="M0 0H9600V5400H0Z" fill="#ffffff" fillRule="evenodd"/> */}
+          {/* Group untuk menerapkan transformasi zoom dan pan */}
+          <g transform={`translate(${translateX}, ${translateY}) scale(${scale})`}>
+            {/* Semua elemen SVG yang ada dipindahkan ke dalam grup ini */}
+            <defs id="defs86">
+              <linearGradient id="a">
+                <stop style={{ stopColor: '#000', stopOpacity: 1 }} offset="0" id="stop86" />
+              </linearGradient>
+              <linearGradient xlinkHref="#a" id="b" x1="427.7" y1="235.7" x2="642.5" y2="235.7" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.98846 0 0 .84258 4.9 39.5)" />
+              <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#000" />
+              </marker>
+            </defs>
+            <rect x="0" y="0" width="960" height="540" fill="#fff" id="background" />
 
-            {/* Blok Kotak Warna - Baris Paling Atas */}
-            <g id="blok_atas_warna">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4282.5 106.07H4987.199V370.328H4282.5Z" fill="#b0fee6" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4987.2 106.07H5691.8996V370.328H4987.2Z" fill="#ffd9ff" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M5691.9 106.07H6396.603V370.328H5691.9Z" fill="#8ee2fc" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4987.2 375.328V91.0703"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M5691.9 375.328V91.0703"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4282.5 375.328V91.0703"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M6396.6 375.328V91.0703"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4277.5 370.328H6401.6"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="30" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4277.5 106.07H6401.6"/>
+            <g id="process-1">
+              <rect x="428.5" y="224.2" width="106" height="25.8" fill="#ffd9ff" id="rect2" />
+              <rect x="534.5" y="224.2" width="106" height="25.8" fill="#8ee2fc" id="rect3" />
+              <line x1="534.5" y1="223.7" x2="534.5" y2="251.5" stroke="#fff" strokeLinejoin="round" fill="none" id="line5" />
+              <rect x="428.3" y="225.5" width="211.2" height="25.2" fill="none" stroke="url(#b)" strokeWidth="1.03503" id="rect7" />
+              <text x="440" y="240.2" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">ANC Terpadu</text>
             </g>
+            <g id="process-2">
+              <rect x="428" y="253" width="106" height="25.7" fill="#ffd9ff" id="rect8" />
+              <rect x="534" y="253" width="106" height="25.7" fill="#8ee2fc" id="rect9" />
+              <line x1="534" y1="252.5" x2="534" y2="280.2" stroke="#fff" strokeLinejoin="round" fill="none" id="line9" />
+              <rect x="428.3" y="253.8" width="211.4" height="23.6" stroke="#000" strokeMiterlimit="8" fill="none" id="rect13" />
+              <text x="440" y="268.5" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining Kesehatan Jiwa</text>
+            </g>
+            <g id="header-section">
+              <rect x="601.3" y="70.7" width="343.5" height="16.2" fill="#f2f2f2" stroke="#000" strokeMiterlimit="8" id="rect16" />
+              <text x="773.05" y="78.8" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Lokasi Unit Layanan</text>
+              <rect x="601.3" y="86.3" width="343.5" height="28.2" fill="#fff" stroke="#000" strokeMiterlimit="8" id="rect17" />
+              <circle cx="613.8" cy="102.3" r="6" fill="#f7f7c2" id="circle17" />
+              <text x="630" y="105" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Keluarga</text>
+              <circle cx="682.4" cy="102.6" r="6" fill="#b0fee6" id="circle18" />
+              <text x="690" y="105" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Posyandu</text>
+              <circle cx="753" cy="102.8" r="6" fill="#ffd9ff" id="circle19" />
+              <text x="760" y="105" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Pustu</text>
+              <circle cx="806.3" cy="103" r="6" fill="#8ee2fc" id="circle20" />
+              <text x="815" y="105" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Puskesmas/FKTP</text>
+              <circle cx="907" cy="102.3" r="6" fill="#f2f2f2" id="circle21" />
+              <text x="915" y="105" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">FKTL</text>
+            </g>
+            <g id="process-3">
+              <rect x="428.3" y="282.5" width="106" height="25.7" fill="#ffd9ff" id="rect22" />
+              <rect x="534.3" y="282.5" width="106" height="25.7" fill="#8ee2fc" id="rect23" />
+              <line x1="534.3" y1="282" x2="534.3" y2="309.7" stroke="#fff" strokeLinejoin="round" fill="none" id="line23" />
+              <rect x="428.6" y="283.3" width="211.5" height="23.7" stroke="#000" strokeMiterlimit="8" fill="none" id="rect27" />
+              <text x="440" y="298" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining Anemia</text>
+            </g>
+            <g id="output-display">
+              <rect x="426.4" y="502.1" width="213.4" height="24.4" stroke="#000" strokeMiterlimit="8" style={{ strokeWidth: '1.01' }} id="rect35" />
+              <rect x="427.4" y="502.4" width="70.4" height="24" fill="#b0fee6" id="rect28" />
+              <rect x="497.8" y="502.4" width="70.5" height="24" fill="#ffd9ff" id="rect29" />
+              <rect x="568.3" y="502.4" width="70.5" height="24" fill="#8ee2fc" id="rect30" />
+              <line x1="497.8" y1="501.9" x2="497.8" y2="526.4" stroke="#fff" strokeLinejoin="round" fill="none" id="line30" />
+              <line x1="568.3" y1="501.9" x2="568.3" y2="526.4" stroke="#fff" strokeLinejoin="round" fill="none" id="line31" />
+              <text x="440" y="516.1" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Pemantauan Hasil Pengobatan</text>
+            </g>
+            <g id="start-end-oval">
+              <ellipse cx="270.8" cy="93.3" rx="86.5" ry="17.7" fill="#fff" stroke="#000" strokeMiterlimit="8" id="ellipse35" />
+              <text x="270.8" y="90" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Ibu Hamil, Bersalin</text>
+              <text x="270.8" y="100" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">dan Nifas</text>
+            </g>
+            <g id="side-process-1">
+              <rect x="32.3" y="204" width="126.7" height="98.3" fill="#f7f7c2" stroke="#000" strokeMiterlimit="8" id="rect36" />
+              <text x="40" y="220" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Kunjungan rumah</text>
+              <text x="40" y="232" fontFamily="Arial, sans-serif" fontSize="10" fill="#000"> oleh kader Posyandu</text>
+              <text x="40" y="244" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">- Edukasi</text>
+              <text x="40" y="256" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">- Pemantauan Kepatuhan</text>
+              <text x="46" y="268" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Pengobatan</text>
+              <text x="40" y="280" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">- Sweeping</text>
+            </g>
+            <g id="input-data-1">
+              <rect x="224.9" y="149.4" width="91.9" height="32.9" fill="#f7f7c2" stroke="#000" strokeMiterlimit="8" id="rect37" />
+              <text x="230" y="165" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Cek Kesehatan</text>
+              <text x="230" y="175" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Secara Mandiri</text>
+            </g>
+            <g id="decision-1">
+              <polygon points="683.9,252.3 746.9,220.7 809.9,252.3 746.9,283.9" fill="#fff" stroke="#000" strokeMiterlimit="8" id="polygon38" />
+              <text x="746.9" y="242.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Dapat</text>
+              <text x="746.9" y="254.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Ditangani</text>
+              <text x="746.9" y="266.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Di FKTP</text>
+            </g>
+            <g id="side-process-2">
+              <rect x="847.6" y="235.4" width="76" height="32.8" fill="#f2f2f2" stroke="#000" strokeMiterlimit="8" id="rect38_a" />
+              <text x="852" y="256.2" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Rujuk ke FKTL</text>
+              <rect x="847.6" y="302.6" width="76" height="32.8" fill="#f2f2f2" stroke="#000" strokeMiterlimit="8" id="rect39" />
+              <text x="852" y="318.4" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Tatalaksana</text>
+              <text x="852" y="330.4" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Di FKTL</text>
+              <rect x="847.6" y="369.7" width="76" height="32.9" fill="#f2f2f2" stroke="#000" strokeMiterlimit="8" id="rect40" />
+              <text x="852" y="390.5" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Kondisi Stabil</text>
+              <rect x="847.6" y="436.8" width="76" height="32.9" fill="#f2f2f2" stroke="#000" strokeMiterlimit="8" id="rect41" />
+              <text x="852" y="450.6" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Rujuk Balik</text>
+              <text x="852" y="462.6" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Ke FKTP</text>
+              <path d="M885 297.6h1v-29.4h-1Zm-2.5-1 3 6 3-6m-3.5 68.1h1v-29.3h-1Zm-2.5-1 3 6 3-6m-2.5 68.2h-1v-29.3h1Zm2.5-1-3 6-3-6" id="path41" />
+            </g>
+            <g id="process-4">
+              <rect x="428.3" y="344.5" width="212.1" height="24.3" fill="#8ee2fc" stroke="#000" strokeMiterlimit="8" id="rect42" />
+              <text x="440" y="359.2" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining Pre-eklampsia</text>
+            </g>
+            <g id="decision-2">
+              <polygon points="201.5,421.7 270.7,391.9 339.8,421.7 270.7,451.6" fill="#fff" stroke="#000" strokeMiterlimit="8" id="polygon42" />
+              <text x="270.7" y="411.7" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Terdapat</text>
+              <text x="270.7" y="423.7" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Tanda</text>
+              <text x="270.7" y="435.7" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Persalinan</text>
+            </g>
+            <g id="decision-3">
+              <polygon points="201.1,252.3 270.3,220.7 339.5,252.3 270.3,283.9" fill="#fff" stroke="#000" strokeMiterlimit="8" id="polygon43" />
+              <text x="270.3" y="242.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Terdapat</text>
+              <text x="270.3" y="254.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Keluhan</text>
+              <text x="270.3" y="266.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Kesehatan</text>
+            </g>
+            <g id="process-5">
+              <rect x="428.8" y="133" width="70.5" height="26.4" fill="#b0fee6" id="rect43" />
+              <rect x="499.3" y="133" width="70.5" height="26.4" fill="#ffd9ff" id="rect44" />
+              <rect x="569.8" y="133" width="70.4" height="26.4" fill="#8ee2fc" id="rect45" />
+              <line x1="499.3" y1="132.5" x2="499.3" y2="160.9" stroke="#fff" strokeLinejoin="round" fill="none" id="line45" />
+              <line x1="569.8" y1="132.5" x2="569.8" y2="160.9" stroke="#fff" strokeLinejoin="round" fill="none" id="line46" />
+              <rect x="428" y="133.4" width="211.4" height="25.5" stroke="#000" strokeMiterlimit="8" fill="none" style={{ strokeWidth: '1.04419' }} id="rect50" />
+              <text x="440" y="149" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining Tuberkulosis</text>
+            </g>
+            <g id="process-6">
+              <rect x="428.4" y="162.8" width="70.5" height="26.5" fill="#b0fee6" id="rect51" />
+              <rect x="498.9" y="162.8" width="70.4" height="26.5" fill="#ffd9ff" id="rect52" />
+              <rect x="569.3" y="162.8" width="70.5" height="26.5" fill="#8ee2fc" id="rect53" />
+              <line x1="498.9" y1="162.3" x2="498.9" y2="190.8" stroke="#fff" strokeLinejoin="round" fill="none" id="line53" />
+              <line x1="569.3" y1="162.3" x2="569.3" y2="190.8" stroke="#fff" strokeLinejoin="round" fill="none" id="line54" />
+              <rect x="428" y="164" width="211.4" height="23.6" stroke="#000" strokeMiterlimit="8" fill="none" id="rect58" />
+              <text x="440" y="178.6" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining Malaria (Daerah Endemis)</text>
+            </g>
+            <g id="process-7">
+              <rect x="428.9" y="193.6" width="70.4" height="26.4" fill="#b0fee6" id="rect59" />
+              <rect x="499.3" y="193.6" width="70.5" height="26.4" fill="#ffd9ff" id="rect60" />
+              <rect x="569.8" y="193.6" width="70.5" height="26.4" fill="#8ee2fc" id="rect61" />
+              <line x1="499.3" y1="193.1" x2="499.3" y2="221.5" stroke="#fff" strokeLinejoin="round" fill="none" id="line61" />
+              <line x1="569.8" y1="193.1" x2="569.8" y2="221.5" stroke="#fff" strokeLinejoin="round" fill="none" id="line62" />
+              <rect x="428.3" y="194.2" width="211.4" height="23.6" stroke="#000" strokeMiterlimit="8" fill="none" style={{ strokeWidth: '1.04587' }} id="rect66" />
+              <text x="440" y="208.8" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining Gigi dan Mulut</text>
+            </g>
+            <g id="process-8">
+              <rect x="428.2" y="313.1" width="106" height="25.7" fill="#ffd9ff" id="rect67" />
+              <rect x="534.1" y="313.1" width="106" height="25.7" fill="#8ee2fc" id="rect68" />
+              <line x1="534.1" y1="312.6" x2="534.1" y2="340.3" stroke="#fff" strokeLinejoin="round" fill="none" id="line68" />
+              <rect x="428.5" y="313.9" width="211.5" height="23.7" stroke="#000" strokeMiterlimit="8" fill="none" id="rect72" />
+              <text x="440" y="328.6" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining HIV, Sifilis, Hepatitis B</text>
+            </g>
+            <g id="dashed-area-1">
+              <rect x="421.7" y="126.4" width="224.5" height="250.4" stroke="#172c51" strokeDasharray="4,3" strokeMiterlimit="8" fill="none" id="rect73" />
+            </g>
+            <g id="process-9">
+              <rect x="428" y="393.8" width="212.2" height="24.2" fill="#8ee2fc" stroke="#000" strokeMiterlimit="8" id="rect74" />
+              <text x="440" y="408.5" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Persalinan Normal</text>
+            </g>
+            <g id="output-display-2">
+              <rect x="429" y="425" width="70.4" height="26.5" fill="#b0fee6" id="rect75" />
+              <rect x="499.6" y="425" width="70.4" height="26.5" fill="#ffd9ff" id="rect76" />
+              <rect x="570" y="425" width="70.5" height="26.5" fill="#8ee2fc" id="rect77" />
+              <line x1="499.6" y1="424.5" x2="499.6" y2="453" stroke="#fff" strokeLinejoin="round" fill="none" id="line77" />
+              <line x1="570" y1="424.5" x2="570" y2="453" stroke="#fff" strokeLinejoin="round" fill="none" id="line78" />
+              <rect x="428.5" y="426" width="211.5" height="23.5" stroke="#000" strokeMiterlimit="8" fill="none" id="rect82" />
+              <text x="440" y="440.7" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Pelayanan Pasca Persalinan</text>
+            </g>
+            <g id="dashed-area-2">
+              <rect x="421.3" y="386.4" width="224.5" height="71.6" stroke="#172c51" strokeDasharray="4,3" strokeMiterlimit="8" fill="none" id="rect83" />
+            </g>
+            <g id="process-10" style={{ display: 'inline' }}>
+              <rect x="427.70001" y="471.39999" width="212.3" height="24.200001" fill="#8ee2fc" stroke="#000000" strokeMiterlimit="8" id="rect84" />
+              <text x="439.70001" y="486.09999" fontFamily="Arial, sans-serif" fontSize="10" fill="#000000" id="text85" >Tatalaksana sesuai standar</text>
+            </g>
+            <g id="complex-lines-arrows">
+              <line x1="270.8" y1="111" x2="270.85" y2="149.4" stroke="#000" fill="none" id="arrow-oval-to-input-line" />
+              <polygon points="270.85 149.4, 267.85 143.4, 273.85 143.4" fill="#000" stroke="#000" id="arrow-oval-to-input-head" />
 
-            {/* Kotak Biru Muda - Tengah Atas */}
-            <g id="kotak_biru_tengah_atas">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4276.8 444H6399.5998V686.398H4276.8Z" fill="#8ee2fc" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M4276.8 444H6399.5998V686.398H4276.8Z"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M4276.8 124.801H6391.1999V367.199H4276.8Z"/>
-            </g>
+              <line x1="270.85" y1="182.3" x2="270.3" y2="220.7" stroke="#000" fill="none" id="arrow-input-to-decision3-line" />
+              <polygon points="270.3 220.7, 267.3 214.7, 273.3 214.7" fill="#000" stroke="#000" id="arrow-input-to-decision3-head" />
 
-            {/* Blok Kotak Warna - Baris Bawah dari Tengah Atas */}
-            <g id="blok_tengah_atas_warna">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4290.8 885.32H4995.499V1149.578H4290.8Z" fill="#b0fee6" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4995.5 885.32H5700.199V1149.578H4995.5Z" fill="#ffd9ff" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M5700.2 885.32H6404.8996V1149.578H5700.2Z" fill="#8ee2fc" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4995.5 1154.6V870.32"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M5700.2 1154.6V870.32"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4290.8 1154.6V870.32"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M6404.9 1154.6V870.32"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4285.8 1149.6H6409.9"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="30" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4285.8 885.32H6409.9"/>
-            </g>
+              <line x1="159" y1="253.15" x2="201.1" y2="252.3" stroke="#000" fill="none" id="arrow-side-process1-to-decision3-line" />
+              <polygon points="201.1 252.3, 191.1 248.8, 191.1 255.8" fill="#000" stroke="#000" id="arrow-side-process1-to-decision3-head" />
 
-            {/* Kotak Biru Muda - Tengah */}
-            <g id="kotak_biru_tengah">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4280.4 1219.2H6402V1461.6019H4280.4Z" fill="#8ee2fc" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M4280.4 1219.2H6402V1461.6019H4280.4Z"/>
-            </g>
+              <path d="M270.3 283.9 L270.7 391.9" stroke="#000" fill="none" id="arrow-decision3-to-decision2-line" />
+              <text x="273.3" y="330.4" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Ya</text>
+              <polygon points="270.7 391.9, 267.2 381.9, 274.2 381.9" fill="#000" stroke="#000" id="arrow-decision3-to-decision2-head" />
 
-            {/* Blok Kotak Warna - Baris Tengah */}
-            <g id="blok_tengah_warna">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4281.5 2011.7H5341.5V2269.352H4281.5Z" fill="#ffd9ff" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M5341.5 2011.7H6401.5V2269.352H5341.5Z" fill="#8ee2fc" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M5341.5 2274.3V1996.7"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4281.5 2274.3V1996.7"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M6401.5 2274.3V1996.7"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4276.5 2269.3H6406.5"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="30" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4276.5 2011.7H6406.5"/>
-            </g>
+              <line x1="339.8" y1="421.7" x2="421.3" y2="422.2" stroke="#000" fill="none" id="arrow-decision2-to-dashed-area2-line" />
+              <text x="370.3" y="420" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Ya</text>
+              <polygon points="421.3 422.2, 411.3 418.7, 411.3 425.7" fill="#000" stroke="#000" id="arrow-decision2-to-dashed-area2-head" />
 
-            {/* Blok Kotak Warna - Baris Bawah dari Tengah */}
-            <g id="blok_bawah_tengah_warna">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4282.9 2317.6H5342.9V2575.248H4282.9Z" fill="#ffd9ff" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M5342.9 2317.6H6402.9V2575.248H5342.9Z" fill="#8ee2fc" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M5342.9 2580.2V2302.6"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4282.9 2580.2V2302.6"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M6402.8 2580.2V2302.6"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4277.9 2575.2H6407.8"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="30" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4277.9 2317.6H6407.8"/>
-            </g>
+              <path d="M270.7 451.6 V483.5 H427.70001" stroke="#000" fill="none" id="arrow-decision2-to-process10-line" />
+              <text x="273" y="470.4" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Tidak</text>
+              <polygon points="427.70001 483.5, 420.70001 480, 420.70001 487" fill="#000" stroke="#000" id="arrow-decision2-to-process10-head" />
 
-            {/* Blok Kotak Warna - Baris Paling Bawah */}
-            <g id="blok_paling_bawah_warna">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4285.2 2900.3H5345.2V3157.948H4285.2Z" fill="#ffd9ff" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M5345.2 2900.3H6405.2V3157.948H5345.2Z" fill="#8ee2fc" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M5345.2 3163V2885.3"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4285.2 3163V2885.3"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M6405.2 3163V2885.3"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4280.2 3158H6410.2"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="30" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4280.2 2900.3H6410.2"/>
-            </g>
+              <line x1="646.2" y1="251.6" x2="683.9" y2="252.3" stroke="#000" fill="none" id="arrow-dashed-area1-to-decision1-line" />
+              <text x="648.2" y="250" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Hasil</text>
+              <polygon points="683.9 252.3, 673.9 248.8, 673.9 255.8" fill="#000" stroke="#000" id="arrow-dashed-area1-to-decision1-head" />
 
-            {/* Blok Kotak Warna - Baris Bawah 1 dari Bawah */}
-            <g id="blok_bawah_1_warna">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4288.7 3199.5H4993.3996V3463.762H4288.7Z" fill="#b0fee6" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4993.4 3199.5H5698.103V3463.762H4993.4Z" fill="#ffd9ff" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M5698.1 3199.5H6402.799V3463.762H5698.1Z" fill="#8ee2fc" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4993.4 3468.7V3184.5"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M5698.1 3468.7V3184.5"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4288.7 3468.7V3184.5"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M6402.8 3468.7V3184.5"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4283.7 3463.7H6407.8"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="30" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4283.7 3199.5H6407.8"/>
-            </g>
+              <line x1="809.9" y1="252.3" x2="847.6" y2="251.8" stroke="#000" fill="none" id="arrow-decision1-to-rect38-line" />
+              <text x="809.9" y="250" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Tidak</text>
+              <polygon points="847.6 251.8, 837.6 248.3, 837.6 255.3" fill="#000" stroke="#000" id="arrow-decision1-to-rect38-head" />
 
-            {/* Blok Kotak Warna - Baris Bawah 2 dari Bawah */}
-            <g id="blok_bawah_2_warna">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4284 3507.3H4988.699V3771.558H4284Z" fill="#b0fee6" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4988.7 3507.3H5693.3996V3771.558H4988.7Z" fill="#ffd9ff" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M5693.4 3507.3H6398.0988V3771.558H5693.4Z" fill="#8ee2fc" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4988.7 3776.5V3492.3"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M5693.4 3776.5V3492.3"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4284 3776.5V3492.3"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M6398.1 3776.5V3492.3"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4279 3771.5H6403.1"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="30" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4279 3507.3H6403.1"/>
-            </g>
+              <path d="M885.6 469.7 V514.3 H639.8" stroke="#000" fill="none" id="arrow-rect41-to-output-display-line" />
+              <path d="M639.8 514.3 L649.8 510.8 L649.8 517.8 Z" fill="#000" stroke="#000" id="arrow-rect41-to-output-display-head" />
 
-            {/* Blok Kotak Warna - Baris Paling Bawah dari Bawah */}
-            <g id="blok_bawah_3_warna">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4288.2 3806.1H4992.8996V4070.3582H4288.2Z" fill="#b0fee6" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4992.9 3806.1H5697.603V4070.3582H4992.9Z" fill="#ffd9ff" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M5697.6 3806.1H6402.299V4070.3582H5697.6Z" fill="#8ee2fc" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4992.9 4075.3V3791.1"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M5697.6 4075.3V3791.1"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4288.2 4075.3V3791.1"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M6402.3 4075.3V3791.1"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4283.2 4070.3H6407.3"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="30" strokeLinecap="butt" strokeLinejoin="round" fill="none" stroke="#ffffff" d="M4283.2 3806.1H6407.3"/>
-            </g>
+              {/* Connector to Kunjungan Rumah */}
+              <path d="M427.7 516H95.3V307.3h1v208.2l-.5-.5h332Z" id="connector-to-kunjungan-rumah" />
+              <path d="M92.7 308.3l3-6 3 6" id="arrowhead-kunjungan-rumah" />
 
-            {/* Oval Utama (Putih) */}
-            <g id="oval_utama">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M1843.2 4467C1843.2 4564.8 2230.6 4644 2708.4 4644 3186.2 4644 3573.6 4564.8 3573.6 4467 3573.6 4369.2 3186.2 4290 2708.4 4290 2230.6 4290 1843.2 4369.2 1843.2 4467" fill="#ffffff" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M1843.2 4467C1843.2 4564.8 2230.6 4644 2708.4 4644 3186.2 4644 3573.6 4564.8 3573.6 4467 3573.6 4369.2 3186.2 4290 2708.4 4290 2230.6 4290 1843.2 4369.2 1843.2 4467Z"/>
-            </g>
+              {/* Connector to Tatalaksana FKTL */}
+              <path d="M747.4 284v200H645v-1h101.9l-.5.5V283.9Z" id="connector-to-tatalaksana-fktl" />
+              <text x="750" y="390" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Ya</text>
+              <path d="M646 486.4l-6-3 6-3" id="arrowhead-tatalaksana-fktl" />
 
-            {/* Kotak Kuning Besar */}
-            <g id="kotak_kuning_besar">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M322.801 2377.2H1591.201V3360.001H322.801Z" fill="#f7f7c2" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M322.801 2377.2H1591.201V3360.001H322.801Z"/>
-            </g>
+              {/* Line Keluhan to ANC */}
+              <path d="M339.5 252.8l77.2-.6v-1l-77.2.6Z" id="line-keluhan-to-anc" />
+              <text x="355" y="250" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Tidak</text>
+              <path d="M415.7 254.7 421.7 251.7 415.7 248.7" id="arrowhead-keluhan-to-anc" />
 
-            {/* Kotak Kuning Kecil */}
-            <g id="kotak_kuning_kecil">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M2248.8 3577.2H3167.999V3906.001H2248.8Z" fill="#f7f7c2" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M2248.8 3577.2H3167.999V3906.001H2248.8Z"/>
+              {/* Line Persalinan to Pelayanan */}
+              <path d="M534.6 418v3h-1v-3Z" id="line-persalinan-to-pelayanan" />
+              <path d="M537.2 419.9l-2.9 6-3.1-5.9" id="arrowhead-persalinan-to-pelayanan" />
             </g>
-
-            {/* Garis-garis kecil di dalam kotak kuning kecil */}
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M2336.5 3753.7H3080.5V3747.7H2336.5Z" fillRule="evenodd"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M2346.1 3633.7H3070.897V3627.7H2346.1Z" fillRule="evenodd"/>
-
-            {/* Belah Ketupat Putih - Tengah Kanan */}
-            <g id="belah_ketupat_putih_tengah_kanan">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M6838.8 2877 7468.8 3193.2 8098.8 2877 7468.8 2560.8Z" fill="#ffffff" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M6838.8 2877 7468.8 3193.2 8098.8 2877 7468.8 2560.8Z"/>
-            </g>
-
-            {/* Kotak Abu-abu (4 buah) */}
-            <g id="kotak_abu_atas">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M8475.6 2718H9235.197V3045.602H8475.6Z" fill="#f2f2f2" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M8475.6 2718H9235.197V3045.602H8475.6Z"/>
-            </g>
-            <g id="kotak_abu_tengah_atas">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M8475.6 2046H9235.197V2373.602H8475.6Z" fill="#f2f2f2" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M8475.6 2046H9235.197V2373.602H8475.6Z"/>
-            </g>
-            <g id="kotak_abu_tengah_bawah">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M8475.6 1374H9235.197V1702.801H8475.6Z" fill="#f2f2f2" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M8475.6 1374H9235.197V1702.801H8475.6Z"/>
-            </g>
-            <g id="kotak_abu_bawah">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M8475.6 703.199H9235.197V1032H8475.6Z" fill="#f2f2f2" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M8475.6 703.199H9235.197V1032H8475.6Z"/>
-            </g>
-
-            {/* Garis panah di kotak abu-abu */}
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M8849.8 2424.4H8859.8V2718.002H8849.8ZM8824.8 2434.4 8854.8 2374.4 8884.8 2434.4"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M8849.8 1753.3H8859.8V2045.999H8849.8ZM8824.8 1763.3 8854.8 1703.3 8884.8 1763.3"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M8859.8 1081.3H8849.8V1373.999H8859.8ZM8884.8 1091.3 8854.8 1031.3 8824.8 1091.3"/>
-
-            {/* Belah Ketupat Putih - Atas Kiri */}
-            <g id="belah_ketupat_putih_atas_kiri">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M2014.8 1182.6 2706.6 1480.8 3398.4 1182.6 2706.6 884.398Z" fill="#ffffff" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M2014.8 1182.6 2706.6 1480.8 3398.4 1182.6 2706.6 884.398Z"/>
-            </g>
-
-            {/* Belah Ketupat Putih - Bawah Kiri */}
-            <g id="belah_ketupat_putih_bawah_kiri">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M2011.2 2877 2703 3193.2 3394.8 2877 2703 2560.8Z" fill="#ffffff" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M2011.2 2877 2703 3193.2 3394.8 2877 2703 2560.8Z"/>
-            </g>
-
-            {/* Garis-garis di dalam kotak-kotak berwarna */}
-            <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M4282.8 2916H6397.1999V3151.199H4282.8Z"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M4354.5 2985.6H5013.301V2980.7994H4354.5Z" fillRule="evenodd"/>
-
-            {/* Garis-garis di dalam kotak-kotak berwarna (lanjutan) */}
-            <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M4282.8 3825.6H6397.1999V4060.799H4282.8Z"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M4355.1 3895.1H5300.698V3890.2994H4355.1Z" fillRule="evenodd"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M4279.2 3524.4H6393.6V3759.603H4279.2Z"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M4351 3594H6005.8V3589.1993H4351Z" fillRule="evenodd"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M4282.8 3222H6397.1999V3458.398H4282.8Z"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M4355.1 3292.1H5459.1V3287.2994H4355.1Z" fillRule="evenodd"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M4286.4 2330.4H6400.8V2566.802H4286.4Z"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M4358.8 2400.6H5125.6008V2394.6H4358.8Z" fillRule="evenodd"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M4285.2 2024.4H6399.6V2260.802H4285.2Z"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M4357.4 2094.7H5718.2V2089.8992H4357.4Z" fillRule="evenodd"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M4285.2 904.801H6399.6V1140H4285.2Z"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M4357.7 974.309H5730.5V969.51217H4357.7Z" fillRule="evenodd"/>
-
-            {/* Garis Putus-putus */}
-            <g id="garis_putus_1">
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeDasharray="40,30" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#172c51" d="M4216.8 1632H6462V4136.4H4216.8Z"/>
-            </g>
-            <g id="garis_putus_2">
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeDasharray="40,30" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#172c51" d="M4213.2 819.602H6458.4006V1536H4213.2Z"/>
-            </g>
-
-            {/* Garis Panah Kecil */}
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M3398.4 1188.2 4164.1 1183.6 4164 1173.6 3398.4 1178.2ZM4154.2 1208.7 4214 1178.3 4153.8 1148.7"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M2701 884.398V559.621H4226.7V569.621H2706L2711 564.621V884.398ZM4216.7 534.621 4276.7 564.621 4216.7 594.621"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M6462 2887.4 6788.8 2886.4 6788.7 2876.4 6462 2877.4ZM6778.9 2911.4 6838.8 2881.2 6778.7 2851.4"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M8098.9 2871.7 8425.6 2875.6 8425.5 2885.6 8098.7 2881.7ZM8415.9 2850.5 8475.6 2881.2 8415.2 2910.5"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M8859.7 703.199V240.66H6441.2V250.66H8854.7L8849.7 245.66V703.199ZM6451.2 215.66 6391.2 245.66 6451.2 275.66"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M2703.4 3956.3H2713.4V4289.999H2703.4ZM2678.4 3966.3 2708.4 3906.3 2738.4 3966.3"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M2702.9 3577.3 2698.1 3243.6 2708.1 3243.4 2712.9 3577.1ZM2673.3 3253.9 2702.4 3193.5 2733.3 3253.1"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M2707.4 2560.8 2710.4 1531H2700.4L2697.4 2560.8ZM2735.4 1541.1 2705.6 1481 2675.4 1540.9"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M1591.3 2864.4 1960.8 2871.6 1960.6 2881.6 1591.1 2874.4ZM1951.3 2846.4 2010.7 2877.6 1950.1 2906.4"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M4277.3 240.078H952.602V2327.2H962.602V245.078L957.602 250.078H4277.3ZM927.602 2317.2 957.602 2377.2 987.602 2317.2"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M7473.7 2560.8V560.309H6449.6V570.309H7468.7L7463.7 565.309V2560.8ZM6459.6 535.309 6399.6 565.309 6459.6 595.309"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M3394.8 2871.6 4166.7 2878.2 4166.6 2888.2 3394.8 2881.6ZM4156.9 2853.1 4216.7 2883.6 4156.4 2913.1"/>
-            <path transform="matrix(.1,0,0,-.1,0,540)" d="M5346.2 1219.3 5346.9 1190.6 5336.9 1190.3 5336.2 1219.1ZM5371.6 1201.2 5343.1 1140.5 5311.7 1199.7"/>
-
-            {/* Kotak Abu-abu (Paling Kanan) */}
-            <g id="blok_kanan_atas">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M6013.2 4531.2H9447.6V4693.2H6013.2Z" fill="#f2f2f2" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M6013.2 4531.2H9447.6V4693.2H6013.2Z"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M6013.2 4255.2H9447.6V4537.2H6013.2Z" fill="#ffffff" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M6013.2 4255.2H9447.6V4537.2H6013.2Z"/>
-            </g>
-
-            {/* Lingkaran-lingkaran Kecil Berwarna */}
-            <g id="lingkaran_kuning">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M6078 4377C6078 4411.1 6104.6 4438.8 6137.4 4438.8 6170.2 4438.8 6196.8 4411.1 6196.8 4377 6196.8 4342.9 6170.2 4315.2 6137.4 4315.2 6104.6 4315.2 6078 4342.9 6078 4377" fill="#f7f7c2" fillRule="evenodd"/>
-            </g>
-            <g id="lingkaran_hijau_muda">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M6764.4 4374C6764.4 4407.8 6791 4435.2 6823.8 4435.2 6856.6 4435.2 6883.2 4407.8 6883.2 4374 6883.2 4340.2 6856.6 4312.8 6823.8 4312.8 6791 4312.8 6764.4 4340.2 6764.4 4374" fill="#b0fee6" fillRule="evenodd"/>
-            </g>
-            <g id="lingkaran_merah_jambu">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M7470 4372.2C7470 4406.3 7496.6 4434 7529.4 4434 7562.2 4434 7588.8 4406.3 7588.8 4372.2 7588.8 4338.1 7562.2 4310.4 7529.4 4310.4 7496.6 4310.4 7470 4338.1 7470 4372.2" fill="#ffd9ff" fillRule="evenodd"/>
-            </g>
-            <g id="lingkaran_biru_muda">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M8002.8 4369.8C8002.8 4403.9 8029.4 4431.6 8062.2 4431.6 8095 4431.6 8121.6 4403.9 8121.6 4369.8 8121.6 4335.7 8095 4308 8062.2 4308 8029.4 4308 8002.8 4335.7 8002.8 4369.8" fill="#8ee2fc" fillRule="evenodd"/>
-            </g>
-            <g id="lingkaran_abu">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M9010.8 4377C9010.8 4411.1 9037.4 4438.8 9070.2 4438.8 9103 4438.8 9129.6 4411.1 9129.6 4377 9129.6 4342.9 9103 4315.2 9070.2 4315.2 9037.4 4315.2 9010.8 4342.9 9010.8 4377" fill="#f2f2f2" fillRule="evenodd"/>
-            </g>
-
-
-            {/* Lingkaran dengan stroke hitam */}
-            <g id="lingkaran_hitam_stroke">
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="2.5" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M9235.2 5173.2C9235.2 5252.7 9297.3 5317.2 9373.8 5317.2 9450.3 5317.2 9512.4 5252.7 9512.4 5173.2 9512.4 5093.7 9450.3 5029.2 9373.8 5029.2 9297.3 5029.2 9235.2 5093.7 9235.2 5173.2Z"/>
-            </g>
-            <g clipPath="url(#clip_0)">
-            </g>
-
-            {/* Kotak dengan stroke hitam (2 buah) */}
-            <g id="kotak_hitam_stroke_1">
-              <path transform="matrix(.1,0,0,-.1,0,540)" strokeWidth="10" strokeLinecap="butt" strokeMiterlimit="8" strokeLinejoin="miter" fill="none" stroke="#000000" d="M4282.8 2625.6H6397.1999V2861.998H4282.8Z"/>
-            </g>
-            <g id="kotak_hitam_stroke_2">
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4354.5 2691.1H4714.5V2695.897H4354.5Z" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4714.5 2691.1H4742.1018V2695.897H4714.5Z" fillRule="evenodd"/>
-              <path transform="matrix(.1,0,0,-.1,0,540)" d="M4742.1 2695.9H5511.299V2691.103H4742.1Z" fillRule="evenodd"/>
-            </g>
-
           </g>
         </svg>
       </div>
     </div>
   );
-}
+};
 
 export default App;
