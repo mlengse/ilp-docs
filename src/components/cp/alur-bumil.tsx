@@ -141,15 +141,17 @@ const App = () => {
       zoomToFitElement(e.target); // Zoom ke elemen yang diklik
       setLastTapTime(0); // Reset waktu tap terakhir
     } else {
-      // Klik tunggal atau mulai panning
-      setIsPanning(true);
-      setInitialPanTranslateX(translateX); // Simpan nilai translate saat ini
-      setInitialPanTranslateY(translateY);
-      setInitialPanClientX(e.clientX); // Simpan posisi mouse awal
-      setInitialPanClientY(e.clientY);
+      // Hanya izinkan panning jika skala tidak 1 (yaitu, sudah di-zoom)
+      if (scale !== 1) {
+        setIsPanning(true);
+        setInitialPanTranslateX(translateX); // Simpan nilai translate saat ini
+        setInitialPanTranslateY(translateY);
+        setInitialPanClientX(e.clientX); // Simpan posisi mouse awal
+        setInitialPanClientY(e.clientY);
+      }
       setLastTapTime(currentTime);
     }
-  }, [lastTapTime, translateX, translateY, zoomToFitElement]);
+  }, [lastTapTime, translateX, translateY, zoomToFitElement, scale]);
 
   const handleMouseMove = useCallback((e) => {
     if (!isPanning) return;
@@ -184,12 +186,14 @@ const App = () => {
         zoomToFitElement(e.target); // Zoom ke elemen yang disentuh
         setLastTapTime(0); // Reset waktu tap terakhir
       } else {
-        // Tap tunggal atau mulai panning
-        setIsPanning(true);
-        setInitialPanTranslateX(translateX); // Simpan nilai translate saat ini
-        setInitialPanTranslateY(translateY);
-        setInitialPanClientX(e.touches[0].clientX); // Simpan posisi sentuh awal
-        setInitialPanClientY(e.touches[0].clientY);
+        // Hanya izinkan panning jika skala tidak 1 (yaitu, sudah di-zoom)
+        if (scale !== 1) {
+          setIsPanning(true);
+          setInitialPanTranslateX(translateX); // Simpan nilai translate saat ini
+          setInitialPanTranslateY(translateY);
+          setInitialPanClientX(e.touches[0].clientX); // Simpan posisi sentuh awal
+          setInitialPanClientY(e.touches[0].clientY);
+        }
         setLastTapTime(currentTime);
       }
     } else if (e.touches.length === 2) {
@@ -209,7 +213,7 @@ const App = () => {
       setInitialPinchCenter(getSvgCoordinates(centerX, centerY));
       setLastTapTime(0); // Reset waktu tap terakhir untuk mencegah double-tap tidak disengaja
     }
-  }, [lastTapTime, translateX, translateY, zoomToFitElement, getSvgCoordinates]);
+  }, [lastTapTime, translateX, translateY, zoomToFitElement, getSvgCoordinates, scale]);
 
   const handleTouchMove = useCallback((e) => {
     if (isPanning && e.touches.length === 1) {
@@ -320,7 +324,6 @@ const App = () => {
                 <polygon points="0 0, 10 3.5, 0 7" fill="#000" />
               </marker>
             </defs>
-            <rect x="0" y="0" width="960" height="540" fill="#fff" id="background" />
 
             <g id="process-1">
               <rect x="428.5" y="224.2" width="106" height="25.8" fill="#ffd9ff" id="rect2" />
@@ -416,7 +419,7 @@ const App = () => {
               <polygon points="201.1,252.3 270.3,220.7 339.5,252.3 270.3,283.9" fill="#fff" stroke="#000" strokeMiterlimit="8" id="polygon43" />
               <text x="270.3" y="242.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Terdapat</text>
               <text x="270.3" y="254.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Keluhan</text>
-              <text x="270.3" y="266.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Kesehatan</text>
+              <text x="270.3" y="266.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Kesehatan</text>
             </g>
             <g id="process-5">
               <rect x="428.8" y="133" width="70.5" height="26.4" fill="#b0fee6" id="rect43" />
