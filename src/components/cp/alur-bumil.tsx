@@ -19,6 +19,10 @@ const App = () => {
   const [lastTapTime, setLastTapTime] = useState(0);
   const doubleTapThreshold = 300; // Milliseconds for double-tap detection
 
+  // State untuk mengelola pinch-to-zoom di perangkat sentuh
+  const [initialPinchDistance, setInitialPinchDistance] = useState(0);
+  const [initialPinchCenter, setInitialPinchCenter] = useState({ x: 0, y: 0 });
+
   // Faktor sensitivitas panning
   // Meningkatkan nilai ini untuk membuat panning terasa lebih cepat.
   // Nilai yang lebih tinggi akan membuat pergerakan geser lebih jauh untuk gerakan mouse/jari yang sama.
@@ -39,41 +43,92 @@ const App = () => {
     };
   }, []);
 
+  // Fungsi untuk mereset zoom dan pan ke tampilan awal
+  // Dipindahkan ke atas agar dapat diakses oleh zoomToFitElement
+  const resetView = useCallback(() => {
+    setScale(1);
+    setTranslateX(0);
+    setTranslateY(0);
+  }, []);
+
+  // Fungsi untuk melakukan zoom pada titik tertentu
+  const zoomAtPoint = useCallback((pointX, pointY, newScale) => {
+    // Batasi zoom agar tidak terlalu kecil atau terlalu besar
+    const clampedNewScale = Math.max(0.1, Math.min(5, newScale));
+
+    // Hitung pergeseran agar zoom berpusat pada titik yang diberikan
+    const newTranslateX = pointX - (pointX - translateX) * (clampedNewScale / scale);
+    const newTranslateY = pointY - (pointY - translateY) * (clampedNewScale / scale);
+
+    setScale(clampedNewScale);
+    setTranslateX(newTranslateX);
+    setTranslateY(newTranslateY);
+  }, [scale, translateX, translateY]);
+
   // Fungsi untuk melakukan zoom agar elemen tertentu memenuhi layar
-  const zoomToFitElement = useCallback((element) => {
-    if (!svgRef.current || !element || typeof element.getBBox !== 'function') {
+  const zoomToFitElement = useCallback((clickedElement) => {
+    if (!svgRef.current || !clickedElement || typeof clickedElement.getBBox !== 'function') {
       console.warn("Invalid element or svgRef for zoomToFitElement.");
       return;
     }
 
+    let targetGroup = clickedElement;
+
+    // Traverse up the DOM tree to find the relevant group to zoom to.
+    // We want to zoom to a <g> element that represents a logical process/box.
+    // If a line/polygon is clicked, we try to find its parent group.
+    // If the parent group is 'complex-lines-arrows' (which is just a collection of lines/arrows),
+    // we should probably not zoom to it, or reset the view.
+    while (targetGroup && targetGroup !== svgRef.current) {
+      if (targetGroup.tagName === 'g') {
+        // If it's a group, check if it contains a rect or ellipse (indicating a box/process)
+        // AND it's not the 'complex-lines-arrows' group.
+        if ((targetGroup.querySelector('rect') || targetGroup.querySelector('ellipse')) && targetGroup.id !== 'complex-lines-arrows') {
+          break; // Found a suitable group
+        }
+        // If it's the 'complex-lines-arrows' group, or a group without a rect/ellipse,
+        // continue searching up the tree.
+        if (targetGroup.id === 'complex-lines-arrows') {
+          // If we hit the complex-lines-arrows group, and the original click was on a line/polygon within it,
+          // then we should not zoom to this group.
+          break;
+        }
+      }
+      targetGroup = targetGroup.parentNode;
+    }
+
+    // If no suitable group was found, or we ended up at the root SVG or 'complex-lines-arrows' group
+    // and the original click was on a line/polygon within it, reset the view.
+    // The condition `targetGroup.id === 'complex-lines-arrows'` specifically handles clicks on lines/polygons
+    // that are part of the general line/arrow group, preventing zooming into just lines.
+    if (!targetGroup || targetGroup === svgRef.current || targetGroup.id === 'complex-lines-arrows' ||
+        ((clickedElement.tagName === 'line' || clickedElement.tagName === 'polygon') && targetGroup.tagName !== 'g')) {
+      resetView();
+      return;
+    }
+
     const svg = svgRef.current;
-    const svgViewBox = svg.viewBox.baseVal; // Dapatkan dimensi viewBox SVG
+    const svgViewBox = svg.viewBox.baseVal;
 
-    // Dapatkan bounding box dari elemen yang diklik
-    const elementBBox = element.getBBox();
+    const elementBBox = targetGroup.getBBox(); // Use the bounding box of the identified group
 
-    // Hitung skala yang dibutuhkan untuk mengisi lebar atau tinggi elemen ke dalam viewport SVG
-    // Menambahkan faktor padding untuk memberikan sedikit ruang di sekitar elemen
-    const paddingFactor = 0.8; // 80% dari viewport akan diisi elemen
+    const paddingFactor = 0.8;
     const scaleX = svgViewBox.width / elementBBox.width * paddingFactor;
     const scaleY = svgViewBox.height / elementBBox.height * paddingFactor;
-    const newScale = Math.min(scaleX, scaleY); // Pilih skala terkecil agar seluruh elemen terlihat
+    const newScale = Math.min(scaleX, scaleY);
 
-    // Batasi skala agar tidak terlalu kecil atau terlalu besar
     const clampedNewScale = Math.max(0.1, Math.min(5, newScale));
 
-    // Hitung pusat elemen dalam koordinat pengguna SVG
     const elementCenterX = elementBBox.x + elementBBox.width / 2;
     const elementCenterY = elementBBox.y + elementBBox.height / 2;
 
-    // Hitung translasi yang dibutuhkan untuk memusatkan elemen di viewport SVG
     const newTranslateX = (svgViewBox.width / 2) - (elementCenterX * clampedNewScale);
     const newTranslateY = (svgViewBox.height / 2) - (elementCenterY * clampedNewScale);
 
     setScale(clampedNewScale);
     setTranslateX(newTranslateX);
     setTranslateY(newTranslateY);
-  }, []);
+  }, [scale, translateX, translateY, resetView]);
 
   // --- Penanganan Event Mouse (untuk Desktop) ---
 
@@ -137,8 +192,24 @@ const App = () => {
         setInitialPanClientY(e.touches[0].clientY);
         setLastTapTime(currentTime);
       }
+    } else if (e.touches.length === 2) {
+      // Pinch-to-zoom dengan dua jari
+      setIsPanning(false); // Pastikan panning tidak aktif selama pinch
+      const touch1 = e.touches[0];
+      const touch2 = e.touches[1];
+
+      const dist = Math.sqrt(
+        Math.pow(touch2.clientX - touch1.clientX, 2) +
+        Math.pow(touch2.clientY - touch1.clientY, 2)
+      );
+      setInitialPinchDistance(dist);
+
+      const centerX = (touch1.clientX + touch2.clientX) / 2;
+      const centerY = (touch1.clientY + touch2.clientY) / 2;
+      setInitialPinchCenter(getSvgCoordinates(centerX, centerY));
+      setLastTapTime(0); // Reset waktu tap terakhir untuk mencegah double-tap tidak disengaja
     }
-  }, [lastTapTime, translateX, translateY, zoomToFitElement]);
+  }, [lastTapTime, translateX, translateY, zoomToFitElement, getSvgCoordinates]);
 
   const handleTouchMove = useCallback((e) => {
     if (isPanning && e.touches.length === 1) {
@@ -150,18 +221,27 @@ const App = () => {
       // Perbarui translasi berdasarkan perubahan posisi sentuh dan skala
       setTranslateX(initialPanTranslateX + (dx * panSensitivity) / scale);
       setTranslateY(initialPanTranslateY + (dy * panSensitivity) / scale);
+    } else if (e.touches.length === 2 && initialPinchDistance > 0) {
+      // Pinch-to-zoom
+      const touch1 = e.touches[0];
+      const touch2 = e.touches[1];
+
+      const currentDist = Math.sqrt(
+        Math.pow(touch2.clientX - touch1.clientX, 2) +
+        Math.pow(touch2.clientY - touch1.clientY, 2)
+      );
+
+      const zoomFactor = currentDist / initialPinchDistance;
+      let newScale = scale * zoomFactor;
+
+      zoomAtPoint(initialPinchCenter.x, initialPinchCenter.y, newScale);
+      setInitialPinchDistance(currentDist); // Perbarui jarak awal untuk gerakan berkelanjutan
     }
-  }, [isPanning, initialPanClientX, initialPanClientY, initialPanTranslateX, initialPanTranslateY, scale, panSensitivity]);
+  }, [isPanning, initialPanClientX, initialPanClientY, initialPanTranslateX, initialPanTranslateY, scale, panSensitivity, initialPinchDistance, initialPinchCenter, zoomAtPoint]);
 
   const handleTouchEnd = useCallback(() => {
     setIsPanning(false);
-  }, []);
-
-  // Fungsi untuk mereset zoom dan pan ke tampilan awal
-  const resetView = useCallback(() => {
-    setScale(1);
-    setTranslateX(0);
-    setTranslateY(0);
+    setInitialPinchDistance(0); // Reset jarak pinch
   }, []);
 
   return (
@@ -193,11 +273,6 @@ const App = () => {
       </style>
       <h3 className="text-4xl font-bold mb-8 text-indigo-700">Diagram Alur Proses</h3>
       <div className="bg-white p-2 rounded-lg shadow-md mb-4 text-center">
-        {/* <p className="text-gray-600 text-sm">
-          Seret dengan mouse atau satu jari untuk menggeser.
-          <br />
-          Ketuk dua kali (mobile) atau klik dua kali (desktop) pada elemen diagram untuk memperbesar/memperkecil ke elemen tersebut.
-        </p> */}
         <button
           onClick={resetView}
           className="reset-button" // Menggunakan kelas CSS kustom
@@ -251,14 +326,12 @@ const App = () => {
               <rect x="428.5" y="224.2" width="106" height="25.8" fill="#ffd9ff" id="rect2" />
               <rect x="534.5" y="224.2" width="106" height="25.8" fill="#8ee2fc" id="rect3" />
               <line x1="534.5" y1="223.7" x2="534.5" y2="251.5" stroke="#fff" strokeLinejoin="round" fill="none" id="line5" />
-              <rect x="428.3" y="225.5" width="211.2" height="25.2" fill="none" stroke="url(#b)" strokeWidth="1.03503" id="rect7" />
               <text x="440" y="240.2" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">ANC Terpadu</text>
             </g>
             <g id="process-2">
               <rect x="428" y="253" width="106" height="25.7" fill="#ffd9ff" id="rect8" />
               <rect x="534" y="253" width="106" height="25.7" fill="#8ee2fc" id="rect9" />
               <line x1="534" y1="252.5" x2="534" y2="280.2" stroke="#fff" strokeLinejoin="round" fill="none" id="line9" />
-              <rect x="428.3" y="253.8" width="211.4" height="23.6" stroke="#000" strokeMiterlimit="8" fill="none" id="rect13" />
               <text x="440" y="268.5" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining Kesehatan Jiwa</text>
             </g>
             <g id="header-section">
@@ -280,7 +353,6 @@ const App = () => {
               <rect x="428.3" y="282.5" width="106" height="25.7" fill="#ffd9ff" id="rect22" />
               <rect x="534.3" y="282.5" width="106" height="25.7" fill="#8ee2fc" id="rect23" />
               <line x1="534.3" y1="282" x2="534.3" y2="309.7" stroke="#fff" strokeLinejoin="round" fill="none" id="line23" />
-              <rect x="428.6" y="283.3" width="211.5" height="23.7" stroke="#000" strokeMiterlimit="8" fill="none" id="rect27" />
               <text x="440" y="298" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining Anemia</text>
             </g>
             <g id="output-display">
@@ -331,7 +403,7 @@ const App = () => {
               <path d="M885 297.6h1v-29.4h-1Zm-2.5-1 3 6 3-6m-3.5 68.1h1v-29.3h-1Zm-2.5-1 3 6 3-6m-2.5 68.2h-1v-29.3h1Zm2.5-1-3 6-3-6" id="path41" />
             </g>
             <g id="process-4">
-              <rect x="428.3" y="344.5" width="212.1" height="24.3" fill="#8ee2fc" stroke="#000" strokeMiterlimit="8" id="rect42" />
+              <rect x="428.3" y="344.5" width="212.1" height="24.3" fill="#8ee2fc" id="rect42" />
               <text x="440" y="359.2" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining Pre-eklampsia</text>
             </g>
             <g id="decision-2">
@@ -344,7 +416,7 @@ const App = () => {
               <polygon points="201.1,252.3 270.3,220.7 339.5,252.3 270.3,283.9" fill="#fff" stroke="#000" strokeMiterlimit="8" id="polygon43" />
               <text x="270.3" y="242.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Terdapat</text>
               <text x="270.3" y="254.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Keluhan</text>
-              <text x="270.3" y="266.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Kesehatan</text>
+              <text x="270.3" y="266.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Kesehatan</text>
             </g>
             <g id="process-5">
               <rect x="428.8" y="133" width="70.5" height="26.4" fill="#b0fee6" id="rect43" />
@@ -352,7 +424,6 @@ const App = () => {
               <rect x="569.8" y="133" width="70.4" height="26.4" fill="#8ee2fc" id="rect45" />
               <line x1="499.3" y1="132.5" x2="499.3" y2="160.9" stroke="#fff" strokeLinejoin="round" fill="none" id="line45" />
               <line x1="569.8" y1="132.5" x2="569.8" y2="160.9" stroke="#fff" strokeLinejoin="round" fill="none" id="line46" />
-              <rect x="428" y="133.4" width="211.4" height="25.5" stroke="#000" strokeMiterlimit="8" fill="none" style={{ strokeWidth: '1.04419' }} id="rect50" />
               <text x="440" y="149" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining Tuberkulosis</text>
             </g>
             <g id="process-6">
@@ -361,7 +432,6 @@ const App = () => {
               <rect x="569.3" y="162.8" width="70.5" height="26.5" fill="#8ee2fc" id="rect53" />
               <line x1="498.9" y1="162.3" x2="498.9" y2="190.8" stroke="#fff" strokeLinejoin="round" fill="none" id="line53" />
               <line x1="569.3" y1="162.3" x2="569.3" y2="190.8" stroke="#fff" strokeLinejoin="round" fill="none" id="line54" />
-              <rect x="428" y="164" width="211.4" height="23.6" stroke="#000" strokeMiterlimit="8" fill="none" id="rect58" />
               <text x="440" y="178.6" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining Malaria (Daerah Endemis)</text>
             </g>
             <g id="process-7">
@@ -370,21 +440,19 @@ const App = () => {
               <rect x="569.8" y="193.6" width="70.5" height="26.4" fill="#8ee2fc" id="rect61" />
               <line x1="499.3" y1="193.1" x2="499.3" y2="221.5" stroke="#fff" strokeLinejoin="round" fill="none" id="line61" />
               <line x1="569.8" y1="193.1" x2="569.8" y2="221.5" stroke="#fff" strokeLinejoin="round" fill="none" id="line62" />
-              <rect x="428.3" y="194.2" width="211.4" height="23.6" stroke="#000" strokeMiterlimit="8" fill="none" style={{ strokeWidth: '1.04587' }} id="rect66" />
               <text x="440" y="208.8" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining Gigi dan Mulut</text>
             </g>
             <g id="process-8">
               <rect x="428.2" y="313.1" width="106" height="25.7" fill="#ffd9ff" id="rect67" />
               <rect x="534.1" y="313.1" width="106" height="25.7" fill="#8ee2fc" id="rect68" />
               <line x1="534.1" y1="312.6" x2="534.1" y2="340.3" stroke="#fff" strokeLinejoin="round" fill="none" id="line68" />
-              <rect x="428.5" y="313.9" width="211.5" height="23.7" stroke="#000" strokeMiterlimit="8" fill="none" id="rect72" />
               <text x="440" y="328.6" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Skrining HIV, Sifilis, Hepatitis B</text>
             </g>
             <g id="dashed-area-1">
               <rect x="421.7" y="126.4" width="224.5" height="250.4" stroke="#172c51" strokeDasharray="4,3" strokeMiterlimit="8" fill="none" id="rect73" />
             </g>
             <g id="process-9">
-              <rect x="428" y="393.8" width="212.2" height="24.2" fill="#8ee2fc" stroke="#000" strokeMiterlimit="8" id="rect74" />
+              <rect x="428" y="393.8" width="212.2" height="24.2" fill="#8ee2fc" id="rect74" />
               <text x="440" y="408.5" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Persalinan Normal</text>
             </g>
             <g id="output-display-2">
@@ -393,14 +461,13 @@ const App = () => {
               <rect x="570" y="425" width="70.5" height="26.5" fill="#8ee2fc" id="rect77" />
               <line x1="499.6" y1="424.5" x2="499.6" y2="453" stroke="#fff" strokeLinejoin="round" fill="none" id="line77" />
               <line x1="570" y1="424.5" x2="570" y2="453" stroke="#fff" strokeLinejoin="round" fill="none" id="line78" />
-              <rect x="428.5" y="426" width="211.5" height="23.5" stroke="#000" strokeMiterlimit="8" fill="none" id="rect82" />
               <text x="440" y="440.7" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Pelayanan Pasca Persalinan</text>
             </g>
             <g id="dashed-area-2">
               <rect x="421.3" y="386.4" width="224.5" height="71.6" stroke="#172c51" strokeDasharray="4,3" strokeMiterlimit="8" fill="none" id="rect83" />
             </g>
             <g id="process-10" style={{ display: 'inline' }}>
-              <rect x="427.70001" y="471.39999" width="212.3" height="24.200001" fill="#8ee2fc" stroke="#000000" strokeMiterlimit="8" id="rect84" />
+              <rect x="427.70001" y="471.39999" width="212.3" height="24.200001" fill="#8ee2fc" id="rect84" />
               <text x="439.70001" y="486.09999" fontFamily="Arial, sans-serif" fontSize="10" fill="#000000" id="text85" >Tatalaksana sesuai standar</text>
             </g>
             <g id="complex-lines-arrows">
