@@ -19,6 +19,11 @@ const App = () => {
   const [lastTapTime, setLastTapTime] = useState(0);
   const doubleTapThreshold = 300; // Milliseconds for double-tap detection
 
+  // Faktor sensitivitas panning
+  // Meningkatkan nilai ini untuk membuat panning terasa lebih cepat.
+  // Nilai yang lebih tinggi akan membuat pergerakan geser lebih jauh untuk gerakan mouse/jari yang sama.
+  const panSensitivity = 10; 
+
   // Ref untuk mengakses elemen SVG DOM
   const svgRef = useRef(null);
 
@@ -99,10 +104,10 @@ const App = () => {
     const dy = e.clientY - initialPanClientY;
 
     // Perbarui translasi berdasarkan perubahan posisi mouse dan skala
-    // Pergeseran dihitung dari posisi awal drag, sehingga lebih responsif
-    setTranslateX(initialPanTranslateX + dx / scale);
-    setTranslateY(initialPanTranslateY + dy / scale);
-  }, [isPanning, initialPanClientX, initialPanClientY, initialPanTranslateX, initialPanTranslateY, scale]);
+    // Menggunakan panSensitivity untuk membuat panning lebih cepat
+    setTranslateX(initialPanTranslateX + (dx * panSensitivity) / scale);
+    setTranslateY(initialPanTranslateY + (dy * panSensitivity) / scale);
+  }, [isPanning, initialPanClientX, initialPanClientY, initialPanTranslateX, initialPanTranslateY, scale, panSensitivity]);
 
   const handleMouseUp = useCallback(() => {
     setIsPanning(false);
@@ -143,10 +148,10 @@ const App = () => {
       const dy = e.touches[0].clientY - initialPanClientY;
 
       // Perbarui translasi berdasarkan perubahan posisi sentuh dan skala
-      setTranslateX(initialPanTranslateX + dx / scale);
-      setTranslateY(initialPanTranslateY + dy / scale);
+      setTranslateX(initialPanTranslateX + (dx * panSensitivity) / scale);
+      setTranslateY(initialPanTranslateY + (dy * panSensitivity) / scale);
     }
-  }, [isPanning, initialPanClientX, initialPanClientY, initialPanTranslateX, initialPanTranslateY, scale]);
+  }, [isPanning, initialPanClientX, initialPanClientY, initialPanTranslateX, initialPanTranslateY, scale, panSensitivity]);
 
   const handleTouchEnd = useCallback(() => {
     setIsPanning(false);
@@ -339,7 +344,7 @@ const App = () => {
               <polygon points="201.1,252.3 270.3,220.7 339.5,252.3 270.3,283.9" fill="#fff" stroke="#000" strokeMiterlimit="8" id="polygon43" />
               <text x="270.3" y="242.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Terdapat</text>
               <text x="270.3" y="254.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Keluhan</text>
-              <text x="270.3" y="266.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Kesehatan</text>
+              <text x="270.3" y="266.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Kesehatan</text>
             </g>
             <g id="process-5">
               <rect x="428.8" y="133" width="70.5" height="26.4" fill="#b0fee6" id="rect43" />
