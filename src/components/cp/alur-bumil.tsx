@@ -8,7 +8,12 @@ const App = () => {
 
   // State untuk mengelola status panning
   const [isPanning, setIsPanning] = useState(false);
-  const [startPoint, setStartPoint] = useState({ x: 0, y: 0 }); // Titik awal saat memulai pan
+  // Menyimpan posisi mouse/sentuh awal saat panning dimulai
+  const [initialPanClientX, setInitialPanClientX] = useState(0);
+  const [initialPanClientY, setInitialPanClientY] = useState(0);
+  // Menyimpan nilai translate awal saat panning dimulai
+  const [initialPanTranslateX, setInitialPanTranslateX] = useState(0);
+  const [initialPanTranslateY, setInitialPanTranslateY] = useState(0);
 
   // State untuk mendeteksi double-tap/double-click
   const [lastTapTime, setLastTapTime] = useState(0);
@@ -78,22 +83,26 @@ const App = () => {
     } else {
       // Klik tunggal atau mulai panning
       setIsPanning(true);
-      setStartPoint({ x: e.clientX, y: e.clientY });
+      setInitialPanTranslateX(translateX); // Simpan nilai translate saat ini
+      setInitialPanTranslateY(translateY);
+      setInitialPanClientX(e.clientX); // Simpan posisi mouse awal
+      setInitialPanClientY(e.clientY);
       setLastTapTime(currentTime);
     }
-  }, [lastTapTime, zoomToFitElement]);
+  }, [lastTapTime, translateX, translateY, zoomToFitElement]);
 
   const handleMouseMove = useCallback((e) => {
     if (!isPanning) return;
 
-    const dx = e.clientX - startPoint.x;
-    const dy = e.clientY - startPoint.y;
+    // Hitung perubahan posisi mouse dari awal drag
+    const dx = e.clientX - initialPanClientX;
+    const dy = e.clientY - initialPanClientY;
 
-    // Perbarui translasi, dibagi dengan skala agar kecepatan pan konsisten
-    setTranslateX(prev => prev + dx / scale);
-    setTranslateY(prev => prev + dy / scale);
-    setStartPoint({ x: e.clientX, y: e.clientY }); // Perbarui titik awal untuk gerakan berkelanjutan
-  }, [isPanning, startPoint.x, startPoint.y, scale]);
+    // Perbarui translasi berdasarkan perubahan posisi mouse dan skala
+    // Pergeseran dihitung dari posisi awal drag, sehingga lebih responsif
+    setTranslateX(initialPanTranslateX + dx / scale);
+    setTranslateY(initialPanTranslateY + dy / scale);
+  }, [isPanning, initialPanClientX, initialPanClientY, initialPanTranslateX, initialPanTranslateY, scale]);
 
   const handleMouseUp = useCallback(() => {
     setIsPanning(false);
@@ -117,23 +126,27 @@ const App = () => {
       } else {
         // Tap tunggal atau mulai panning
         setIsPanning(true);
-        setStartPoint({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+        setInitialPanTranslateX(translateX); // Simpan nilai translate saat ini
+        setInitialPanTranslateY(translateY);
+        setInitialPanClientX(e.touches[0].clientX); // Simpan posisi sentuh awal
+        setInitialPanClientY(e.touches[0].clientY);
         setLastTapTime(currentTime);
       }
     }
-  }, [lastTapTime, zoomToFitElement]);
+  }, [lastTapTime, translateX, translateY, zoomToFitElement]);
 
   const handleTouchMove = useCallback((e) => {
     if (isPanning && e.touches.length === 1) {
       // Panning dengan satu jari
-      const dx = e.touches[0].clientX - startPoint.x;
-      const dy = e.touches[0].clientY - startPoint.y;
+      // Hitung perubahan posisi sentuh dari awal drag
+      const dx = e.touches[0].clientX - initialPanClientX;
+      const dy = e.touches[0].clientY - initialPanClientY;
 
-      setTranslateX(prev => prev + dx / scale);
-      setTranslateY(prev => prev + dy / scale);
-      setStartPoint({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+      // Perbarui translasi berdasarkan perubahan posisi sentuh dan skala
+      setTranslateX(initialPanTranslateX + dx / scale);
+      setTranslateY(initialPanTranslateY + dy / scale);
     }
-  }, [isPanning, startPoint.x, startPoint.y, scale]);
+  }, [isPanning, initialPanClientX, initialPanClientY, initialPanTranslateX, initialPanTranslateY, scale]);
 
   const handleTouchEnd = useCallback(() => {
     setIsPanning(false);
@@ -148,8 +161,32 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4 font-sans text-gray-800">
-      {/* <h1 className="text-4xl font-bold mb-8 text-indigo-700">Diagram Alur Proses</h1> */}
+      <style>
+        {`
+        .reset-button {
+          margin-top: 0.75rem; /* mt-3 */
+          padding: 0.5rem 1rem; /* px-4 py-2 */
+          background-color: #3b82f6; /* bg-blue-500 */
+          color: white; /* text-white */
+          border-radius: 0.375rem; /* rounded-md */
+          transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out; /* transition-colors duration-200 */
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+          border: none;
+          cursor: pointer;
+        }
 
+        .reset-button:hover {
+          background-color: #2563eb; /* hover:bg-blue-600 */
+          transform: translateY(-1px); /* subtle lift on hover */
+        }
+
+        .reset-button:active {
+          background-color: #1d4ed8; /* active:bg-blue-700 */
+          transform: translateY(0);
+        }
+        `}
+      </style>
+      <h3 className="text-4xl font-bold mb-8 text-indigo-700">Diagram Alur Proses</h3>
       <div className="bg-white p-2 rounded-lg shadow-md mb-4 text-center">
         {/* <p className="text-gray-600 text-sm">
           Seret dengan mouse atau satu jari untuk menggeser.
@@ -158,7 +195,7 @@ const App = () => {
         </p> */}
         <button
           onClick={resetView}
-          className="mt-3 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200 shadow-md"
+          className="reset-button" // Menggunakan kelas CSS kustom
         >
           Reset Tampilan
         </button>
@@ -302,7 +339,7 @@ const App = () => {
               <polygon points="201.1,252.3 270.3,220.7 339.5,252.3 270.3,283.9" fill="#fff" stroke="#000" strokeMiterlimit="8" id="polygon43" />
               <text x="270.3" y="242.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Terdapat</text>
               <text x="270.3" y="254.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Keluhan</text>
-              <text x="270.3" y="266.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000" textAnchor="middle" dominantBaseline="middle">Kesehatan</text>
+              <text x="270.3" y="266.3" fontFamily="Arial, sans-serif" fontSize="10" fill="#000">Kesehatan</text>
             </g>
             <g id="process-5">
               <rect x="428.8" y="133" width="70.5" height="26.4" fill="#b0fee6" id="rect43" />
