@@ -1,0 +1,85 @@
+---
+slug: /care-pathways
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import BumilIcon from '@site/static/cp/bumil.svg';
+import BayiIcon from '@site/static/cp/bayi.svg';
+import SekolahIcon from '@site/static/cp/sekolah.svg';
+import DewasaIcon from '@site/static/cp/dewasa.svg';
+import BumilComponent from '@site/src/components/cp/alur-bumil';
+import DocCardList from '@theme/DocCardList';
+
+# Pengantar
+
+
+![Alur banner](/cp/PDF1_SVG10.svg)
+
+## Cara Membaca Care Pathway
+
+Pilih **ALUR LAYANAN** sesuai siklus hidup yang ingin dituju.
+
+Pada **ALUR LAYANAN** :
+- Biasakan memulai membaca dari sasaran yang berada dalam bentuk oval.
+- Gunakan belah ketupat untuk menentukan apakah sasaran memiliki keluhan kesehatan yang memerlukan penanganan di Puskesmas.
+- Jika sasaran tidak memiliki keluhan kesehatan, ikuti algoritma untuk memilih salah satu jenis skrining yang dituju.
+
+Pada **ALUR SKRINING** :
+- Selalu dimulai dari unit pelayanan mana yang akan dikunjungi oleh sasaran.
+- Jika sudah ditentukan unit pelayanan mana yang akan dikunjungi, bacalah informasi yang tertera dalam kotak putih, lakukan sebagaimana informasi yang disampaikan dan sesuaikan dengan kondisi yang ada.
+- Pada bagian belah ketupat, informasi didalamnya menunjukkan suatu kondisi tertentu akan menghasilkan beberapa kemungkinan, yang selanjutnya dapat dipilih sesuai dengan kondisi atau kasus yang dijumpai.
+- Terus ikuti tanda panah untuk melakukan tata laksana selanjutnya.
+
+Pada **ALUR LAYANAN** dan **ALUR SKRINING** akan sering ditemukan:
+- Legenda warna yang berfungsi untuk memudahkan pengguna mengidentifikasi unit pelayanan dan layanan apa saja yang dapat dilakukan pada masing-masing unit pelayanan ( Keluarga I Posyandu I Pustu I Puskesmas/FKTP I Fasilitas Pelayanan Kesehatan Tingkat Lanjut (FKTL)).
+- Kalimat yang digarisbawahi yang apabila diklik akan membawa pengguna ke halaman skrining/halaman bantu yang berisi informasi tambahan.
+- Tombol navigasi yang dapat mengarahkan pengguna untuk berpindah halaman jika diklik
+- Tanda panah kembali membawa pengguna ke halaman sebelumnya.
+- Tanda panah ke kanan membawa pengguna ke alur skrining selanjutnya.
+{/* - Tanda list membawa pengguna kembali ke daftar isi. */}
+
+<DocCardList items={[
+  { 
+    type: 'link', 
+    href: '/care-pathways/bumil', 
+    myEmoji: <BumilIcon />,
+    label:"  Ibu Hamil, Bersalin & Nifas",
+    description: 'Alur perawatan ibu hamil, bersalin, dan nifas mencakup pelayanan ANC terpadu, kelas ibu hamil, PMT pada ibu hamil KEK, skrining TBC, kes. jiwa, anemia, malaria, KtPA, pre-eklampsia, persalinan normal, pelayanan pasca persalinan, kes. gigi dan mulut, serta pengobatan.'
+  },
+  { 
+    type: 'link', 
+    href: '/care-pathways/balita', 
+    myEmoji: <BayiIcon />,
+    label:"Bayi dan Anak Prasekolah",
+    description: 'Alur perawatan bayi dan anak prasekolah meliputi pelayanan neonatal esensial, BBLR, pencegahan dan deteksi dini gizi, kelas ibu balita, imunisasi rutin, vitamin A, pengukuran pertumbuhan, skrining hipotiroid kongenital, penyakit jantung bawaan, TBC, gigi dan mulut, gangguan spektrum autisme, perilaku dan emosi, GPPH, HIV, hepatitis B, talasemia, malaria, KtPA, tes daya dengar dan lihat, serta pengobatan dengan manajemen terpadu balita sakit (MTBS).'
+  },
+  { 
+    type: 'link', 
+    href: '/care-pathways/sekolah', 
+    myEmoji: <SekolahIcon />,
+    label:"Anak Usia Sekolah dan Remaja",
+    description: 'Alur perawatan anak usia sekolah dan remaja mencakup imunisasi rutin lengkap, skrining tumbuh kembang, gizi, kes. indra, gigi dan mulut, perilaku merokok, faktor risiko PTM, TBC, kes. jiwa, talasemia, kebugaran, malaria (daerah endemis), KtPA, imunisasi tetanus bagi WUS, pelayanan kes. gigi dan mulut, pencegahan anemia, serta pengobatan.'
+  },
+  { 
+    type: 'link', 
+    href: '/care-pathways/dewasa', 
+    myEmoji: <DewasaIcon />,
+    label:"Usia Dewasa dan Lanjut Usia",
+    description: 'Alur perawatan usia dewasa dan lanjut usia meliputi skrining obesitas, hipertensi, DM, faktor risiko stroke dan penyakit jantung, kanker (leher rahim, payudara, kolorektal, paru), talasemia, PPOK, TBC, indra penglihatan, kebugaran, kes. jiwa, layak hamil, imunisasi tetanus bagi WUS, geriatrik, malaria (daerah endemis), KtPA, pelayanan KB dan PAK, kes. gigi dan mulut, imunisasi COVID-19 program serta pengobatan.'
+  }
+]} />
+
+## Lampiran
+* Panduan Praktis Tata Laksana Klinis bagi Pasien Dewasa (PPTK)
+* Pelayanan Pengobatan dengan Manajemen Terpadu Balita Sakit (MTBS)
+* _Tracer Indicator_
+
+{/* <!-- ```
+Tanda panah kembali membawa pengguna ke halaman sebelumnya.
+Tanda panah ke kanan membawa pengguna ke alur skrining selanjutnya.
+Tanda list membawa pengguna kembali ke daftar isi.
+``` --> */}
+
+<DocCardList/>
+

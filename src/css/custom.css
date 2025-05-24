@@ -39,3 +39,46 @@ article p,article li,article ol{
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.clickable-icon {
+  /* Umum untuk semua elemen yang dapat disentuh */
+  cursor: pointer; /* Tetap pertahankan untuk desktop */
+  
+  /* Transisi halus untuk umpan balik yang lebih baik */
+  transition: 
+    /* transform 0.15s ease-out, Untuk efek scale */
+    fill 0.15s ease-out, /* Untuk perubahan warna isi SVG */
+    stroke 0.15s ease-out, /* Untuk perubahan warna garis SVG */
+    box-shadow 0.15s ease-out, /* Untuk efek bayangan */
+    filter 0.15s ease-out; /* Untuk efek filter */
+
+  /* Pastikan area sentuh cukup besar (min. 48x48px) */
+  /* Ini mungkin perlu diatur pada elemen induk <g> atau dengan padding/margin virtual */
+  min-width: 48px; /* Contoh, sesuaikan ukuran SVG aslinya */
+  min-height: 48px; /* Contoh, sesuaikan ukuran SVG aslinya */
+  display: inline-block; /* Agar min-width/height berfungsi */
+}
+
+/* Efek saat disentuh / aktif (untuk mobile dan desktop) */
+.clickable-icon:active {
+  /* transform: scale(0.95); Sedikit mengecil saat disentuh, memberi kesan "menekan" */
+  filter: brightness(1.1); /* Sedikit lebih cerah */
+  /* atau */
+  /* filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2)); */ /* Memberi efek bayangan kecil */
+  
+  /* Perubahan warna */
+  /* Jika elemen adalah <rect> atau <path> */
+  /* fill: #e0e0e0; Warna isi berubah */
+  stroke: #555; /* Warna garis berubah */
+
+  /* Jika elemen adalah <g> dan Anda ingin mengubah warna children */
+  /* Anda mungkin perlu menargetkan children di dalam .clickable-icon */
+  /* .clickable-icon > rect { fill: #e0e0e0; } */
+}
+
+/* Efek saat hover (lebih relevan untuk desktop, tapi bisa jadi fallback) */
+.clickable-icon:hover {
+  stroke: #555; /* Warna garis berubah */
+  /* transform: scale(1.03); Sedikit membesar saat hover */
+  filter: brightness(1.05); /* Sedikit lebih cerah saat hover */
+}
