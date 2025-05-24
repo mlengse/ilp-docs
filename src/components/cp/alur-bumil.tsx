@@ -8,7 +8,7 @@ const App = () => {
     const goToCekKesehatanPage = () => {
         // Ganti '/docs/cek-kesehatan-mandiri' dengan path URL yang Anda inginkan di Docusaurus
         // Pastikan path ini sesuai dengan rute halaman yang Anda buat di Docusaurus
-        history.push('/docs/cek-kesehatan-mandiri');
+        // history.push('/docs/cek-kesehatan-mandiri');
     };
 
     return (
