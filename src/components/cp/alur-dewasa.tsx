@@ -25,7 +25,7 @@ const App = () => {
     // State for reset button visibility
     const [showResetButton, setShowResetButton] = useState(false);
 
-    // Constants for the original viewBox dimensions from alur bumil.svg
+    // Constants for the original viewBox dimensions from Alur dewasa.svg
     const originalViewBoxWidth = 540;
     const originalViewBoxHeight = 960;
     const panSensitivity = 1; // Adjusted pan sensitivity for smoother mobile drag
@@ -171,7 +171,7 @@ const App = () => {
         e.stopPropagation();
 
         // Target the <g> element representing a process box or oval, not lines/arrows
-        const targetElement = e.target.closest('g[id]:not(#flow_lines_and_arrows):not(#dashed_area_1):not(#dashed_area_2)');
+        const targetElement = e.target.closest('g[id]:not(#flow_lines_and_arrows):not(#dashed_area_main)');
 
         if (targetElement && svgRef.current) {
             const svgRect = svgRef.current.getBoundingClientRect();
@@ -226,8 +226,8 @@ const App = () => {
         e.preventDefault();
         e.stopPropagation();
 
-        // Replace '/docs/cek-kesehatan-mandiri-ibu-hamil' with your desired Docusaurus URL path
-        history.push('/docs/cek-kesehatan-mandiri-ibu-hamil');
+        // Replace '/docs/cek-kesehatan-mandiri-dewasa' with your desired Docusaurus URL path
+        history.push('/docs/cek-kesehatan-mandiri-dewasa');
     };
 
     // Generic click handler for other nodes
@@ -243,8 +243,8 @@ const App = () => {
         const nodeId = e.currentTarget.id;
         console.log(`Node clicked: ${nodeId}`);
         // Example: You can add specific navigation logic here based on nodeId
-        // if (nodeId === 'skrining_hiv_sifilis_hepatitis_b') {
-        //     history.push('/docs/skrining-hiv-sifilis-hepatitis-b-info');
+        // if (nodeId === 'skrining_hipertensi') {
+        //     history.push('/docs/skrining-hipertensi-info');
         // }
     };
 
@@ -320,221 +320,307 @@ const App = () => {
                     }}
                 >
                     {/* Background rectangle */}
-                    <rect x="0" y="0" width="540" height="960" fill="#FFFFFF"/>
+                    <path fill="#FFF" d="M0 0h540v960H0z"/>
 
-                    {/* Start/End Oval: Ibu Hamil, Bersalin dan Nifas */}
-                    <g id="ibu_hamil_bersalin_nifas" onDoubleClick={handleDoubleClick}>
-                        <path fill="none" stroke="#000" strokeLinejoin="round" strokeMiterlimit="10" d="M157.5 22c0-9.7 38.7-17.5 86.5-17.5s86.5 7.8 86.5 17.5-38.7 17.5-86.5 17.5-86.5-7.8-86.5-17.5Z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(201.5 17)">Ibu Hamil,</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(249.2 17)">Bersalin</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(227.3 28)">dan</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(246.7 28)">Nifas</text>
+                    {/* Start/End Oval: Usia Dewasa dan lanjut usia */}
+                    <g id="usia_dewasa_dan_lanjut_usia" onDoubleClick={handleDoubleClick}>
+                        <path fill="#FFF" fillRule="evenodd" stroke="#000" strokeMiterlimit="8" strokeWidth=".6667" d="M283.5 71.0001c0 11.8745 34.026 21.5 76 21.5s76-9.6255 76-21.5c0-11.8746-34.026-21.5-76-21.5s-76 9.6254-76 21.5Z"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(310.467 73)">Usia Dewasa dan lanjut usia</text>
                     </g>
 
                     {/* Process: Kunjungan rumah oleh Kader Posyandu */}
                     <g id="kunjungan_rumah_kader_posyandu" onDoubleClick={handleDoubleClick}>
-                        <path fill="#F7F7C2" stroke="#000" strokeMiterlimit="8" d="M29.5 59.5h126v98h-126z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(36.4 75)">Kunjungan rumah</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(36.4 87)">oleh</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(57.9 87)">kader</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(85.5 87)">Posyandu</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(36.4 99)">- Edukasi</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(36.4 111)">- Pemantauan</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(101.7 111)">Kepatuhan</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(42.4 123)">Pengobatan</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(36.4 135)">- Sweeping</text>
+                        <rect x="73.5" y="206.5" width="149" height="101" fill="#F7F7C2" stroke="#000" strokeMiterlimit="8" strokeWidth=".6667"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(98.1448 235)">Kunjungan rumah oleh Kader</text>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(130.645 245)">Posyandu</text>
+                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(82.6448 255)">• Edukasi</text>
+                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(82.6448 264)">• Pemantauan kepatuhan</text>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(91.9782 274)">pengobatan</text>
+                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(82.6448 283)">• Sweeping</text>
                     </g>
 
-                    {/* Input Data: Cek Kesehatan Mandiri (Clickable) */}
+                    {/* Input Data: Cek Kesehatan secara mandiri (Clickable) */}
                     <g id="cek_kesehatan_mandiri" className='clickable-icon' onClick={goToCekKesehatanPage} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
-                        <path fill="#F7F7C2" fillRule="evenodd" stroke="#000" strokeMiterlimit="8" d="M230.5 113.5h92v33h-92Z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(235.2 130)">Cek Kesehatan</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(235.2 140)">Secara</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(269.5 140)">Mandiri</text>
+                        <rect x="306.5" y="132.5" width="106" height="33" fill="#F7F7C2" stroke="#000" strokeMiterlimit="8" strokeWidth=".6667"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(315.114 146)">Cek Kesehatan secara</text>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(315.114 156)">mandiri</text>
                     </g>
 
-                    {/* Process: ANC Terpadu (Clickable) */}
-                    <g id="anc_terpadu" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
-                        <path fill="#FFD9FF" d="M257 297h106v26H257z"/>
-                        <path fill="#8EE2FC" d="M363 297h106v26H363z"/>
-                        <path fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" d="M363.5 297.5h1v27h-1z"/>
-                        <path fill="none" stroke="#000" strokeMiterlimit="8" d="M257.5 298.5h211v26h-211z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(268.5 314)">ANC Terpadu</text>
+                    {/* Process: Tata laksana sesuai Alur Klinis (PPTK/PPK) */}
+                    <g id="tatalaksana_alur_klinis" onDoubleClick={handleDoubleClick}>
+                        <rect x="280.5" y="904.5" width="194" height="37" fill="#8EE2FC" stroke="#000" strokeMiterlimit="8" strokeWidth=".6667"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(290.075 925)">Tata laksana sesuai Alur Klinis (PPTK/PPK)</text>
                     </g>
 
-                    {/* Process: Skrining Kesehatan Jiwa (Clickable) */}
-                    <g id="skrining_kesehatan_jiwa" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
-                        <path fill="#FFD9FF" d="M257 326h105v26H257z"/>
-                        <path fill="#8EE2FC" d="M362 326h106v26H362z"/>
-                        <path fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" d="M362.5 325.5h1v28h-1z"/>
-                        <path fill="none" stroke="#000" strokeMiterlimit="8" d="M257.5 327.5h211v23h-211z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(268.5 342)">Skrining Kesehatan Jiwa</text>
-                    </g>
-
-                    {/* Process: Skrining Anemia (Clickable) */}
-                    <g id="skrining_anemia" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
-                        <path fill="#FFD9FF" d="M257 355h106v26H257z"/>
-                        <path fill="#8EE2FC" d="M363 355h106v26H363z"/>
-                        <path fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" d="M363.5 355.5h1v28h-1z"/>
-                        <path fill="none" stroke="#000" strokeMiterlimit="8" d="M257.5 356.5h211v24h-211z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(268.5 372)">Skrining Anemia</text>
-                    </g>
-
-                    {/* Process: Skrining HIV, Sifilis, Hepatitis B (Clickable) */}
-                    <g id="skrining_hiv_sifilis_hepatitis_b" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
-                        <path fill="#FFD9FF" d="M257 386h106v26H257z"/>
-                        <path fill="#8EE2FC" d="M363 386h105v26H363z"/>
-                        <path fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" d="M363.5 385.5h1v28h-1z"/>
-                        <path fill="none" stroke="#000" strokeMiterlimit="8" d="M257.5 387.5h211v23h-211z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(268.5 402)">Skrining HIV, Sifilis, Hepatitis B</text>
-                    </g>
-
-                    {/* Process: Skrining Pre-eklampsia (Clickable) */}
-                    <g id="skrining_pre_eklampsia" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
-                        <path fill="#8EE2FC" stroke="#000" strokeMiterlimit="8" d="M257.5 417.5h212v25h-212z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(268.5 433)">Skrining Pre-eklampsia</text>
-                    </g>
-
-                    {/* Process: Skrining Tuberkulosis (Clickable) */}
-                    <g id="skrining_tuberkulosis" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
-                        <path fill="#B0FEE6" d="M257 206h71v26h-71z"/>
-                        <path fill="#FFD9FF" d="M328 206h70v26h-70z"/>
-                        <path fill="#8EE2FC" d="M398 206h70v26h-70z"/>
-                        <path fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" d="M328.5 205.5h70v29h-70z"/>
-                        <path fill="none" stroke="#000" strokeMiterlimit="8" d="M257.5 206.5h211v26h-211z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(268.5 223)">Skrining Tuberkulosis</text>
-                    </g>
-
-                    {/* Process: Skrining Malaria (Daerah Endemis) (Clickable) */}
-                    <g id="skrining_malaria_daerah_endemis" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
-                        <path fill="#B0FEE6" d="M257 236h70v26h-70z"/>
-                        <path fill="#FFD9FF" d="M327 236h71v26h-71z"/>
-                        <path fill="#8EE2FC" d="M398 236h70v26h-70z"/>
-                        <path fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" d="M327.5 235.5h71v29h-71z"/>
-                        <path fill="none" stroke="#000" strokeMiterlimit="8" d="M257.5 237.5h211v24h-211z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(268.5 252)">Skrining Malaria (Daerah Endemis)</text>
-                    </g>
-
-                    {/* Process: Skrining Gigi dan Mulut (Clickable) */}
-                    <g id="skrining_gigi_dan_mulut" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
-                        <path fill="#B0FEE6" d="M257 267h71v26h-71z"/>
-                        <path fill="#FFD9FF" d="M328 267h70v26h-70z"/>
-                        <path fill="#8EE2FC" d="M398 267h71v26h-71z"/>
-                        <path fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" d="M328.5 266.5h70v28h-70z"/>
-                        <path fill="none" stroke="#000" strokeMiterlimit="8" d="M257.5 267.5h211v24h-211z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(268.5 283)">Skrining Gigi dan Mulut</text>
-                    </g>
-
-                    {/* Decision: Terdapat Keluhan Kesehatan */}
-                    <g id="keputusan_keluhan_kesehatan" onDoubleClick={handleDoubleClick}>
-                        <path fill="none" stroke="#000" strokeLinejoin="round" strokeMiterlimit="10" d="m74.5 257 51-31.5 51 31.5-51 31.5Z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(106.7 246)">Terdapat</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(106.2 258)">Keluhan</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(106.3 270)">Kesehatan</text>
-                    </g>
-
-                    {/* Decision: Terdapat Tanda Persalinan */}
-                    <g id="keputusan_tanda_persalinan" onDoubleClick={handleDoubleClick}>
-                        <path fill="none" stroke="#000" strokeLinejoin="round" strokeMiterlimit="10" d="m56.5 486.5 69-30 69 30-69 30Z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(104.5 478)">Terdapat</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(104.5 490)">Tanda</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(103.9 502)">Persalinan</text>
-                    </g>
-
-                    {/* Process: Persalinan Normal (Clickable) */}
-                    <g id="persalinan_normal" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
-                        <path fill="#8EE2FC" stroke="#000" strokeMiterlimit="8" d="M255.5 482.5h212v24h-212z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(267.4 498)">Persalinan Normal</text>
-                    </g>
-
-                    {/* Process: Pelayanan Pasca Persalinan (Clickable) */}
-                    <g id="pelayanan_pasca_persalinan" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
-                        <path fill="#B0FEE6" d="M256 513h71v26h-71z"/>
-                        <path fill="#FFD9FF" d="M327 513h70v26h-70z"/>
-                        <path fill="#8EE2FC" d="M397 513h71v26h-71z"/>
-                        <path fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" d="M327.5 512.5h70v29h-70z"/>
-                        <path fill="none" stroke="#000" strokeMiterlimit="8" d="M256.5 514.5h211v23h-211z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(267.4 530)">Pelayanan Pasca Persalinan</text>
-                    </g>
-
-                    {/* Process: Tatalaksana sesuai standar */}
-                    <g id="tatalaksana_sesuai_standar" onDoubleClick={handleDoubleClick}>
-                        <path fill="#8EE2FC" stroke="#000" strokeMiterlimit="8" d="M168.5 882.5h212v24h-212z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(179.9 898)">Tatalaksana sesuai standar</text>
-                    </g>
-
-                    {/* Process: Pemantauan Hasil Pengobatan (Clickable) */}
-                    <g id="pemantauan_hasil_pengobatan" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
-                        <path fillRule="evenodd" stroke="#000" strokeMiterlimit="8" d="M158.5 929.5h214v25h-214Z"/>
-                        <path fill="#B0FEE6" fillRule="evenodd" d="M159 930h71v24h-71Z"/>
-                        <path fill="#FFD9FF" fillRule="evenodd" d="M230 930h70v24h-70Z"/>
-                        <path fill="#8EE2FC" fillRule="evenodd" d="M300 930h71v24h-71Z"/>
-                        <path fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" d="M230.5 929.5v25m70-25v25"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(172 944)">Pemantauan Hasil Pengobatan</text>
-                    </g>
-
-                    {/* Decision: Dapat Ditangani Di FKTP */}
-                    <g id="keputusan_ditangani_fktp" onDoubleClick={handleDoubleClick}>
-                        <path fill="#FFF" fillRule="evenodd" stroke="#000" strokeMiterlimit="8" d="m283.5 628.5 63-32 63 32-63 32Z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(332.5 619)">Dapat</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(324.7 631)">Ditangani</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(327 643)">Di FKTP</text>
+                    {/* Decision: Dapat ditangani di FKTP */}
+                    <g id="dapat_ditangani_fktp" onDoubleClick={handleDoubleClick}>
+                        <polygon points="84.5001,561 150,601.5 215.5,561 150,520.5" fill="#FFF" fillRule="evenodd" stroke="#000" strokeMiterlimit="8" strokeWidth=".6667"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(122.265 558)">Dapat ditangani</text>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(137.185 568)">di FKTP</text>
                     </g>
 
                     {/* Process: Rujuk ke FKTL */}
                     <g id="rujuk_ke_fktl" onDoubleClick={handleDoubleClick}>
-                        <path fill="#F2F2F2" stroke="#000" strokeMiterlimit="8" d="M404.5 678.5h76v32h-76z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(408.6 699)">Rujuk ke FKTL</text>
+                        <rect x="84" y="657" width="130" height="25" fill="#F2F2F2" fillRule="evenodd"/>
+                        <rect x="86.5001" y="658.5" width="129" height="25" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(125.327 672)">Rujuk ke FKTL</text>
                     </g>
 
-                    {/* Process: Tatalaksana Di FKTL */}
+                    {/* Process: Tatalaksana di FKTL */}
                     <g id="tatalaksana_di_fktl" onDoubleClick={handleDoubleClick}>
-                        <path fill="#F2F2F2" stroke="#000" strokeMiterlimit="8" d="M404.5 745.5h76v32h-76z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(408.6 761)">Tatalaksana</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(408.6 773)">Di FKTL</text>
+                        <rect x="84" y="708" width="130" height="27" fill="#F2F2F2" fillRule="evenodd"/>
+                        <rect x="86.5001" y="709.5" width="129" height="26" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(93.7857 724)">Tatalaksana di FKTL</text>
                     </g>
 
                     {/* Process: Kondisi Stabil */}
                     <g id="kondisi_stabil" onDoubleClick={handleDoubleClick}>
-                        <path fill="#F2F2F2" fillRule="evenodd" stroke="#000" strokeMiterlimit="8" d="M404.5 812.5h76v33h-76Z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(408.6 833)">Kondisi Stabil</text>
+                        <rect x="84" y="761" width="130" height="26" fill="#F2F2F2" fillRule="evenodd"/>
+                        <rect x="86.5001" y="762.5" width="129" height="26" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(93.7857 776)">Kondisi Stabil</text>
                     </g>
 
-                    {/* Process: Rujuk Balik Ke FKTP */}
+                    {/* Process: Rujuk Balik ke FKTP */}
                     <g id="rujuk_balik_ke_fktp" onDoubleClick={handleDoubleClick}>
-                        <path fill="#F2F2F2" fillRule="evenodd" stroke="#000" strokeMiterlimit="8" d="M404.5 879.5h76v33h-76Z"/>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(408.6 893)">Rujuk Balik</text>
-                        <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontSize="10" fontWeight="400" transform="translate(408.6 905)">Ke FKTP</text>
+                        <rect x="84" y="813" width="130" height="25" fill="#F2F2F2" fillRule="evenodd"/>
+                        <rect x="86.5001" y="814.5" width="129" height="25" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(93.7857 828)">Rujuk Balik ke FKTP</text>
                     </g>
 
-                    {/* Dashed Area 1 (Skrining) */}
-                    <g id="dashed_area_1">
-                        <path fill="none" stroke="#172C51" strokeDasharray="3.99034 2.99276" strokeMiterlimit="8" d="M250.5 199.5h224v251h-224z"/>
+                    {/* Decision: Terdapat Keluhan Kesehatan */}
+                    <g id="keputusan_keluhan_kesehatan" onDoubleClick={handleDoubleClick}>
+                        <polygon points="292.5,258.5 359.5,292.5 426.5,258.5 359.5,224.5" fill="#FFF" fillRule="evenodd" stroke="#000" strokeMiterlimit="8" strokeWidth=".6667"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(309.57 260)">Terdapat Keluhan Kesehatan</text>
                     </g>
 
-                    {/* Dashed Area 2 (Pelayanan Pasca Persalinan) */}
-                    <g id="dashed_area_2">
-                        <path fill="none" stroke="#172C51" strokeDasharray="3.99034 2.99276" strokeMiterlimit="8" d="M249.5 475.5h224v71h-224z"/>
+                    {/* Process: Pemantauan Hasil Pengobatan (Clickable) */}
+                    <g id="pemantauan_hasil_pengobatan" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="51" y="422" width="64" height="32" fill="#B0FEE6"/>
+                        <rect x="115" y="422" width="63" height="32" fill="#FFD9FF"/>
+                        <rect x="178" y="422" width="65" height="32" fill="#8EE2FC"/>
+                        <rect x="116.5" y="423.5" width="2" height="34" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="179.5" y="423.5" width="2" height="34" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="52.5001" y="421.5" width="192" height="31" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(61.1707 439)">Pemantauan Hasil Pengobatan</text>
+                    </g>
+
+                    {/* Process: Skrining Obesitas (Clickable) */}
+                    <g id="skrining_obesitas" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="269" y="320" width="59" height="21" fill="#B0FEE6"/>
+                        <rect x="328" y="320" width="57" height="21" fill="#FFD9FF"/>
+                        <rect x="385" y="320" width="59" height="21" fill="#8EE2FC"/>
+                        <rect x="329.5" y="321.5" width="1" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="386.5" y="321.5" width="2" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="270.5" y="319.5" width="175" height="21" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(279.409 332)">Skrining Obesitas</text>
+                    </g>
+
+                    {/* Process: Skrining Talasemia (Clickable) */}
+                    <g id="skrining_talasemia" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="268" y="690" width="88" height="20" fill="#FFD9FF"/>
+                        <rect x="356" y="690" width="87" height="20" fill="#8EE2FC"/>
+                        <rect x="357.5" y="691.5" width="1" height="21" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="269.5" y="691.5" width="175" height="18" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(278.109 702)">Skrining Talasemia</text>
+                    </g>
+
+                    {/* Process: Skrining Kebugaran (Clickable) */}
+                    <g id="skrining_kebugaran" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="270.5" y="786.5" width="176" height="19" fill="#8EE2FC" stroke="#000" strokeMiterlimit="8" strokeWidth=".6667"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(279.962 798)">Skrining Kebugaran</text>
+                    </g>
+
+                    {/* Process: Skrining Hipertensi (Clickable) */}
+                    <g id="skrining_hipertensi" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="270" y="344" width="59" height="21" fill="#B0FEE6"/>
+                        <rect x="329" y="344" width="57" height="21" fill="#FFD9FF"/>
+                        <rect x="386" y="344" width="59" height="21" fill="#8EE2FC"/>
+                        <rect x="329.5" y="345.5" width="2" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="387.5" y="345.5" width="1" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="270.5" y="343.5" width="176" height="21" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(280.034 356)">Skrining Hipertensi</text>
+                    </g>
+
+                    {/* Process: Skrining Diabetes Mellitus (Clickable) */}
+                    <g id="skrining_diabetes_mellitus" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="270" y="370" width="59" height="21" fill="#B0FEE6"/>
+                        <rect x="329" y="370" width="57" height="21" fill="#FFD9FF"/>
+                        <rect x="386" y="370" width="59" height="21" fill="#8EE2FC"/>
+                        <rect x="329.5" y="371.5" width="2" height="23" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="387.5" y="371.5" width="1" height="23" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="270.5" y="369.5" width="176" height="21" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(280.035 382)">Skrining Diabetes Mellitus</text>
+                    </g>
+
+                    {/* Process: Skrining Malaria (Endemis) (Clickable) */}
+                    <g id="skrining_malaria_endemis" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="270" y="394" width="59" height="20" fill="#B0FEE6"/>
+                        <rect x="329" y="394" width="58" height="20" fill="#FFD9FF"/>
+                        <rect x="387" y="394" width="58" height="20" fill="#8EE2FC"/>
+                        <rect x="330.5" y="395.5" width="1" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="387.5" y="395.5" width="2" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="271.5" y="393.5" width="175" height="21" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(280.416 405)">Skrining Malaria (Endemis)</text>
+                    </g>
+
+                    {/* Process: Skrining Indra Penglihatan (Clickable) */}
+                    <g id="skrining_indra_penglihatan" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="271" y="418" width="59" height="21" fill="#B0FEE6"/>
+                        <rect x="330" y="418" width="57" height="21" fill="#FFD9FF"/>
+                        <rect x="387" y="418" width="59" height="21" fill="#8EE2FC"/>
+                        <rect x="331.5" y="420.5" width="1" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="388.5" y="420.5" width="2" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="272.5" y="417.5" width="175" height="21" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(281.25 430)">Skrining Indra Penglihatan</text>
+                    </g>
+
+                    {/* Process: Skrining Kanker Kolorektal (Clickable) */}
+                    <g id="skrining_kanker_kolorektal" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="270.5" y="761.5" width="175" height="20" fill="#8EE2FC" stroke="#000" strokeMiterlimit="8" strokeWidth=".6667"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(279.36 773)">Skrining Kanker Kolorektal</text>
+                    </g>
+
+                    {/* Process: Skrining Faktor Risiko Penyakit Jantung (Clickable) */}
+                    <g id="skrining_faktor_risiko_penyakit_jantung" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="270.5" y="736.5" width="175" height="19" fill="#8EE2FC" stroke="#000" strokeMiterlimit="8" strokeWidth=".6667"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(279.6 748)">Skrining Faktor Risiko Penyakit Jantung</text>
+                    </g>
+
+                    {/* Process: Skrining Faktor Risiko Stroke (Clickable) */}
+                    <g id="skrining_faktor_risiko_stroke" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="270.5" y="713.5" width="175" height="19" fill="#8EE2FC" stroke="#000" strokeMiterlimit="8" strokeWidth=".6667"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(279.6 725)">Skrining Faktor Risiko Stroke</text>
+                    </g>
+
+                    {/* Process: Skrining Kanker Paru (Clickable) */}
+                    <g id="skrining_kanker_paru" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="268" y="669" width="88" height="19" fill="#FFD9FF"/>
+                        <rect x="356" y="669" width="87" height="19" fill="#8EE2FC"/>
+                        <rect x="357.5" y="670.5" width="1" height="20" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="269.5" y="670.5" width="175" height="18" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(278.109 681)">Skrining Kanker Paru</text>
+                    </g>
+
+                    {/* Process: Skrining Kanker Leher Rahim (Clickable) */}
+                    <g id="skrining_kanker_leher_rahim" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="268" y="645" width="88" height="19" fill="#FFD9FF"/>
+                        <rect x="356" y="645" width="87" height="19" fill="#8EE2FC"/>
+                        <rect x="357.5" y="646.5" width="1" height="20" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="269.5" y="646.5" width="175" height="18" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(278.109 657)">Skrining Kanker Leher Rahim</text>
+                    </g>
+
+                    {/* Process: Skrining Kanker Payudara (Clickable) */}
+                    <g id="skrining_kanker_payudara" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="268" y="622" width="88" height="20" fill="#FFD9FF"/>
+                        <rect x="356" y="622" width="87" height="20" fill="#8EE2FC"/>
+                        <rect x="357.5" y="623.5" width="1" height="21" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="269.5" y="623.5" width="175" height="18" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(278.109 634)">Skrining Kanker Payudara</text>
+                    </g>
+
+                    {/* Process: Skrining Kesehatan Jiwa Dewasa (Clickable) */}
+                    <g id="skrining_kesehatan_jiwa_dewasa" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="268" y="600" width="88" height="19" fill="#FFD9FF"/>
+                        <rect x="356" y="600" width="87" height="19" fill="#8EE2FC"/>
+                        <rect x="357.5" y="601.5" width="1" height="21" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="269.5" y="600.5" width="175" height="18" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(278.109 612)">Skrining Kesehatan Jiwa</text>
+                    </g>
+
+                    {/* Process: Skrining PPOK (Clickable) */}
+                    <g id="skrining_ppok" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="270" y="443" width="59" height="21" fill="#B0FEE6"/>
+                        <rect x="329" y="443" width="57" height="21" fill="#FFD9FF"/>
+                        <rect x="386" y="443" width="59" height="21" fill="#8EE2FC"/>
+                        <rect x="330.5" y="444.5" width="1" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="387.5" y="444.5" width="2" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="271.5" y="442.5" width="175" height="21" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(280.337 455)">Skrining PPOK</text>
+                    </g>
+
+                    {/* Process: Skrining Tuberkulosis Dewasa (Clickable) */}
+                    <g id="skrining_tuberkulosis_dewasa" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="270" y="466" width="59" height="21" fill="#B0FEE6"/>
+                        <rect x="329" y="466" width="57" height="21" fill="#FFD9FF"/>
+                        <rect x="386" y="466" width="59" height="21" fill="#8EE2FC"/>
+                        <rect x="330.5" y="467.5" width="1" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="387.5" y="467.5" width="2" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="271.5" y="465.5" width="175" height="21" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(280.337 478)">Skrining Tuberkulosis</text>
+                    </g>
+
+                    {/* Process: Skrining Layak Hamil (Clickable) */}
+                    <g id="skrining_layak_hamil" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="270" y="489" width="59" height="20" fill="#B0FEE6"/>
+                        <rect x="329" y="489" width="57" height="20" fill="#FFD9FF"/>
+                        <rect x="386" y="489" width="59" height="20" fill="#8EE2FC"/>
+                        <rect x="330.5" y="490.5" width="1" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="387.5" y="490.5" width="2" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="271.5" y="488.5" width="175" height="21" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(280.337 500)">Skrining Layak Hamil</text>
+                    </g>
+
+                    {/* Process: Skrining Geriatri (Clickable) */}
+                    <g id="skrining_geriatri" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="268" y="518" width="59" height="21" fill="#B0FEE6"/>
+                        <rect x="327" y="518" width="57" height="21" fill="#FFD9FF"/>
+                        <rect x="384" y="518" width="59" height="21" fill="#8EE2FC"/>
+                        <rect x="327.5" y="519.5" width="2" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="385.5" y="519.5" width="1" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="269.5" y="517.5" width="175" height="21" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(278.109 530)">Skrining Geriatri</text>
+                    </g>
+
+                    {/* Process: Skrining Imunisasi Tetanus bagi WUS (Clickable) */}
+                    <g id="skrining_imunisasi_tetanus_wus" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="268" y="541" width="59" height="20" fill="#B0FEE6"/>
+                        <rect x="327" y="541" width="57" height="20" fill="#FFD9FF"/>
+                        <rect x="384" y="541" width="59" height="21" fill="#8EE2FC"/>
+                        <rect x="327.5" y="542.5" width="2" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="385.5" y="542.5" width="1" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="269.5" y="541.5" width="175" height="21" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(278.109 553)">Skrining Imunisasi Tetanus bagi WUS</text>
+                    </g>
+
+                    {/* Process: Imunisasi Covid 19 Program (Clickable) */}
+                    <g id="imunisasi_covid_19_program" className='clickable-icon' onClick={handleNodeClick} onDoubleClick={handleDoubleClick} style={{ cursor: 'pointer' }}>
+                        <rect x="268" y="571" width="59" height="21" fill="#B0FEE6"/>
+                        <rect x="327" y="571" width="57" height="21" fill="#FFD9FF"/>
+                        <rect x="384" y="571" width="59" height="21" fill="#8EE2FC"/>
+                        <rect x="327.5" y="572.5" width="2" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="385.5" y="572.5" width="1" height="22" fill="none" stroke="#FFF" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth=".5625"/>
+                        <rect x="269.5" y="570.5" width="175" height="21" fill="none" stroke="#000" strokeMiterlimit="8" strokeWidth=".5625"/>
+                        <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(278.109 583)">Imunisasi Covid 19 Program *</text>
+                    </g>
+
+                    {/* Dashed Area Main (Skrining) */}
+                    <g id="dashed_area_main">
+                        <rect x="262.5" y="314.5" width="193" height="497" fill="none" stroke="#172C51" strokeDasharray="2.25008 1.68756" strokeMiterlimit="8" strokeWidth=".5625"/>
                     </g>
 
                     {/* Text labels for "Tidak" and "Ya" */}
-                    <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="13" fontWeight="400" transform="translate(189.4 251)">Tidak</text>
-                    <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="16" fontWeight="400" transform="translate(134.6 386)">Ya</text>
-                    <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="13" fontWeight="400" transform="translate(128 650)">Tidak</text>
-                    <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontWeight="400" fontSize="13" transform="translate(387.6 662)">Tidak</text>
-                    <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="16" fontWeight="400" transform="translate(204.9 478)">Ya</text>
-                    <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="16" fontWeight="400" transform="translate(246 794)">Ya</text>
-                    <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="16" fontWeight="400" transform="translate(454.4 623)">Hasil</text>
+                    <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(363.937 303)">Tidak</text>
+                    <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(157.293 621)">Tidak</text>
+                    <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(450.088 250)">Ya</text>
+                    <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontSize="8" fontWeight="400" transform="translate(55.9309 555)">Ya</text>
 
                     {/* Flow lines and arrows */}
                     <g id="flow_lines_and_arrows">
-                        <path d="M243 39.5v38.4h26.4l-.5-.5v31.3h1V76.9h-26.4l.5.5V39.5Zm22.4 67.8 4 8 4-8Z"/>
-                        <path d="M92 157.5v34.6h33.6l-.5-.5v27.5h1v-28H92.5l.5.5v-34.1Zm29.6 60.2 4 8 4-8Z"/>
-                        <path d="M269.8 146.5v40.2H125.5l.5-.5v33h-1v-33.5h144.3l-.5.5v-39.7Zm-140.3 71.4-4 8-4-8Zm47 39.1h37.6v68.4l-.5-.5h30.5v1h-31v-68.4l.5.5h-37.1Zm66.3 64.4 8 4-8 4Z"/>
-                        <path d="M126.4 288.5v84.7h-.9l.5-.5v77.5h-1v-78h1l-.6.5v-84.2Zm3.1 160.3-4 8-4-8Z"/>
-                        <path d="M475.2 325h24l-.5-.5V628l.5-.5h-83v1h83.5V324h-24.5Zm-57.7 299-8 4 8 4ZM346 660.5v9.5h96.8l-.5-.5v2.4h1V669h-96.8l.5.5v-9Zm92.8 10 4 8 4-8ZM194.5 486h28v24.5l-.4-.5H243v1h-21.4v-24.5l.5.5h-27.6Zm47.1 20.5 8 4-8 4Zm-116.6 10v378.4h37.2v-1h-36.7l.5.5V516.5Zm35.9 381.9 8-4-8-4ZM283 628h-42v248.6h1V628.5l-.5.5H283Zm-45.5 247.3 4 8 4-8Z"/>
-                        <path d="M163.1 941.4H3V108h17.8v1H3.5l.5-.5v832.4l-.5-.5h159.6ZM19.5 104.5l8 4-8 4Z"/>
-                        <path d="M443 710.5v27.7h-1v-27.7Zm3.5 26.4-4 8-4-8Zm-3.5 40.6V806h-1v-28.5Zm3.5 27.2-4 8-4-8Zm-3.5 42.8v26.8h-1v-26.8Zm3.5 25.5-4 8-4-8Zm-3.9 39h-2.5v28l.5-.4h-56.4v1H441v-28.1l-.5.5h2Zm-57.1 24-8 4 8 4Zm-144.3-30.5-.1 18.4h1l.1-18.4Zm-3.6 17 3.9 8 4-8Z"/>
+                        <path fillRule="evenodd" d="M147.418 705.072h2.164V682h-2.164Zm-5.418-.786 6.5 4.714 6.5-4.714"/>
+                        <path fillRule="evenodd" d="M147.418 757.207h2.164V735h-2.164Zm-5.418-.758 6.5 4.551 6.5-4.551"/>
+                        <path fillRule="evenodd" d="M149.582 809.207h-2.164V787h2.164Zm5.418-.76L148.5 813l-6.5-4.553"/>
+                        <path d="m359.393 92.4951-.327 32.8668 1 .01.327-32.8668Zm-3.8135 31.4987 3.9202 8.0394 4.0794-7.9598Z"/>
+                        <path d="m222.507 257 63.322.866-.014 1-63.322-.866Zm62.037-2.652 7.944 4.109-8.054 3.89Z"/>
+                        <path d="m360 165.497.293 52.253-1 .006-.293-52.253Zm3.785 50.9-3.955 8.023-4.045-7.978Z"/>
+                        <path d="m359.187 292.4958-.1304 15.3437 1 .0085.1304-15.3438Zm-3.619 13.9807 3.932 8.0337 4.0678-7.9657Z"/>
+                        <path d="M426.5 258h84.148v665.679h-29.202v-1h28.702l-.5.5V258.5l.5.5H426.5Zm56.28 669.179-8-4 8-4Z"/>
+                        <path d="m262.581 563.418-40.432-1.217.03-1 40.433 1.217Zm-39.205 2.321L215.5 561.5l8.117-3.757Z"/>
+                        <path d="m151 601.493.681 50.185-1 .013-.681-50.184Zm4.163 48.804-3.892 8.054-4.108-7.945Z"/>
+                        <path d="M151 839.5v84.169h123.772v-1H151.5l.5.5V839.5Zm122.439 87.669 8-4-8-4Z"/>
+                        <path d="M84.5001 562H31.9692l.5-.5v361.607l-.5-.5H274.123v1H31.4692V561h53.0309ZM272.789 919.107l8 4-8 4Z"/>
+                        <path d="m150.072 520.528-1.869-61.349 1-.031 1.868 61.349Zm-5.327-59.91 3.755-8.118 4.242 7.875Z"/>
+                        <path d="m149 420.5433.0657-106.3763-1-.001L148 420.5427Zm3.5649-105.0413-3.995-8.002-4.005 7.997Z"/>
                     </g>
                 </svg>
             </div>

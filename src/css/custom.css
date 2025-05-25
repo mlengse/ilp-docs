@@ -71,7 +71,7 @@ article p,article li,article ol{
 }
 
 /* Efek saat disentuh / aktif (untuk mobile dan desktop) */
-.clickable-icon:active {
+.clickable-icon:active text{
   /* transform: scale(0.95); Sedikit mengecil saat disentuh, memberi kesan "menekan" */
   filter: brightness(1.1); /* Sedikit lebih cerah */
   /* atau */
@@ -88,7 +88,7 @@ article p,article li,article ol{
 }
 
 /* Efek saat hover (lebih relevan untuk desktop, tapi bisa jadi fallback) */
-.clickable-icon:hover {
+.clickable-icon:hover text {
   stroke: #555; /* Warna garis berubah */
   /* transform: scale(1.03); Sedikit membesar saat hover */
   filter: brightness(1.05); /* Sedikit lebih cerah saat hover */
