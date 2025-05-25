@@ -52,9 +52,9 @@ const App = () => {
         updateViewBox();
     }, [updateViewBox]);
 
-    // --- Pan (Drag) Logic ---
+    // --- Pan (Drag) Logic for Mouse ---
     const handleMouseDown = (e) => {
-        if (scale === 1) return; // Disable pan at initial scale
+        if (scale === 1) return; // Disable pan at initial scale for mouse
         setIsDragging(true);
         setStartX(e.clientX);
         setStartY(e.clientY);
@@ -80,6 +80,11 @@ const App = () => {
     const lastTapTarget = useRef(null);
 
     const handleTouchStart = (e) => {
+        // If not zoomed in, prevent setting isDragging for single touch to allow native scrolling
+        if (e.touches.length === 1 && scale === 1) {
+            return;
+        }
+
         if (e.touches.length === 1) {
             // Single touch for pan and double-tap
             setIsDragging(true);
@@ -115,11 +120,11 @@ const App = () => {
 
     const handleTouchMove = (e) => {
         if (e.touches.length === 1 && isDragging && scale !== 1) {
-            // Single touch pan - Invert delta for mobile for more natural feel
+            // Single touch pan - Adjusted for more natural feel on mobile
             const deltaX = (e.touches[0].clientX - startX) * panSensitivity / scale;
             const deltaY = (e.touches[0].clientY - startY) * panSensitivity / scale;
-            setTranslateX(startTranslateX - deltaX); // Keep this as is for standard pan
-            setTranslateY(startTranslateY - deltaY); // Keep this as is for standard pan
+            setTranslateX(startTranslateX + deltaX); // Changed to + for intuitive mobile drag
+            setTranslateY(startTranslateY + deltaY); // Changed to + for intuitive mobile drag
         } else if (e.touches.length === 2 && initialPinchDistance > 0) {
             // Pinch-to-zoom
             const touch1 = e.touches[0];
@@ -255,10 +260,8 @@ const App = () => {
             flexDirection: 'column', // Arrange elements in a column for the button
             justifyContent: 'center',
             alignItems: 'center',
-            minHeight: '100vh',
             backgroundColor: '#f0f0f0',
             margin: 0,
-            padding: '20px',
             boxSizing: 'border-box',
             width: '100%',
         }}>
