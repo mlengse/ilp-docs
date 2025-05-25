@@ -43,9 +43,9 @@ article p,article li,article ol{
 .clickable-icon {
   /* Umum untuk semua elemen yang dapat disentuh */
   cursor: pointer; /* Tetap pertahankan untuk desktop */
-  
+
   /* Transisi halus untuk umpan balik yang lebih baik */
-  transition: 
+  transition:
     /* transform 0.15s ease-out, Untuk efek scale */
     fill 0.15s ease-out, /* Untuk perubahan warna isi SVG */
     stroke 0.15s ease-out, /* Untuk perubahan warna garis SVG */
@@ -57,6 +57,17 @@ article p,article li,article ol{
   min-width: 48px; /* Contoh, sesuaikan ukuran SVG aslinya */
   min-height: 48px; /* Contoh, sesuaikan ukuran SVG aslinya */
   display: inline-block; /* Agar min-width/height berfungsi */
+
+  /* Menambahkan garis putus-putus di bawah teks */
+  border-bottom: 1px dashed currentColor; /* 1px tebal, putus-putus, dan warna sesuai teks */
+  padding-bottom: 2px; /* Memberi sedikit jarak antara teks dan garis */
+  text-decoration: dotted; /* Pastikan tidak ada underline default jika elemen adalah <a> */
+}
+
+.clickable-icon text {
+  text-decoration: underline; /* Tambahkan garis bawah saat hover */
+  text-decoration-style: dashed; /* Ubah gaya garis menjadi putus-putus */
+  text-decoration-color: currentColor; /* Sesuaikan warna garis dengan warna teks */
 }
 
 /* Efek saat disentuh / aktif (untuk mobile dan desktop) */
@@ -65,7 +76,7 @@ article p,article li,article ol{
   filter: brightness(1.1); /* Sedikit lebih cerah */
   /* atau */
   /* filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2)); */ /* Memberi efek bayangan kecil */
-  
+
   /* Perubahan warna */
   /* Jika elemen adalah <rect> atau <path> */
   /* fill: #e0e0e0; Warna isi berubah */

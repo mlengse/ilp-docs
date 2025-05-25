@@ -1,13 +1,244 @@
-import React from 'react';
-import { useHistory } from '@docusaurus/router'; // Mengimpor useHistory untuk navigasi
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { useHistory } from '@docusaurus/router'; // Menggunakan useHistory untuk Docusaurus v2/v3
 
 const App = () => {
-    const history = useHistory(); // Mendapatkan objek history dari React Router Docusaurus
+    const history = useHistory();
+    const svgRef = useRef(null); // Referensi ke elemen SVG
+    const containerRef = useRef(null); // Referensi ke div container SVG
+
+    // State untuk transformasi viewBox SVG
+    const [scale, setScale] = useState(1);
+    const [translateX, setTranslateX] = useState(0);
+    const [translateY, setTranslateY] = useState(0);
+
+    // State untuk fungsionalitas geser (pan)
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [startY, setStartY] = useState(0);
+    const [startTranslateX, setStartTranslateX] = useState(0);
+    const [startTranslateY, setStartTranslateY] = useState(0);
+
+    // State untuk pinch-to-zoom
+    const [initialPinchDistance, setInitialPinchDistance] = useState(0);
+    const [initialPinchScale, setInitialPinchScale] = useState(1);
+    const [initialPinchMidpoint, setInitialPinchMidpoint] = useState({ x: 0, y: 0 });
+
+    // State untuk tombol reset
+    const [showResetButton, setShowResetButton] = useState(false);
+
+    // Konstanta untuk ukuran viewBox asli
+    const originalViewBoxWidth = 540;
+    const originalViewBoxHeight = 960;
+    const panSensitivity = 10; // Sensitivitas geser tinggi
+
+    // Fungsi untuk memperbarui viewBox SVG
+    const updateViewBox = useCallback(() => {
+        const currentViewBoxWidth = originalViewBoxWidth / scale;
+        const currentViewBoxHeight = originalViewBoxHeight / scale;
+        const currentViewBoxX = -translateX;
+        const currentViewBoxY = -translateY;
+
+        if (svgRef.current) {
+            svgRef.current.setAttribute(
+                'viewBox',
+                `${currentViewBoxX} ${currentViewBoxY} ${currentViewBoxWidth} ${currentViewBoxHeight}`
+            );
+        }
+
+        // Tampilkan tombol reset jika tidak pada skala atau posisi default
+        setShowResetButton(scale !== 1 || translateX !== 0 || translateY !== 0);
+    }, [scale, translateX, translateY]);
+
+    useEffect(() => {
+        updateViewBox();
+    }, [updateViewBox]);
+
+    // --- Pan (Geser) Logic ---
+    const handleMouseDown = (e) => {
+        if (scale === 1) return; // Nonaktifkan geser pada skala awal
+        setIsDragging(true);
+        setStartX(e.clientX);
+        setStartY(e.clientY);
+        setStartTranslateX(translateX);
+        setStartTranslateY(translateY);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        const deltaX = (e.clientX - startX) * panSensitivity / scale;
+        const deltaY = (e.clientY - startY) * panSensitivity / scale;
+        setTranslateX(startTranslateX - deltaX);
+        setTranslateY(startTranslateY - deltaY);
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    // --- Touch Pan & Pinch-to-Zoom Logic ---
+    const lastTapTime = useRef(0);
+    const lastTapTarget = useRef(null);
+
+    const handleTouchStart = (e) => {
+        if (e.touches.length === 1) {
+            // Single touch for pan and double-tap
+            setIsDragging(true);
+            setStartX(e.touches[0].clientX);
+            setStartY(e.touches[0].clientY);
+            setStartTranslateX(translateX);
+            setStartTranslateY(translateY);
+
+            // Double-tap logic
+            const currentTime = new Date().getTime();
+            const tapLength = currentTime - lastTapTime.current;
+            if (tapLength < 300 && tapLength > 0 && lastTapTarget.current === e.target) {
+                // Double tap detected
+                handleDoubleClick(e); // Trigger zoom to element
+                lastTapTime.current = 0; // Reset to prevent triple tap
+            } else {
+                lastTapTime.current = currentTime;
+                lastTapTarget.current = e.target;
+            }
+        } else if (e.touches.length === 2) {
+            // Two touches for pinch-to-zoom
+            setIsDragging(false); // Disable single-touch pan
+            const touch1 = e.touches[0];
+            const touch2 = e.touches[1];
+            const distance = Math.sqrt(
+                Math.pow(touch2.clientX - touch1.clientX, 2) +
+                Math.pow(touch2.clientY - touch1.clientY, 2)
+            );
+            setInitialPinchDistance(distance);
+            setInitialPinchScale(scale);
+
+            // Calculate pinch midpoint in SVG coordinates
+            const rect = svgRef.current.getBoundingClientRect();
+            const svgX = (e.touches[0].clientX + e.touches[1].clientX) / 2 - rect.left;
+            const svgY = (e.touches[0].clientY + e.touches[1].clientY) / 2 - rect.top;
+
+            // Convert screen coordinates to SVG viewBox coordinates
+            const viewBoxX = -translateX;
+            const viewBoxY = -translateY;
+            const viewBoxWidth = originalViewBoxWidth / scale;
+            const viewBoxHeight = originalViewBoxHeight / scale;
+
+            const svgCoordX = viewBoxX + (svgX / rect.width) * viewBoxWidth;
+            const svgCoordY = viewBoxY + (svgY / rect.height) * viewBoxHeight;
+
+            setInitialPinchMidpoint({ x: svgCoordX, y: svgCoordY });
+        }
+    };
+
+    const handleTouchMove = (e) => {
+        if (e.touches.length === 1 && isDragging && scale !== 1) {
+            // Single touch pan
+            const deltaX = (e.touches[0].clientX - startX) * panSensitivity / scale;
+            const deltaY = (e.touches[0].clientY - startY) * panSensitivity / scale;
+            setTranslateX(startTranslateX - deltaX);
+            setTranslateY(startTranslateY - deltaY);
+        } else if (e.touches.length === 2 && initialPinchDistance > 0) {
+            // Pinch-to-zoom
+            const touch1 = e.touches[0];
+            const touch2 = e.touches[1];
+            const currentDistance = Math.sqrt(
+                Math.pow(touch2.clientX - touch1.clientX, 2) +
+                Math.pow(touch2.clientY - touch1.clientY, 2)
+            );
+
+            const newScale = initialPinchScale * (currentDistance / initialPinchDistance);
+            
+            // Limit zoom level
+            const clampedNewScale = Math.max(1, Math.min(newScale, 5)); // Zoom min 1x, max 5x
+
+            // Adjust pan to zoom around midpoint
+            const rect = svgRef.current.getBoundingClientRect();
+            const currentPinchMidpointScreenX = (touch1.clientX + touch2.clientX) / 2 - rect.left;
+            const currentPinchMidpointScreenY = (touch1.clientY + touch2.clientY) / 2 - rect.top;
+
+            const oldViewBoxX = -startTranslateX;
+            const oldViewBoxY = -startTranslateY;
+            const oldViewBoxWidth = originalViewBoxWidth / initialPinchScale;
+            const oldViewBoxHeight = originalViewBoxHeight / initialPinchScale;
+
+            const oldSvgCoordX = oldViewBoxX + (currentPinchMidpointScreenX / rect.width) * oldViewBoxWidth;
+            const oldSvgCoordY = oldViewBoxY + (currentPinchMidpointScreenY / rect.height) * oldViewBoxHeight;
+
+            const newViewBoxWidth = originalViewBoxWidth / clampedNewScale;
+            const newViewBoxHeight = originalViewBoxHeight / clampedNewScale;
+
+            const newTranslateX = -(oldSvgCoordX - (currentPinchMidpointScreenX / rect.width) * newViewBoxWidth);
+            const newTranslateY = -(oldSvgCoordY - (currentPinchMidpointScreenY / rect.height) * newViewBoxHeight);
+            
+            setScale(clampedNewScale);
+            setTranslateX(newTranslateX);
+            setTranslateY(newTranslateY);
+        }
+    };
+
+    const handleTouchEnd = () => {
+        setIsDragging(false);
+        setInitialPinchDistance(0); // Reset pinch state
+    };
+
+    // --- Zoom to Element Logic (Double-Click / Double-Tap) ---
+    const handleDoubleClick = (e) => {
+        // Mencegah navigasi Docusaurus jika ada event click/double-click pada elemen SVG
+        e.preventDefault();
+        e.stopPropagation();
+
+        const targetElement = e.target.closest('g[id^="process-"], g[id^="decision-"], g[id^="output-"], g[id^="input-"], g[id^="start-end-"], g[id^="side-process-"]');
+
+        if (targetElement && svgRef.current) {
+            const svgRect = svgRef.current.getBoundingClientRect();
+            const elementRect = targetElement.getBoundingClientRect();
+
+            // Hitung posisi elemen dalam koordinat SVG
+            const elementSvgX = (elementRect.left - svgRect.left) / svgRect.width * originalViewBoxWidth;
+            const elementSvgY = (elementRect.top - svgRect.top) / svgRect.height * originalViewBoxHeight;
+            const elementSvgWidth = elementRect.width / svgRect.width * originalViewBoxWidth;
+            const elementSvgHeight = elementRect.height / svgRect.height * originalViewBoxHeight;
+
+            // Hitung skala baru (misalnya, 2x dari skala saat ini, atau skala yang membuat elemen mengisi 80% viewport)
+            const zoomFactor = 2; // Perbesar 2 kali dari ukuran saat ini
+            const newScale = Math.min(5, scale * zoomFactor); // Batasi zoom maksimum 5x
+
+            // Hitung posisi tengah elemen
+            const centerX = elementSvgX + elementSvgWidth / 2;
+            const centerY = elementSvgY + elementSvgHeight / 2;
+
+            // Hitung translasi baru untuk memusatkan elemen
+            // Perlu memperhitungkan skala baru
+            const newTranslateX = -(centerX - (originalViewBoxWidth / 2) / newScale);
+            const newTranslateY = -(centerY - (originalViewBoxHeight / 2) / newScale);
+
+            setScale(newScale);
+            setTranslateX(newTranslateX);
+            setTranslateY(newTranslateY);
+        }
+    };
+
+    // --- Reset View Button ---
+    const resetView = () => {
+        setScale(1);
+        setTranslateX(0);
+        setTranslateY(0);
+    };
 
     // Fungsi untuk navigasi ke halaman Cek Kesehatan Mandiri
-    const goToCekKesehatanPage = () => {
+    const goToCekKesehatanPage = (e) => {
+        // Hanya navigasi jika bukan bagian dari double-tap/double-click
+        // Ini adalah heuristic sederhana, mungkin perlu penyesuaian
+        const currentTime = new Date().getTime();
+        if (currentTime - lastTapTime.current < 300) {
+             // Ini adalah double tap, jangan navigasi
+             return;
+        }
+
+        // Mencegah event default dari SVG yang mungkin memicu navigasi Docusaurus
+        e.preventDefault();
+        e.stopPropagation();
+
         // Ganti '/docs/cek-kesehatan-mandiri' dengan path URL yang Anda inginkan di Docusaurus
-        // Pastikan path ini sesuai dengan rute halaman yang Anda buat di Docusaurus
         // history.push('/docs/cek-kesehatan-mandiri');
     };
 
@@ -15,6 +246,7 @@ const App = () => {
         <div style={{
             fontFamily: 'Arial, sans-serif',
             display: 'flex',
+            flexDirection: 'column', // Mengatur tata letak kolom untuk tombol
             justifyContent: 'center',
             alignItems: 'center',
             // minHeight: '100vh',
@@ -24,22 +256,55 @@ const App = () => {
             boxSizing: 'border-box',
             width: '100%',
         }}>
-            <div style={{
-                width: '100%',
-                height: 'auto',
-                borderRadius: '8px',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-                backgroundColor: 'white',
-                overflow: 'hidden',
-                paddingBottom: '177.77%', // Rasio aspek 960/540
-                position: 'relative',
-            }}>
+            {showResetButton && (
+                <button
+                    onClick={resetView}
+                    style={{
+                        padding: '10px 20px',
+                        fontSize: '0.9rem',
+                        backgroundColor: '#00796b',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '5px',
+                        cursor: 'pointer',
+                        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
+                        transition: 'background-color 0.3s ease',
+                        marginBottom: '10px', // Jarak antara tombol dan SVG
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#004d40'}
+                    onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#00796b'}
+                >
+                    Reset Tampilan
+                </button>
+            )}
+            <div
+                ref={containerRef}
+                style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: '8px',
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                    backgroundColor: 'white',
+                    overflow: 'hidden',
+                    paddingBottom: '177.77%', // Rasio aspek 960/540
+                    position: 'relative',
+                    touchAction: 'none', // Mencegah default browser pan/zoom
+                }}
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseUp} // Hentikan geser jika mouse keluar area
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+            >
                 <svg
+                    ref={svgRef}
                     width="100%"
-                    height="auto"
+                    height="100%"
                     xmlns="http://www.w3.org/2000/svg"
                     overflow="hidden"
-                    viewBox="0 0 540 960"
+                    viewBox={`0 0 ${originalViewBoxWidth} ${originalViewBoxHeight}`} // ViewBox awal
                     style={{
                         display: 'block',
                         position: 'absolute',
@@ -47,8 +312,11 @@ const App = () => {
                         left: 0,
                     }}
                 >
+                    {/* Background rectangle */}
+                    <rect x="0" y="0" width="540" height="960" fill="#FFF" />
+
                     {/* Decision Diamond: Terdapat Tanda Persalinan */}
-                    <g id="decision-persalinan">
+                    <g id="decision-persalinan" onDoubleClick={handleDoubleClick}>
                         <polygon points="56.5 486.5, 125.5 456.5, 194.5 486.5, 125.5 516.5" stroke="#000" strokeLinejoin="round" strokeMiterlimit="10" fill="none"/>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(104.5 478)">Terdapat</text>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(104.5 490)">Tanda</text>
@@ -56,7 +324,7 @@ const App = () => {
                     </g>
 
                     {/* Decision Diamond: Terdapat Keluhan Kesehatan */}
-                    <g id="decision-keluhan-kesehatan">
+                    <g id="decision-keluhan-kesehatan" onDoubleClick={handleDoubleClick}>
                         <polygon points="74.5 257, 125.5 225.5, 176.5 257, 125.5 288.5" stroke="#000" strokeLinejoin="round" strokeMiterlimit="10" fill="none"/>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(106.7 246)">Terdapat</text>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(106.2 258)">Keluhan</text>
@@ -64,7 +332,7 @@ const App = () => {
                     </g>
 
                     {/* Output Display: Pemantauan Hasil Pengobatan */}
-                    <g id="output-pemantauan-pengobatan">
+                    <g id="output-pemantauan-pengobatan" onDoubleClick={handleDoubleClick}>
                         <rect x="158.5" y="929.5" width="214" height="25" stroke="#000" strokeMiterlimit="8" fill="none"/>
                         <rect x="159" y="930" width="71" height="24" fill="#B0FEE6"/>
                         <rect x="230" y="930" width="70" height="24" fill="#FFD9FF"/>
@@ -75,7 +343,7 @@ const App = () => {
                     </g>
 
                     {/* Decision Diamond: Dapat Ditangani Di FKTP */}
-                    <g id="decision-dapat-ditangani-fktp">
+                    <g id="decision-dapat-ditangani-fktp" onDoubleClick={handleDoubleClick}>
                         <polygon points="283.5,628.5 346.5,596.5 409.5,628.5 346.5,660.5" stroke="#000" strokeMiterlimit="8" fill="#FFF"/>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(332.5 619)">Dapat</text>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(324.7 631)">Ditangani</text>
@@ -83,13 +351,13 @@ const App = () => {
                     </g>
 
                     {/* Process: Tatalaksana sesuai standar */}
-                    <g id="process-tatalaksana-standar">
+                    <g id="process-tatalaksana-standar" onDoubleClick={handleDoubleClick}>
                         <rect x="168.5" y="882.5" width="212" height="24" stroke="#000" strokeMiterlimit="8" fill="#8EE2FC"/>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(179.9 898)">Tatalaksana sesuai standar</text>
                     </g>
 
                     {/* Output Display: Pelayanan Pasca Persalinan */}
-                    <g id="output-pelayanan-pasca-persalinan">
+                    <g id="output-pelayanan-pasca-persalinan" onDoubleClick={handleDoubleClick}>
                         <rect x="256.5" y="514.5" width="211" height="23" stroke="#000" strokeMiterlimit="8" fill="none"/>
                         <rect x="256" y="513" width="71" height="26" fill="#B0FEE6"/>
                         <rect x="327" y="513" width="70" height="26" fill="#FFD9FF"/>
@@ -100,7 +368,7 @@ const App = () => {
                     </g>
 
                     {/* Process: Persalinan Normal */}
-                    <g id="process-persalinan-normal">
+                    <g id="process-persalinan-normal" onDoubleClick={handleDoubleClick}>
                         <rect x="255.5" y="482.5" width="212" height="24" stroke="#000" strokeMiterlimit="8" fill="#8EE2FC"/>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(267.4 498)">Persalinan Normal</text>
                     </g>
@@ -111,7 +379,7 @@ const App = () => {
                     </g>
 
                     {/* Process: Kunjungan rumah oleh kader Posyandu */}
-                    <g id="process-kunjungan-rumah">
+                    <g id="process-kunjungan-rumah" onDoubleClick={handleDoubleClick}>
                         <rect x="29.5" y="59.5" width="126" height="98" stroke="#000" strokeMiterlimit="8" fill="#F7F7C2"/>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(36.4 75)">Kunjungan rumah</text>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(36.4 87)">oleh</text>
@@ -128,7 +396,7 @@ const App = () => {
                     </g>
 
                     {/* Input Data: Cek Kesehatan Secara Mandiri (Clickable untuk Docusaurus) */}
-                    <g id="input-cek-kesehatan-mandiri" onClick={goToCekKesehatanPage} className='clickable-icon'>
+                    <g id="input-cek-kesehatan-mandiri" onClick={goToCekKesehatanPage} onDoubleClick={handleDoubleClick} className='clickable-icon'>
                         <rect x="230.5" y="113.5" width="92" height="33" stroke="#000" strokeMiterlimit="8" fill="#F7F7C2"/>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(235.2 130)">Cek Kesehatan</text>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(235.2 140)">Secara</text>
@@ -136,7 +404,7 @@ const App = () => {
                     </g>
 
                     {/* Start/End Oval: Ibu Hamil, Bersalin dan Nifas */}
-                    <g id="start-end-ibu-hamil">
+                    <g id="start-end-ibu-hamil" onDoubleClick={handleDoubleClick}>
                         <ellipse cx="244" cy="22" rx="86.5" ry="17.5" stroke="#000" strokeLinejoin="round" strokeMiterlimit="10" fill="none"/>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(201.5 17)">Ibu Hamil,</text>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(249.2 17)">Bersalin</text>
@@ -150,7 +418,7 @@ const App = () => {
                     </g>
 
                     {/* Process: Skrining Pre-eklampsia */}
-                    <g id="process-skrining-preeklampsia">
+                    <g id="process-skrining-preeklampsia" onDoubleClick={handleDoubleClick}>
                         <rect x="257.5" y="417.5" width="212" height="25" stroke="#000" strokeMiterlimit="8" fill="#8EE2FC"/>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(268.5 433)">Skrining Pre</text>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(322.7 433)">-</text>
@@ -158,7 +426,7 @@ const App = () => {
                     </g>
 
                     {/* Process: Skrining Tuberkulosis */}
-                    <g id="process-skrining-tuberkulosis">
+                    <g id="process-skrining-tuberkulosis" onDoubleClick={handleDoubleClick}>
                         <rect x="257.5" y="206.5" width="211" height="26" stroke="#000" strokeMiterlimit="8" fill="none"/>
                         <rect x="257" y="206" width="71" height="26" fill="#B0FEE6"/>
                         <rect x="328" y="206" width="70" height="26" fill="#FFD9FF"/>
@@ -169,7 +437,7 @@ const App = () => {
                     </g>
 
                     {/* Process: Skrining Malaria (Daerah Endemis) */}
-                    <g id="process-skrining-malaria">
+                    <g id="process-skrining-malaria" onDoubleClick={handleDoubleClick}>
                         <rect x="257.5" y="237.5" width="211" height="24" stroke="#000" strokeMiterlimit="8" fill="none"/>
                         <rect x="257" y="236" width="70" height="26" fill="#B0FEE6"/>
                         <rect x="327" y="236" width="71" height="26" fill="#FFD9FF"/>
@@ -180,7 +448,7 @@ const App = () => {
                     </g>
 
                     {/* Process: Skrining Gigi dan Mulut */}
-                    <g id="process-skrining-gigi-mulut">
+                    <g id="process-skrining-gigi-mulut" onDoubleClick={handleDoubleClick}>
                         <rect x="257.5" y="267.5" width="211" height="24" stroke="#000" strokeMiterlimit="8" fill="none"/>
                         <rect x="257" y="267" width="71" height="26" fill="#B0FEE6"/>
                         <rect x="328" y="267" width="70" height="26" fill="#FFD9FF"/>
@@ -191,7 +459,7 @@ const App = () => {
                     </g>
 
                     {/* Process: Skrining HIV, Sifilis, Hepatitis B */}
-                    <g id="process-skrining-hiv-sifilis-hepatitis">
+                    <g id="process-skrining-hiv-sifilis-hepatitis" onDoubleClick={handleDoubleClick}>
                         <rect x="257.5" y="387.5" width="211" height="23" stroke="#000" strokeMiterlimit="8" fill="none"/>
                         <rect x="257" y="386" width="106" height="26" fill="#FFD9FF"/>
                         <rect x="363" y="386" width="105" height="26" fill="#8EE2FC"/>
@@ -200,7 +468,7 @@ const App = () => {
                     </g>
 
                     {/* Process: ANC Terpadu */}
-                    <g id="process-anc-terpadu">
+                    <g id="process-anc-terpadu" onDoubleClick={handleDoubleClick}>
                         <rect x="257.5" y="298.5" width="211" height="26" stroke="#000" strokeMiterlimit="8" fill="none"/>
                         <rect x="257" y="297" width="106" height="26" fill="#FFD9FF"/>
                         <rect x="363" y="297" width="106" height="26" fill="#8EE2FC"/>
@@ -209,7 +477,7 @@ const App = () => {
                     </g>
 
                     {/* Process: Skrining Kesehatan Jiwa */}
-                    <g id="process-skrining-kesehatan-jiwa">
+                    <g id="process-skrining-kesehatan-jiwa" onDoubleClick={handleDoubleClick}>
                         <rect x="257.5" y="327.5" width="211" height="23" stroke="#000" strokeMiterlimit="8" fill="none"/>
                         <rect x="257" y="326" width="105" height="26" fill="#FFD9FF"/>
                         <rect x="362" y="326" width="106" height="26" fill="#8EE2FC"/>
@@ -218,7 +486,7 @@ const App = () => {
                     </g>
 
                     {/* Process: Skrining Anemia */}
-                    <g id="process-skrining-anemia">
+                    <g id="process-skrining-anemia" onDoubleClick={handleDoubleClick}>
                         <rect x="257.5" y="356.5" width="211" height="24" stroke="#000" strokeMiterlimit="8" fill="none"/>
                         <rect x="257" y="355" width="106" height="26" fill="#FFD9FF"/>
                         <rect x="363" y="355" width="106" height="26" fill="#8EE2FC"/>
@@ -227,7 +495,7 @@ const App = () => {
                     </g>
 
                     {/* Side Process: Rujuk ke FKTL */}
-                    <g id="side-process-rujuk-fktl">
+                    <g id="side-process-rujuk-fktl" onDoubleClick={handleDoubleClick}>
                         <rect x="404.5" y="678.5" width="76" height="32" stroke="#000" strokeMiterlimit="8" fill="#F2F2F2"/>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(408.6 699)">Rujuk</text>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(436.8 699)">ke</text>
@@ -235,20 +503,20 @@ const App = () => {
                     </g>
 
                     {/* Side Process: Tatalaksana Di FKTL */}
-                    <g id="side-process-tatalaksana-fktl">
+                    <g id="side-process-tatalaksana-fktl" onDoubleClick={handleDoubleClick}>
                         <rect x="404.5" y="745.5" width="76" height="32" stroke="#000" strokeMiterlimit="8" fill="#F2F2F2"/>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(408.6 761)">Tatalaksana</text>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(408.6 773)">Di FKTL</text>
                     </g>
 
                     {/* Side Process: Kondisi Stabil */}
-                    <g id="side-process-kondisi-stabil">
+                    <g id="side-process-kondisi-stabil" onDoubleClick={handleDoubleClick}>
                         <rect x="404.5" y="812.5" width="76" height="33" stroke="#000" strokeMiterlimit="8" fill="#F2F2F2"/>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(408.6 833)">Kondisi Stabil</text>
                     </g>
 
                     {/* Side Process: Rujuk Balik Ke FKTP */}
-                    <g id="side-process-rujuk-balik-fktp">
+                    <g id="side-process-rujuk-balik-fktp" onDoubleClick={handleDoubleClick}>
                         <rect x="404.5" y="879.5" width="76" height="33" stroke="#000" strokeMiterlimit="8" fill="#F2F2F2"/>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(408.6 893)">Rujuk Balik</text>
                         <text fontFamily="Arial,Arial_MSFontService,sans-serif" fontWeight="400" fontSize="10" transform="translate(408.6 905)">Ke FKTP</text>
@@ -286,6 +554,9 @@ const App = () => {
                         <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontWeight="400" fontSize="16" transform="translate(454.4 623)">Hasi</text>
                         <text fontFamily="Aptos,Aptos_MSFontService,sans-serif" fontWeight="400" fontSize="16" transform="translate(485.9 623)">l</text>
 
+                        {/* Line and arrow from #process-kunjungan-rumah to #decision-keluhan-kesehatan */}
+                        {/* <line x1="92.5" y1="157.5" x2="125.5" y2="225.5" stroke="#000" fill="none"/> */}
+                        {/* <polygon points="125.5 225.5, 120.5 218.5, 130.5 218.5" fill="#000" stroke="#000"/> */}
                     </g>
                     {/* Long vertical line on the left */}
                     <path d="M163.1 941.4H3V108h17.8v1H3.5l.5-.5v832.4l-.5-.5h159.6ZM19.5 104.5l8 4-8 4Z" stroke="#000" fill="none"/>
